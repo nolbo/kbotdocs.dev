@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { id: string } }, p
         title: `${Data.label} | KBotDocs`,
         description: "카카오톡봇의 정보가 모인 카카오톡봇 문서입니다.",
         openGraph: {
-            title: `${Data.label} | KBotDocs`,
+            title: Data.label,
             siteName: "KBotDocs",
             url: `https://kbotdocs.dev/${params.id}`,
             images: {

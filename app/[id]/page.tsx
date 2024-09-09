@@ -1,9 +1,7 @@
 "use client";
 
-import React, {useState, ChangeEvent, ReactElement, useRef, useEffect} from "react";
+import React, { useState, ReactElement } from "react";
 import { useRouter } from "next/navigation";
-import Select from "@/components/common/Select";
-import TOC from "@/components/common/TOC";
 import Sidebar from "@/components/common/Sidebar";
 import Summary from "@/markdown/Summary.mdx";
 import LegacyAPI from "@/markdown/LegacyAPI.mdx";
@@ -11,9 +9,6 @@ import API2 from "@/markdown/API2.mdx";
 import Advanced from "@/markdown/Advanced.mdx";
 
 export default function Page({ params }: { params: { id: string } }) {
-    const [ isTOCShowed, setIsTOCShowed ] = useState<boolean>(false);
-
-    const router = useRouter();
     const Docs: { label: string, value: DocPath, doc: ReactElement }[] = [
         { label: "개요", value: "/summary", doc: <Summary /> },
         { label: "레거시 API", value: "/legacy", doc: <LegacyAPI /> },
