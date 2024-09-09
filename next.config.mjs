@@ -1,6 +1,5 @@
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 
 /** @type {import('next').NextConfig} */
@@ -11,6 +10,23 @@ const nextConfig = {
             use: ["@svgr/webpack"],
         });
         return config;
+    },
+    async redirects() {
+        return [
+            {
+                source: "/",
+                destination: "/summary",
+                permanent: true
+            }
+        ]
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/',
+                destination: '/summary',
+            },
+        ]
     },
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
