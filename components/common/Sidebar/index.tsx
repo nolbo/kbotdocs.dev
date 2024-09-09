@@ -19,8 +19,8 @@ export default function Sidebar({ params }: { params: { id: string } }) {
     };
 
     return (
-        <aside className={`fixed top-0 left-0 mt-header-h w-full h-[calc(100vh-theme(height.header-h))] ${(isTOCShowed) ? "bg-default" : "bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
-            <div className={`flex justify-start items-center gap-[8px] px-screen-x-default w-full h-[48px] bg-default md:hidden`}>
+        <aside className={`fixed top-0 left-0 mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
+            <div className={`flex justify-start items-center gap-[8px] px-screen-x-default-corrected w-full h-[48px] bg-default md:hidden`}>
                 <IconButton icon={(isTOCShowed) ? "CancelIcon" : "HamburgerButtonIcon"} onClick={() => {
                     setIsTOCShowed(v => !v)
                 }} />

@@ -48,7 +48,7 @@ export default function Markdown({ children } : IMarkdown) {
                 },
                 section(p) {
                     const { node, ...rest } = p;
-                    return (<section className={"flex flex-col gap-[24px] section"}>{ p.children }</section>);
+                    return (<section className={"flex flex-col gap-[24px] w-full section"}>{ p.children }</section>);
                 },
                 li(p) {
                     const { node, ...rest } = p;
@@ -81,8 +81,18 @@ export default function Markdown({ children } : IMarkdown) {
                                 <InlineCode>{ children }</InlineCode>
                     );
                 },
+                table(p) {
+                    const { children, className, ...rest } = p;
+                    return (
+                        <article className={"overflow-auto"}>
+                            <table className={"min-w-[0] w-full"} {...rest}>
+                                {children}
+                            </table>
+                        </article>
+                    )
+                },
                 th(p) {
-                    const { children, ...rest } = p;
+                    const {children, ...rest} = p;
 
                     return (
                         <th className={"py-[8px] border-b-[2px] border-default"}>

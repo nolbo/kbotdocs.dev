@@ -11,15 +11,6 @@ const nextConfig = {
         });
         return config;
     },
-    async redirects() {
-        return [
-            {
-                source: "/",
-                destination: "/summary",
-                permanent: true
-            }
-        ]
-    },
     async rewrites() {
         return [
             {
