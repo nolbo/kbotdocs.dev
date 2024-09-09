@@ -1,0 +1,1784 @@
+import Markdown from "@/components/common/Markdown";
+
+<Markdown>
+{`
+<section>
+
+## 레거시 API
+
+갑자기 뜬금없이 레거시 API라니, '하늘에서 떨어졌나 땅에서 솟았나' 하는 느낌일 거예요. 하지만 이때까지 나온 소스 코드는 모두 **레거시 API**를 기반으로 한 것이었답니다!<br />카카오톡봇 개발에 사용되는 내장 API는 두 가지가 있어요. 하나는 지금 이 편에서 다룰 **레거시 API**이고, 다른 하나는 다음 편에서 알아볼 **API2**라는 것이죠.
+
+일단 레거시 API의 객체부터 알아보도록 합시다!
+
+</section>
+<section>
+
+## 객체
+
+레거시 API의 객체들에 대해 알아볼 거예요. 레거시 API의 객체는 다양하답니다!
+
+<section>
+
+### Api
+
+\`Api\` 객체는 카카오톡봇의 근본적인 기능을 구현하거나 스크립트에 접근하기 위한 메소드들을 모아놓은 것이에요. 어떤 메소드들이 있는지 볼까요?
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.content.Context\`
+
+</td>
+<td>
+
+\`getContext()\`
+
+
+
+
+앱의 Context(컨텍스트)를 반환합니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>reload(<i>scriptName?: String</i>, <i>throwOnError?: Boolean = false</i>)</code>
+
+<code>compile(<i>scriptName?: String</i>, <i>throwOnError?: Boolean = false</i>)</code>
+
+스크립트를 재컴파일합니다.
+
+컴파일 성공 여부를 반환합니다.
+
+<br /><br />
+\`scriptName?\`: 재컴파일할 스크립트 이름 (인자가 없을 시 모든 스크립트를 대상으로 재컴파일)
+
+\`throwOnError?\`: 컴파일 에러 시 에러 \`throw\` 여부
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+<code>prepare(<i>scriptName: String</i>)</code>
+
+스크립트가 한번도 컴파일된 적이 없을 경우 컴파일합니다.
+
+컴파일 에러 시 에러를 \`throw\`합니다. 반환값은 다음과 같습니다:
+
+<br /><br />
+스크립트가 존재하지 않음: \`0\`
+
+컴파일에 성공함: \`1\`
+
+컴파일된 적이 있음: \`2\`
+
+\`scriptName\`: 컴파일할 스크립트 이름
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>unload(<i>scriptName: String</i>)</code>
+
+스크립트를 컴파일 전 상태로 전환합니다.
+
+언로드 성공 여부를 반환합니다.
+
+<br /><br />
+\`scriptName\`: 언로드할 스크립트 이름
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+<code>off(<i>scriptName?: String</i>)</code>
+
+스크립트의 작동을 비활성화합니다.
+
+주어진 인자가 없을 경우, 무조건 \`true\`를 반환합니다.
+
+주어진 인자가 존재할 경우, 비활성화 성공 여부를 반환합니다.
+
+<br /><br />
+\`scriptName?\`: 비활성화할 스크립트 이름
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>on(<i>scriptName?: String</i>)</code>
+
+스크립트의 작동을 활성화합니다.
+
+주어진 인자가 없을 경우, 무조건 \`true\`를 반환합니다.
+
+주어진 인자가 존재할 경우, 스크립트의 존재 여부를 반환합니다.
+
+<br /><br />
+\`scriptName?\`: 활성화할 스크립트 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>isOn(<i>scriptName: String</i>)</code>
+
+스크립트의 활성화 여부를 반환합니다.
+
+<br /><br />
+\`scriptName\`: 활성화 여부를 확인할 스크립트 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>isCompiled(<i>scriptName: String</i>)</code>
+
+스크립트의 컴파일 완료 여부를 반환합니다.
+
+<br /><br />
+\`scriptName\`: 컴파일 완료 여부를 확인할 스크립트 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>isCompiling(<i>scriptName: String</i>)</code>
+
+스크립트의 컴파일 진행 여부를 반환합니다.
+
+<br /><br />
+\`scriptName\`: 컴파일 진행 여부를 확인할 스크립트 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`Array\`
+
+</td>
+<td>
+
+\`getScriptNames()\`
+
+존재하는 모든 스크립트의 이름을 배열로 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>replyRoom(<i>room: String, message: String, hideToast?: Boolean = false</i>)</code>
+
+특정 방에 메시지를 보냅니다.
+
+메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+
+<br /><br />
+\`room\`: 메시지를 보낼 방 이름
+
+\`message\`: 보낼 메시지의 내용
+
+\`hideToast?\`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>canReply(<i>room: String</i>)</code>
+
+특정 방에 메시지를 수신할 수 있는지의 여부를 반환합니다.
+
+<br /><br />
+\`room\`: 메시지 수신 가능 여부를 확인할 방의 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>showToast(<i>content: String, length?: Number = android.widget.Toast.LENGTH_SHORT</i>)</code>
+
+토스트 메시지를 발생합니다.
+
+<br /><br />
+\`content\`: 토스트 메시지로 출력할 내용
+
+\`length?\`: 토스트 메시지의 유지 시간
+
+- <code>android.widget.Toast.LENGTH_SHORT = <i>0</i> (<i>0x00000000</i>)</code>: 짧은 시간 동안 출력
+- <code>android.widget.Toast.LENGTH_LONG = <i>1</i> (<i>0x00000001</i>)</code>: 긴 시간 동안 출력
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>makeNoti(<i>title: String, content: String, id?: Number</i>)</code>
+
+상단바 노티피케이션을 생성합니다.
+
+<br /><br />
+\`title\`: 노티피케이션의 제목
+
+\`content\`: 노티피케이션의 내용
+
+\`id?\`: 노티피케이션 아이디 (같은 아이디의 노티피케이션은 내용을 갱신)
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>papagoTranslate(<i>sourceLanguage: String, targetLanguage: String, content: String, errorToString?: String = false</i>)</code>
+
+입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다.
+
+<br /><br />
+\`sourceLanguage\`: 출발어의 언어코드
+
+\`targetLanguage\`: 번역어(도착어)의 언어코드
+
+\`content\`: 번역할 텍스트
+
+\`errorToString\`: 에러를 문자열로 반환할 것인지에 대한 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+\`gc()\`
+
+가비지 컬렉팅을 강제로 시작합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>UIThread(<i>func: Function, onComplete: Function</i>)</code>
+
+UI쓰레드 상에서 특정 함수를 실행합니다.
+
+<br /><br />
+\`func\`: UI쓰레드 상에서 실행할 함수
+
+\`complete\`: 결과를 처리할 함수
+
+매개변수:
+
+- \`error\`: \`func\`함수 실행 도중 일어난 에러의 객체를 전달받는 인자
+- \`result\`: \`func\`함수의 반환값을 전달받는 인자
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+<code>getActiveThreadsCount(<i>scriptName?: String</i>)</code>
+
+스크립트의 활성 쓰레드 수를 반환합니다.
+
+<br /><br />
+\`scriptName?\`: 활성 쓰레드 수를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 활성 쓰레드 수 반환)
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>interruptThreads(<i>scriptName?: String</i>)</code>
+
+스크립트의 쓰레드에 \`interrupt\`요청을 보냅니다.
+
+<br /><br />
+\`scriptName?\`: 쓰레드에 \`interrupt\`요청을 보낼 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 쓰레드에 \`interrupt\`요청)
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>isTerminated(<i>scriptName?: String</i>)</code>
+
+\`interruptThreads()\` 실행 이후, 스크립트의 모든 쓰레드의 \`interrupt\`처리 완료 여부를 반환합니다.
+
+<br /><br />
+\`scriptName?\`: 모든 쓰레드의 \`interrupt\`처리 완료 여부를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 모든 쓰레드의 \`interrupt\`처리 완료 여부 반환)
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>markAsRead(<i>room?: String, packageName?: String</i>)</code>
+
+채팅방의 메시지를 읽음 처리합니다.
+
+방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+
+<br /><br />
+\`room?\`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리)
+
+\`packageName?\`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### Utils
+
+그럼 \`Utils\` 객체는 어떤 객체일까요? 이 객체도 카카오톡봇의 근본적인 기능을 구현하기 위한 메소드들이 있답니다!
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>getWebText(<i>url: String</i>)</code>
+
+입력된 URL의 HTML을 반환합니다. (동기)
+
+<br /><br />
+\`url\`: HTML을 로드할 웹 페이지의 URL
+</td>
+</tr>
+<tr>
+<td>
+
+\`org.jsoup.nodes\`
+
+</td>
+<td>
+
+<code>parse(<i>url: String</i>)</code>
+
+입력된 URL의 HTML을 로드한 \`org.jsoup.nodes.Document\`를 반환합니다. (동기, \`GET\`방식)
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getAndroidVersionCode()\`
+
+앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getAndroidVersionName()\`
+
+앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getPhoneBrand\`
+
+앱 구동 기기의 브랜드명을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getPhoneModel()\`
+
+앱 구동 기기의 모델명을 반환합니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### FileStream
+
+이번 객체는 이름에서부터 느낌이 오지 않나요? \`FileStream\` 객체는 내부 저장소의 파일을 다루는 객체입니다! 카카오톡봇을 개발하다 보면 많이 사용할 객체이니 잘 알아보세요.
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>read(<i>path: String</i>)</code>
+
+특정 파일의 내용을 반환합니다.
+
+<br /><br />
+\`path\`: 내용을 읽을 파일의 경로
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>write(<i>path: String, data: String</i>)</code>
+
+파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다.
+
+생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
+
+<br /><br />
+\`path\`: 생성하거나 덮어쓸 파일의 경로
+
+\`data\`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>append(<i>path: String, data: String</i>)</code>
+
+기존의 파일의 내용에 새로운 내용을 이어 씁니다.
+
+이어 쓴 파일의 최종 내용을 반환합니다.
+
+<br /><br />
+\`path\`: 내용을 이어 쓸 파일의 경로
+
+\`data\`: 파일에 이어 쓸 내용
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>remove(<i>path: String</i>)</code>
+
+파일을 삭제합니다.
+
+\`java.io.File.delete()\`의 결과값을 반환합니다.
+
+<br /><br />
+\`path\`: 삭제할 파일의 경로
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### DataBase
+
+\`DataBase\` 객체는 \`FileStream\` 객체와 마찬가지로 파일을 다루는 객체입니다. 근데 뭐가 다르냐고요? 이 객체는 스크립트의 로컬 폴더에 한해서만 파일을 조작할 수 있습니다!
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>getDataBase(<i>fileName: String</i>)</code>
+
+스크립트 로컬 폴더 내 특정 파일의 내용을 반환합니다.
+
+<br /><br />
+\`fileName\`: 내용을 읽을 파일의 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>setDataBase(<i>fileName: String, data: String</i>)</code>
+
+파일을 새로 생성하거나, 스크립트 로컬 폴더 내 특정 파일의 내용을 덮어씁니다.
+
+생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
+
+<br /><br />
+\`fileName\`: 생성하거나 덮어쓸 파일의 이름
+
+\`data\`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>appendDataBase(<i>fileName: String, data: String</i>)</code>
+
+기존의 파일의 내용에 새로운 내용을 이어 씁니다.
+
+이어 쓴 파일의 최종 내용을 반환합니다.
+
+<br /><br />
+\`fileName\`: 내용을 이어 쓸 파일의 이름
+
+\`data\`: 파일에 이어 쓸 내용
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>removeDataBase(<i>fileName: String</i>)</code>
+
+스크립트 로컬 폴더 내 특정 파일을 삭제합니다. (메신저봇R 옵션의 "삭제 시 백업기능"이 활성화 상태인 경우, <code><i>fileName</i>.bak</code>으로 백업.)
+
+\`java.io.File.delete()\`의 결과값을 반환합니다.
+
+<br /><br />
+\`fileName\`: 삭제할 파일의 이름
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### Log
+
+\`Log\` 객체는 앱 내 스크립트 로그에 로그를 기록할 수 있게 하는 객체입니다.
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>d(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+<code>debug(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+디버그 로그를 작성합니다.
+
+<br /><br />
+\`data\`: 작성할 디버그 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>e(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+<code>error(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+에러 로그를 작성합니다.
+
+<br /><br />
+\`data\`: 작성할 에러 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>i(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+<code>info(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+정보 로그를 작성합니다.
+
+<br /><br />
+\`data\`: 작성할 정보 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+\`clear()\`
+
+로그를 모두 삭제합니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### Device
+
+\`Device\` 객체는 구동 환경 / 기기에 관한 정보를 제공하는 메소드들을 모은 객체입니다. 빈번하게는 아니지만 꽤 애용할 만한 객체예요.
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.os.Build\`
+
+</td>
+<td>
+
+\`getBuild()\`
+
+\`android.os.Build()\`값을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getAndroidVersionCode()\`
+
+앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getAndroidVersionName()\`
+
+앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getPhoneBrand()\`
+
+앱 구동 기기의 브랜드명을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getPhoneModel()\`
+
+앱 구동 기기의 모델명을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+\`isCharging()\`
+
+앱 구동 기기가 충전 중인지의 여부를 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getPlugType()\`
+
+앱 구동 기기의 충전기 타입을 반환합니다.
+
+반환값은 다음과 같습니다:
+
+
+- \`ac\`
+- \`wireless\`
+- \`usb\`
+- \`unknown\`
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getBatteryLevel()\`
+
+앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getBatteryHealth()\`
+
+앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다.
+
+반환값은 다음과 같습니다:
+
+- <code>android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = <i>1</i> (<i>0x00000001</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_GOOD = <i>2</i> (<i>0x00000002</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = <i>3</i> (<i>0x00000003</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_DEAD = <i>4</i> (<i>0x00000004</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_VOLTAGE = <i>5</i> (<i>0x00000005</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = <i>6</i> (<i>0x00000006</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_COLD = <i>7</i> (<i>0x00000007</i>)</code>
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getBatteryTemperature()\`
+
+앱 구동 기기의 배터리 온도(<code><i>temp</i> * 10</code>)값을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getBatteryVoltage()\`
+
+앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+\`getBatteryStatus()\`
+
+앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다.
+
+반환값은 다음과 같습니다:
+
+- <code>android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = <i>1</i> (<i>0x00000001</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_STATUS_CHARGING = <i>2</i> (<i>0x00000002</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = <i>3</i> (<i>0x00000003</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = <i>4</i> (<i>0x00000004</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_STATUS_FULL = <i>5</i> (<i>0x00000005</i>)</code>
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`android.content.Intent\`
+
+</td>
+<td>
+
+\`getBatteryIntent()\`
+
+\`context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))\`값을 반환합니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### Bridge
+
+\`Bridge\` 객체는 이름처럼 다른 스크립트의 전역 스코프에 접근할 수 있도록 하는 메소드를 모은 것이에요. 알아두면 언젠가 유용하게 쓰일 객체이니 기억해두세요!
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`org.mozilla.javascript.ScriptableObject\`
+
+</td>
+<td>
+
+<code>getScopeOf(<i>scriptName: String</i>)</code>
+
+특정 스크립트의 전역 스코프를 반환합니다.
+
+<br /><br />
+\`scriptName\`: 반환받고자 하는 전역 스코프의 스크립트 이름
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>isAllowed(<i>scriptName: String</i>)</code>
+
+특정 스크립트의 \`Bridge\`에 의한 접근 허용 여부를 반환합니다.
+
+<br /><br />
+\`scriptName\`: \`Bridge\`의 접근 혀용 여부를 확인할 스크립트 이름
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### AppData
+
+\`AppData\` 객체는 앱의 데이터에 관한 기능들을 위한 객체예요.
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>putBoolean(<i>key: String, boolean: Boolean</i>)</code>
+
+앱 데이터에 \`Boolean\`형 데이터를 씁니다.
+
+<br /><br />
+\`key\`: 쓸 앱 데이터의 키
+
+\`boolean\`: \`key\`에 대한 \`Boolean\`형 데이터
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>getBoolean(<i>key: String</i>)</code>
+
+앱 데이터로부터 특정 키 값에 대응되는 \`Boolean\`형 데이터를 반환합니다.
+
+<br /><br />
+\`key\`: 불러올 앱 데이터에 대응되는 키 이름
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>putInt(<i>key: String, integer: Number</i>)</code>
+
+앱 데이터에 \`Number\`(정수)형 데이터를 씁니다.
+
+<br /><br />
+\`key\`: 쓸 앱 데이터의 키
+
+\`integer\`: \`key\`에 대한 \`Number\`(정수)형 데이터
+</td>
+</tr>
+<tr>
+<td>
+
+\`Number\`
+
+</td>
+<td>
+
+<code>getInt(<i>key: String</i>)</code>
+
+앱 데이터로부터 특정 키 값에 대응되는 \`Number\`(정수)형 데이터를 반환합니다.
+
+<br /><br />
+\`key\`: 불러올 앱 데이터에 대응되는 키 이름
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>putString(<i>key: String, string: String</i>)</code>
+
+앱 데이터에 \`String\`형 데이터를 씁니다.
+
+<br /><br />
+\`key\`: 쓸 앱 데이터의 키
+
+\`string\`: \`key\`에 대한 \`String\`형 데이터
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+<code>getString(<i>key: String</i>)</code>
+
+앱 데이터로부터 특정 키 값에 대응되는 \`String\`형 데이터를 반환합니다.
+
+<br /><br />
+\`key\`: 불러올 앱 데이터에 대응되는 키
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+<code>remove(<i>key: String</i>)</code>
+
+\`AppData\`로 저장한 특정 키에 대응되는 앱 데이터를 삭제합니다.
+
+<br /><br />
+\`key\`: 삭제할 앱 데이터에 대한 키
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+\`clear()\`
+
+\`AppData\`로 저장한 모든 앱 데이터를 삭제합니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+
+## 이벤트 리스너
+
+레거시 API에는 이벤트 리스너가 지정되어 있습니다. 상황에 맞는 이벤트 리스너를 사용하여 더 다양한 기능을 만들거나, 더 다양한 상황에 대응할 수 있죠!
+
+<section>
+
+### response 함수
+
+\`response\` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너예요. 카카오톡봇 개발에 있어서 가장 기초가 되죠. \`response\` 함수의 매개변수는 메시지에 관한 다양한 정보를 나타내요.
+
+~~~js
+function response (room, msg, sender, isGroupChat, replier, imageDB, packageName) {
+
+}
+~~~
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`room\`
+
+메시지가 발신된 채팅방의 이름을 나타냅니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`msg\`
+
+발신된 메시지의 내용을 나타냅니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`sender\`
+
+메시지를 발신한 유저의 이름을 나타냅니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+\`isGroupChat\`
+
+메시지가 발신된 방이 그룹 채팅방(3인 이상)인지의 여부를 나타냅니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Object\`
+
+</td>
+<td>
+
+\`replier\`
+
+응답 기능, 세션 등을 가지고 있는 객체입니다. (아래 참고)
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Object\`
+
+</td>
+<td>
+
+\`imageDB\`
+
+메시지를 발신한 유저의 프로필 이미지의 정보를 담은 객체입니다. (아래 참고)
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`packageName\`
+
+메시지가 발신된 앱의 패키지명을 반환합니다. (카카오톡의 경우: \`com.kakao.talk\`)
+
+</td>
+</tr>
+</tbody>
+</table>
+<section>
+
+#### replier
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`void\`
+
+</td>
+<td>
+
+<code>reply(<i>msg: String</i>)</code>
+
+메시지가 발신된 방에 메시지를 보냅니다.
+<br /><br />
+\`msg\`: 보낼 메시지의 내용
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>reply(<i>room: String, msg: String, hideToast?: Boolean= false</i>)</code>
+
+특정 방에 메시지를 보냅니다.<br />
+메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+<br /><br />
+\`room\`: 메시지를 보낼 방 이름<br />
+\`msg\`: 보낼 메시지의 내용<br />
+\`hideToast?\`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`void\`
+
+</td>
+<td>
+
+<code>replyDelayed(<i>msg: String, delay: Number</i>)</code>
+
+메시지가 발신된 방에 지정한 시간이 지난 후 메시지를 보냅니다.
+<br /><br />
+\`msg\`: 보낼 메시지의 내용<br />
+\`delay\`: 메시지 발신을 지연할 시간 (밀리초)
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>replyDelayed(<i>room: String, msg: String, delay: Number, hideToast?: Boolean= false</i>)</code>
+
+특정 방에 지정한 시간이 지난 후 메시지를 보냅니다.
+
+메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+
+<br /><br />
+\`room\`: 메시지를 보낼 방 이름
+
+\`msg\`: 보낼 메시지의 내용
+
+\`delay\`: 메시지 발신을 지연할 시간 (밀리초)
+
+\`hideToast?\`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`Boolean\`
+
+</td>
+<td>
+
+<code>markAsRead(<i>room?: String, packageName?: String</i>)</code>
+
+채팅방의 메시지를 읽음 처리합니다.
+
+방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+
+<br /><br />
+\`room?\`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리)
+
+\`packageName?\`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+#### imageDB
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getProfileBase64()\`
+<br />
+\`getProfileImage()\`
+
+프로필 이미지를 Base64로 인코딩한 값을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`android.graphics.Bitmap\`
+
+</td>
+<td>
+
+\`getProfileBitmap()\`
+
+프로필 이미지를 Bitmap으로 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getImageBase64()\`
+<br />
+\`getImage()\`
+
+채팅 상에서 감지된 이미지를 Base64로 인코딩한 값을 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getImageBitmap()\`
+
+채팅 상에서 감지된 이미지를 Bitmap으로 반환합니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getImageHash()\`
+
+채팅 상에서 감지된 이미지의 해시 값을 반환합니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getImageMD5()\`
+
+채팅 상에서 감지된 이미지를 MD5로 인코딩한 값을 반환합니다.
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`String\`
+
+</td>
+<td>
+
+\`getImageSHA()\`
+
+채팅 상에서 감지된 이미지를 SHA로 인코딩한 값을 반환합니다.
+</td>
+</tr>
+</tbody>
+</table>
+<p>유용한 매개변수들이죠? 다만, response 함수의 매개변수를 사용할 때 유의해야 할 점이 있어요. <mark>response 함수의 매개변수는 반드시 response 함수 안에서만 사용을 해야 한답니다!</mark></p>
+</section>
+<section>
+
+### onStartCompile 함수
+
+\`onStartCompile\` 함수는 스크립트의 컴파일이 수행되려 할 때, 컴파일 수행 전 호출되는 이벤트 리스너예요.
+~~~js
+function onStartCompile () {
+
+}
+~~~
+</section>
+<section>
+
+### onNotificationPosted 함수
+
+\`onNotificationPosted\` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너예요. 방법은 어려울지 모르지만, 이 이벤트 리스너를 이용해 다른 메신저 앱의 자동응답봇을 개발할 수 있어요!
+~~~js
+function onNotificationPosted (statusBarNotification, sessionManager) {
+
+}
+~~~
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.service.notification.StatusBarNotification\`
+
+</td>
+<td>
+
+\`statusBarNotification\`
+
+<a href="https://developer.android.com/reference/android/service/notification/StatusBarNotification" target="_blank">안드로이드 공식 문서</a>를 참고하세요.
+</td>
+</tr>
+<tr>
+<td>
+
+\`Object\`
+
+</td>
+<td>
+
+\`sessionManager\`
+
+앱이 공식 지원하지 않는 메신저에 사용하기 위한 인자입니다.
+
+<br /><br />
+
+<li>
+<code>bindSession(<i>packageName?: String, room: String, action?: android.app.Notification.Action</i>): Boolean</code>
+
+: 다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다.
+
+\`action?\`과 앱이 자동 분석한 답장 액션 모두 \`null\`이 아닌지의 여부를 반환합니다.
+
+<br /><br />
+  - \`packageName?\`: 메시지를 보낼 메신저 앱의 패키지명
+  - \`room\`: 메시지를 보낼 메신저 앱 내의 채팅방
+  - \`action?\`: 메시지 전송 구형을 위한 \`android.app.Notification.Action\`값
+
+</li>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### onCreate 함수
+
+지금부터는 스크립트 액티비티에 관한 이벤트 리스너예요. 안드로이드 객체를 사용하여 새 화면을 만들 수 있는건데, \`onCreate\` 함수는 스트립트 액티비티의 \`onCreate\`가 호출될 때 호출되는 이벤트 리스너예요.
+~~~js
+function onCreate (savedInstanceState, activity) {
+
+}
+~~~
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.os.Bundle\`
+
+</td>
+<td>
+
+\`savedInstanceState\`
+
+액티비티의 \`onCreate\`의 인자인 \`savedInstanceState\`입니다.
+</td>
+</tr>
+<tr>
+<td>
+
+\`android.app.Activity\`
+
+</td>
+<td>
+
+\`activity\`
+
+해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### onPause 함수
+
+\`onPause\` 함수는 스트립트 액티비티의 \`onPause\`가 호출될 때 호출되는 이벤트 리스너예요.
+~~~js
+function onPause (activity) {
+
+}
+~~~
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.app.Activity\`
+
+</td>
+<td>
+
+\`activity\`
+
+해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### onResume 함수
+
+\`onResume\` 함수는 스트립트 액티비티의 \`onResume\`이 호출될 때 호출되는 이벤트 리스너예요.
+~~~js
+function onResume (activity) {
+
+}
+~~~
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.app.Activity\`
+
+</td>
+<td>
+
+\`activity\`
+
+해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+### onStop 함수
+
+\`onStop\` 함수는 스트립트 액티비티의 \`onStop\`이 호출될 때 호출되는 이벤트 리스너예요.
+~~~js
+function onStop (activity) {
+
+}
+~~~
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`android.app.Activity\`
+
+</td>
+<td>
+
+\`activity\`
+
+해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+`}
+</Markdown>
