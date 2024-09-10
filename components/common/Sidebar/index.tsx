@@ -4,7 +4,7 @@ import React, {ChangeEvent, useEffect, useState} from "react";
 import { useRouter } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
-import { Docs } from "@/constants";
+import { Docs } from "@/constants/mdxDocs";
 import IconButton from "@/components/common/IconButton";
 
 export default function Sidebar({ params }: { params: { id: string } }) {

@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { Docs } from "@/constants";
+import { Docs } from "@/constants/mdxDocs";
 
 export async function generateMetadata({ params }: { params: { id: string } }, parent: ResolvingMetadata): Promise<Metadata> {
     const Data = Docs.find(e => e.value === `/${params.id}`);
