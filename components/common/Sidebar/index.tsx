@@ -27,7 +27,7 @@ export default function Sidebar({ params }: { params: { id: string } }) {
                 <p className={`${(isTOCShowed) ? "hidden" : "block"} text-sm font-bold`}>{ Docs.find(e => e.value === `/${params.id}`)?.label }</p>
             </div>
             <div
-                className={`w-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:w-[225px] md:max-h-[calc(100vh-160px-64px)]`}>
+                className={`w-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-[225px] md:max-h-[calc(100vh-160px-64px)]`}>
                 <Select defaultValue={`/${params.id}`}
                         onChange={SelectOnChangeHandler}>
                     {
