@@ -4,6 +4,9 @@ import Markdown from "@/components/common/Markdown";
 {`
 <section>
 
+> **⚠️ 주의:** 이 레거시 API는 더 이상 권장되지 않습니다. 
+> 새로운 프로젝트에서는 사용을 피하고, 가능한 경우 API2로 마이그레이션하는 것이 좋습니다.
+
 ## 레거시 API
 
 갑자기 뜬금없이 레거시 API라니, '하늘에서 떨어졌나 땅에서 솟았나' 하는 느낌일 거예요. 하지만 이때까지 나온 소스 코드는 모두 **레거시 API**를 기반으로 한 것이었답니다!<br />카카오톡봇 개발에 사용되는 내장 API는 두 가지가 있어요. 하나는 지금 이 편에서 다룰 **레거시 API**이고, 다른 하나는 다음 편에서 알아볼 **API2**라는 것이죠.
@@ -308,6 +311,10 @@ import Markdown from "@/components/common/Markdown";
 <code>papagoTranslate(<i>sourceLanguage: String, targetLanguage: String, content: String, errorToString?: String = false</i>)</code>
 
 입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다.
+
+> **⚠️ 주의:** Papago API 지원이 중단되었습니다. 하위 호환성을 위해 메소드는 유지되지만, 항상 `null`을 반환합니다.
+
+이 메소드는 더 이상 실제 번역 기능을 수행하지 않으며, 항상 `null`을 반환합니다.
 
 <br /><br />
 \`sourceLanguage\`: 출발어의 언어코드
