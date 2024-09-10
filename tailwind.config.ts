@@ -134,12 +134,20 @@ export default {
                 "default-hover": "var(--bg-default-hover)",
                 emphasis: "var(--bg-emphasis)",
                 "emphasis-hover": "var(--bg-emphasis-hover)",
+                blue: "var(--bg-blue)",
+                green: "var(--bg-green)",
+                red: "var(--bg-red)",
+                yellow: "var(--bg-yellow)",
             },
             borderColor: {
                 default: "var(--border-default)",
                 "default-hover": "var(--border-default-hover)",
                 emphasis: "var(--border-emphasis)",
-                noimportance: "var(--border-noimportance)"
+                noimportance: "var(--border-noimportance)",
+                blue: "var(--border-blue)",
+                green: "var(--border-green)",
+                red: "var(--border-red)",
+                yellow: "var(--border-yellow)",
             },
             spacing: {
                 "content-x-default": "24px",
