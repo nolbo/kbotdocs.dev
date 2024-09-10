@@ -108,6 +108,24 @@ export default function Markdown({ children } : IMarkdown) {
                             { children }
                         </td>
                     )
+                },
+                blockquote(p) {
+                    const { children, className, ...rest } = p;
+                    let style = "";
+
+                    switch (className) {
+                        case "warning": style = "bg-yellow border-yellow"; break;
+                        case "danger": style = "bg-red border-red"; break;
+                        case "success": style = "bg-green border-green"; break;
+                        case "info": style = "bg-blue border-blue"; break;
+                        default: style = "bg-default-hover border-default-hover";
+                    }
+
+                    return (
+                        <blockquote className={`p-[12px_16px] rounded-[6px] border ${style}`}>
+                            { children }
+                        </blockquote>
+                    )
                 }
             }}>
             { children }
