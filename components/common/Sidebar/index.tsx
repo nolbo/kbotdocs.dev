@@ -1,6 +1,6 @@
 "use client";
 
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
