@@ -2283,15 +2283,23 @@ API2에는 레거시 API와 달리, 이벤트 리스너가 지정되어 있지 �
 ~~~json
 {
     "room": String, // 메시지가 온 방의 이름
+    "channelId": BigInt, // 메시지가 온 방의 고유 아이디
     "content": String, // 메시지의 내용
     "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
     "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
+    "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
+        "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
+        "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
+    },
+    "isMention": Boolean, // 채팅에 멘션 포함 여부,
+    "logId": BigInt, // 각 채팅에 대한 고유 아이디
     "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
         "name": String, // 메시지를 보낸 유저의 이름
         "avatar": { // 메시지 전송자 프로필에 대한 정보
             "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
             "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
-        }
+        },
+        "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
     },
     "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
     "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
@@ -2341,15 +2349,23 @@ API2에는 레거시 API와 달리, 이벤트 리스너가 지정되어 있지 �
     "command": String, // 명령어의 이름 ('/angles 30 60 90' 이라는 메시지일 때 "angles")
     "args": Array, // 명령어의 인자들의 배열 (인자가 없을 경우 길이가 0인 배열 반환; 가령, '/angles 30 60 90' 이라는 메시지일 때 ["30", "60", "90"])
     "room": String, // 메시지가 온 방의 이름
+    "channelId": BigInt, // 메시지가 온 방의 고유 아이디
     "content": String, // 메시지의 내용
     "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
     "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
+    "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
+        "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
+        "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
+    },
+    "isMention": Boolean, // 채팅에 멘션 포함 여부,
+    "logId": BigInt, // 각 채팅에 대한 고유 아이디
     "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
         "name": String, // 메시지를 보낸 유저의 이름
         "avatar": { // 메시지 전송자 프로필에 대한 정보
             "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
             "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
-        }
+        },
+        "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
     },
     "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
     "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
