@@ -48,7 +48,7 @@ export default function Markdown({ children } : IMarkdown) {
                 },
                 section(p) {
                     const { node, ...rest } = p;
-                    return (<section className={"flex flex-col gap-[24px] w-full section"}>{ p.children }</section>);
+                    return (<section className={"flex flex-col gap-[24px] w-full leading-normal section"}>{ p.children }</section>);
                 },
                 li(p) {
                     const { node, ...rest } = p;
@@ -63,7 +63,7 @@ export default function Markdown({ children } : IMarkdown) {
                     )
                 },
                 p(p) {
-                    return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block leading-normal"}>{ p.children }</p>)
+                    return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block"}>{ p.children }</p>)
                 },
                 code(p) {
                     const { children, className, node, ...rest } = p;
@@ -111,19 +111,58 @@ export default function Markdown({ children } : IMarkdown) {
                 },
                 blockquote(p) {
                     const { children, className, ...rest } = p;
-                    let style = "";
+                    let header;
+                    let blockStyle = "";
 
                     switch (className) {
-                        case "warning": style = "bg-yellow border-yellow"; break;
-                        case "danger": style = "bg-red border-red"; break;
-                        case "success": style = "bg-green border-green"; break;
-                        case "info": style = "bg-blue border-blue"; break;
-                        default: style = "bg-default-hover border-default-hover";
+                        case "warning":
+                            header = (
+                                <>
+                                    <Icon icon={"WarningFillIcon"} className={"fill-yellow w-[16px] h-[16px]"}/>
+                                    <p className={"font-bold"}>주의</p>
+                                </>
+                            )
+                            blockStyle = "bg-yellow-default border-yellow-default";
+                            break;
+                        case "danger":
+                            header = (
+                                <>
+                                    <Icon icon={"DangerFillIcon"} className={"fill-red w-[16px] h-[16px]"}/>
+                                    <p className={"font-bold"}>경고</p>
+                                </>
+                            )
+                            blockStyle = "bg-red-default border-red-default";
+                            break;
+                        case "success":
+                            header = (
+                                <>
+                                    <Icon icon={"SuccessFillIcon"} className={"fill-green w-[16px] h-[16px]"}/>
+                                    <p className={"font-bold"}>성공</p>
+                                </>
+                            )
+                            blockStyle = "bg-green-default border-green-default";
+                            break;
+                        case "info":
+                            header = (
+                                <>
+                                    <Icon icon={"InformationFillIcon"} className={"fill-blue w-[16px] h-[16px]"}/>
+                                    <p className={"font-bold"}>정보</p>
+                                </>
+                            )
+                            blockStyle = "bg-blue-default border-blue-default dark:[&_a]:text-green dark:[&_a:visited]:text-purple";
+                            break;
+                        default:
+                            blockStyle = "bg-default-hover border-default-hover";
                     }
 
                     return (
-                        <blockquote className={`p-[12px_16px] rounded-[6px] border ${style}`}>
-                            { children }
+                        <blockquote className={`flex flex-col gap-[4px] p-[12px_16px] rounded-[6px] border leading-snug ${blockStyle}`}>
+                            <div className={"flex items-center gap-[6px]"}>
+                                { header }
+                            </div>
+                            <div>
+                                { children }
+                            </div>
                         </blockquote>
                     )
                 }

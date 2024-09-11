@@ -62,6 +62,7 @@ export default {
                 900: "#332500"
             },
             green: {
+                DEFAULT: "var(--colors-green-default)",
                 50: "#E5FFF6",
                 100: "#CCFFEC",
                 200: "#99FFDA",
@@ -108,6 +109,8 @@ export default {
             "4xl": "3rem"
         },
         lineHeight: {
+            tight: "1.25",
+            snug: "1.5",
             normal: "1.875",
             relaxed: "2",
             loose: "2.125"
@@ -134,20 +137,20 @@ export default {
                 "default-hover": "var(--bg-default-hover)",
                 emphasis: "var(--bg-emphasis)",
                 "emphasis-hover": "var(--bg-emphasis-hover)",
-                blue: "var(--bg-blue)",
-                green: "var(--bg-green)",
-                red: "var(--bg-red)",
-                yellow: "var(--bg-yellow)",
+                "blue-default": "var(--bg-blue-default)",
+                "green-default": "var(--bg-green-default)",
+                "red-default": "var(--bg-red-default)",
+                "yellow-default": "var(--bg-yellow-default)",
             },
             borderColor: {
                 default: "var(--border-default)",
                 "default-hover": "var(--border-default-hover)",
                 emphasis: "var(--border-emphasis)",
                 noimportance: "var(--border-noimportance)",
-                blue: "var(--border-blue)",
-                green: "var(--border-green)",
-                red: "var(--border-red)",
-                yellow: "var(--border-yellow)",
+                "blue-default": "var(--border-blue-default)",
+                "green-default": "var(--border-green-default)",
+                "red-default": "var(--border-red-default)",
+                "yellow-default": "var(--border-yellow-default)",
             },
             spacing: {
                 "content-x-default": "24px",

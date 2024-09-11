@@ -3,15 +3,20 @@ import Markdown from "@/components/common/Markdown";
 <Markdown>
 {`
 <section>
+
 <blockquote class="warning">
 
-**⚠️ 주의:** 이 레거시 API는 더 이상 권장되지 않습니다. 새로운 프로젝트에서는 사용을 피하고, 가능한 경우 API2로 마이그레이션하는 것이 좋습니다.
+이 레거시 API는 더 이상 권장되지 않습니다. 새로운 프로젝트에서는 사용을 피하고, 가능한 경우 API2로 마이그레이션하는 것이 좋습니다.
 
 </blockquote>
 
+</section>
+<section>
+
 ## 레거시 API
 
-갑자기 뜬금없이 레거시 API라니, '하늘에서 떨어졌나 땅에서 솟았나' 하는 느낌일 거예요. 하지만 이때까지 나온 소스 코드는 모두 **레거시 API**를 기반으로 한 것이었답니다!<br />카카오톡봇 개발에 사용되는 내장 API는 두 가지가 있어요. 하나는 지금 이 편에서 다룰 **레거시 API**이고, 다른 하나는 다음 편에서 알아볼 **API2**라는 것이죠.
+카카오톡봇 개발에 사용되는 내장 API는 두 가지가 있어요. 하나는 지금 이 편에서 다룰 **레거시 API**이고, 다른 하나는 다음 편에서 알아볼 **API2**라는 것이죠.<br />
+레거시 API는 카카오톡봇 초창기부터 지원해오고 있는 내장 API예요. 등장한지 오래되었지만 일부에서는 사용 중인 API이죠.
 
 일단 레거시 API의 객체부터 알아보도록 합시다!
 
@@ -68,7 +73,6 @@ import Markdown from "@/components/common/Markdown";
 스크립트를 재컴파일합니다.
 
 컴파일 성공 여부를 반환합니다.
-
 <br /><br />
 \`scriptName?\`: 재컴파일할 스크립트 이름 (인자가 없을 시 모든 스크립트를 대상으로 재컴파일)
 
@@ -89,14 +93,13 @@ import Markdown from "@/components/common/Markdown";
 스크립트가 한번도 컴파일된 적이 없을 경우 컴파일합니다.
 
 컴파일 에러 시 에러를 \`throw\`합니다. 반환값은 다음과 같습니다:
-
 <br /><br />
 스크립트가 존재하지 않음: \`0\`
 
 컴파일에 성공함: \`1\`
 
 컴파일된 적이 있음: \`2\`
-
+<br /><br />
 \`scriptName\`: 컴파일할 스크립트 이름
 
 </td>
@@ -114,7 +117,6 @@ import Markdown from "@/components/common/Markdown";
 스크립트를 컴파일 전 상태로 전환합니다.
 
 언로드 성공 여부를 반환합니다.
-
 <br /><br />
 \`scriptName\`: 언로드할 스크립트 이름
 
@@ -134,7 +136,6 @@ import Markdown from "@/components/common/Markdown";
 주어진 인자가 없을 경우, 무조건 \`true\`를 반환합니다.
 
 주어진 인자가 존재할 경우, 비활성화 성공 여부를 반환합니다.
-
 <br /><br />
 \`scriptName?\`: 비활성화할 스크립트 이름
 
@@ -155,7 +156,6 @@ import Markdown from "@/components/common/Markdown";
 주어진 인자가 없을 경우, 무조건 \`true\`를 반환합니다.
 
 주어진 인자가 존재할 경우, 스크립트의 존재 여부를 반환합니다.
-
 <br /><br />
 \`scriptName?\`: 활성화할 스크립트 이름
 </td>
@@ -171,7 +171,6 @@ import Markdown from "@/components/common/Markdown";
 <code>isOn(<i>scriptName: String</i>)</code>
 
 스크립트의 활성화 여부를 반환합니다.
-
 <br /><br />
 \`scriptName\`: 활성화 여부를 확인할 스크립트 이름
 </td>
@@ -187,7 +186,6 @@ import Markdown from "@/components/common/Markdown";
 <code>isCompiled(<i>scriptName: String</i>)</code>
 
 스크립트의 컴파일 완료 여부를 반환합니다.
-
 <br /><br />
 \`scriptName\`: 컴파일 완료 여부를 확인할 스크립트 이름
 </td>
@@ -203,7 +201,6 @@ import Markdown from "@/components/common/Markdown";
 <code>isCompiling(<i>scriptName: String</i>)</code>
 
 스크립트의 컴파일 진행 여부를 반환합니다.
-
 <br /><br />
 \`scriptName\`: 컴파일 진행 여부를 확인할 스크립트 이름
 </td>
@@ -234,7 +231,6 @@ import Markdown from "@/components/common/Markdown";
 특정 방에 메시지를 보냅니다.
 
 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-
 <br /><br />
 \`room\`: 메시지를 보낼 방 이름
 
@@ -254,7 +250,6 @@ import Markdown from "@/components/common/Markdown";
 <code>canReply(<i>room: String</i>)</code>
 
 특정 방에 메시지를 수신할 수 있는지의 여부를 반환합니다.
-
 <br /><br />
 \`room\`: 메시지 수신 가능 여부를 확인할 방의 이름
 </td>
@@ -270,7 +265,6 @@ import Markdown from "@/components/common/Markdown";
 <code>showToast(<i>content: String, length?: Number = android.widget.Toast.LENGTH_SHORT</i>)</code>
 
 토스트 메시지를 발생합니다.
-
 <br /><br />
 \`content\`: 토스트 메시지로 출력할 내용
 
@@ -292,7 +286,6 @@ import Markdown from "@/components/common/Markdown";
 <code>makeNoti(<i>title: String, content: String, id?: Number</i>)</code>
 
 상단바 노티피케이션을 생성합니다.
-
 <br /><br />
 \`title\`: 노티피케이션의 제목
 
@@ -312,7 +305,7 @@ import Markdown from "@/components/common/Markdown";
 
 <blockquote class="warning">
 
-**⚠️ 주의:** Papago API 지원이 중단되었습니다. 하위 호환성을 위해 메소드는 유지되지만, 항상 \`null\`을 반환합니다.
+Papago API 지원이 중단되었습니다. 하위 호환성을 위해 메소드는 유지되지만, 항상 \`null\`을 반환합니다.
 
 </blockquote>
 
@@ -355,7 +348,6 @@ import Markdown from "@/components/common/Markdown";
 <code>UIThread(<i>func: Function, onComplete: Function</i>)</code>
 
 UI쓰레드 상에서 특정 함수를 실행합니다.
-
 <br /><br />
 \`func\`: UI쓰레드 상에서 실행할 함수
 
@@ -379,7 +371,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getActiveThreadsCount(<i>scriptName?: String</i>)</code>
 
 스크립트의 활성 쓰레드 수를 반환합니다.
-
 <br /><br />
 \`scriptName?\`: 활성 쓰레드 수를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 활성 쓰레드 수 반환)
 </td>
@@ -395,7 +386,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>interruptThreads(<i>scriptName?: String</i>)</code>
 
 스크립트의 쓰레드에 \`interrupt\`요청을 보냅니다.
-
 <br /><br />
 \`scriptName?\`: 쓰레드에 \`interrupt\`요청을 보낼 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 쓰레드에 \`interrupt\`요청)
 </td>
@@ -411,7 +401,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>isTerminated(<i>scriptName?: String</i>)</code>
 
 \`interruptThreads()\` 실행 이후, 스크립트의 모든 쓰레드의 \`interrupt\`처리 완료 여부를 반환합니다.
-
 <br /><br />
 \`scriptName?\`: 모든 쓰레드의 \`interrupt\`처리 완료 여부를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 모든 쓰레드의 \`interrupt\`처리 완료 여부 반환)
 </td>
@@ -429,7 +418,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 채팅방의 메시지를 읽음 처리합니다.
 
 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-
 <br /><br />
 \`room?\`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리)
 
@@ -463,7 +451,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getWebText(<i>url: String</i>)</code>
 
 입력된 URL의 HTML을 반환합니다. (동기)
-
 <br /><br />
 \`url\`: HTML을 로드할 웹 페이지의 URL
 </td>
@@ -560,7 +547,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>read(<i>path: String</i>)</code>
 
 특정 파일의 내용을 반환합니다.
-
 <br /><br />
 \`path\`: 내용을 읽을 파일의 경로
 </td>
@@ -578,7 +564,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다.
 
 생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
-
 <br /><br />
 \`path\`: 생성하거나 덮어쓸 파일의 경로
 
@@ -598,7 +583,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 기존의 파일의 내용에 새로운 내용을 이어 씁니다.
 
 이어 쓴 파일의 최종 내용을 반환합니다.
-
 <br /><br />
 \`path\`: 내용을 이어 쓸 파일의 경로
 
@@ -618,7 +602,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 파일을 삭제합니다.
 
 \`java.io.File.delete()\`의 결과값을 반환합니다.
-
 <br /><br />
 \`path\`: 삭제할 파일의 경로
 </td>
@@ -650,7 +633,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getDataBase(<i>fileName: String</i>)</code>
 
 스크립트 로컬 폴더 내 특정 파일의 내용을 반환합니다.
-
 <br /><br />
 \`fileName\`: 내용을 읽을 파일의 이름
 </td>
@@ -668,7 +650,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 파일을 새로 생성하거나, 스크립트 로컬 폴더 내 특정 파일의 내용을 덮어씁니다.
 
 생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
-
 <br /><br />
 \`fileName\`: 생성하거나 덮어쓸 파일의 이름
 
@@ -688,7 +669,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 기존의 파일의 내용에 새로운 내용을 이어 씁니다.
 
 이어 쓴 파일의 최종 내용을 반환합니다.
-
 <br /><br />
 \`fileName\`: 내용을 이어 쓸 파일의 이름
 
@@ -708,7 +688,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 스크립트 로컬 폴더 내 특정 파일을 삭제합니다. (메신저봇R 옵션의 "삭제 시 백업기능"이 활성화 상태인 경우, <code><i>fileName</i>.bak</code>으로 백업.)
 
 \`java.io.File.delete()\`의 결과값을 반환합니다.
-
 <br /><br />
 \`fileName\`: 삭제할 파일의 이름
 </td>
@@ -742,7 +721,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>debug(<i>data: String, showToast?: Boolean = false</i>)</code>
 
 디버그 로그를 작성합니다.
-
 <br /><br />
 \`data\`: 작성할 디버그 로그의 내용
 
@@ -762,7 +740,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>error(<i>data: String, showToast?: Boolean = false</i>)</code>
 
 에러 로그를 작성합니다.
-
 <br /><br />
 \`data\`: 작성할 에러 로그의 내용
 
@@ -782,7 +759,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>info(<i>data: String, showToast?: Boolean = false</i>)</code>
 
 정보 로그를 작성합니다.
-
 <br /><br />
 \`data\`: 작성할 정보 로그의 내용
 
@@ -1044,7 +1020,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getScopeOf(<i>scriptName: String</i>)</code>
 
 특정 스크립트의 전역 스코프를 반환합니다.
-
 <br /><br />
 \`scriptName\`: 반환받고자 하는 전역 스코프의 스크립트 이름
 </td>
@@ -1060,7 +1035,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>isAllowed(<i>scriptName: String</i>)</code>
 
 특정 스크립트의 \`Bridge\`에 의한 접근 허용 여부를 반환합니다.
-
 <br /><br />
 \`scriptName\`: \`Bridge\`의 접근 혀용 여부를 확인할 스크립트 이름
 </td>
@@ -1092,7 +1066,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>putBoolean(<i>key: String, boolean: Boolean</i>)</code>
 
 앱 데이터에 \`Boolean\`형 데이터를 씁니다.
-
 <br /><br />
 \`key\`: 쓸 앱 데이터의 키
 
@@ -1110,7 +1083,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getBoolean(<i>key: String</i>)</code>
 
 앱 데이터로부터 특정 키 값에 대응되는 \`Boolean\`형 데이터를 반환합니다.
-
 <br /><br />
 \`key\`: 불러올 앱 데이터에 대응되는 키 이름
 
@@ -1127,7 +1099,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>putInt(<i>key: String, integer: Number</i>)</code>
 
 앱 데이터에 \`Number\`(정수)형 데이터를 씁니다.
-
 <br /><br />
 \`key\`: 쓸 앱 데이터의 키
 
@@ -1145,7 +1116,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getInt(<i>key: String</i>)</code>
 
 앱 데이터로부터 특정 키 값에 대응되는 \`Number\`(정수)형 데이터를 반환합니다.
-
 <br /><br />
 \`key\`: 불러올 앱 데이터에 대응되는 키 이름
 
@@ -1162,7 +1132,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>putString(<i>key: String, string: String</i>)</code>
 
 앱 데이터에 \`String\`형 데이터를 씁니다.
-
 <br /><br />
 \`key\`: 쓸 앱 데이터의 키
 
@@ -1180,7 +1149,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>getString(<i>key: String</i>)</code>
 
 앱 데이터로부터 특정 키 값에 대응되는 \`String\`형 데이터를 반환합니다.
-
 <br /><br />
 \`key\`: 불러올 앱 데이터에 대응되는 키
 
@@ -1197,7 +1165,6 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 <code>remove(<i>key: String</i>)</code>
 
 \`AppData\`로 저장한 특정 키에 대응되는 앱 데이터를 삭제합니다.
-
 <br /><br />
 \`key\`: 삭제할 앱 데이터에 대한 키
 </td>
@@ -1419,7 +1386,6 @@ function response (room, msg, sender, isGroupChat, replier, imageDB, packageName
 특정 방에 지정한 시간이 지난 후 메시지를 보냅니다.
 
 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-
 <br /><br />
 \`room\`: 메시지를 보낼 방 이름
 
@@ -1444,7 +1410,6 @@ function response (room, msg, sender, isGroupChat, replier, imageDB, packageName
 채팅방의 메시지를 읽음 처리합니다.
 
 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-
 <br /><br />
 \`room?\`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리)
 
@@ -1621,7 +1586,6 @@ function onNotificationPosted (statusBarNotification, sessionManager) {
 \`sessionManager\`
 
 앱이 공식 지원하지 않는 메신저에 사용하기 위한 인자입니다.
-
 <br /><br />
 
 <li>
@@ -1630,7 +1594,6 @@ function onNotificationPosted (statusBarNotification, sessionManager) {
 : 다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다.
 
 \`action?\`과 앱이 자동 분석한 답장 액션 모두 \`null\`이 아닌지의 여부를 반환합니다.
-
 <br /><br />
   - \`packageName?\`: 메시지를 보낼 메신저 앱의 패키지명
   - \`room\`: 메시지를 보낼 메신저 앱 내의 채팅방

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { sthlTheme } from "@/styles/syntaxHighlighter";
 import Icon from "@/components/common/Icon";
@@ -12,16 +11,17 @@ interface ICodeBlock {
 }
 
 export default function CodeBlock({ language, content } : ICodeBlock) {
-    const { theme, setTheme } = useTheme();
     const [ isCopied, setIsCopied ] = useState<boolean>(false);
 
     const CopyIconOnClickHandler = (copyContent: string) => {
         window.navigator.clipboard.writeText(copyContent)
-            .then(r => {
+            .then(() => {
                 setIsCopied(true);
                 setTimeout(() => { setIsCopied(false) }, 2000);
             });
     };
+
+    // content.split("\n").map((line: string) => "  " + line).join("\n");
 
     return (
         <div className={"overflow-clip min-w-[0] rounded-[8px] border border-[var(--sthl-pre-border)]"}>
@@ -31,9 +31,17 @@ export default function CodeBlock({ language, content } : ICodeBlock) {
                     icon={ (isCopied) ? "CheckIcon" : "CopyIcon" } onClick={ () => { CopyIconOnClickHandler(content) } }
                     className={`rounded-sm w-[12px] h-[12px] ${(isCopied) ? "stroke-green-500" : "stroke-inherit-text"} cursor-pointer transition-[stroke] duration-default ${(isCopied) ? "hover:stroke-green-500" : "hover:stroke-default"}`} />
             </div>
-            <SyntaxHighlighter PreTag={"div"} language={ language }
-                style={ sthlTheme }>
-                { content }
+            <SyntaxHighlighter language={ language } style={ sthlTheme }>
+                {
+                    content.split("\n").map((line: string) => {
+                        if (line.startsWith("  ")) {
+                            return ("  " + line);
+                        }
+                        else {
+                            return line;
+                        }
+                    }).join("\n")
+                }
             </SyntaxHighlighter>
         </div>
     );
