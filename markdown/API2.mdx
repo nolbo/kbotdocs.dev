@@ -852,7 +852,7 @@ UI쓰레드 상에서 특정 함수를 실행합니다.
 - <code>android.os.BatteryManager.BATTERY_HEALTH_GOOD = <i>2</i> (<i>0x00000002</i>)</code>
 - <code>android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = <i>3</i> (<i>0x00000003</i>)</code>
 - <code>android.os.BatteryManager.BATTERY_HEALTH_DEAD = <i>4</i> (<i>0x00000004</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_VOLTAGE = <i>5</i> (<i>0x00000005</i>)</code>
+- <code>android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = <i>5</i> (<i>0x00000005</i>)</code>
 - <code>android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = <i>6</i> (<i>0x00000006</i>)</code>
 - <code>android.os.BatteryManager.BATTERY_HEALTH_COLD = <i>7</i> (<i>0x00000007</i>)</code>
 
@@ -1194,6 +1194,94 @@ API2의 [\`message\`](#message) 이벤트 입니다.
 \`java.io.File.delete()\`의 결과값을 반환합니다.
 <br /><br />
 \`path\`: 삭제할 파일의 경로
+</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section>
+
+### GlobalLog
+
+\`GlobalLog\` 객체는 앱 내 글로벌 로그에 로그를 기록할 수 있게 하는 객체예요.
+
+<table>
+<thead>
+<tr>
+<th>자료형</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+<code>d(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+
+<code>debug(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+디버그 로그를 작성합니다.
+<br /><br />
+\`data\`: 작성할 디버그 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+<code>e(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+
+<code>error(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+에러 로그를 작성합니다.
+<br /><br />
+\`data\`: 작성할 에러 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+<code>i(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+
+<code>info(<i>data: String, showToast?: Boolean = false</i>)</code>
+
+정보 로그를 작성합니다.
+<br /><br />
+\`data\`: 작성할 정보 로그의 내용
+
+\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+</td>
+</tr>
+<tr>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+\`clear()\`
+
+로그를 모두 삭제합니다.
 </td>
 </tr>
 </tbody>
