@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import { useRouter } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
@@ -17,6 +17,22 @@ export default function Sidebar({ params }: { params: { id: string } }) {
             router.push(e.target.value);
         }
     };
+
+    useEffect(() => {
+        if (isTOCShowed) {
+            document.body.style.cssText = `
+                position: fixed; 
+                top: -${window.scrollY}px;
+                overflow-y: scroll;
+                width: 100%;
+            `;
+        }
+        else {
+            const scrollY = document.body.style.top;
+            document.body.style.cssText = "";
+            window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+        }
+    }, [isTOCShowed]);
 
     return (
         <aside className={`fixed top-0 left-0 mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>

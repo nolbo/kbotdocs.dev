@@ -15,37 +15,46 @@ export default function TOC() {
     };
 
     useEffect(() => {
-        if (document.querySelectorAll(".section h2, .section h3")) {
-            setHeaders(Array.from(document.querySelectorAll(".section h2, .section h3")));
+        const target = document.getElementById("doc");
+        const callback = () => {
+            if (document.querySelectorAll(".section h2, .section h3")) {
+                setHeaders(Array.from(document.querySelectorAll(".section h2, .section h3")));
+            }
+        };
+        const options: MutationObserverInit = { attributes: true, childList: true, subtree: true };
+        const observer = new MutationObserver(callback);
+
+        if (target) {
+            callback();
+            observer.observe(target, options);
         }
     }, []);
 
     useEffect(() => {
-        const WindowOnScrollEventHandler = (e: Element, i: number) => {
+        const listeners: (() => void)[] = [];
+
+        const scrollEventListener = (e: Element, i: number) => {
             if ((e.getBoundingClientRect().y <= 175) && ((i === headers.length - 1) || (headers[i + 1].getBoundingClientRect().y > 175))) {
                 if (pageInViewport !== e.id) setPageInViewport(e.id);
             }
         }
 
-        const addScrollEventListener = () => {
-            if (headers.length > 0) {
-                headers.forEach((e, i) => {
-                    window.addEventListener("scroll", () => WindowOnScrollEventHandler(e, i), { passive: true });
-                });
-            }
-        };
-
         if (headers.length > 0) {
-            headers.forEach((e, i) => WindowOnScrollEventHandler(e, i));
-            addScrollEventListener();
+            headers.forEach((e, i) => {
+                listeners.push(() => scrollEventListener(e, i));
+            });
+            listeners.forEach((e) => {
+                e();
+                window.addEventListener("scroll", e, { passive: true });
+            });
         }
 
-        // return (() => {
-        //     headers.forEach((e, i) => {
-        //         window.removeEventListener("scroll", () => WindowOnScrollEventHandler(e, i));
-        //     });
-        // });
-    }, [headers]);
+        return (() => {
+            listeners.forEach((e) => {
+                window.removeEventListener("scroll", e);
+            });
+        });
+    }, [headers, pageInViewport]);
 
     return (
         <ul className={"leading-relaxed overflow-auto text-sm mt-0 p-none border-0 rounded-[0] bg-transparent"}>

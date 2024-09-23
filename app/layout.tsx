@@ -8,7 +8,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://kbotdocs.dev"),
-    title: "KBotDocs",
+    title: {
+        default: "KBotDocs",
+        template: "%s | KBotDocs"
+    },
     description: "카카오톡봇의 정보가 모인 카카오톡봇 문서입니다.",
     openGraph: {
         title: {

@@ -1,2473 +1,1585 @@
-import Markdown from "@/components/common/Markdown";
-
-<Markdown>
-{`
-<section>
-
-## API2
-
-API2는 레거시 API보다 더 최근에 공개된 내장 API에요. 레거시 API보다 지원하는 앱이 적지만, 디스코드봇을 개발해본 분이라면 레거시 API보다 더 친숙하게 느껴질 거예요.
-기존 내장 API (레거시 API)보다 더 체계적인 구조로 되어 있어요. 레거시 API에만 존재하는 기능도 있지만, API2에만 존재하는 기능도 있으니 한번 공부해보면 좋을 거예요.
-
-</section>
-<section>
-
-## 객체
-
-API2의 객체는 레거시 API와 비슷한 부분도 있고, 다른 부분도 있어요. 그래도 전체적으로 보았을 땐 API2에 더 다양한 기능의 객체이 내장되어 있어요.
-
-<section>
-
-### App
-
-\`App\` 객체는 봇 구동 앱에 관한 기능들을 담고 있어요. 메소드는 몇 개 없지만 한번 살펴볼까요?
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.content.Context\`
-
-</td>
-<td>
-
-\`getContext()\`
-
-앱의 Context(컨텍스트)를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>runOnUiThread(<i>task: Function, onComplete: Function</i>)</code>
-
-UI쓰레드 상에서 특정 함수를 실행합니다.
-<br /><br />
-\`task\`: UI쓰레드 상에서 실행할 함수
-
-\`complete\`: 결과를 처리할 함수
-
-매개변수:
-
-
-- \`error\`: \`task\`함수 실행 도중 일어난 에러의 객체를 전달받는 인자
-- \`result\`: \`task\`함수의 반환값을 전달받는 인자
-
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Bot
-
-\`Bot\` 객체는 카카오톡봇을 소스 코드 상에서 카카오톡봇을 조금 더 개념화해주는 객체예요. 말이 어려워서 그렇지, 사실 카카오톡봇의 근본적인 기능에 관한 객체로 이해하시면 돼요.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>setCommandPrefix(<i>prefix: String</i>)</code>
-
-카카오톡봇 명령어의 접두어를 설정합니다.
-<br /><br />
-\`prefix\`: 카카오톡봇 명령어의 접두어로 설정할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>send(<i>room: String, msg: String, packageName?: String = null</i>)</code>
-
-특정 방에 메시지를 보냅니다.
-
-메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-<br /><br />
-\`room\`: 메시지를 보낼 방 이름
-
-\`msg\`: 보낼 메시지의 내용
-
-\`packageName?\`: 메시지를 보낼 메신저 앱의 패키지명
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>canReply(<i>room: String, packageName?: String = null</i>)</code>
-
-특정 방에 메시지를 수신할 수 있는지의 여부를 반환합니다.
-<br /><br />
-\`room\`: 메시지 수신 가능 여부를 확인할 방의 이름
-
-\`packageName?\`: 메시지 수신 가능 여부를 확인할 방이 소속한 메신저 앱의 패키지명
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`getName()\`
-
-카카오톡봇의 이름을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>setPower(<i>power: Boolean</i>)</code>
-
-특정 스크립트의 작동 여부를 제어합니다.
-<br /><br />
-\`power\`: 활성화할 스크립트 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-\`getPower()\`
-
-스크립트의 활성화 여부를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`compile()\`
-
-스크립트를 컴파일합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`unload()\`
-
-스크립트를 컴파일 전 상태로 전환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>on(<i>eventName: String, listener: Function</i>)</code>
-
-
-<code>addListener(<i>eventName: String, listener: Function</i>)</code>
-
-특정 이벤트에 대한 이벤트 리스너를 추가합니다. (리스너 리스트의 마지막에 추가)
-<br /><br />
-\`eventName\`: 리스너를 추가할 이벤트명
-
-\`listener\`: 추가할 이벤트 리스너
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>off(<i>eventName: String, listener?: Function</i>)</code>
-
-
-<code>removeListener(<i>eventName: String, listener?: Function</i>)</code>
-
-특정 이벤트에 대한 이벤트 리스너를 제거합니다.
-<br /><br />
-\`eventName\`: 리스너를 제거할 이벤트명
-
-\`listener?\`: 제거할 이벤트 리스너 (인자가 없을 시 리스너 이벤트의 마지막 리스너를 제거)
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>removeAllListeners(<i>eventName: String</i>)</code>
-
-특정 이벤트에 대한 모든 이벤트 리스너를 제거합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>prependListener(<i>eventName: String, listener: Function</i>)</code>
-
-특정 이벤트에 대한 이벤트 리스너를 추가합니다. (리스너 리스트의 첫 번째에 추가)
-<br /><br />
-\`eventName\`: 리스너를 추가할 이벤트명
-
-\`listener\`: 추가할 이벤트 리스너
-</td>
-</tr>
-<tr>
-<td>
-
-\`Array\`
-
-</td>
-<td>
-
-<code>listeners(<i>eventName: String</i>)</code>
-
-특정 이벤트에 대한 모든 이벤트 리스너를 배열로 반환합니다.
-<br /><br />
-\`eventName\`: 반환될 모든 이벤트 리스너의 이벤트명
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>markAsRead(<i>room?: String, packageName?: String</i>)</code>
-
-채팅방의 메시지를 읽음 처리합니다.
-
-방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-<br /><br />
-\`room?\`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리)
-
-\`packageName?\`: 메시지를 읽음 처리할 메신저 앱의 패키지명
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### BotManager
-
-\`BotManager\` 객체는 앞서 나온 \`Bot\` 객체를 보조해주는 느낌의 객체예요.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`Bot\`
-
-</td>
-<td>
-
-\`getCurrentBot()\`
-
-스크립트에 할당된 \`Bot\` 객체를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Bot\`
-
-</td>
-<td>
-
-<code>getBot(<i>botName: String</i>)</code>
-
-특정 Bot 객체를 반환합니다.
-<br /><br />
-\`botName\`: 반환받을 \`Bot\` 객체의 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`Array\`
-
-</td>
-<td>
-
-<code>getRooms(<i>packageName?: String</i>)</code>
-
-메신저 앱에서 받은 메시지의 방 이름을 배열로 반환합니다.
-<br /><br />
-\`packageName?\`: 메시지가 발신된 방들의 메신저 앱 패키지명 (인자가 없을 시 모든 메신저 앱에 대하여 반환)
-</td>
-</tr>
-<tr>
-<td>
-
-\`Array\`
-
-</td>
-<td>
-
-\`getBotList()\`
-
-모든 \`Bot\` 인스턴스를 배열로 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>getPower(<i>botName: String</i>)</code>
-
-특정 \`Bot\`의 활성화 여부를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>setPower(<i>botName: String, power: Boolean</i>)</code>
-
-특정 \`Bot\`의 작동 여부를 제어합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>compile(<i>botName: String, throwOnError?: Boolean = false</i>)</code>
-
-특정 \`Bot\`을 컴파일합니다.
-<br /><br />
-\`botName\`: 컴파일할 \`Bot\`의 이름
-
-\`throwOnError?\`: 컴파일 에러 시 에러 throw 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`compileAll()\`
-
-모든 \`Bot\`을 컴파일합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-<code>prepare(<i>scriptName: String, throwOnError?: Boolean = false</i>)</code>
-
-\`Bot\`이 한번도 컴파일된 적이 없을 경우 컴파일합니다.
-
-컴파일 에러 시 에러를 \`throw\`합니다. 반환값은 다음과 같습니다:
-<br /><br />
-컴파일에 실패함: \`0\`
-
-컴파일에 성공함: \`1\`
-
-컴파일된 적이 있음: \`2\`
-<br /><br />
-\`scriptName\`: 컴파일할 \`Bot\`의 이름
-
-\`throwOnError?\`: 컴파일 에러 시 에러 throw 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-<code>prepare(<i>throwOnError?: Boolean = false</i>)</code>
-
-\`Bot\`에 대하여 \`prepare()\`를 실행합니다.
-
-새롭게 컴파일된 \`Bot\`의 개수를 반환합니다.
-<br /><br />
-\`throwOnError?\`: 컴파일 에러 시 에러 throw 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>isCompiled(<i>botName: String</i>)</code>
-
-특정 \`Bot\`의 컴파일 완료 여부를 반환합니다.
-<br /><br />
-\`botName\`: 컴파일 완료 여부를 확인할 \`Bot\`의 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`unload()\`
-
-\`Bot\`을 컴파일 전 상태로 전환합니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Broadcast
-
-\`Broadcast\` 객체는 다른 스크립트 간의 데이터 교류를 지원하는 객체입니다. 레거시 API의 \`Bridge\` 객체와 근본적인 용도는 비슷하지만, \`Bridge\` 객체보다 더 다양한 기능을 수행할 수 있죠!
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>send(<i>broadcastName: String, value: Any</i>)</code>
-
-모든 스크립트를 대상으로 특정 값을 브로드캐스트합니다.
-<br /><br />
-\`broadcastName\`: 브로드캐스트 이름
-
-\`value\`: 브로드캐스트으로 송출할 값 (\`register()\`의 인자 \`task\`의 인자로 주어짐.)
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>register(<i>broadcastName: String, task: Function</i>)</code>
-
-특정 브로드캐스트에 대한 리스너를 추가합니다.
-<br /><br />
-\`broadcastName\`: 리스너를 추가할 브로드캐스트 이름
-
-\`task\`: 리스너로 추가할 함수
-
-
-- \`value\`: 특정 브로드캐스트을 통해 송출된 값
-
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>unregister(<i>broadcastName: String, task: Function</i>)</code>
-
-특정 브로드캐스트에 대한 특정 리스너를 제거합니다.
-<br /><br />
-\`broadcastName\`: 특정 리스너를 제거할 브로드캐스트 이름
-
-\`task\`: 제거할 리스너
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`unregisterAll()\`
-
-브로드캐스트에 등록된 모든 리스너를 제거합니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Database
-
-\`Database\` 객체는 레거시 API의 \`DataBase\` 객체와 비슷하게 스크립트 로컬 폴더의 \`/Database\` 폴더 내 데이터 조작에 관한 객체예요. 하지만 메소드들을 잘 살펴보면 API2의 \`Database\` 객체가 더 편리한 기능들을 가지고 있다는 것을 알 수 있어요!
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>exists(<i>fileName: String</i>)</code>
-
-특정 이름의 파일이 존재하는지의 여부를 반환합니다.
-<br /><br />
-\`fileName\`: 파일의 존재 여부를 확인할 파일의 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`Object\`
-
-</td>
-<td>
-
-<code>readObject(<i>fileName: String</i>)</code>
-
-특정 파일의 내용을 \`Object\` 형식으로 반환합니다.
-
-파일 내용의 형식이 \`JSON\`일 경우에만 가능합니다.
-<br /><br />
-\`fileName\`: 내용을 \`Object\` 형식으로 반환할 파일 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>readString(<i>fileName: String</i>)</code>
-
-특정 파일의 내용을 반환합니다.
-<br /><br />
-\`fileName\`: 내용을 반환할 파일 이름
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>writeObject(<i>fileName: String, obj: Object</i>)</code>
-
-인자로 주어진 객체를 \`JSON String\`으로 변환한 값을 특정 파일에 덮어씁니다.
-
-파일이 존재하지 않을 경우 파일을 생성합니다.
-<br /><br />
-\`fileName\`: 내용을 덮어씌우거나 새로 생성할 파일 이름
-
-\`obj\`: 문자열로 변환 후 파일 내용으로 저장할 객체
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-<code>writeString(<i>fileName: String, str: String</i>)</code>
-
-인자로 주어진 문자열을 특정 파일에 덮어씁니다.
-
-파일이 존재하지 않을 경우 파일을 생성합니다.
-<br /><br />
-\`fileName\`: 내용을 덮어씌우거나 새로 생성할 파일 이름
-
-\`str\`: 파일 내용으로 저장할 문자열
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Device
-
-이 객체는 보자마자 바로 "레거시 API에 있던 거 아냐?"라고 생각할 수 있어요. 그거 맞아요. API2의 \`Device\` 객체는 레거시 API의 \`Device\` 객체와 동일하답니다!
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.os.Build\`
-
-</td>
-<td>
-
-\`getBuild()\`
-
-\`android.os.Build()\`값을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getAndroidVersionCode()\`
-
-앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`getAndroidVersionName()\`
-
-앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`getPhoneBrand()\`
-
-앱 구동 기기의 브랜드명을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`getPhoneModel()\`
-
-앱 구동 기기의 모델명을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-\`isCharging()\`
-
-앱 구동 기기가 충전 중인지의 여부를 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`getPlugType()\`
-
-앱 구동 기기의 충전기 타입을 반환합니다.
-
-반환값은 다음과 같습니다:
-
-
-- \`ac\`
-- \`wireless\`
-- \`usb\`
-- \`unknown\`
-
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getBatteryLevel()\`
-
-앱 구동 기기의 배터리 잔량(%)을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getBatteryHealth()\`
-
-앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다.
-
-반환값은 다음과 같습니다:
-
-
-- <code>android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = <i>1</i> (<i>0x00000001</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_GOOD = <i>2</i> (<i>0x00000002</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = <i>3</i> (<i>0x00000003</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_DEAD = <i>4</i> (<i>0x00000004</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = <i>5</i> (<i>0x00000005</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = <i>6</i> (<i>0x00000006</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_HEALTH_COLD = <i>7</i> (<i>0x00000007</i>)</code>
-
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getBatteryTemperature()\`
-
-앱 구동 기기의 배터리 온도(<code><i>temp</i> * 10</code>)값을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getBatteryVoltage()\`
-
-앱 구동 기기의 배터리 전압(mV)을 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`Number\`
-
-</td>
-<td>
-
-\`getBatteryStatus()\`
-
-앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다.
-
-반환값은 다음과 같습니다:
-
-
-- <code>android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = <i>1</i> (<i>0x00000001</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_STATUS_CHARGING = <i>2</i> (<i>0x00000002</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = <i>3</i> (<i>0x00000003</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = <i>4</i> (<i>0x00000004</i>)</code>
-- <code>android.os.BatteryManager.BATTERY_STATUS_FULL = <i>5</i> (<i>0x00000005</i>)</code>
-
-</td>
-</tr>
-<tr>
-<td>
-
-\`android.content.Intent\`
-
-</td>
-<td>
-
-\`getBatteryIntent()\`
-
-\`context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))\`값을 반환합니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Event
-
-\`Event\` 객체는 API2에서 제공하는 이벤트들에 대한 상수들을 제공하는 객체예요. 그래서 메소드는 없고 프로퍼티만 존재하는 객체이죠.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.BACK_PRESSED = <i>"activityBackPressed"</i></code>
-
-API2의 [\`activityBackPressed\`](#activitybackpressed) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.CREATE = <i>"activityCreate"</i></code>
-
-API2의 [\`activityCreate\`](#activitycreate) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.DESTROY = <i>"activityDestroy"</i></code>
-
-API2의 [\`activityDestroy\`](#activitydestroy) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.PAUSE = <i>"activityPause"</i></code>
-
-API2의 [\`activityPause\`](#activitypause) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.RESTART = <i>"activityRestart"</i></code>
-
-API2의 [\`activityRestart\`](#activityrestart) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.RESUME = <i>"activityResume"</i></code>
-
-API2의 [\`activityResume\`](#activityresume) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.START = <i>"activityStart"</i></code>
-
-API2의 [\`activityStart\`](#activitystart) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>Activity.STOP = <i>"activityStop"</i></code>
-
-API2의 [\`activityStop\`](#activitystop) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>NOTIFICATION_POSTED = <i>"notificationPosted"</i></code>
-
-API2의 [\`notificationPosted\`](#notificationposted) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>START_COMPILE = <i>"startCompile"</i></code>
-
-API2의 [\`startCompile\`](#startcompile) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>TICK = <i>"tick"</i></code>
-
-API2의 [\`tick\`](#tick) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>COMMAND = <i>"command"</i></code>
-
-API2의 [\`command\`](#command) 이벤트 입니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>MESSAGE = <i>"message"</i></code>
-
-API2의 [\`message\`](#message) 이벤트 입니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### FileStream
-
-이 객체도 레거시 API의 \`FileStream\` 객체와 동일한 객체예요.
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>read(<i>path: String</i>)</code>
-
-특정 파일의 내용을 반환합니다.
-<br /><br />
-\`path\`: 내용을 읽을 파일의 경로
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>write(<i>path: String, data: String</i>)</code>
-
-파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다.
-
-생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
-<br /><br />
-\`path\`: 생성하거나 덮어쓸 파일의 경로
-
-\`data\`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>append(<i>path: String, data: String</i>)</code>
-
-기존의 파일의 내용에 새로운 내용을 이어 씁니다.
-
-이어 쓴 파일의 최종 내용을 반환합니다.
-<br /><br />
-\`path\`: 내용을 이어 쓸 파일의 경로
-
-\`data\`: 파일에 이어 쓸 내용
-</td>
-</tr>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>remove(<i>path: String</i>)</code>
-
-파일을 삭제합니다.
-
-\`java.io.File.delete()\`의 결과값을 반환합니다.
-<br /><br />
-\`path\`: 삭제할 파일의 경로
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### GlobalLog
-
-\`GlobalLog\` 객체는 앱 내 글로벌 로그에 로그를 기록할 수 있게 하는 객체예요.
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>d(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>debug(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-디버그 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 디버그 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>e(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>error(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-에러 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 에러 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>i(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>info(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-정보 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 정보 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`clear()\`
-
-로그를 모두 삭제합니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Http
-
-\`Http\` 객체는 웹 상에서의 request(리퀘스트; 요청)에 관한 기능을 제공하는 객체예요.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>request(<i>url: String, callBack: Function</i>)</code>
-
-
-<code>request(<i>option: Object, callBack: Function</i>)</code>
-
-특정 URL에 Jsoup으로 비동기 request를 보냅니다.
-<br /><br />
-\`url\`: request를 보낼 URL
-
-\`option\`: [request 옵션 구조](#request-옵션-구조)
-
-\`callBack\`: [CallBack 인자 정보](#callback-인자-정보)
-</td>
-</tr>
-<tr>
-<td>
-
-\`org.jsoup.nodes.Document\`
-
-</td>
-<td>
-<code>requestSync(<i>url: String</i>)</code>
-
-
-<code>requestSync(<i>option: Object</i>)</code>
-
-특정 URL에 Jsoup으로 동기 request를 보냅니다.
-<br /><br />
-\`url\`: request를 보낼 URL
-
-\`option\`: [request 옵션 구조](#request-옵션-구조)
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<section>
-
-#### request 옵션 구조
-
-~~~json
-{
-    "url": String, // request를 보낼 URL
-    "timeout": Number, // request 타임아웃 (밀리초; 기본값: 3000)
-    "method": String, // request 메소드 (기본값: "GET")
-    "headers": { /* Header */ } // request 헤더 (기본값: null)
-}
-~~~
-
-</section>
-<section>
-
-#### CallBack 인자 정보
-
-~~~text
-error: java.lang.Exception
-response: org.jsoup.Connection.Response
-doc: org.jsoup.nodes.Document
-~~~
-
-</section>
-</section>
-<section>
-
-### Log
-
-\`Log\` 객체 또한 레거시 API의 \`Log\` 객체와 동일합니다.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>d(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>debug(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-디버그 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 디버그 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>e(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>error(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-에러 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 에러 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-<code>i(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-
-<code>info(<i>data: String, showToast?: Boolean = false</i>)</code>
-
-정보 로그를 작성합니다.
-<br /><br />
-\`data\`: 작성할 정보 로그의 내용
-
-\`showToast?\`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
-</td>
-</tr>
-<tr>
-<td>
-
-\`undefined\`
-
-</td>
-<td>
-
-\`clear()\`
-
-로그를 모두 삭제합니다.
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### sessionManager
-
-\`sessionManager\` 객체는 채팅방 세션을 수동으로 등록할 수 있게 해주는 객체예요.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`Boolean\`
-
-</td>
-<td>
-
-<code>bindSession(<i>packageName?: String, room: String, action?: android.app.Notification.Action</i>): Boolean</code>
-
-다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다.
-
-\`action?\`과 앱이 자동 분석한 답장 액션 모두 \`null\`이 아닌지의 여부를 반환합니다.
-<br /><br />
-\`packageName?\`: 메시지를 보낼 메신저 앱의 패키지명
-
-\`room\`: 메시지를 보낼 메신저 앱 내의 채팅방
-
-\`packageName?\`: 메시지 전송 구형을 위한 \`android.app.Notification.Action\`값
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### Security
-
-\`Security\` 객체는 각종 암호화 / 복호화에 관한 기능들을 제공하는 객체예요.
-
-
-<table>
-<thead>
-<tr>
-<th>자료형</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>aesDecode(<i>key: String, initVector: String, value: String</i>)</code>
-
-특정 값을 AES 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: AES 복호화를 위한 키
-
-\`initVector\`: 초기화 백터
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>aesEncode(<i>key: String, initVector: String, value: String</i>)</code>
-
-특정 값을 AES 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: AES 암호화를 위한 키
-
-\`initVector\`: 초기화 백터
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>ariaDecode(<i>key: String, value: String</i>)</code>
-
-특정 값을 ARIA 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: ARIA 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>ariaEncode(<i>key: String, value: String</i>)</code>
-
-특정 값을 ARIA 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: ARIA 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>base32Decode(<i>value: String</i>)</code>
-
-특정 값을 Base32 복호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>base32Encode(<i>value: String</i>)</code>
-
-특정 값을 Base32 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>base64Decode(<i>value: String</i>)</code>
-
-특정 값을 Base64 복호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>base64Encode(<i>value: String</i>)</code>
-
-특정 값을 Base64 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>desDecode(<i>key: String, value: String</i>)</code>
-
-특정 값을 DES 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: DES 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>desEncode(<i>key: String, value: String</i>)</code>
-
-특정 값을 DES 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: DES 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-\`desKey()\`
-
-DES 보조키를 생성하여 반환합니다.
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>des3Decode(<i>key: String, value: String</i>)</code>
-
-특정 값을 DES3 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: DES3 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>des3Encode(<i>key: String, value: String</i>)</code>
-
-특정 값을 DES3 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: DES3 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>eccDecode(<i>key: String, value: String</i>)</code>
-
-특정 값을 ECC 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: ECC 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>eccEncode(<i>key: String, value: String</i>)</code>
-
-특정 값을 ECC 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: ECC 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>hashCode(<i>value: String</i>)</code>
-
-특정 값의 해시코드를 반환합니다.
-<br /><br />
-\`value\`: 해시코드를 추출할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>md2(<i>value: String</i>)</code>
-
-특정 값을 MD2 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>md5(<i>value: String</i>)</code>
-
-특정 값을 MD5 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>rc4Decode(<i>key: String, value: String</i>)</code>
-
-특정 값을 RC4 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: RC4 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>rc4Encode(<i>key: String, value: String</i>)</code>
-
-특정 값을 RC4 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: RC4 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>seedDecode(<i>key: String, value: String</i>)</code>
-
-특정 값을 SEED 복호화한 값을 반환합니다.
-<br /><br />
-\`key\`: SEED 복호화를 위한 키
-
-\`value\`: 복호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>seedEncode(<i>key: String, value: String</i>)</code>
-
-특정 값을 SEED 암호화한 값을 반환합니다.
-<br /><br />
-\`key\`: SEED 암호화를 위한 키
-
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha(<i>value: String</i>)</code>
-
-특정 값을 SHA 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha256(<i>value: String</i>)</code>
-
-특정 값을 SHA256 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha384(<i>value: String</i>)</code>
-
-특정 값을 SHA384 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha512(<i>value: String</i>)</code>
-
-특정 값을 SHA512 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha3_224(<i>value: String</i>)</code>
-
-특정 값을 SHA3-224 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha3_256(<i>value: String</i>)</code>
-
-특정 값을 SHA3-256 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha3_384(<i>value: String</i>)</code>
-
-특정 값을 SHA3-384 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-<tr>
-<td>
-
-\`String\`
-
-</td>
-<td>
-
-<code>sha3_512(<i>value: String</i>)</code>
-
-특정 값을 SHA3-512 암호화한 값을 반환합니다.
-<br /><br />
-\`value\`: 암호화할 값
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-</section>
-<section>
-
-## 이벤트
-
-API2에는 레거시 API와 달리, 이벤트 리스너가 지정되어 있지 않습니다. 이벤트 자체만 존재할 뿐이죠. 이벤트 리스너는 [\`Bot\` 객체](#bot)와 [\`Event\` 객체](#event)를 이용하여 관리할 수 있죠!
-
-<section>
-
-### activityBackPressed
-
-\`activityBackPressed\` 이벤트는 스크립트 액티비티의 \`onBackPressed\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityCreate
-
-\`activityCreate\` 이벤트는 스크립트 액티비티의 \`onCreate\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityDestroy
-
-\`activityDestroy\` 이벤트는 스크립트 액티비티의 \`onDestroy\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityPause
-
-\`activityPause\` 이벤트는 스크립트 액티비티의 \`onPause\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityRestart
-
-\`activityRestart\` 이벤트는 스크립트 액티비티의 \`onRestart\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityResume
-
-\`activityResume\` 이벤트는 스크립트 액티비티의 \`onResume\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 액티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityStart
-
-\`activityStart\` 이벤트는 스크립트 액티비티의 \`onStart\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### activityStop
-
-\`activityStop\` 이벤트는 스크립트 액티비티의 \`onStop\`가 호출되면 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.app.Activity\`
-
-</td>
-<td>
-
-\`activity\`
-
-해당 이벤트가 발생했을 때의 맥티비티
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### notificationPosted
-
-\`notificationPosted\` 이벤트는 기기에 알림이 발생할 때 마다 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`android.service.notification.StatusBarNotification\`
-
-</td>
-<td>
-
-\`atatusBarNotification\`
-
-[안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification) 참고
-</td>
-</tr>
-<tr>
-<td>
-
-\`SessionManager\`
-
-</td>
-<td>
-
-[\`sessionManager\`](#sessionmanager)
-
-메신저봇 앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 인자
-</td>
-</tr>
-</tbody>
-</table>
-
-</section>
-<section>
-
-### startCompile
-
-\`startCompile\` 이벤트는 컴파일 요청을 감지했을 때, <strong>컴파일 시작 전에</strong> 발생하는 이벤트예요. 이 이벤트는 인자를 따로 필요로 하지 않죠.
-
-</section>
-<section>
-
-### tick
-
-<blockquote class="warning">
-
-이 이벤트는 아직 구현되지 않았습니다.
-
-</blockquote>
-
-\`tick\` 이벤트는 매 틱마다 발생하는 이벤트예요.
-
-</section>
-<section>
-
-### message
-
-\`message\` 이벤트는 메신저 앱에 메시지가 수신되었을 때 마다 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`Object\`
-
-</td>
-<td>
-
-\`msg\`
-
-수신된 메시지에 대한 정보를 담고 있는 객체
-</td>
-</tr>
-</tbody>
-</table>
-
-
-\`msg\` 인자에 대해 더 궁금하신가요? \`msg\` 인자의 구조는 아래와 같습니다!
-
-
-~~~json
-{
-    "room": String, // 메시지가 온 방의 이름
-    "channelId": BigInt, // 메시지가 온 방의 고유 아이디
-    "content": String, // 메시지의 내용
-    "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
-    "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
-    "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
-        "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
-        "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
-    },
-    "isMention": Boolean, // 채팅에 멘션 포함 여부,
-    "logId": BigInt, // 각 채팅에 대한 고유 아이디
-    "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
-        "name": String, // 메시지를 보낸 유저의 이름
-        "avatar": { // 메시지 전송자 프로필에 대한 정보
-            "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
-            "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
-        },
-        "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
-    },
-    "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
-    "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
-    "packageName": String // 메시지가 온 메신저 앱의 패키지명
-}
-~~~
-
-</section>
-<section>
-
-### command
-
-\`command\` 이벤트는 \`message\` 이벤트와 달리, \`Bot.setCommandPrefix()\`에 의해 정해진 접두어로 시작하는 메시지가 수신되었을 때 마다 발생하는 이벤트예요.
-
-
-인자의 정보는 아래와 같아요.
-
-
-<table>
-<thead>
-<th>자료형</th>
-<th>설명</th>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`Object\`
-
-</td>
-<td>
-
-\`msg\`
-
-수신된 메시지에 대한 정보를 담고 있는 객체
-</td>
-</tr>
-</tbody>
-</table>
-
-
-\`command\` 이벤트의 \`msg\` 인자에 대해서도 더 궁금하신가요? \`command\` 이벤트의 \`msg\` 인자에는 \`message\` 이벤트의 인자에 없는 프로퍼티가 있답니다!
-
-
-~~~json
-{
-    "command": String, // 명령어의 이름 ('/angles 30 60 90' 이라는 메시지일 때 "angles")
-    "args": Array, // 명령어의 인자들의 배열 (인자가 없을 경우 길이가 0인 배열 반환; 가령, '/angles 30 60 90' 이라는 메시지일 때 ["30", "60", "90"])
-    "room": String, // 메시지가 온 방의 이름
-    "channelId": BigInt, // 메시지가 온 방의 고유 아이디
-    "content": String, // 메시지의 내용
-    "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
-    "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
-    "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
-        "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
-        "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
-    },
-    "isMention": Boolean, // 채팅에 멘션 포함 여부,
-    "logId": BigInt, // 각 채팅에 대한 고유 아이디
-    "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
-        "name": String, // 메시지를 보낸 유저의 이름
-        "avatar": { // 메시지 전송자 프로필에 대한 정보
-            "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
-            "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
-        },
-        "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
-    },
-    "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
-    "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
-    "packageName": String // 메시지가 온 메신저 앱의 패키지명
-}
-~~~
-
-</section>
-</section>
-`}
-</Markdown>
+<Section>
+    ## API2
+
+    API2는 레거시 API보다 더 최근에 공개된 내장 API에요. 레거시 API보다 지원하는 앱이 적지만, 디스코드봇을 개발해본 분이라면 레거시 API보다 더 친숙하게 느껴질 거예요.
+    기존 내장 API (레거시 API)보다 더 체계적인 구조로 되어 있어요. 레거시 API에만 존재하는 기능도 있지만, API2에만 존재하는 기능도 있으니 한번 공부해보면 좋을 거예요.
+</Section>
+<Section>
+    ## 객체
+
+    API2의 객체는 레거시 API와 비슷한 부분도 있고, 다른 부분도 있어요. 그래도 전체적으로 보았을 땐 API2에 더 다양한 기능의 객체이 내장되어 있어요.
+    <Section>
+        ### App
+
+        `App` 객체는 봇 구동 앱에 관한 기능들을 담고 있어요. 메소드는 몇 개 없지만 한번 살펴볼까요?
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.content.Context`</Td>
+                <Td>
+                    `getContext()` \
+                    앱의 Context(컨텍스트)를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `runOnUiThread(`*`task: Function, onComplete: Function`*`)` \
+                    UI쓰레드 상에서 특정 함수를 실행합니다.
+                    <br />
+                    `task`: UI쓰레드 상에서 실행할 함수 \
+                    `complete`: 결과를 처리할 함수 \
+                    매개변수:
+                    - `error`: `task`함수 실행 도중 일어난 에러의 객체를 전달받는 인자
+                    - `result`: `task`함수의 반환값을 전달받는 인자
+
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Bot
+
+        `Bot` 객체는 카카오톡봇을 소스 코드 상에서 카카오톡봇을 조금 더 개념화해주는 객체예요. 말이 어려워서 그렇지, 사실 카카오톡봇의 근본적인 기능에 관한 객체로 이해하시면 돼요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `setCommandPrefix(`*`prefix: String`*`)` \
+                    카카오톡봇 명령어의 접두어를 설정합니다.
+                    <br />
+                    `prefix`: 카카오톡봇 명령어의 접두어로 설정할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `send(`*`room: String, msg: String, packageName?: String = null`*`)` \
+                    특정 방에 메시지를 보냅니다. \
+                    메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+                    <br />
+                    `room`: 메시지를 보낼 방 이름 \
+                    `msg`: 보낼 메시지의 내용 \
+                    `packageName?`: 메시지를 보낼 메신저 앱의 패키지명
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `canReply(`*`room: String, packageName?: String = null`*`)` \
+                    특정 방에 메시지를 수신할 수 있는지의 여부를 반환합니다.
+                    <br />
+                    `room`: 메시지 수신 가능 여부를 확인할 방의 이름 \
+                    `packageName?`: 메시지 수신 가능 여부를 확인할 방이 소속한 메신저 앱의 패키지명
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `getName()` \
+                    카카오톡봇의 이름을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `setPower(`*`power: Boolean`*`)` \
+                    특정 스크립트의 작동 여부를 제어합니다.
+                    <br />
+                    `power`: 활성화할 스크립트 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `getPower()` \
+                    스크립트의 활성화 여부를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `compile()` \
+                    스크립트를 컴파일합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `unload()` \
+                    스크립트를 컴파일 전 상태로 전환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `on(`*`eventName: String, listener: Function`*`)` \
+                    `addListener(`*`eventName: String, listener: Function`*`)` \
+                    특정 이벤트에 대한 이벤트 리스너를 추가합니다. (리스너 리스트의 마지막에 추가)
+                    <br />
+                    `eventName`: 리스너를 추가할 이벤트명 \
+                    `listener`: 추가할 이벤트 리스너
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `off(`*`eventName: String, listener?: Function`*`)` \
+                    `removeListener(`*`eventName: String, listener?: Function`*`)` \
+                    특정 이벤트에 대한 이벤트 리스너를 제거합니다.
+                    <br />
+                    `eventName`: 리스너를 제거할 이벤트명 \
+                    `listener?`: 제거할 이벤트 리스너 (인자가 없을 시 리스너 이벤트의 마지막 리스너를 제거)
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `removeAllListeners(`*`eventName: String`*`)` \
+                    특정 이벤트에 대한 모든 이벤트 리스너를 제거합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `prependListener(`*`eventName: String, listener: Function`*`)` \
+                    특정 이벤트에 대한 이벤트 리스너를 추가합니다. (리스너 리스트의 첫 번째에 추가)
+                    <br />
+                    `eventName`: 리스너를 추가할 이벤트명 \
+                    `listener`: 추가할 이벤트 리스너
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Array`</Td>
+                <Td>
+                    `listeners(`*`eventName: String`*`)` \
+                    특정 이벤트에 대한 모든 이벤트 리스너를 배열로 반환합니다.
+                    <br />
+                    `eventName`: 반환될 모든 이벤트 리스너의 이벤트명
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `markAsRead(`*`room?: String, packageName?: String`*`)` \
+                    채팅방의 메시지를 읽음 처리합니다. \
+                    방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                    <br />
+                    `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
+                    `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### BotManager
+
+        `BotManager` 객체는 앞서 나온 `Bot` 객체를 보조해주는 느낌의 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`Bot`</Td>
+                <Td>
+                    `getCurrentBot()` \
+                    스크립트에 할당된 `Bot` 객체를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Bot`</Td>
+                <Td>
+                    `getBot(`*`botName: String`*`)` \
+                    특정 Bot 객체를 반환합니다.
+                    <br />
+                    `botName`: 반환받을 `Bot` 객체의 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Array`</Td>
+                <Td>
+                    `getRooms(`*`packageName?: String`*`)` \
+                    메신저 앱에서 받은 메시지의 방 이름을 배열로 반환합니다.
+                    <br />
+                    `packageName?`: 메시지가 발신된 방들의 메신저 앱 패키지명 (인자가 없을 시 모든 메신저 앱에 대하여 반환)
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Array`</Td>
+                <Td>
+                    `getBotList()` \
+                    모든 `Bot` 인스턴스를 배열로 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `getPower(`*`botName: String`*`)` \
+                    특정 `Bot`의 활성화 여부를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `setPower(`*`botName: String, power: Boolean`*`)` \
+                    특정 `Bot`의 작동 여부를 제어합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `compile(`*`botName: String, throwOnError?: Boolean = false`*`)` \
+                    특정 `Bot`을 컴파일합니다.
+                    <br />
+                    `botName`: 컴파일할 `Bot`의 이름 \
+                    `throwOnError?`: 컴파일 에러 시 에러 throw 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `compileAll()` \
+                    모든 `Bot`을 컴파일합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `prepare(`*`scriptName: String, throwOnError?: Boolean = false`*`)` \
+                    `Bot`이 한번도 컴파일된 적이 없을 경우 컴파일합니다. \
+                    컴파일 에러 시 에러를 `throw`합니다. 반환값은 다음과 같습니다:
+                    <br />
+                    컴파일에 실패함: `0` \
+                    컴파일에 성공함: `1` \
+                    컴파일된 적이 있음: `2`
+                    <br />
+                    `scriptName`: 컴파일할 `Bot`의 이름 \
+                    `throwOnError?`: 컴파일 에러 시 에러 throw 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `prepare(`*`throwOnError?: Boolean = false`*`)` \
+                    `Bot`에 대하여 `prepare()`를 실행합니다. \
+                    새롭게 컴파일된 `Bot`의 개수를 반환합니다.
+                    <br />
+                    `throwOnError?`: 컴파일 에러 시 에러 throw 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `isCompiled(`*`botName: String`*`)` \
+                    특정 `Bot`의 컴파일 완료 여부를 반환합니다.
+                    <br />
+                    `botName`: 컴파일 완료 여부를 확인할 `Bot`의 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `unload()` \
+                    `Bot`을 컴파일 전 상태로 전환합니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Broadcast
+
+        `Broadcast` 객체는 다른 스크립트 간의 데이터 교류를 지원하는 객체입니다. 레거시 API의 `Bridge` 객체와 근본적인 용도는 비슷하지만, `Bridge` 객체보다 더 다양한 기능을 수행할 수 있죠!
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `send(`*`broadcastName: String, value: Any`*`)` \
+                    모든 스크립트를 대상으로 특정 값을 브로드캐스트합니다.
+                    <br />
+                    `broadcastName`: 브로드캐스트 이름 \
+                    `value`: 브로드캐스트으로 송출할 값 (`register()`의 인자 `task`의 인자로 주어짐.)
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `register(`*`broadcastName: String, task: Function`*`)` \
+                    특정 브로드캐스트에 대한 리스너를 추가합니다.
+                    <br />
+                    `broadcastName`: 리스너를 추가할 브로드캐스트 이름 \
+                    `task`: 리스너로 추가할 함수 \
+                    매개변수:
+                    - `value`: 특정 브로드캐스트을 통해 송출된 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `unregister(`*`broadcastName: String, task: Function`*`)` \
+                    특정 브로드캐스트에 대한 특정 리스너를 제거합니다.
+                    <br />
+                    `broadcastName`: 특정 리스너를 제거할 브로드캐스트 이름 \
+                    `task`: 제거할 리스너
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `unregisterAll()` \
+                    브로드캐스트에 등록된 모든 리스너를 제거합니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Database
+
+        `Database` 객체는 레거시 API의 `DataBase` 객체와 비슷하게 스크립트 로컬 폴더의 `/Database` 폴더 내 데이터 조작에 관한 객체예요. 하지만 메소드들을 잘 살펴보면 API2의 `Database` 객체가 더 편리한 기능들을 가지고 있다는 것을 알 수 있어요!
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `exists(`*`fileName: String`*`)` \
+                    특정 이름의 파일이 존재하는지의 여부를 반환합니다.
+                    <br />
+                    `fileName`: 파일의 존재 여부를 확인할 파일의 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Object`</Td>
+                <Td>
+                    `readObject(`*`fileName: String`*`)` \
+                    특정 파일의 내용을 `Object` 형식으로 반환합니다. \
+                    파일 내용의 형식이 `JSON`일 경우에만 가능합니다.
+                    <br />
+                    `fileName`: 내용을 `Object` 형식으로 반환할 파일 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `readString(`*`fileName: String`*`)` \
+                    특정 파일의 내용을 반환합니다.
+                    <br />
+                    `fileName`: 내용을 반환할 파일 이름
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `writeObject(`*`fileName: String, obj: Object`*`)` \
+                    인자로 주어진 객체를 `JSON String`으로 변환한 값을 특정 파일에 덮어씁니다. \
+                    파일이 존재하지 않을 경우 파일을 생성합니다.
+                    <br />
+                    `fileName`: 내용을 덮어씌우거나 새로 생성할 파일 이름 \
+                    `obj`: 문자열로 변환 후 파일 내용으로 저장할 객체
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `writeString(`*`fileName: String, str: String`*`)` \
+                    인자로 주어진 문자열을 특정 파일에 덮어씁니다. \
+                    파일이 존재하지 않을 경우 파일을 생성합니다.
+                    <br />
+                    `fileName`: 내용을 덮어씌우거나 새로 생성할 파일 이름 \
+                    `str`: 파일 내용으로 저장할 문자열
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Device
+
+        이 객체는 보자마자 바로 "레거시 API에 있던 거 아냐?"라고 생각할 수 있어요. 그거 맞아요. API2의 `Device` 객체는 레거시 API의 `Device` 객체와 동일하답니다!
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.os.Build`</Td>
+                <Td>
+                    `getBuild()` \
+                    `android.os.Build()`값을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getAndroidVersionCode()` \
+                    앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `getAndroidVersionName()` \
+                    앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `getPhoneBrand()` \
+                    앱 구동 기기의 브랜드명을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `getPhoneModel()` \
+                    앱 구동 기기의 모델명을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `isCharging()` \
+                    앱 구동 기기가 충전 중인지의 여부를 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `getPlugType()` \
+                    앱 구동 기기의 충전기 타입을 반환합니다. \
+                    반환값은 다음과 같습니다:
+                    - `ac`
+                    - `wireless`
+                    - `usb`
+                    - `unknown`
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getBatteryLevel()` \
+                    앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getBatteryHealth()` \
+                    앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다. \
+                    반환값은 다음과 같습니다:
+                    - `android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_GOOD = `*`2`*` (`*`0x00000002`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = `*`3`*` (`*`0x00000003`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_DEAD = `*`4`*` (`*`0x00000004`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = `*`5`*` (`*`0x00000005`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = `*`6`*` (`*`0x00000006`*`)`
+                    - `android.os.BatteryManager.BATTERY_HEALTH_COLD = `*`7`*` (`*`0x00000007`*`)`
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getBatteryTemperature()` \
+                    앱 구동 기기의 배터리 온도(*`temp`*` * 10`)값을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getBatteryVoltage()` \
+                    앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Number`</Td>
+                <Td>
+                    `getBatteryStatus()` \
+                    앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다. \
+                    반환값은 다음과 같습니다:
+                    - `android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
+                    - `android.os.BatteryManager.BATTERY_STATUS_CHARGING = `*`2`*` (`*`0x00000002`*`)`
+                    - `android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = `*`3`*` (`*`0x00000003`*`)`
+                    - `android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = `*`4`*` (`*`0x00000004`*`)`
+                    - `android.os.BatteryManager.BATTERY_STATUS_FULL = `*`5`*` (`*`0x00000005`*`)`
+                </Td>
+            </tr>
+            <tr>
+                <Td>`android.content.Intent`</Td>
+                <Td>
+                    `getBatteryIntent()` \
+                    `context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`값을 반환합니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Event
+
+        `Event` 객체는 API2에서 제공하는 이벤트들에 대한 상수들을 제공하는 객체예요. 그래서 메소드는 없고 프로퍼티만 존재하는 객체이죠.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.BACK_PRESSED = `*`"activityBackPressed"`* \
+                    API2의 [`activityBackPressed`](#activitybackpressed) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.CREATE = `*`"activityCreate"`* \
+                    API2의 [`activityCreate`](#activitycreate) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.DESTROY = `*`"activityDestroy"`* \
+                    API2의 [`activityDestroy`](#activitydestroy) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.PAUSE = `*`"activityPause"`* \
+                    API2의 [`activityPause`](#activitypause) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.RESTART = `*`"activityRestart"`* \
+                    API2의 [`activityRestart`](#activityrestart) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.RESUME = `*`"activityResume"`* \
+                    API2의 [`activityResume`](#activityresume) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.START = `*`"activityStart"`* \
+                    API2의 [`activityStart`](#activitystart) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `Activity.STOP = `*`"activityStop"`* \
+                    API2의 [`activityStop`](#activitystop) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `NOTIFICATION_POSTED = `*`"notificationPosted"`* \
+                    API2의 [`notificationPosted`](#notificationposted) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `START_COMPILE = `*`"startCompile"`* \
+                    API2의 [`startCompile`](#startcompile) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `TICK = `*`"tick"`* \
+                    API2의 [`tick`](#tick) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `COMMAND = `*`"command"`* \
+                    API2의 [`command`](#command) 이벤트 입니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `MESSAGE = `*`"message"`* \
+                    API2의 [`message`](#message) 이벤트 입니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### FileStream
+
+        이 객체도 레거시 API의 `FileStream` 객체와 동일한 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `read(`*`path: String`*`)` \
+                    특정 파일의 내용을 반환합니다.
+                    <br />
+                    `path`: 내용을 읽을 파일의 경로
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `write(`*`path: String, data: String`*`)` \
+                    파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다. \
+                    생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
+                    <br />
+                    `path`: 생성하거나 덮어쓸 파일의 경로 \
+                    `data`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `append(`*`path: String, data: String`*`)` \
+                    기존의 파일의 내용에 새로운 내용을 이어 씁니다. \
+                    이어 쓴 파일의 최종 내용을 반환합니다.
+                    <br />
+                    `path`: 내용을 이어 쓸 파일의 경로 \
+                    `data`: 파일에 이어 쓸 내용
+                </Td>
+            </tr>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `remove(`*`path: String`*`)` \
+                    파일을 삭제합니다. \
+                    `java.io.File.delete()`의 결과값을 반환합니다.
+                    <br />
+                    `path`: 삭제할 파일의 경로
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### GlobalLog
+
+        `GlobalLog` 객체는 앱 내 글로벌 로그에 로그를 기록할 수 있게 하는 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `d(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `debug(`*`data: String, showToast?: Boolean = false`*`)` \
+                    디버그 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 디버그 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `e(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `error(`*`data: String, showToast?: Boolean = false`*`)` \
+                    에러 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 에러 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `i(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `info(`*`data: String, showToast?: Boolean = false`*`)` \
+                    정보 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 정보 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `clear()` \
+                    로그를 모두 삭제합니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Http
+
+        `Http` 객체는 웹 상에서의 request(리퀘스트; 요청)에 관한 기능을 제공하는 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `request(`*`url: String, callBack: Function`*`)` \
+                    `request(`*`option: Object, callBack: Function`*`)` \
+                    특정 URL에 Jsoup으로 비동기 request를 보냅니다.
+                    <br />
+                    `url`: request를 보낼 URL \
+                    `option`: [request 옵션 구조](#request-옵션-구조) \
+                    `callBack`: [CallBack 인자 정보](#callback-인자-정보)
+                </Td>
+            </tr>
+            <tr>
+                <Td>`org.jsoup.nodes.Document`</Td>
+                <Td>
+                    `requestSync(`*`url: String`*`)` \
+                    `requestSync(`*`option: Object`*`)` \
+                    특정 URL에 Jsoup으로 동기 request를 보냅니다.
+                    <br />
+                    `url`: request를 보낼 URL \
+                    `option`: [request 옵션 구조](#request-옵션-구조)
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+
+        <Section>
+            #### request 옵션 구조
+
+            ~~~json
+            {
+                "url": String, // request를 보낼 URL
+                "timeout": Number, // request 타임아웃 (밀리초; 기본값: 3000)
+                "method": String, // request 메소드 (기본값: "GET")
+                "headers": { /* Header */ } // request 헤더 (기본값: null)
+            }
+            ~~~
+        </Section>
+        <Section>
+            #### CallBack 인자 정보
+
+            ~~~text
+            error: java.lang.Exception
+            response: org.jsoup.Connection.Response
+            doc: org.jsoup.nodes.Document
+            ~~~
+        </Section>
+    </Section>
+    <Section>
+        ### Log
+
+        `Log` 객체 또한 레거시 API의 `Log` 객체와 동일합니다.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `d(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `debug(`*`data: String, showToast?: Boolean = false`*`)` \
+                    디버그 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 디버그 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `e(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `error(`*`data: String, showToast?: Boolean = false`*`)` \
+                    에러 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 에러 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `i(`*`data: String, showToast?: Boolean = false`*`)` \
+                    `info(`*`data: String, showToast?: Boolean = false`*`)` \
+                    정보 로그를 작성합니다.
+                    <br />
+                    `data`: 작성할 정보 로그의 내용 \
+                    `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                </Td>
+            </tr>
+            <tr>
+                <Td>`undefined`</Td>
+                <Td>
+                    `clear()` \
+                    로그를 모두 삭제합니다.
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### sessionManager
+
+        `sessionManager` 객체는 채팅방 세션을 수동으로 등록할 수 있게 해주는 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`Boolean`</Td>
+                <Td>
+                    `bindSession(`*`packageName?: String, room: String, action?: android.app.Notification.Action`*`)` \
+                    다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다. \
+                    `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
+                    <br />
+                    `packageName?`: 메시지를 보낼 메신저 앱의 패키지명 \
+                    `room`: 메시지를 보낼 메신저 앱 내의 채팅방 \
+                    `action?`: 메시지 전송 구현을 위한 `android.app.Notification.Action`값
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Security
+
+        `Security` 객체는 각종 암호화 / 복호화에 관한 기능들을 제공하는 객체예요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `aesDecode(`*`key: String, initVector: String, value: String`*`)` \
+                    특정 값을 AES 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: AES 복호화를 위한 키 \
+                    `initVector`: 초기화 백터 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `aesEncode(`*`key: String, initVector: String, value: String`*`)` \
+                    특정 값을 AES 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: AES 암호화를 위한 키 \
+                    `initVector`: 초기화 백터 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `ariaDecode(`*`key: String, value: String`*`)` \
+                    특정 값을 ARIA 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: ARIA 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `ariaEncode(`*`key: String, value: String`*`)` \
+                    특정 값을 ARIA 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: ARIA 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `base32Decode(`*`value: String`*`)` \
+                    특정 값을 Base32 복호화한 값을 반환합니다.
+                    <br />
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `base32Encode(`*`value: String`*`)` \
+                    특정 값을 Base32 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `base64Decode(`*`value: String`*`)` \
+                    특정 값을 Base64 복호화한 값을 반환합니다.
+                    <br />
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `base64Encode(`*`value: String`*`)` \
+                    특정 값을 Base64 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `desDecode(`*`key: String, value: String`*`)` \
+                    특정 값을 DES 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: DES 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `desEncode(`*`key: String, value: String`*`)` \
+                    특정 값을 DES 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: DES 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `desKey()` \
+                    DES 보조키를 생성하여 반환합니다.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `des3Decode(`*`key: String, value: String`*`)` \
+                    특정 값을 DES3 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: DES3 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `des3Encode(`*`key: String, value: String`*`)` \
+                    특정 값을 DES3 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: DES3 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `eccDecode(`*`key: String, value: String`*`)` \
+                    특정 값을 ECC 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: ECC 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `eccEncode(`*`key: String, value: String`*`)` \
+                    특정 값을 ECC 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: ECC 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `hashCode(`*`value: String`*`)` \
+                    특정 값의 해시코드를 반환합니다.
+                    <br />
+                    `value`: 해시코드를 추출할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `md2(`*`value: String`*`)` \
+                    특정 값을 MD2 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `md5(`*`value: String`*`)` \
+                    특정 값을 MD5 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `rc4Decode(`*`key: String, value: String`*`)` \
+                    특정 값을 RC4 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: RC4 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `rc4Encode(`*`key: String, value: String`*`)` \
+                    특정 값을 RC4 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: RC4 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `seedDecode(`*`key: String, value: String`*`)` \
+                    특정 값을 SEED 복호화한 값을 반환합니다.
+                    <br />
+                    `key`: SEED 복호화를 위한 키 \
+                    `value`: 복호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `seedEncode(`*`key: String, value: String`*`)` \
+                    특정 값을 SEED 암호화한 값을 반환합니다.
+                    <br />
+                    `key`: SEED 암호화를 위한 키 \
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha(`*`value: String`*`)` \
+                    특정 값을 SHA 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha256(`*`value: String`*`)` \
+                    특정 값을 SHA256 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha384(`*`value: String`*`)` \
+                    특정 값을 SHA384 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha512(`*`value: String`*`)` \
+                    특정 값을 SHA512 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha3_224(`*`value: String`*`)` \
+                    특정 값을 SHA3-224 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha3_256(`*`value: String`*`)` \
+                    특정 값을 SHA3-256 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha3_384(`*`value: String`*`)` \
+                    특정 값을 SHA3-384 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            <tr>
+                <Td>`String`</Td>
+                <Td>
+                    `sha3_512(`*`value: String`*`)` \
+                    특정 값을 SHA3-512 암호화한 값을 반환합니다.
+                    <br />
+                    `value`: 암호화할 값
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+</Section>
+<Section>
+    ## 이벤트
+
+    API2에는 레거시 API와 달리, 이벤트 리스너가 지정되어 있지 않습니다. 이벤트 자체만 존재할 뿐이죠. 이벤트 리스너는 [`Bot` 객체](#bot)와 [`Event` 객체](#event)를 이용하여 관리할 수 있죠!
+
+    <Section>
+        ### activityBackPressed
+
+        `activityBackPressed` 이벤트는 스크립트 액티비티의 `onBackPressed`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityCreate
+
+        `activityCreate` 이벤트는 스크립트 액티비티의 `onCreate`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityDestroy
+
+        `activityDestroy` 이벤트는 스크립트 액티비티의 `onDestroy`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityPause
+
+        `activityPause` 이벤트는 스크립트 액티비티의 `onPause`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityRestart
+
+        `activityRestart` 이벤트는 스크립트 액티비티의 `onRestart`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityResume
+
+        `activityResume` 이벤트는 스크립트 액티비티의 `onResume`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityStart
+
+        `activityStart` 이벤트는 스크립트 액티비티의 `onStart`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### activityStop
+
+        `activityStop` 이벤트는 스크립트 액티비티의 `onStop`가 호출되면 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.app.Activity`</Td>
+                <Td>
+                    `activity` \
+                    해당 이벤트가 발생했을 때의 액티비티
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### notificationPosted
+
+        `notificationPosted` 이벤트는 기기에 알림이 발생할 때 마다 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`android.service.notification.StatusBarNotification`</Td>
+                <Td>
+                    `atatusBarNotification` \
+                    [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
+                </Td>
+            </tr>
+            <tr>
+                <Td>`SessionManager`</Td>
+                <Td>
+                    [`sessionManager`](#sessionmanager) \
+                    메신저봇 앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 인자
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### startCompile
+
+        `startCompile` 이벤트는 컴파일 요청을 감지했을 때, **컴파일 시작 전에** 발생하는 이벤트예요. 이 이벤트는 인자를 따로 필요로 하지 않죠.
+    </Section>
+    <Section>
+        ### tick
+
+        <Blockquote className="warning">
+            이 이벤트는 아직 구현되지 않았습니다.
+        </Blockquote>
+
+        `tick` 이벤트는 매 틱마다 발생하는 이벤트예요.
+    </Section>
+    <Section>
+        ### message
+
+        `message` 이벤트는 메신저 앱에 메시지가 수신되었을 때 마다 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`Object`</Td>
+                <Td>
+                    `msg` \
+                    수신된 메시지에 대한 정보를 담고 있는 객체
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+
+        `msg` 인자에 대해 더 궁금하신가요? `msg` 인자의 구조는 아래와 같습니다!
+
+        ~~~json
+        {
+            "room": String, // 메시지가 온 방의 이름
+            "channelId": BigInt, // 메시지가 온 방의 고유 아이디
+            "content": String, // 메시지의 내용
+            "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
+            "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
+            "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
+                "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
+                "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
+            },
+            "isMention": Boolean, // 채팅에 멘션 포함 여부,
+            "logId": BigInt, // 각 채팅에 대한 고유 아이디
+            "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
+                "name": String, // 메시지를 보낸 유저의 이름
+                "avatar": { // 메시지 전송자 프로필에 대한 정보
+                    "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
+                    "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
+                },
+                "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
+            },
+            "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
+            "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
+            "packageName": String // 메시지가 온 메신저 앱의 패키지명
+        }
+        ~~~
+    </Section>
+    <Section>
+        ### command
+
+        `command` 이벤트는 `message` 이벤트와 달리, `Bot.setCommandPrefix()`에 의해 정해진 접두어로 시작하는 메시지가 수신되었을 때 마다 발생하는 이벤트예요.
+
+        인자의 정보는 아래와 같아요.
+
+        <Table>
+            <thead>
+            <tr>
+                <Th>자료형</Th>
+                <Th>설명</Th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <Td>`Object`</Td>
+                <Td>
+                    `msg` \
+                    수신된 메시지에 대한 정보를 담고 있는 객체
+                </Td>
+            </tr>
+            </tbody>
+        </Table>
+
+        `command` 이벤트의 `msg` 인자에 대해서도 더 궁금하신가요? `command` 이벤트의 `msg` 인자에는 `message` 이벤트의 인자에 없는 프로퍼티가 있답니다!
+
+        ~~~json
+        {
+            "command": String, // 명령어의 이름 ('/angles 30 60 90' 이라는 메시지일 때 "angles")
+            "args": Array, // 명령어의 인자들의 배열 (인자가 없을 경우 길이가 0인 배열 반환; 가령, '/angles 30 60 90' 이라는 메시지일 때 ["30", "60", "90"])
+            "room": String, // 메시지가 온 방의 이름
+            "channelId": BigInt, // 메시지가 온 방의 고유 아이디
+            "content": String, // 메시지의 내용
+            "isGroupChat": Boolean, // 방 내 인원이 3인 이상인지의 여부
+            "isDebugRoom": Boolean, // 디버깅룸에서 온 메시지인지의 여부
+                "image": { // 메시지에 포함된 사진에 대한 정보를 담고 있는 객체 (카카오톡 알림 구조 변경에 따라 안될 가능성이 높음)
+                "getBase64": Function, // 채팅속 사진의 Base64 값을 반환
+                "getBitmap": Function // 채팅속 사진의 android.graphics.Bitmap을 반환
+            },
+            "isMention": Boolean, // 채팅에 멘션 포함 여부,
+            "logId": BigInt, // 각 채팅에 대한 고유 아이디
+            "author": { // 메시지 전송자에 대한 정보를 담고 있는 객체
+                "name": String, // 메시지를 보낸 유저의 이름
+                "avatar": { // 메시지 전송자 프로필에 대한 정보
+                    "getBase64": Function, // 전송자 프로필의 Base64 값을 반환
+                    "getBitmap": Function // 전송자 프로필의 android.graphics.Bitmap을 반환
+                },
+                "hash": String // 안드로이드 11이상에서만 사용가능, 동일 방에 한하여, 같은 유저는 프로필이 변경되어도 같은 값
+            },
+            "reply": Function(content), // 메시지가 온 방에 content를 전송 (content: String)
+            "markAsRead": Function, // 메시지가 온 방의 알림을 읽음 처리
+            "packageName": String // 메시지가 온 메신저 앱의 패키지명
+        }
+        ~~~
+    </Section>
+</Section>
