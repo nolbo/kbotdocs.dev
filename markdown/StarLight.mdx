@@ -110,12 +110,12 @@
                     <Td>`Any?`</Td>
                     <Td>
                         `callFunction(scope: Any, functionName: String, args: Array<Any>)` \
-                        컴파일 된 스코프에 선언된 특정 함수를 호출합니다.  
+                        컴파일 된 스코프에 선언된 특정 함수의 이름과 인자를 전달받아 호출합니다. \
                         함수의 반환값이 존재할 시 해당 값을 반환합니다.
                         <br/>
-                        `scope`: 사용될 스코프
-                        `functionName`: 호출될 함수의 이름
-                        `args`: 함수 호출시 제공될 매개변수
+                        `scope`: 사용될 스코프 \
+                        `functionName`: 호출할 함수의 이름 \
+                        `args`: 함수에게 전달할 인자
                     </Td>
                 </tr>
                 <tr>
@@ -245,7 +245,7 @@
                             <br />
                             `name`: 호출할 함수의 이름 \
                             `args`: 함수에게 전달할 인자 \
-                            `onException`: ?
+                            `onException`: 실행 중 오류 발생시 호출될 콜백 함수
                         </Td>
                     </tr>
                     <tr>
