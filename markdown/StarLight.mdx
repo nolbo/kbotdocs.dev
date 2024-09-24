@@ -356,7 +356,7 @@
     </Section>
     <Section>
         ### Plugins
-         `Plugins` 객체는 현재 앱에 등록된 플러그인 정보에 접근할 수 있는 기능들을 담고 있어요.  
+         `Plugins` 객체는 현재 앱에 등록된 플러그인 정보에 접근할 수 있는 기능들을 담고 있어요. \
         이 객체는 조건에 따라 플러그인 정보를 반환하는 기능만을 담고 있으며, 실제 플러그인에 대한 기능들은 `Plugin` 객체가 담당해요.
         <Table>
             <thead>
@@ -460,7 +460,7 @@
         <Blockquote className="info">
             이 API는 Dotenvy의 확장된 Dotenv 형식을 지원해요. 자세한 사항은 [여기](https://github.com/allan2/dotenvy/blob/master/.env-substitution)를 참고하세요.
         </Blockquote>
-        `Env` 객체는 Dotenv 형식의 파일을 읽고 값을 사용할 수 있는 API에요.
+        `Env` 객체는 Dotenv 형식의 파일을 읽고 값을 사용할 수 있는 API에요. \
         기본적으로 프로젝트 폴더 내부의 .env 파일을 찾아 파싱해요.
         <Table>
             <thead>
@@ -503,12 +503,187 @@
     </Section>
     <Section>
         ### Platform
+        `Platform` 객체는 현재 구동중인 봇 앱의 정보를 담고 있어요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `getName()` \
+                        현재 구동중인 봇 앱의 이름을 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `getVersion()` \
+                        현재 구동중인 봇 앱의 버전을 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Long`</Td>
+                    <Td>
+                        `getUptim()` \
+                        현재 구동중인 봇 앱의 구동 시간을 반환합니다. (milliseconds)
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
     <Section>
         ### Java
+        `Java` 객체는 특정 이름을 가진 자바 클래스를 가져올 수 있어요. \
+        특정 플랫폼의 자바 클래스 사용 방법에 종속되지 않고 자바 클래스를 사용할 수 있도록 만들어졌어요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Class<*>`</Td>
+                    <Td>
+                        `type(name: String)` \
+                        특정 패키지명과 이름을 가진 자바 클래스를 반환합니다.
+                        <br/>
+                        `name`: 가져올 자바 클래스의 패키지를 포함한 전체 이름 (예: java.lang.System)
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
     <Section>
         ### Notification
+        <Blockquote className="warning">
+            알림의 생성은 NotificationBuilder를 통해서, 생성 이후의 관리는 Notification 객체를 통해서 수행됩니다. \
+            각 메서드가 어디에 소속되어 있는지 잘 확인하고 사용하세요.
+        </Blockquote>
+        `Notification` 객체는 상단 알림을 생성하고 관리할 수 있어요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>소속 객체</Th>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Notification`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `Notification.create(id: Int)` \
+                        특정 id의 알림을 생성하는 Builder 객체를 반환합니다.
+                        <br/>
+                        `id`: 생성될 알림의 ID
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `setTitle(title: String)` \
+                        알림의 제목을 설정합니다.
+                        <br/>
+                        `title`: 제목으로 설정할 문자열
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `setText(text: String)` \
+                        알림의 본 내용을 설정합니다.
+                        <br/>
+                        `text`: 본 내용으로 설정할 문자열
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `lights(argb: Int, onMs: Int, offMs: Int)` \
+                        알림의 LED 발광 패턴을 설정합니다. \
+                        최신 기기는 이를 지원하지 않을 수 있습니다.
+                        <br/>
+                        `argb`: 설정할 LED 색 (예: 0xFFFFFFFF)
+                        `onMs`: LED가 켜진 채로 유지될 시간(ms)
+                        `offMs`: LED가 꺼진 채로 유지될 시간(ms) 
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `onDismiss(callback: Function)` \
+                        이 알림이 상단바에서 제거되면 호출될 콜백을 설정합니다.
+                        <br/>
+                        `callback`: 알림 제거시 호출될 콜백 함수, 파라미터로 id 제공
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>
+                        `onClick(title: String, callback: Function)` \
+                        알림에 클릭 가능한 버튼과 버튼 클릭시 호출될 콜백 함수를 설정합니다.
+                        <br/>
+                        `title`: 버튼에 표시될 텍스트
+                        `callback`: 버튼 클릭시 호출될 콜백 함수, 파라미터로 id 제공
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`NotificationBuilder`</Td>
+                    <Td>`Notification`</Td>
+                    <Td>
+                        `build()` \
+                        설정한 값들로 알림을 생성합니다. \
+                        생성된 알림을 제어할 수 있는 Notification 객체를 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Notification`</Td>
+                    <Td>`Int`</Td>
+                    <Td>
+                        `state` \
+                        현재 알림의 상태를 나타내는 값을 반환합니다. \
+                        각 값에 대한 상태는 다음과 같습니다: \
+                        - -1 : 알림이 제거됨
+                        - 0  : 알림이 아직 생성되지 않음
+                        - 1  : 알림이 생성됨
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Notification`</Td>
+                    <Td>`void`</Td>
+                    <Td>
+                        `update(title?: String, message?: String)` \
+                        생성된 알림의 제목과 내용을 수정합니다. \
+                        null이 제공된 값은 수정하지 않습니다.
+                        <br/>
+                        `title?`: 제목으로 설정할 문자열
+                        `message?`: 내용으로 설정할 문자열
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Notification`</Td>
+                    <Td>`void`</Td>
+                    <Td>
+                        `delete()` \
+                        알림을 상단바에서 제거합니다. \
+                        이미 알림이 제거된 상태라면 IllegalStateException을 throw합니다.
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
 </Section>
 <Section>
