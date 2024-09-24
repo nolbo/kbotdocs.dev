@@ -30,14 +30,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`Language`</Td>
+                    <Td>[`Language`](#language)</Td>
                     <Td>
                         `getSelf()` \
                         현재 프로젝트에 대한 `Language` 객체를 반환합니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Language`</Td>
+                    <Td>[`Language`](#language)</Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
                         특정 ID의 프로그래밍 언어 구현체에 대한 `Language` 객체를 반환합니다.
@@ -289,7 +289,7 @@
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`Language`</Td>
+                        <Td>[`Language`](#language)</Td>
                         <Td>
                             `getLanguage()` \
                             프로젝트에서 사용 중인 언어를 반환합니다.
@@ -367,7 +367,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`Plugin`</Td>
+                    <Td>[`Plugin`](#plugin)</Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
                         특정 ID의 플러그인에 대한 `Plugin` 객체를 반환합니다.
@@ -376,7 +376,7 @@
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Plugin`</Td>
+                    <Td>[`Plugin`](#plugin)</Td>
                     <Td>
                         `ofName(`*`name: String`*`)` \
                         특정 이름의 플러그인에 대한 `Plugin` 객체를 반환합니다.
@@ -710,11 +710,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`Message`</Td>
+                    <Td>[`Message`](#message)</Td>
                     <Td>
                         `event` \
                         수신된 메세지의 정보를 담고 있는 객체에요. \
-                        자세한 구조는 하단의 `Message` 섹션을 참고하세요.
+                        자세한 구조는 하단의 [`Message`](#message) 섹션을 참고하세요.
                     </Td>
                 </tr>
             </tbody>
@@ -770,11 +770,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`DeletedMessage`</Td>
+                    <Td>[`DeletedMessage`](#deletedmessage)</Td>
                     <Td>
                         `event` \
                         삭제된 메세지가 담고 있던 정보를 담고 있는 객체에요. \
-                        자세한 구조는 하단의 DeletedMessage 섹션을 참고하세요.
+                        자세한 구조는 하단의 [`DeletedMessage`](#deletedmessage) 섹션을 참고하세요.
                     </Td>
                 </tr>
             </tbody>
@@ -782,7 +782,7 @@
         <Section>
             #### DeletedMessage
             <Blockquote className="warning">
-                Message와 다르게 room이 null일 수 있어요. 값의 null 유무를 확인한 후 사용하세요.
+                Message와 다르게 room이 null일 수 있어요. 값의 null 여부를 확인한 후 사용하세요.
             </Blockquote>
 
             ~~~js
