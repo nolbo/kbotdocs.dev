@@ -28,14 +28,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `getSelf()` \
                         현재 프로젝트에 대한 `Project` 객체를 반환합니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `ofName(`*`name: String`*`)` \
                         특정 이름의 프로젝트에 대한 `Project` 객체를 반환합니다.
@@ -44,7 +44,7 @@
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
                         특정 ID의 프로젝트에 대한 `Project` 객체를 반환합니다.
@@ -104,12 +104,12 @@
                     <tr>
                         <Td>`void`</Td>
                         <Td>
-                            `callFunction(`*`name: String, args: Any[], onException: Function`*`)` \
+                            `callFunction(`*`name: String, args: Any[], onException: (java.lang.Throwable) => void`*`)` \
                             특정 함수의 이름과 인자를 전달받아 호출합니다.
                             <br />
                             `name`: 호출할 함수의 이름 \
                             `args`: 함수에게 전달할 인자 \
-                            `onException`: ?
+                            `onException`: 에러 발생 시 호출할 콜백 함수
                         </Td>
                     </tr>
                     <tr>
@@ -120,13 +120,6 @@
                             컴파일 성공 여부를 반환합니다.
                             <br />
                             `throwException?`: 컴파일 에러 시 에러 throw 여부
-                        </Td>
-                    </tr>
-                    <tr>
-                        <Td>`?`</Td>
-                        <Td>
-                            `compileAsync()` \
-                            ?
                         </Td>
                     </tr>
                     <tr>
