@@ -18,8 +18,8 @@
 
     <Section>
         ### Languages
-        
-        `Languages` 객체는 현재 앱에 등록된 특정 프로그래밍 언어에 접근할 수 있는 기능들을 담고 있어요.  
+
+        `Languages` 객체는 현재 앱에 등록된 특정 프로그래밍 언어에 접근할 수 있는 기능들을 담고 있어요.
         이 객체는 조건에 따른 언어를 반환하는 기능만을 담고 있으며, 실제 언어에 대한 기능들은 `Language` 객체가 담당해요.
         <Table>
             <thead>
@@ -50,7 +50,7 @@
     </Section>
     <Section>
         ### Language
-        
+
         `Language` 객체는 현재 앱에 등록된 프로그래밍 언어에 관한 기능들을 담고 있어요.
         <Table>
             <thead>
@@ -85,7 +85,7 @@
                     <Td>`Boolean`</Td>
                     <Td>
                         `requireRelease` \
-                        이 언어의 사용이 종료되었을 때 scope를 할당 해제해야 하는지 여부입니다.  
+                        이 언어의 사용이 종료되었을 때 scope를 할당 해제해야 하는지 여부입니다.
                         scope의 할당 해제는 `release(scope)` 함수로 수행 가능합니다.
                     </Td>
                 </tr>
@@ -97,7 +97,7 @@
                         </Blockquote>
                         <br/>
                         `compile(code: String, apis: List<Api>, project?: Project, classLoader?: ClassLoader)` \
-                        제공된 코드를 컴파일 하여 실행 가능한 Scope로 변환합니다.  
+                        제공된 코드를 컴파일 하여 실행 가능한 Scope로 변환합니다.
                         반환 타입은 언어의 종류에 따라 상이합니다.
                         <br />
                         `code`: 컴파일 할 코드 \
@@ -122,7 +122,7 @@
                     <Td>`Any`</Td>
                     <Td>
                         `eval(code: String)` \
-                        컴파일 단계 없이 코드를 즉시 실행합니다.  
+                        컴파일 단계 없이 코드를 즉시 실행합니다.
                         코드 실행 결과를 반환합니다.
                         <br/>
                         `code`: 실행될 코드
@@ -132,7 +132,7 @@
                     <Td>`void`</Td>
                     <Td>
                         `release(scope: Any)` \
-                        컴파일 된 스코프를 사용 해제 상태로 변경합니다.  
+                        컴파일 된 스코프를 사용 해제 상태로 변경합니다.
                         사용 해제된 스코프는 불필요한 리소스를 모두 정리하고 대기 상태로 전환됩니다.
                         <br/>
                         `scope`: 사용 해제될 스코프
@@ -142,8 +142,8 @@
                     <Td>`void`</Td>
                     <Td>
                         `destroy(scope: Any)` \
-                        컴파일 된 스코프를 폐기하고 모든 리소스를 할당 해제합니다.  
-                        이 메서드는 스코프의 사용이 끝난 후 최종 단계에만 호출되어야 합니다.  
+                        컴파일 된 스코프를 폐기하고 모든 리소스를 할당 해제합니다.
+                        이 메서드는 스코프의 사용이 끝난 후 최종 단계에만 호출되어야 합니다.
                         폐기된 스코프는 재사용이 불가합니다.
                         <br/>
                         `scope`: 폐기될 스코프
@@ -164,14 +164,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `getSelf()` \
                         현재 프로젝트에 대한 `Project` 객체를 반환합니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `ofName(`*`name: String`*`)` \
                         특정 이름의 프로젝트에 대한 `Project` 객체를 반환합니다.
@@ -180,7 +180,7 @@
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Project`</Td>
+                    <Td>[`Project`](#project)</Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
                         특정 ID의 프로젝트에 대한 `Project` 객체를 반환합니다.
@@ -239,12 +239,12 @@
                     <tr>
                         <Td>`void`</Td>
                         <Td>
-                            `callFunction(`*`name: String, args: Any[], onException: Function`*`)` \
+                            `callFunction(`*`name: String, args: Any[], onException: (java.lang.Throwable) => void`*`)` \
                             특정 함수의 이름과 인자를 전달받아 호출합니다.
                             <br />
                             `name`: 호출할 함수의 이름 \
                             `args`: 함수에게 전달할 인자 \
-                            `onException`: 실행 중 오류 발생시 호출될 콜백 함수
+                            `onException`: 에러 발생 시 호출할 콜백 함수
                         </Td>
                     </tr>
                     <tr>
@@ -616,7 +616,7 @@
                         <br/>
                         `argb`: 설정할 LED 색 (예: 0xFFFFFFFF)
                         `onMs`: LED가 켜진 채로 유지될 시간(ms)
-                        `offMs`: LED가 꺼진 채로 유지될 시간(ms) 
+                        `offMs`: LED가 꺼진 채로 유지될 시간(ms)
                     </Td>
                 </tr>
                 <tr>
