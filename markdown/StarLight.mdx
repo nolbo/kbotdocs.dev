@@ -1,4 +1,7 @@
 <Section>
+    <Blockquote className="warning">
+        StarLight는 아직 Alpha Test 단계로, API의 세부 구현이 추후 변경될 수 있습니다.
+    </Blockquote>
     <Blockquote className="info">
         이 문서는 완성되지 않았습니다. [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
     </Blockquote>
@@ -15,6 +18,139 @@
 
     <Section>
         ### Languages
+        
+        `Languages` 객체는 현재 앱에 등록된 특정 프로그래밍 언어에 접근할 수 있는 기능들을 담고 있어요.  
+        이 객체는 조건에 따른 언어를 반환하는 기능만을 담고 있으며, 실제 언어에 대한 기능들은 `Language` 객체가 담당해요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Language`</Td>
+                    <Td>
+                        `getSelf()` \
+                        현재 프로젝트에 대한 `Language` 객체를 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Language`</Td>
+                    <Td>
+                        `ofId(`*`id: String`*`)` \
+                        특정 ID의 프로그래밍 언어 구현체에 대한 `Language` 객체를 반환합니다.
+                        <br />
+                        `id`: 반환받고자 하는 구현체의 이름
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Language
+        
+        `Language` 객체는 현재 앱에 등록된 프로그래밍 언어에 관한 기능들을 담고 있어요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `id` \
+                        이 언어의 고유 id입니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `name` \
+                        이 언어의 유저에게 표시되는 이름입니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `fileExtension` \
+                        이 언어의 파일 확장자입니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Boolean`</Td>
+                    <Td>
+                        `requireRelease` \
+                        이 언어의 사용이 종료되었을 때 scope를 할당 해제해야 하는지 여부입니다.  
+                        scope의 할당 해제는 `release(scope)` 함수로 수행 가능합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Any`</Td>
+                    <Td>
+                        <Blockquote className="warning">
+                            이 함수는 내부적 구현에 사용되는 것을 기준으로 설계되었습니다. `code` 매개변수 이외에는 일반적으로 취득 및 사용이 불가합니다.
+                        </Blockquote>
+                        <br/>
+                        `compile(code: String, apis: List<Api>, project?: Project, classLoader?: ClassLoader)` \
+                        제공된 코드를 컴파일 하여 실행 가능한 Scope로 변환합니다.  
+                        반환 타입은 언어의 종류에 따라 상이합니다.
+                        <br />
+                        `code`: 컴파일 할 코드 \
+                        `apis`: 코드에 사용 가능한 API 객체 목록 \
+                        `project?`: API 객체 초기화에 사용될 프로젝트 객체 \
+                        `classLoader?`: 코드 컴파일 시 사용될 ClassLoader
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Any?`</Td>
+                    <Td>
+                        `callFunction(scope: Any, functionName: String, args: Array<Any>)` \
+                        컴파일 된 스코프에 선언된 특정 함수를 호출합니다.  
+                        함수의 반환값이 존재할 시 해당 값을 반환합니다.
+                        <br/>
+                        `scope`: 사용될 스코프
+                        `functionName`: 호출될 함수의 이름
+                        `args`: 함수 호출시 제공될 매개변수
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Any`</Td>
+                    <Td>
+                        `eval(code: String)` \
+                        컴파일 단계 없이 코드를 즉시 실행합니다.  
+                        코드 실행 결과를 반환합니다.
+                        <br/>
+                        `code`: 실행될 코드
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`undefined`</Td>
+                    <Td>
+                        `release(scope: Any)` \
+                        컴파일 된 스코프를 사용 해제 상태로 변경합니다.  
+                        사용 해제된 스코프는 불필요한 리소스를 모두 정리하고 대기 상태로 전환됩니다.
+                        <br/>
+                        `scope`: 사용 해제될 스코프
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`undefined`</Td>
+                    <Td>
+                        `destroy(scope: Any)` \
+                        컴파일 된 스코프를 폐기하고 모든 리소스를 할당 해제합니다.  
+                        이 메서드는 스코프의 사용이 끝난 후 최종 단계에만 호출되어야 합니다.  
+                        폐기된 스코프는 재사용이 불가합니다.
+                        <br/>
+                        `scope`: 폐기될 스코프
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
     <Section>
         ### Projects
@@ -120,13 +256,6 @@
                             컴파일 성공 여부를 반환합니다.
                             <br />
                             `throwException?`: 컴파일 에러 시 에러 throw 여부
-                        </Td>
-                    </tr>
-                    <tr>
-                        <Td>`?`</Td>
-                        <Td>
-                            `compileAsync()` \
-                            ?
                         </Td>
                     </tr>
                     <tr>
