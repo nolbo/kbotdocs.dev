@@ -1,4 +1,9 @@
 <Section>
+    <Blockquote className="info">
+        이 문서는 완성되지 않았습니다. [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+    </Blockquote>
+</Section>
+<Section>
     ## StarLight
 
     [**StarLight**](https://starlight.mooner.dev/)는 2023년 Alpha Test로 공개된 [**mooner**](https://github.com/mooner1022)님의 카카오톡봇 프로젝트예요.
@@ -8,15 +13,255 @@
 <Section>
     ## 객체
 
-    [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+    <Section>
+        ### Languages
+    </Section>
+    <Section>
+        ### Projects
+
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Project`</Td>
+                    <Td>
+                        `getSelf()` \
+                        현재 프로젝트에 대한 `Project` 객체를 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Project`</Td>
+                    <Td>
+                        `ofName(`*`name: String`*`)` \
+                        특정 이름의 프로젝트에 대한 `Project` 객체를 반환합니다.
+                        <br />
+                        `name`: 반환받고자 하는 프로젝트의 이름
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Project`</Td>
+                    <Td>
+                        `ofId(`*`id: String`*`)` \
+                        특정 ID의 프로젝트에 대한 `Project` 객체를 반환합니다.
+                        <br />
+                        `id`: 반환받고자 하는 프로젝트의 ID
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
+
+        <Section>
+            #### Project
+
+            <Table>
+                <thead>
+                    <tr>
+                        <Th>자료형</Th>
+                        <Th>설명</Th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <Td>`java.io.File`</Td>
+                        <Td>
+                            `directory` \
+                            프로젝트의 루트 디렉터리에 대한 `java.io.File`입니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`ProjectInfo`</Td>
+                        <Td>
+                            `info` \
+                            프로젝트에 대한 정보입니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`MutableConfig`</Td>
+                        <Td>
+                            `config` \
+                            프로젝트의 로컬 디렉터리에 저장되는 프로젝트 전용 구성 데이터입니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Boolean`</Td>
+                        <Td>
+                            `isCompiled` \
+                            프로젝트의 컴파일 여부입니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`ProjectLogger`</Td>
+                        <Td>
+                            `logger` \
+                            프로젝트의 이벤트 로깅에 사용되는 logger입니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `callFunction(`*`name: String, args: Any[], onException: Function`*`)` \
+                            특정 함수의 이름과 인자를 전달받아 호출합니다.
+                            <br />
+                            `name`: 호출할 함수의 이름 \
+                            `args`: 함수에게 전달할 인자 \
+                            `onException`: ?
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Boolean`</Td>
+                        <Td>
+                            `compile(`*`throwException?: Boolean = false`*`)` \
+                            프로젝트를 컴파일합니다. \
+                            컴파일 성공 여부를 반환합니다.
+                            <br />
+                            `throwException?`: 컴파일 에러 시 에러 throw 여부
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`?`</Td>
+                        <Td>
+                            `compileAsync()` \
+                            ?
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Boolean`</Td>
+                        <Td>
+                            `setEnabled(`*`enabled: Boolean`*`)` \
+                            프로젝트의 활성화 상태를 설정합니다.
+                            <br />
+                            `enabled`: 새롭게 설정할 프로젝트의 활성화 상태 값
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `requestUpdate()` \
+                            앱에 프로젝트 UI 업데이트를 요청합니다. \
+                            앱이 백그라운드에서 실행 중일 경우 요청은 무시됩니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `saveInfo()` \
+                            `Project.info` 값을 파일에 저장합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `loadInfo()` \
+                            메모리 내 프로젝트 정보 데이터를 무효화하고 로컬 파일에서 다시 로드합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Language`</Td>
+                        <Td>
+                            `getLanguage()` \
+                            프로젝트에서 사용 중인 언어를 반환합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Any?`</Td>
+                        <Td>
+                            `getScope()` \
+                            scope 인스턴스를 반환합니다. \
+                            프로젝트가 컴파일되지 않은 경우, `null`을 반환합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Number`</Td>
+                        <Td>
+                            `activeJobs()` \
+                            프로젝트의 스레트 풀에서 작동 중인 `job`의 수를 반환합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `stopAllJobs()` \
+                            작동 중인 모든 `job`을 중지합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `destroy()` \
+                            작동 중인 모든 `job`을 중지합니다. \
+                            프로젝트가 컴파일된 상태일 경우, `langScope`를 해제합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`void`</Td>
+                        <Td>
+                            `rename(`*`name: String`*`)` \
+                            프로젝트의 이름을 변경합니다.
+                            <br />
+                            `name`: 새롭게 설정할 프로젝트의 이름
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`java.io.File`</Td>
+                        <Td>
+                            `getDataDirectory()` \
+                            프로젝트의 데이터(데이터베이스 파일, 유저 데이터 등)가 저장된 디렉터리에 대한 `java.io.File`을 반환합니다.
+                        </Td>
+                    </tr>
+                    <tr>
+                        <Td>`Boolean`</Td>
+                        <Td>
+                            `isEventCallAllowed(`*`eventId: String`*`)` \
+                            특정 `ProjectEvent`의 호출 허용 여부를 반환합니다.
+                            <br />
+                            `eventId`: 호출 허용 여부를 확인할 `ProjectEvent`의 ID
+                        </Td>
+                    </tr>
+                </tbody>
+            </Table>
+        </Section>
+    </Section>
+    <Section>
+        ### Plugins
+    </Section>
+    <Section>
+        ### Env
+    </Section>
+    <Section>
+        ### Platform
+    </Section>
+    <Section>
+        ### Java
+    </Section>
+    <Section>
+        ### Notification
+    </Section>
 </Section>
 <Section>
     ## 이벤트 리스너
 
-    [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+    <Section>
+        ### onMessage 함수
+    </Section>
+    <Section>
+        ### onMessageDeleted 함수
+    </Section>
+    <Section>
+        ### onStartCompile 함수
+    </Section>
+    <Section>
+        ### onNotificationPosted 함수
+    </Section>
 </Section>
 <Section>
     ## 플러그인
 
-    [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+    <Blockquote className="info">
+        [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+    </Blockquote>
 </Section>
