@@ -42,7 +42,7 @@
                         `ofId(`*`id: String`*`)` \
                         특정 ID의 프로그래밍 언어 구현체에 대한 `Language` 객체를 반환합니다.
                         <br />
-                        `id`: 반환받고자 하는 구현체의 이름
+                        `id`: 반환받고자 하는 구현체의 ID
                     </Td>
                 </tr>
             </tbody>
@@ -190,7 +190,6 @@
                 </tr>
             </tbody>
         </Table>
-
         <Section>
             #### Project
 
@@ -357,6 +356,104 @@
     </Section>
     <Section>
         ### Plugins
+         `Plugins` 객체는 현재 앱에 등록된 플러그인 정보에 접근할 수 있는 기능들을 담고 있어요.  
+        이 객체는 조건에 따라 플러그인 정보를 반환하는 기능만을 담고 있으며, 실제 플러그인에 대한 기능들은 `Plugin` 객체가 담당해요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Plugin`</Td>
+                    <Td>
+                        `ofId(`*`id: String`*`)` \
+                        특정 ID의 플러그인에 대한 `Plugin` 객체를 반환합니다.
+                        <br />
+                        `id`: 반환받고자 하는 플러그인의 ID
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Plugin`</Td>
+                    <Td>
+                        `ofName(`*`name: String`*`)` \
+                        특정 이름의 플러그인에 대한 `Plugin` 객체를 반환합니다.
+                        <br/>
+                        `name`: 반환받고자 하는 플러그인의 이름
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`List<Plugin>`</Td>
+                    <Td>
+                        `getAll()` \
+                        현재 로드된 모든 플러그인의 정보들을 반환합니다.
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
+    </Section>
+    <Section>
+        ### Plugin
+         `Plugins` 객체는 현재 앱에 등록된 플러그인 정보를 담고 있어요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`PluginInfo`</Td>
+                    <Td>
+                        `info` \
+                        플러그인의 기본 등록 정보입니다.
+                        등록 정보에 대한 자세한 정보는 [여기](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/plugin/PluginInfo.kt#L2)를 참조하세요.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Boolean`</Td>
+                    <Td>
+                        `isEnabled()` \
+                        플러그인의 활성화 여부를 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`java.io.File`</Td>
+                    <Td>
+                        <Blockquote className="danger">
+                            플러그인의 내부 경로 및 데이터는 오직 플러그인에서만 관리되어야 하며, 이를 임의로 변경 및 수정시 예기치 못한 동작이 발생할 수 있습니다.
+                        </Blockquote>
+                        `getInternalDataDirectory()` \
+                        플러그인의 내부 데이터 경로를 반환합니다.
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`java.io.File`</Td>
+                    <Td>
+                        <Blockquote className="danger">
+                            플러그인의 외부 경로 및 데이터는 오직 앱 내부 로직과 플러그인에서만 관리되어야 하며, 이를 임의로 변경 및 수정시 예기치 못한 동작이 발생할 수 있습니다.
+                        </Blockquote>
+                        `getExternalDataDirectory()` \
+                        플러그인의 외부 데이터 경로를 반환합니다. (/sdcard/StarLight/plugins/\{id\}/)
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`java.io.File`</Td>
+                    <Td>
+                        <Blockquote className="warning">
+                            플러그인의 에셋은 읽기 전용이며, 이를 수정 혹은 제거해서는 안됩니다.
+                        </Blockquote>
+                        `getAsset(path: String)` \
+                        플러그인에 등록된 에셋 파일을 반환합니다.
+                        <br/>
+                        `path`: 에셋 파일에 대한 상대 경로
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
     <Section>
         ### Env
