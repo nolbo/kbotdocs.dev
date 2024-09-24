@@ -457,6 +457,49 @@
     </Section>
     <Section>
         ### Env
+        <Blockquote className="info">
+            이 API는 Dotenvy의 확장된 Dotenv 형식을 지원해요. 자세한 사항은 [여기](https://github.com/allan2/dotenvy/blob/master/.env-substitution)를 참고하세요.
+        </Blockquote>
+        `Env` 객체는 Dotenv 형식의 파일을 읽고 값을 사용할 수 있는 API에요.
+        기본적으로 프로젝트 폴더 내부의 .env 파일을 찾아 파싱해요.
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`String`</Td>
+                    <Td>
+                        `get(key: String)` \
+                        key에 대응하는 value를 반환합니다. \
+                        Env API 클래스는 Map을 상속하고 있기에, `Env.get("KEY")` 혹은 `Env.KEY` 로 사용 가능합니다.
+                        <br />
+                        `path`: 사용하고자 하는 Dotenv 파일의 경로
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Map<String, String>`</Td>
+                    <Td>
+                        `parseFile(`*`path: String`*`)` \
+                        특정 Dotenv 파일을 파싱하고 키-값을 담고 있는 Map을 반환합니다.
+                        <br />
+                        `path`: 사용하고자 하는 Dotenv 파일의 경로
+                    </Td>
+                </tr>
+                <tr>
+                    <Td>`Map<String, String>`</Td>
+                    <Td>
+                        `parseString(`*`content: String`*`)` \
+                        Dotenv 형식의 문자열을 파싱하고 키-값을 담고 있는 Map을 반환합니다.
+                        <br />
+                        `content`: Dotenv 형식으로 작성된 문자열
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
     <Section>
         ### Platform
