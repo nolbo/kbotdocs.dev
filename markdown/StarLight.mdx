@@ -691,15 +691,161 @@
 
     <Section>
         ### onMessage 함수
+        `onMessage` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너예요. 레거시 API의 `response`에 대응되며, 단일 매개변수 `event`로 메세지 정보를 제공해요.
+
+        ~~~js
+        function onMessage(event) {
+
+        }
+        ~~~
+
+        인자의 정보는 다음과 같아요.
+
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`Message`</Td>
+                    <Td>
+                        `event` \
+                        수신된 메세지의 정보를 담고 있는 객체에요. \
+                        자세한 구조는 하단의 `Message` 섹션을 참고하세요.
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
+
+        <Section>
+            #### Message
+
+            ~~~js
+            {
+                message : String, // 수신된 메시지
+                image   : Bitmap?, // 전송된 이미지(실험적)
+                sender  : (ChatSender) {
+                    name          : String, // 전송자 이름
+                    id            : String?, // 유저 고유 ID, 방마다 상이
+                    profileBitmap : Bitmap, // 프로필 이미지
+                    profileBase64 : String, // 프로필 이미지의 Base64 인코딩 값
+                    profileHash   : Int // profileBase64의 hashCode
+                },
+                room    : (ChatRoom) {
+                    id          : String, // 채팅방 고유 ID
+                    name        : String, // 채팅방의 이름,
+                    isGroupChat : Boolean, // 그룹 채팅방 유무
+                    isDebugRoom : Boolean, // 디버그룸 유무
+                    send        : function(message: String): Boolean, // message를 방에 전송, 전송 성공시 true 반환
+                    markAsRead  : function(): Boolean // 방의 메세지를 읽음 처리, 성공시 true 반환
+                },
+                hasMention  : Boolean, // 멘션을 포함하고 있을 시 true
+                chatLogId   : Long
+            }
+            ~~~
+        </Section>
     </Section>
+    <br/>
     <Section>
         ### onMessageDeleted 함수
+        `onMessageDeleted` 함수는 메시지 삭제를 감지하면 호출되는 함수에요. 가장 마지막에 전송된 메세지의 삭제만 감지할 수 있어요.
+
+        ~~~js
+        function onMessageDeleted(event) {
+
+        }
+        ~~~
+
+        인자의 정보는 다음과 같아요.
+
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`DeletedMessage`</Td>
+                    <Td>
+                        `event` \
+                        삭제된 메세지가 담고 있던 정보를 담고 있는 객체에요. \
+                        자세한 구조는 하단의 DeletedMessage 섹션을 참고하세요.
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
+        <Section>
+            #### DeletedMessage
+            <Blockquote className="warning">
+                Message와 다르게 room이 null일 수 있어요. 값의 null 유무를 확인한 후 사용하세요.
+            </Blockquote>
+
+            ~~~js
+            {
+                message : String, // 수신된 메시지
+                sender  : String, // 전송자 이름
+                room?   : (ChatRoom) {
+                    id          : String, // 채팅방 고유 ID
+                    name        : String, // 채팅방의 이름,
+                    isGroupChat : Boolean, // 그룹 채팅방 유무
+                    isDebugRoom : Boolean, // 디버그룸 유무
+                    send        : function(message: String): Boolean, // message를 방에 전송, 전송 성공시 true 반환
+                    markAsRead  : function(): Boolean // 방의 메세지를 읽음 처리, 성공시 true 반환
+                },
+                packageName : String,
+                chatLogId   : Long
+            }
+            ~~~
+        </Section>
     </Section>
+    <br/>
     <Section>
         ### onStartCompile 함수
+        `onStartCompile` 함수는 스크립트의 컴파일이 수행되려 할 때, 컴파일 수행 전 호출되는 이벤트 리스너예요. \
+        레거시 API의 `onStartCompile` 함수와 동일해요.
+
+        ~~~js
+        function onStartCompile() {
+
+        }
+        ~~~
     </Section>
+    <br/>
     <Section>
         ### onNotificationPosted 함수
+        `onNotificationPosted` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너예요. \
+        레거시 API의 `onNotificationPosted` 함수와 유사하나, sessionManager가 제공되지 않아요.
+
+        ~~~js
+        function onNotificationPosted(statusBarNotification) {
+
+        }
+        ~~~
+
+        인자의 정보는 다음과 같아요.
+
+        <Table>
+            <thead>
+                <tr>
+                    <Th>자료형</Th>
+                    <Th>설명</Th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <Td>`android.service.notification.StatusBarNotification`</Td>
+                    <Td>
+                        `statusBarNotification` \
+                        [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
+                    </Td>
+                </tr>
+            </tbody>
+        </Table>
     </Section>
 </Section>
 <Section>
