@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date()
         },
         {
+            url: "https://kbotdocs.dev/advanced",
+            lastModified: new Date()
+        },
+        {
             url: "https://kbotdocs.dev/legacy",
             lastModified: new Date()
         },
@@ -20,10 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: "https://kbotdocs.dev/starlight",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/advanced",
             lastModified: new Date()
         },
     ];

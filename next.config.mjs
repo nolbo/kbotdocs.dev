@@ -11,24 +11,17 @@ const nextConfig = {
         });
         return config;
     },
-    async rewrites() {
-        return [
-            {
-                source: '/',
-                destination: '/summary',
-            },
-        ]
-    },
-    async redirects() {
-        return [
-            {
-                source: '/',
-                destination: '/summary',
-                permanent: true
-            },
-        ]
-    },
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    images: {
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'github.com',
+              port: '',
+              pathname: '/user-attachments/assets/**',
+            },
+          ],
+    }
 };
 
 const withMDX = createMDX({
