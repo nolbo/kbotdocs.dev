@@ -1,10 +1,10 @@
 "use client";
 
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
-import { Docs } from "@/constants/mdxDocs";
+import { Docs, Guide, NoGroup, Reference } from "@/constants/mdxDocs";
 import IconButton from "@/components/common/IconButton";
 
 export default function Sidebar({ params }: { params: { id: string } }) {
@@ -47,10 +47,24 @@ export default function Sidebar({ params }: { params: { id: string } }) {
                 <Select defaultValue={`/${params.id}`}
                         onChange={SelectOnChangeHandler}>
                     {
-                        Docs.map((e) => (
-                            <option key={e.value} value={e.value}>{e.label}</option>
-                        ))
-                    }
+                            NoGroup.map((e) => (
+                                <option key={e.value} value={e.value}>{e.label}</option>
+                            ))
+                        }
+                    <optgroup label="가이드">
+                        {
+                            Guide.map((e) => (
+                                <option key={e.value} value={e.value}>{e.label}</option>
+                            ))
+                        }
+                    </optgroup>
+                    <optgroup label="레퍼런스">
+                        {
+                            Reference.map((e) => (
+                                <option key={e.value} value={e.value}>{e.label}</option>
+                            ))
+                        }
+                    </optgroup>
                 </Select>
                 <div className={"overflow-auto"} onClick={() => { setIsTOCShowed(false) }}>
                     <TOC />

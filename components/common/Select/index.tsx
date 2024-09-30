@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, SelectHTMLAttributes } from "react";
+import React, { useRef, useState, useEffect, SelectHTMLAttributes, Fragment } from "react";
 import Icon from "@/components/common/Icon";
 
 const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => {
@@ -13,6 +13,7 @@ const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => 
     const itemsOnClick = ((value: string) => {
         if (selectRef.current) {
             selectRef.current.value = value;
+            selectRef.current.dispatchEvent(new Event("change", { bubbles: true }));
         }
         setIsFocused(false);
     });
@@ -47,7 +48,6 @@ const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => 
 
     useEffect(() => {
         if (selectRef.current) {
-            selectRef.current.dispatchEvent(new Event("change", { bubbles: true }));
             setValue(selectRef.current.value);
         }
     }, [selectRef.current?.value]);
@@ -67,10 +67,25 @@ const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => 
                     ref={ popoverRef }>
                     { 
                         options.map((e, i) => {
+                            const optGroup = e.closest("optgroup");
+                            const isFirstOfGroup = (optGroup && ((i == 0) || (optGroup !== options[i - 1].closest("optgroup"))));
+
                             return (
-                                <li 
-                                    className={`flex items-center relative p-[6px_8px] rounded-[4px] ${(value === e.value) ? "bg-emphasis hover:bg-emphasis-hover before:block" : "bg-default hover:bg-default-hover before:hidden"} cursor-pointer before:content-[''] before:absolute before:left-[-8px] before:w-[2px] before:h-[calc(100%-12px)] before:rounded-[4px] before:bg-[theme(textColor.default)]`}
-                                    key={ i } ref={ (value === e.value) ? selectedItemRef : null } onClick={ (_e) => { itemsOnClick(e.value) } }>{ e.label }</li>
+                                <Fragment key={i}>
+                                    {
+                                        isFirstOfGroup &&
+                                        <div 
+                                            className={`flex items-center gap-[8px] relative p-[6px_8px] rounded-[4px]`}
+                                            >
+                                            <p className="font-bold">{ optGroup.label }</p>
+                                            <div className="w-auto h-[1px] bg-[theme(borderColor.default)] flex-auto"></div>
+                                        </div>
+                                    }
+                                    <li 
+                                        className={`flex items-center relative p-[6px_8px] ${(optGroup) ? "pl-[1rem]" : "pl-[8px]"} rounded-[4px] ${(value === e.value) ? "bg-emphasis hover:bg-emphasis-hover before:block" : "bg-default hover:bg-default-hover before:hidden"} cursor-pointer before:content-[''] before:absolute before:left-[-8px] before:w-[2px] before:h-[calc(100%-12px)] before:rounded-[4px] before:bg-[theme(textColor.default)]`}
+                                        ref={ (value === e.value) ? selectedItemRef : null } onClick={ (_e) => { itemsOnClick(e.value) } }>{ e.label }</li>
+                                </Fragment>
+                                
                             );
                         }) 
                     }

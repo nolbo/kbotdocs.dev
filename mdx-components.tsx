@@ -28,6 +28,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 </h4>
             );
         },
+        p({ children }) {
+            return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block"}>{ children }</p>)
+        },
         Mark({ children }) {
             return (<mark className={"bg-yellow text-gray-800 font-bold"}>{ children }</mark>);
         },
@@ -42,11 +45,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 (p.alt === "icon") ?
                     <Icon className={"w-[.75rem] h-[.75rem] stroke-inherit-text"} icon={ p.src as Icons } />
                     :
-                    <Image src={p.src as string} alt={p.alt || ""} />
+                    <div className={`justify-center items-center w-full h-fit ${(p.alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((p.alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
+                        <img src={p.src as string} alt={p.alt || ""} className="rounded-[6px]" />
+                    </div>
             )
         },
-        p({ children }) {
-            return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block"}>{ children }</p>)
+        Image(p) {
+            return (
+                <div className={`justify-center items-center w-full h-fit ${(p.alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((p.alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
+                    <img src={p.src as string} alt={p.alt || ""} className="rounded-[6px]" />
+                </div>
+            )
         },
         code({ children, className }) {
             const sthlMatch = /language-(\w+)/.exec(className || "");
