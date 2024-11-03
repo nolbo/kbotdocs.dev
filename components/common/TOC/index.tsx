@@ -8,6 +8,9 @@ export default function TOC({ scrollToRef } : { scrollToRef: React.MutableRefObj
 
     const liOnClickHandler = (id: string) => {
         if (document.getElementById(id)) {
+            window.scrollBy({
+                top: document.getElementById(id)!.getBoundingClientRect().top - 160
+            });
             scrollToRef.current += document.getElementById(id)!.getBoundingClientRect().top - 160;
         }
     };

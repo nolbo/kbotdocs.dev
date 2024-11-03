@@ -80,7 +80,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Table({ children, className, ...rest }) {
             return (
                 <article className={"overflow-auto"}>
-                    <table className={"min-w-[0] w-full"} {...rest}>
+                    <table className={"min-w-[0] w-full table-fixed"} {...rest}>
                         {children}
                     </table>
                 </article>
@@ -95,7 +95,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         Td({ children }) {
             return (
-                <td className={"p-[12px] border-y border-default"}>
+                <td className={"p-[12px] border-y border-default leading-normal"}>
                     { children }
                 </td>
             )
