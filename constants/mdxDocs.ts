@@ -1,5 +1,5 @@
 import Home from "@/markdown/Home.mdx";
-import Summary from "@/markdown/Summary.mdx";
+import Basic from "@/markdown/Basic.mdx";
 import LegacyAPI from "@/markdown/LegacyAPI.mdx";
 import API2 from "@/markdown/API2.mdx";
 import StarLight from "@/markdown/StarLight.mdx";
@@ -12,7 +12,7 @@ export const NoGroup: Doc[] = [
     { label: "홈", value: "/", doc: Home },
 ] as const;
 export const Guide: Doc[] = [
-    { label: "개요", value: "/summary", doc: Summary },
+    { label: "기초", value: "/basic", doc: Basic },
     { label: "심화", value: "/advanced", doc: Advanced },
 ] as const;
 export const Reference: Doc[] = [

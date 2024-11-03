@@ -4,7 +4,7 @@ export const sthlTheme: { [key: string]: React.CSSProperties } = {
     "code[class*=\"language-\"]": {
         color: "var(--sthl-code-text)",
         background: "none",
-        fontFamily: "var(--font-cascadia-code-nf), Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+        fontFamily: "var(--font-cascadia-mono-nf), Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
         fontSize: "14px",
         textAlign: "left",
         whiteSpace: "pre",
@@ -25,7 +25,7 @@ export const sthlTheme: { [key: string]: React.CSSProperties } = {
         color: "var(--sthl-code-text)",
         background: "var(--sthl-pre-bg)",
         textShadow: "none",
-        fontFamily: "var(--font-cascadia-code-nf), Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+        fontFamily: "var(--font-cascadia-mono-nf), Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
         fontSize: "14px",
         textAlign: "left",
         whiteSpace: "pre",
@@ -126,7 +126,6 @@ export const sthlTheme: { [key: string]: React.CSSProperties } = {
     },
     "keyword": {
         color: "var(--sthl-keyword)",
-        fontStyle: "italic",
         fontWeight: "bold"
     },
     "regex": {

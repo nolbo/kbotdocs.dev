@@ -1,16 +1,17 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
 import { Docs, Guide, NoGroup, Reference } from "@/constants/mdxDocs";
 import IconButton from "@/components/common/IconButton";
 
-export default function Sidebar({ params }: { params: { id: string } }) {
+export default function Sidebar() {
     const [ isTOCShowed, setIsTOCShowed ] = useState<boolean>(false);
 
     const router = useRouter();
+    const params = useParams<{ id: string }>();
 
     const SelectOnChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         if (e.target) {
@@ -36,7 +37,7 @@ export default function Sidebar({ params }: { params: { id: string } }) {
 
     return (
         <aside className={`fixed top-0 left-0 mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
-            <div className={`flex justify-start items-center gap-[8px] px-screen-x-default-corrected w-full h-[48px] bg-default md:hidden`}>
+            <div className={`flex justify-start items-center gap-[8px] px-screen-x-default w-full h-[48px] bg-default md:hidden`}>
                 <IconButton icon={(isTOCShowed) ? "CancelIcon" : "HamburgerButtonIcon"} onClick={() => {
                     setIsTOCShowed(v => !v)
                 }} />

@@ -111,7 +111,7 @@ export default {
         lineHeight: {
             tight: "1.25",
             snug: "1.5",
-            normal: "1.875",
+            normal: "1.75",
             relaxed: "2",
             loose: "2.125"
         },
@@ -123,7 +123,8 @@ export default {
         },
         fontFamily: {
             sans: ["var(--font-open-sans)", "var(--font-pretendard)", "'sans-serif'"],
-            mono: ["var(--font-cascadia-code-nf)", "Consolas", "Monaco", "'Andale Mono'", "'Ubuntu Mono'", "monospace"]
+            mono: ["var(--font-cascadia-mono-nf)", "Consolas", "Monaco", "'Andale Mono'", "'Ubuntu Mono'", "monospace"],
+            mono_ligature: ["var(--font-cascadia-code-nf)", "Consolas", "Monaco", "'Andale Mono'", "'Ubuntu Mono'", "monospace"]
         },
         extend: {
             textColor: {
@@ -158,7 +159,6 @@ export default {
                 "content-x-lg": "calc((100vw - var(--width-main-md)) / 2 + 32px)",
                 "content-x-xl": "32px",
                 "screen-x-default": "18px",
-                "screen-x-default-corrected": "calc(18px - 9px)",
                 "screen-x-md": "32px",
                 "screen-x-lg": "128px",
                 "screen-x-xl": "32px",

@@ -1,6 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 import Icon from "@/components/common/Icon";
-import Image from "next/image";
 import CodeBlock from "@/components/common/CodeBlock";
 import Keycap from "@/components/common/Keycap";
 import InlineCode from "@/components/common/InlineCode";
@@ -59,7 +58,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         code({ children, className }) {
             const sthlMatch = /language-(\w+)/.exec(className || "");
-            const keyMatch = /key-(\w+)/.exec(children as string || "");
+            const keyMatch = /key-(\w+|\W+)/.exec(children as string || "");
             const content = String(children).replace(/\n$/, "");
 
             return (
@@ -95,7 +94,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 </td>
             )
         },
-        Blockquote({ children, className }) {
+        Blockquote({ children, className, title }) {
             let header;
             let blockStyle = "";
 
@@ -104,7 +103,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     header = (
                         <>
                             <Icon icon={"WarningFillIcon"} className={"fill-yellow w-[16px] h-[16px]"}/>
-                            <p className={"font-bold"}>주의</p>
+                            <p className={"font-bold"}>{ title || "주의" }</p>
                         </>
                     )
                     blockStyle = "bg-yellow-default border-yellow-default";
@@ -113,7 +112,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     header = (
                         <>
                             <Icon icon={"DangerFillIcon"} className={"fill-red w-[16px] h-[16px]"}/>
-                            <p className={"font-bold"}>경고</p>
+                            <p className={"font-bold"}>{ title || "경고" }</p>
                         </>
                     )
                     blockStyle = "bg-red-default border-red-default";
@@ -122,7 +121,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     header = (
                         <>
                             <Icon icon={"SuccessFillIcon"} className={"fill-green w-[16px] h-[16px]"}/>
-                            <p className={"font-bold"}>성공</p>
+                            <p className={"font-bold"}>{ title || "성공" }</p>
                         </>
                     )
                     blockStyle = "bg-green-default border-green-default";
@@ -131,7 +130,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     header = (
                         <>
                             <Icon icon={"InformationFillIcon"} className={"fill-blue w-[16px] h-[16px]"}/>
-                            <p className={"font-bold"}>정보</p>
+                            <p className={"font-bold"}>{ title || "정보" }</p>
                         </>
                     )
                     blockStyle = "bg-blue-default border-blue-default dark:[&_a]:text-green dark:[&_a:visited]:text-purple";
