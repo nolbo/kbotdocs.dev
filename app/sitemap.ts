@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date()
         },
         {
-            url: "https://kbotdocs.dev/summary",
+            url: "https://kbotdocs.dev/basic",
             lastModified: new Date()
         },
         {
