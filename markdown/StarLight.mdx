@@ -873,4 +873,84 @@
     <Blockquote className="info">
         [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
     </Blockquote>
+
+    `플러그인`은 서드파티 개발자들이 응용 프로그램을 확장하는 기능을 만들 수 있도록 하는 일종의 확장 레이어에요. \
+    플러그인을 이용해 기본적으로 제공하지 않는 기능들을 추가할 수 있어요. \
+    [플러그인 다운로드](https://drive.google.com/drive/folders/12GgPeRxWrlBbj9TV2olPmeKTPfI8KW0i)
+    <Table>
+        <thead>
+            <tr>
+                <Th>이름</Th>
+                <Th>설명</Th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <Td>[`Discord`](#discord)</Td>
+                <Td>디스코드 챗봇을 자바스크립트로 제작할 수 있어요.</Td>
+            </tr>
+            <tr>
+                <Td>[`V8`](#v8)</Td>
+                <Td></Td>
+            </tr>
+        </tbody>
+    </Table>
+
+    ###Discord
+    `Discord`는 StarLight용 플러그인으로, 디스코드 챗봇 api의 이벤트를 수신 및 사용할 수 있게 해요.
+
+    ####사용방법
+    1. 플러그인 파일(discord.slp, awt.slp)을 다운로드하여 /StarLight/plugins 폴더 내에 저장합니다
+    2. StarLight 앱을 재시작하여, 초기화를 수행합니다.
+    3. 플러그인 탭 -> Discord 플러그인 -> 설정 -> 봇 토큰 에 본인의 봇 토큰을 입력합니다.(봇 토큰 발급 방법)
+    4. StarLight 앱을 재시작하여 서버를 시작합니다.
+    5. 이벤트를 수신할 프로젝트의 설정에 들어가 `호출이 허용된 이벤트` 항목에 `discord.message.*` 를 추가합니다.
+    6. 이제 해당 프로젝트의 onMessageCreate 함수가 디스코드 메세지 수신 시 호출됩니다.
+
+    ####Event 수신
+    본 플러그인은 내부적으로 JavaCord 라이브러리를 사용해요.
+    따라서 onMessageCreate의 매개변수인 event로 JavaCord의 `MessageCreateEvent` 객체가 넘겨져요.
+    자세한 사항은 JavaCord의 [Javadoc]((https://javadoc.io/doc/org.javacord/javacord-api/latest/org/javacord/api/event/message/MessageCreateEvent.html))을 참고해주세요.
+
+    ####예제
+
+    ~~~JS
+    function onMessageCreate(event) {
+        if (!event.messageAuthor.isUser()) return;
+        if (event.message.content !== "!ping") return;
+
+        event.channel.sendMessage("Pong!");
+    }
+    ~~~
+
+    ###V8
+    `V8`는 StarLight용 플러그인으로, Rhino JS에 V8 엔진을 이용할 수 있게 해요.
+    Rhino엔진에 비해 약 29 ~ 117(최악~최상)배 정도 차이가 나는게 특징이에요.
+
+    <Blockquote className="danger">
+        이 플러그인은 아직 실험적으로, 여러 에러가 발생할 수 있어요. \
+        에러 발생시 StarLight 제작자에게 [**제보**](https://github.com/mooner1022/StarLight/issues) 부탁드려요.
+    </Blockquote>
+
+    ####사용방법
+    1. 위 첨부된 링크에서 올바른 플러그인 파일을 다운로드 합니다.
+    <Blockquote className="warning">
+        주의: 사용하는 기기에 맞는 파일을 다운로드 해야 합니다! \
+        - armeabi: 일부 구식 안드로이드 기기 \
+        - arm64: 대부분의 기기와 휴대폰 \
+        - x86_64: 대부분의 에뮬레이터/가상화 기기 ​\
+    </Blockquote>
+    2. 앱을 완전히 재시작 합니다. (설정 > 일반 > 앱 재시작)
+    3. 새 프로젝트 생성시에 언어 선택 항목에서 `JavaScript(V8)` 항목을 선택합니다.
+    4. 즐기시면 됩니다.
+
+    ####추가: 프로젝트 설정
+    eval() 함수의 사용 여부와 상술한 Java 클래스 수동 접근 여부를 프로젝트 설정에서 변경할 수 있어요.
+    사용 환경에 따라 해당 설정을 조절하여 사용하세요.
+
+    ####주의
+    - 이 플러그인은 아직 실험적 적용 단계입니다. 사용중에 발생한 문제에 대해선 책임지지 않으며, 모든 책임은 사용자 본인에게 있습니다.
+    - V8 엔진은 Rhino에 비해 전력 사용량이 매우 큽니다. 실제 휴대하는 기기에 적용시 배터리를 크게 소모할 수 있습니다.
+    - 아직 require와 같이 외부 모듈을 로드하는 부분은 지원하지 않습니다.
+
 </Section>
