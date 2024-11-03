@@ -56,6 +56,20 @@ const pretendard = localFont({
     variable: "--font-pretendard"
 });
 
+const cascadia_mono_nf = localFont({
+    src: [
+        {
+            path: "../public/fonts/CascadiaMonoNF.woff2",
+            style: "normal"
+        },
+        {
+            path: "../public/fonts/CascadiaMonoNFItalic.woff2",
+            style: "italic"
+        }
+    ],
+    variable: "--font-cascadia-mono-nf"
+});
+
 const cascadia_code_nf = localFont({
     src: [
         {
@@ -68,7 +82,7 @@ const cascadia_code_nf = localFont({
         }
     ],
     variable: "--font-cascadia-code-nf"
-})
+});
 
 export default function RootLayout({
     children,
@@ -80,7 +94,7 @@ export default function RootLayout({
 
     return (
         <html suppressHydrationWarning>
-            <body className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable}`}>
+            <body className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable} ${cascadia_mono_nf.variable}`}>
                 <ThemeProvider>
                     <Header />
                     <div className={"flex justify-center mt-header-h px-screen-x-default md:px-screen-x-md"}>

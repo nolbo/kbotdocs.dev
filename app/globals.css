@@ -110,6 +110,11 @@
     a {
         @apply text-blue no-underline cursor-pointer visited:text-purple hover:underline;
     }
+
+    [aria-hidden="true"] {
+        display: none;
+    }
+    
     ::-webkit-scrollbar {
         background: transparent;
     }
