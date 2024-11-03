@@ -36,11 +36,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Section({ children }) {
             return (<section className={"flex flex-col gap-[24px] w-full leading-normal section"}>{ children }</section>);
         },
+        ol({ children, ...rest }) {
+            return (<ol className={"flex flex-col gap-[2px]"} { ...rest }>{ children }</ol>);
+        },
         ul({ children, ...rest }) {
-            return (<ul className={"flex flex-col gap-[6px]"} { ...rest }>{ children }</ul>);
+            return (<ul className={"flex flex-col gap-[2px]"} { ...rest }>{ children }</ul>);
         },
         li({ children, ...rest }) {
-            return (<li className={"list-inside leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} { ...rest }>{ children }</li>);
+            return (<li className={"leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} { ...rest }>{ children }</li>);
         },
         img(p) {
             return (
@@ -143,7 +146,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             }
 
             return (
-                <blockquote className={`flex flex-col gap-[4px] p-[12px_16px] rounded-[6px] border leading-snug ${blockStyle}`}>
+                <blockquote className={`flex flex-col gap-[4px] p-[12px_16px] rounded-[6px] border leading-normal ${blockStyle}`}>
                     <div className={"flex items-center gap-[6px]"}>
                         { header }
                     </div>

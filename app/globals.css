@@ -105,7 +105,17 @@
         @apply text-sm font-bold;
     }
     ul {
-        list-style: initial;
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+    li {
+        list-style-position: inside;
+    }
+    ol > li::marker {
+        margin-left: 1rem;
+        font-weight: bold;
     }
     a {
         @apply text-blue no-underline cursor-pointer visited:text-purple hover:underline;
