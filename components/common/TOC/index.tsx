@@ -1,16 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function TOC() {
+export default function TOC({ scrollToRef } : { scrollToRef: React.MutableRefObject<number> }) {
     const [ headers, setHeaders ] = useState<Element[]>([]);
     const [ pageInViewport, setPageInViewport ] = useState<string>("");
 
     const liOnClickHandler = (id: string) => {
         if (document.getElementById(id)) {
-            window.scrollBy({
-                top: document.getElementById(id)!.getBoundingClientRect().top - 160
-            });
+            scrollToRef.current += document.getElementById(id)!.getBoundingClientRect().top - 160;
         }
     };
 

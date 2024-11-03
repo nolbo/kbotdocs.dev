@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Select from "@/components/common/Select";
 import TOC from "@/components/common/TOC";
@@ -9,6 +9,7 @@ import IconButton from "@/components/common/IconButton";
 
 export default function Sidebar() {
     const [ isTOCShowed, setIsTOCShowed ] = useState<boolean>(false);
+    const scrollTo = useRef<number>(0);
 
     const router = useRouter();
     const params = useParams<{ id: string }>();
@@ -27,11 +28,11 @@ export default function Sidebar() {
                 overflow-y: scroll;
                 width: 100%;
             `;
+            scrollTo.current = parseInt(document.body.style.top || "0", 10) * -1;
         }
         else {
-            const scrollY = document.body.style.top;
             document.body.style.cssText = "";
-            window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+            window.scrollTo(0, scrollTo.current);
         }
     }, [isTOCShowed]);
 
@@ -68,7 +69,7 @@ export default function Sidebar() {
                     </optgroup>
                 </Select>
                 <div className={"overflow-auto"} onClick={() => { setIsTOCShowed(false) }}>
-                    <TOC />
+                    <TOC scrollToRef={ scrollTo } />
                 </div>
             </div>
         </aside>

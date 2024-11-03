@@ -36,8 +36,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Section({ children }) {
             return (<section className={"flex flex-col gap-[24px] w-full leading-normal section"}>{ children }</section>);
         },
+        ul({ children, ...rest }) {
+            return (<ul className={"flex flex-col gap-[6px]"} { ...rest }>{ children }</ul>);
+        },
         li({ children, ...rest }) {
-            return (<li className={"list-inside leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} { ...rest }>{ children }</li>)
+            return (<li className={"list-inside leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} { ...rest }>{ children }</li>);
         },
         img(p) {
             return (
