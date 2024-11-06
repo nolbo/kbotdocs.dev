@@ -100,15 +100,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         Th({ children, ...rest }) {
             return (
-                <th className={"p-[12px] overflow-auto border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
-                    { children }
+                <th className={"p-[12px] border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
+                    <div className="w-full overflow-auto">
+                        { children }    
+                    </div>
                 </th>
             )
         },
         Td({ children, ...rest }) {
             return (
-                <td className={"p-[12px] overflow-auto leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
-                    <div className="flex flex-col gap-[16px]">
+                <td className={"p-[12px] leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
+                    <div className="flex flex-col gap-[16px] w-full overflow-auto">
                         { children }    
                     </div>
                 </td>
