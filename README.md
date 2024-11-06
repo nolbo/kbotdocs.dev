@@ -140,21 +140,21 @@ KBotDocs에서 표는 객체의 메소드나 프로퍼티 등을 나타내기 �
 
 ```mdx
 <Table>
-    <thead>
-        <tr>
+    <Thead>
+        <Tr>
             <Th>자료형</Th>
             <Th>설명</Th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
             <Td>`android.content.Context`</Td>
             <Td>
                 `getContext()` \
                 앱의 Context(컨텍스트)를 반환합니다.
             </Td>
-        </tr>
-        <tr>
+        </Tr>
+        <Tr>
             <Td>`undefined`</Td>
             <Td>
                 `runOnUiThread(`*`task: Function, onComplete: Function`*`)` \
@@ -167,37 +167,37 @@ KBotDocs에서 표는 객체의 메소드나 프로퍼티 등을 나타내기 �
                 - `result`: `task`함수의 반환값을 전달받는 인자
 
             </Td>
-        </tr>
-    </tbody>
+        </Tr>
+    </Tbody>
 </Table>
 ```
 
 KBotDocs에서 표를 작성할 때, 유의해야 할 점이 몇 가지 있습니다:
 
 - 표는 `<Table></Table>`(`table`이 아님)로 구분합니다.
-- 표의 헤더는 `<thead>`를, 표의 본문은 `<tbody>`를 사용하여 구분합니다.
+- 표의 헤더는 `<Thead>`를, 표의 본문은 `<Tbody>`를 사용하여 구분합니다.
 - `<th>`와 `<td>`는 각각 `<Th>`, `<Td>`로 작성해야 합니다.
 
 객체의 메소드나 프로퍼티 등을 나타내기 위해 사용할 때엔, 몇 가지 지켜야 할 사항이 더 있습니다. 가령, 다음과 같이 작성해야 합니다:
 
 ```mdx
 <Table>
-    <thead>
-        <tr>
+    <Thead>
+        <Tr>
             <Th>자료형</Th>
             <Th>설명</Th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
             <Td>`{메소드1의 자료형}`</Td>
             <Td>
                 `{메소드1}()` \
                 {메소드1의 설명} \
                 {메소드1의 반환값이 존재하는 경우, 메소드1의 반환값에 대한 설명}
             </Td>
-        </tr>
-        <tr>
+        </Tr>
+        <Tr>
             <Td>`{메소드2의 자료형}`</Td>
             <Td>
                 `{메소드2}(`*`{매개변수1}: {매개변수1의 타입}, {매개변수2}: {매개변수2의 타입} {, ...})` \
@@ -210,8 +210,8 @@ KBotDocs에서 표를 작성할 때, 유의해야 할 점이 몇 가지 있습�
                 - `{콜백함수 매개변수2의 매개변수A}`: {매개변수A에 대한 설명}
                 - `{콜백함수 매개변수2의 매개변수B}`: {매개변수B에 대한 설명}
             </Td>
-        </tr>
-    </tbody>
+        </Tr>
+    </Tbody>
 </Table>
 ```
 

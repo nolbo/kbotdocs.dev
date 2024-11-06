@@ -21,14 +21,13 @@
 
         `Languages` 객체는 현재 앱에 등록된 특정 프로그래밍 언어에 접근할 수 있는 기능들을 담고 있습니다. 이 객체는 조건에 따른 언어를 반환하는 기능만을 담고 있으며, 실제 언어에 대한 기능들은 `Language` 객체가 담당합니다.
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Languages` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>[`Language`](#language)</span></Td>
                     <Td>
                         `getSelf()` \
@@ -38,8 +37,8 @@
                             현재 프로젝트에 대한 `Language` 객체
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`Language`](#language)</span></Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
@@ -53,8 +52,8 @@
                             `id`: 반환받고자 하는 구현체의 id
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -63,42 +62,41 @@
         `Language` 객체는 현재 앱에 등록된 프로그래밍 언어에 관한 기능들을 담고 있는 객체입니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Language` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `id` \
                         이 언어의 고유 id입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `name` \
                         이 언어의 유저에게 표시되는 이름입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `fileExtension` \
                         이 언어의 파일 확장자입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `requireRelease` \
                         이 언어의 사용이 종료되었을 때 scope를 할당 해제해야 할 경우 `true`, 아닐 경우 `false`를 나타냅니다. scope의 할당 해제는 `release(scope)` 함수로 수행 가능합니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Any`</span></Td>
                     <Td>
                         <Blockquote className="warning">
@@ -118,8 +116,8 @@
                             `classLoader?`: 코드 컴파일 시 사용될 `ClassLoader`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Any?`</span></Td>
                     <Td>
                         `callFunction(`*`scope: Any, functionName: String, args: Any[]`*`)` \
@@ -136,8 +134,8 @@
                             `args`: 함수에게 전달할 인자
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Any`</span></Td>
                     <Td>
                         `eval(`*`code: String`*`)` \
@@ -151,8 +149,8 @@
                             `code`: 실행할 코드의 문자열
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `release(`*`scope: Any`*`)` \
@@ -162,8 +160,8 @@
                             `scope`: 사용 해제될 스코프
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         <Blockquote className="warning">
@@ -177,22 +175,21 @@
                             `scope`: 폐기될 스코프
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
         ### Projects
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Projects` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>[`Project`](#project)</span></Td>
                     <Td>
                         `getSelf()` \
@@ -202,8 +199,8 @@
                             현재 프로젝트에 대한 `Project` 객체
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`Project`](#project)</span></Td>
                     <Td>
                         `ofName(`*`name: String`*`)` \
@@ -217,8 +214,8 @@
                             `name`: 반환받고자 하는 프로젝트의 이름
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`Project`](#project)</span></Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
@@ -232,57 +229,56 @@
                             `id`: 반환받고자 하는 프로젝트의 id
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
         ### Project
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Project` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`java.io.File`</span></Td>
                     <Td>
                         `directory` \
                         프로젝트의 루트 디렉터리에 대한 `java.io.File`입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`ProjectInfo`</span></Td>
                     <Td>
                         `info` \
                         프로젝트에 대한 정보입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`MutableConfig`</span></Td>
                     <Td>
                         `config` \
                         프로젝트의 로컬 디렉터리에 저장되는 프로젝트 전용 구성 데이터입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isCompiled` \
                         프로젝트의 컴파일 여부입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`ProjectLogger`</span></Td>
                     <Td>
                         `logger` \
                         프로젝트의 이벤트 로깅에 사용되는 logger입니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `callFunction(`*`name: String, args: Any[], onException: (throwable) => Any`*`)` \
@@ -295,8 +291,8 @@
                             - `throwable`: 발생한 예외에 대한 `java.lang.Throwable` 클래스
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `compile(`*`throwException?: Boolean = false`*`)` \
@@ -310,8 +306,8 @@
                             `throwException?`: 컴파일 에러 시 에러 throw 여부
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `setEnabled(`*`enabled: Boolean`*`)` \
@@ -325,29 +321,29 @@
                             `enabled`: 새롭게 설정할 프로젝트의 활성화 상태 값
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `requestUpdate()` \
                         앱에 프로젝트 UI 업데이트를 요청합니다. 앱이 백그라운드에서 실행 중일 경우 요청은 무시됩니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `saveInfo()` \
                         `Project.info` 값을 파일에 저장합니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `loadInfo()` \
                         메모리 내 프로젝트 정보 데이터를 무효화하고 로컬 파일에서 다시 로드합니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`Language`](#language)</span></Td>
                     <Td>
                         `getLanguage()` \
@@ -357,8 +353,8 @@
                             프로젝트에서 사용 중인 언어에 대한 `Language`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Any?`</span></Td>
                     <Td>
                         `getScope()` \
@@ -369,8 +365,8 @@
                             프로젝트가 컴파일되지 않은 상태일 경우: `null`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Number`</span></Td>
                     <Td>
                         `activeJobs()` \
@@ -380,22 +376,22 @@
                             프로젝트의 스레드 풀에서 작동 중인 `job`의 수
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `stopAllJobs()` \
                         작동 중인 모든 `job`을 중지합니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `destroy()` \
                         작동 중인 모든 `job`을 중지합니다. 프로젝트가 컴파일된 상태일 경우, `langScope`를 해제합니다.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `rename(`*`name: String`*`)` \
@@ -405,8 +401,8 @@
                             `name`: 새롭게 설정할 프로젝트의 이름
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`java.io.File`</span></Td>
                     <Td>
                         `getDataDirectory()` \
@@ -416,8 +412,8 @@
                             프로젝트의 데이터가 저장된 디렉터리에 대한 `java.io.File`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isEventCallAllowed(`*`eventId: String`*`)` \
@@ -431,8 +427,8 @@
                             `eventId`: 호출 허용 여부를 확인할 `ProjectEvent`의 id
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -440,14 +436,13 @@
          `Plugins` 객체는 현재 앱에 등록된 플러그인 정보에 접근할 수 있는 기능들을 담고 있는 객체입니다. 해당 객체는 조건에 따라 플러그인 정보를 반환하는 기능만을 담고 있으며, 실제 플러그인에 대한 기능들은 `Plugin` 객체가 담당해요.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Plugins` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>[`Plugin`](#plugin)</span></Td>
                     <Td>
                         `ofId(`*`id: String`*`)` \
@@ -461,8 +456,8 @@
                             `id`: 반환받고자 하는 플러그인의 id
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`Plugin`](#plugin)</span></Td>
                     <Td>
                         `ofName(`*`name: String`*`)` \
@@ -476,8 +471,8 @@
                             `name`: 반환받고자 하는 플러그인의 이름
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`List<Plugin>`</span></Td>
                     <Td>
                         `getAll()` \
@@ -487,8 +482,8 @@
                             현재 로드된 모든 플러그인을 모은 리스트
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -497,22 +492,21 @@
          `Plugin` 객체는 현재 앱에 등록된 플러그인 정보를 담고 있는 객체입니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Plugin` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`PluginInfo`</span></Td>
                     <Td>
                         `info` \
                         플러그인의 기본 등록 정보입니다.
                         등록 정보에 대한 자세한 정보는 [여기](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/plugin/PluginInfo.kt#L2)를 참조하세요.
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isEnabled()` \
@@ -522,8 +516,8 @@
                             플러그인이 활성화 상태일 경우 `true`, 비활성화 상태일 경우 `false`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`java.io.File`</span></Td>
                     <Td>
                         <Blockquote className="danger">
@@ -536,8 +530,8 @@
                             플러그인의 내부 데이터 경로
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`java.io.File`</span></Td>
                     <Td>
                         <Blockquote className="danger">
@@ -550,8 +544,8 @@
                             플러그인의 외부 데이터 경로 (`/sdcard/StarLight/plugins/{id}/`)
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`java.io.File`</span></Td>
                     <Td>
                         <Blockquote className="danger">
@@ -568,8 +562,8 @@
                             `path`: 에셋 파일에 대한 상대 경로
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -582,14 +576,13 @@
         `Env` 객체는 Dotenv 형식의 파일을 읽고 값을 사용할 수 있는 API입니다. 기본적으로 프로젝트 폴더 내부의 `.env` 파일을 찾아 파싱합니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Env` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `get(`*`key: String`*`)` \
@@ -606,8 +599,8 @@
                             `key`: 반환받으려는 값에 대한 key
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Map<String, String>`</span></Td>
                     <Td>
                         `parseFile(`*`path: String`*`)` \
@@ -621,8 +614,8 @@
                             `path`: 사용하고자 하는 Dotenv 파일의 경로
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Map<String, String>`</span></Td>
                     <Td>
                         `parseString(`*`content: String`*`)` \
@@ -636,8 +629,8 @@
                             `content`: Dotenv 형식으로 작성된 문자열
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -646,14 +639,13 @@
         `Platform` 객체는 현재 구동중인 봇 앱의 정보를 담고 있는 객체입니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Platform` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `getName()` \
@@ -663,8 +655,8 @@
                             현재 구동 중인 봇 앱의 이름
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`String`</span></Td>
                     <Td>
                         `getVersion()` \
@@ -674,8 +666,8 @@
                             현재 구동 중인 봇 앱의 버전
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`Long`</span></Td>
                     <Td>
                         `getUptime()` \
@@ -685,8 +677,8 @@
                             현재 구동 중인 봇 앱의 구동 시간 (밀리초)
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -695,14 +687,13 @@
         `Java` 객체는 특정 이름을 가진 Java 클래스를 가져오기 위한 객체입니다. 특정 플랫폼의 Java 클래스 사용 방법에 종속되지 않고 Java 클래스를 사용할 수 있게 하는데 목적이 있습니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Java` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`java.lang.Class<*>`</span></Td>
                     <Td>
                         `type(`*`name: String`*`)` \
@@ -716,8 +707,8 @@
                             `name`: 가져올 Java 클래스의 패키지를 포함한 전체 이름 (예: `java.lang.System`)
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
     <Section>
@@ -730,14 +721,13 @@
         `Notification` 객체는 상단 알림(노티피케이션)을 생성하고 관리하기 위한 객체입니다.
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`Notification` 객체의 프로퍼티 / 메소드</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`Number`</span></Td>
                     <Td>
                         `state` \
@@ -750,8 +740,8 @@
                             - 알림이 생성되었을 경우: `1`
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>[`NotificationBuilder`](#notificationbuilder)</span></Td>
                     <Td>
                         `Notification.create(`*`id: Number`*`)` \
@@ -765,8 +755,8 @@
                             `id`: 생성될 알림의 id (`Int`)
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `update(`*`title?: String, message?: String`*`)` \
@@ -777,8 +767,8 @@
                             `message?`: 내용으로 설정할 문자열
                         </div>
                     </Td>
-                </tr>
-                <tr>
+                </Tr>
+                <Tr>
                     <Td><span>`void`</span></Td>
                     <Td>
                         `delete()` \
@@ -788,22 +778,21 @@
                             해당 `Notification` 객체
                         </div>
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
 
         <Section>
             #### NotificationBuilder
 
             <Table>
-                <thead>
-                    <tr>
-                        <Th>자료형</Th>
-                        <Th>설명</Th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
+                <Thead>
+                    <Tr>
+                        <Th colSpan="2">`NotificationBuilder` 객체의 프로퍼티 / 메소드</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    <Tr>
                         <Td><span>`NotificationBuilder`</span></Td>
                         <Td>
                             `setTitle(`*`title: String`*`)` \
@@ -817,8 +806,8 @@
                                 `title`: 제목으로 설정할 문자열
                             </div>
                         </Td>
-                    </tr>
-                    <tr>
+                    </Tr>
+                    <Tr>
                         <Td><span>`NotificationBuilder`</span></Td>
                         <Td>
                             `setText(`*`text: String`*`)` \
@@ -832,8 +821,8 @@
                                 `text`: 본 내용으로 설정할 문자열
                             </div>
                         </Td>
-                    </tr>
-                    <tr>
+                    </Tr>
+                    <Tr>
                         <Td><span>`NotificationBuilder`</span></Td>
                         <Td>
                             <Blockquote className="warning">
@@ -852,8 +841,8 @@
                                 `offMs`: LED가 꺼진 채로 유지될 시간(밀리초, `Int`)
                             </div>
                         </Td>
-                    </tr>
-                    <tr>
+                    </Tr>
+                    <Tr>
                         <Td><span>`NotificationBuilder`</span></Td>
                         <Td>
                             `onDismiss(`*`callback: (id) => Any`*`)` \
@@ -868,8 +857,8 @@
                                 - `id`: 제거된 알림의 id
                             </div>
                         </Td>
-                    </tr>
-                    <tr>
+                    </Tr>
+                    <Tr>
                         <Td><span>`NotificationBuilder`</span></Td>
                         <Td>
                             `onClick(`*`title: String, callback: (id) => Any`*`)` \
@@ -885,8 +874,8 @@
                                 - `id`: 알림의 id
                             </div>
                         </Td>
-                    </tr>
-                    <tr>
+                    </Tr>
+                    <Tr>
                         <Td><span>`Notification`</span></Td>
                         <Td>
                             `build()` \
@@ -896,8 +885,8 @@
                                 생성된 알림에 대한 `Notification` 객체
                             </div>
                         </Td>
-                    </tr>
-                </tbody>
+                    </Tr>
+                </Tbody>
             </Table>
         </Section>
     </Section>
@@ -917,21 +906,20 @@
         ~~~
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`onMessage` 함수의 인자</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>[`Message`](#message)</span></Td>
                     <Td>
                         `event` \
                         수신된 메세지의 정보를 담고 있는 객체입니다. 자세한 구조는 하단의 [`Message`](#message) 섹션을 참고하세요.
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
 
         <Section>
@@ -974,21 +962,20 @@
         ~~~
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`onMessageDeleted` 함수의 인자</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>[`DeletedMessage`](#deletedmessage)</span></Td>
                     <Td>
                         `event` \
                         삭제된 메세지가 담고 있던 정보를 담고 있는 객체입니다. 자세한 구조는 하단의 [`DeletedMessage`](#deletedmessage) 섹션을 참고하세요.
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
 
         <Section>
@@ -1037,21 +1024,20 @@
         ~~~
 
         <Table>
-            <thead>
-                <tr>
-                    <Th>자료형</Th>
-                    <Th>설명</Th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+            <Thead>
+                <Tr>
+                    <Th colSpan="2">`onNotificationPosted` 함수의 인자</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                <Tr>
                     <Td><span>`android.service.notification.StatusBarNotification`</span></Td>
                     <Td>
                         `statusBarNotification` \
                         [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
                     </Td>
-                </tr>
-            </tbody>
+                </Tr>
+            </Tbody>
         </Table>
     </Section>
 </Section>
@@ -1066,22 +1052,21 @@
     [여기에서](https://drive.google.com/drive/folders/12GgPeRxWrlBbj9TV2olPmeKTPfI8KW0i) 플러그인들을 다운로드할 수 있습니다.
 
     <Table>
-        <thead>
-            <tr>
-                <Th>이름</Th>
-                <Th>설명</Th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">StarLight 플러그인</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
                 <Td><span>[Discord](#discord)</span></Td>
                 <Td>JS를 이용한 디스코드봇 개발을 위한 플러그인입니다.</Td>
-            </tr>
-            <tr>
+            </Tr>
+            <Tr>
                 <Td><span>[V8](#v8)</span></Td>
                 <Td>V8 엔진을 이용한 카카오톡봇 개발을 위한 플러그인입니다.</Td>
-            </tr>
-        </tbody>
+            </Tr>
+        </Tbody>
     </Table>
 
     <Section>

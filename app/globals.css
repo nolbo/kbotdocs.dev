@@ -78,6 +78,8 @@
         --sthl-important: light-dark(theme("colors.red.400"), theme("colors.red.400"));
         --sthl-deleted: light-dark(theme("colors.red.500"), theme("colors.red.600"));
         --sthl-coord: light-dark(theme("colors.gray.500"), theme("colors.gray.500"));
+
+        @apply text-[14px] md:text-[16px]
     }
     * {
         margin: 0;

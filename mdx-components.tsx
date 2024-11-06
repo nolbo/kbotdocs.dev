@@ -83,22 +83,31 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Table({ children, className, ...rest }) {
             return (
                 <article className={"overflow-auto"}>
-                    <table className={"min-w-[0] w-full table-fixed"} {...rest}>
+                    <table className={"flex flex-col gap-[16px] min-w-[0] w-full border-collapse md:table"} { ...rest }>
                         {children}
                     </table>
                 </article>
             )
         },
-        Th({ children }) {
+        Thead({ children, ...rest }) {
+            return (<thead { ...rest }>{ children }</thead>);
+        },
+        Tbody({ children, ...rest }) {
+            return (<tbody className="flex flex-col gap-[16px] md:table-row-group" { ...rest }>{ children }</tbody>);
+        },
+        Tr({ children, ...rest }) {
+            return (<tr className="flex flex-col overflow-clip rounded-[8px] border-[1px] border-default md:table-row md:border-none" { ...rest }>{ children }</tr>);
+        },
+        Th({ children, ...rest }) {
             return (
-                <th className={"py-[8px] border-b-[2px] border-default"}>
+                <th className={"p-[12px] border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
                     { children }
                 </th>
             )
         },
-        Td({ children }) {
+        Td({ children, ...rest }) {
             return (
-                <td className={"p-[12px] border-y border-default leading-normal"}>
+                <td className={"p-[12px] leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
                     <div className="flex flex-col gap-[16px]">
                         { children }    
                     </div>
@@ -113,7 +122,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 case "warning":
                     header = (
                         <>
-                            <Icon icon={"WarningFillIcon"} className={"fill-yellow w-[16px] h-[16px]"}/>
+                            <Icon icon={"WarningFillIcon"} className={"fill-yellow w-[1rem] h-[1rem]"}/>
                             <p className={"font-bold"}>{ title || "주의" }</p>
                         </>
                     )
@@ -122,7 +131,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 case "danger":
                     header = (
                         <>
-                            <Icon icon={"DangerFillIcon"} className={"fill-red w-[16px] h-[16px]"}/>
+                            <Icon icon={"DangerFillIcon"} className={"fill-red w-[1rem] h-[1rem]"}/>
                             <p className={"font-bold"}>{ title || "경고" }</p>
                         </>
                     )
@@ -131,7 +140,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 case "success":
                     header = (
                         <>
-                            <Icon icon={"SuccessFillIcon"} className={"fill-green w-[16px] h-[16px]"}/>
+                            <Icon icon={"SuccessFillIcon"} className={"fill-green w-[1rem] h-[1rem]"}/>
                             <p className={"font-bold"}>{ title || "성공" }</p>
                         </>
                     )
@@ -140,7 +149,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 case "info":
                     header = (
                         <>
-                            <Icon icon={"InformationFillIcon"} className={"fill-blue w-[16px] h-[16px]"}/>
+                            <Icon icon={"InformationFillIcon"} className={"fill-blue w-[1rem] h-[1rem]"}/>
                             <p className={"font-bold"}>{ title || "정보" }</p>
                         </>
                     )
