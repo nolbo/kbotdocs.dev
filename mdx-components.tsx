@@ -100,7 +100,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         Th({ children, ...rest }) {
             return (
-                <th className={"p-[12px] border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
+                <th className={"p-[12px] leading-normal bg-gradient-to-r from-[theme(backgroundColor.emphasis)] to-transparent text-left md:bg-transparent md:border-b-[2px] md:border-default"} { ...rest }>
                     <div className="w-full overflow-auto">
                         { children }    
                     </div>
