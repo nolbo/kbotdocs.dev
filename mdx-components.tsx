@@ -100,14 +100,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         Th({ children, ...rest }) {
             return (
-                <th className={"p-[12px] border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
+                <th className={"p-[12px] overflow-auto border-b-[2px] border-default leading-normal bg-emphasis-hover text-left md:bg-transparent"} { ...rest }>
                     { children }
                 </th>
             )
         },
         Td({ children, ...rest }) {
             return (
-                <td className={"p-[12px] leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
+                <td className={"p-[12px] overflow-auto leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
                     <div className="flex flex-col gap-[16px]">
                         { children }    
                     </div>
@@ -160,7 +160,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             }
 
             return (
-                <blockquote className={`flex flex-col gap-[4px] p-[12px_16px] rounded-[6px] border leading-normal ${blockStyle}`}>
+                <blockquote className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
                     <div className={"flex items-center gap-[6px]"}>
                         { header }
                     </div>
