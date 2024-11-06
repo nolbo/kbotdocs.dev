@@ -77,6 +77,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                         <InlineCode>{ children }</InlineCode>
             );
         },
+        del(p) {
+            return (<del className="text-noimportance" { ...p }></del>);
+        },
         Table({ children, className, ...rest }) {
             return (
                 <article className={"overflow-auto"}>
@@ -96,7 +99,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Td({ children }) {
             return (
                 <td className={"p-[12px] border-y border-default leading-normal"}>
-                    { children }
+                    <div className="flex flex-col gap-[16px]">
+                        { children }    
+                    </div>
                 </td>
             )
         },

@@ -6,20 +6,15 @@
 <Section>
     ## 레거시 API
     
-    카카오톡봇 개발에 사용되는 내장 API는 두 가지가 있어요. 하나는 지금 이 편에서 다룰 **레거시 API**이고, 다른 하나는 다음 편에서 알아볼 **API2**라는 것이죠. \
-    레거시 API는 카카오톡봇 초창기부터 지원해오고 있는 내장 API예요. 등장한지 오래되었지만 일부에서는 여전히 사용되고 있어요.
-    
-    일단 레거시 API의 객체부터 알아보도록 합시다!
+    레거시 API는 카카오톡봇 초창기부터 지원해오고 있는 내장 API입니다. 등장한지 오래되었으며, 더 이상 사용을 권장하지 않습니다. [최신 레벨의 API인 API2를 사용하세요](https://kbotdocs.dev/api2).
 </Section>
 <Section>
     ## 객체
-    
-    레거시 API의 객체들에 대해 알아볼 거예요. 레거시 API의 객체는 다양하답니다!
 
     <Section>
         ### Api
         
-        `Api` 객체는 카카오톡봇의 근본적인 기능을 구현하거나 스크립트에 접근하기 위한 메소드들을 모아놓은 것이에요. 어떤 메소드들이 있는지 볼까요?
+        `Api` 객체는 카카오톡봇의 근본적인 기능을 구현하거나 스크립트에 접근하기 위한 메소드들을 모아놓은 객체입니다.
     
         <Table>
             <thead>
@@ -30,221 +25,318 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.content.Context`</Td>
+                    <Td><span>`android.content.Context`</span></Td>
                     <Td>
                         `getContext()` \
                         앱의 Context(컨텍스트)를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱의 Context
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `reload(`*`scriptName?: String`*`, `*`throwOnError?: Boolean = false`*`)` \
                         `compile(`*`scriptName?: String`*`, `*`throwOnError?: Boolean = false`*`)` \
-                        스크립트를 재컴파일합니다. \
-                        컴파일 성공 여부를 반환합니다.
-                        <br />
-                        `scriptName?`: 재컴파일할 스크립트 이름 (인자가 없을 시 모든 스크립트를 대상으로 재컴파일) \
-                        `throwOnError?`: 컴파일 에러 시 에러 `throw` 여부
+                        스크립트를 재컴파일합니다. 컴파일 성공 여부를 반환합니다. `throwOnError`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 인자가 존재할 경우: `scriptName` 스크립트의 컴파일에 성공할 경우 `true`, 실패할 경우 `false` \
+                            `scriptName` 인자가 존재하지 않을 경우: 모든 스크립트의 컴파일에 성공할 경우 `true`, 실패할 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 재컴파일할 스크립트 이름 (인자가 없을 시 모든 스크립트를 대상으로 재컴파일) \
+                            `throwOnError?`: 컴파일 에러 시 에러 throw 여부
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `prepare(`*`scriptName: String`*`)` \
-                        스크립트가 한번도 컴파일된 적이 없을 경우 컴파일합니다. \
-                        컴파일 에러 시 에러를 `throw`합니다. 반환값은 다음과 같습니다:
-                        <br />
-                        스크립트가 존재하지 않음: `0` \
-                        컴파일에 성공함: `1` \
-                        컴파일된 적이 있음: `2`
-                        <br />
-                        `scriptName`: 컴파일할 스크립트 이름
+                        스크립트가 한번도 컴파일된 적이 없을 경우 컴파일합니다. 컴파일 에러 시 에러를 throw합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트가 존재하지 않을 경우: `0` \
+                            컴파일에 성공할 경우: `1` \
+                            컴파일된 적이 있을 경우: `2`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 컴파일할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `unload(`*`scriptName: String`*`)` \
-                        스크립트를 컴파일 전 상태로 전환합니다. \
-                        언로드 성공 여부를 반환합니다.
-                        <br />
-                        `scriptName`: 언로드할 스크립트 이름
+                        스크립트를 컴파일 전 상태로 전환(언로드)합니다. 언로드 성공 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트의 언로드에 성공할 경우 `true`, 실패할 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 언로드할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `off(`*`scriptName?: String`*`)` \
-                        스크립트의 작동을 비활성화합니다. \
-                        주어진 인자가 없을 경우, 무조건 `true`를 반환합니다. \
-                        주어진 인자가 존재할 경우, 비활성화 성공 여부를 반환합니다.
-                        <br />
-                        `scriptName?`: 비활성화할 스크립트 이름
+                        스크립트의 작동을 비활성화합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 인자가 존재할 경우: 비활성화에 성공할 경우 `true`, 실패할 경우 `false` \
+                            `scriptName` 인자가 존재하지 않을 경우: 무조건 `true`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 비활성화할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `on(`*`scriptName?: String`*`)` \
-                        스크립트의 작동을 활성화합니다. \
-                        주어진 인자가 없을 경우, 무조건 `true`를 반환합니다. \
-                        주어진 인자가 존재할 경우, 스크립트의 존재 여부를 반환합니다.
-                        <br />
-                        `scriptName?`: 활성화할 스크립트 이름
+                        스크립트의 작동을 활성화합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 인자가 존재할 경우: 스크립트가 존재할 경우 `true`, 존재하지 않을 경우 `false` \
+                            `scriptName` 인자가 존재하지 않을 경우: 항상 `true`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 활성화할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isOn(`*`scriptName: String`*`)` \
                         스크립트의 활성화 여부를 반환합니다.
-                        <br />
-                        `scriptName`: 활성화 여부를 확인할 스크립트 이름
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트가 활성화 상태일 경우 `true`, 비활성화 상태일 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 활성화 여부를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isCompiled(`*`scriptName: String`*`)` \
                         스크립트의 컴파일 완료 여부를 반환합니다.
-                        <br />
-                        `scriptName`: 컴파일 완료 여부를 확인할 스크립트 이름
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트의 컴파일이 완료되었을 경우 `true`, 완료되지 않았을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 컴파일 완료 여부를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isCompiling(`*`scriptName: String`*`)` \
                         스크립트의 컴파일 진행 여부를 반환합니다.
-                        <br />
-                        `scriptName`: 컴파일 진행 여부를 확인할 스크립트 이름
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트의 컴파일이 진행 중일 경우 `true`, 진행 중이지 않을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 컴파일 진행 여부를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Array`</Td>
+                    <Td><span>`Array<String>`</span></Td>
                     <Td>
                         `getScriptNames()` \
-                        존재하는 모든 스크립트의 이름을 배열로 반환합니다.
+                        모든 스크립트의 이름을 배열로 반환합니다.
+                        <div>
+                            ##### 반환값
+                            모든 스크립트의 이름이 담긴 배열
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `replyRoom(`*`room: String, message: String, hideToast?: Boolean = false`*`)` \
-                        특정 방에 메시지를 보냅니다. \
-                        메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-                        <br />
-                        `room`: 메시지를 보낼 방 이름 \
-                        `message`: 보낼 메시지의 내용 \
-                        `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+                        특정 방에 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다. `hideToast`가 `true`일 경우 방의 세션 존재 여부를 토스트 메시지로 출력합니다.
+                        <div>
+                            ##### 반환값
+                            `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `room`: 메시지를 보낼 방 이름 \
+                            `message`: 보낼 메시지의 내용 \
+                            `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부 
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `canReply(`*`room: String`*`)` \
-                        특정 방에 메시지를 수신할 수 있는지의 여부를 반환합니다.
-                        <br />
-                        `room`: 메시지 수신 가능 여부를 확인할 방의 이름
+                        특정 방에 메시지를 발신할 수 있는지의 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            메시지를 발신할 수 있을 경우 `true`, 발신할 수 없을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `room`: 메시지 발신 가능 여부를 확인할 방의 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `showToast(`*`content: String, length?: Number = android.widget.Toast.LENGTH_SHORT`*`)` \
                         토스트 메시지를 발생합니다.
-                        <br />
-                        `content`: 토스트 메시지로 출력할 내용 \
-                        `length?`: 토스트 메시지의 유지 시간
-                        - `android.widget.Toast.LENGTH_SHORT = `*`0`*` (`*`0x00000000`*`)`: 짧은 시간 동안 출력
-                        - `android.widget.Toast.LENGTH_LONG = `*`1`*` (`*`0x00000001`*`)`: 긴 시간 동안 출력
+                        <div>
+                            ##### 매개변수
+                            `content`: 토스트 메시지로 출력할 내용 \
+                            `length?`: 토스트 메시지의 유지 시간
+                            - `android.widget.Toast.LENGTH_SHORT = `*`0`*` (`*`0x00000000`*`)`: 짧은 시간 동안 출력
+                            - `android.widget.Toast.LENGTH_LONG = `*`1`*` (`*`0x00000001`*`)`: 긴 시간 동안 출력
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `makeNoti(`*`title: String, content: String, id?: Number`*`)` \
-                        상단바 노티피케이션을 생성합니다.
-                        <br />
-                        `title`: 노티피케이션의 제목 \
-                        `content`: 노티피케이션의 내용 \
-                        `id?`: 노티피케이션 아이디 (같은 아이디의 노티피케이션은 내용을 갱신)
+                        상단바 노티피케이션을 생성합니다. 노티피케이션의 생성/수정 성공 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            정상적으로 노티피케이션을 생성/수정할 경우 `true`, 실패할 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `title`: 노티피케이션의 제목 \
+                            `content`: 노티피케이션의 내용 \
+                            `id?`: 노티피케이션 아이디 (같은 아이디의 노티피케이션은 내용을 갱신)
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>~~`String`~~ `null`</span></Td>
                     <Td>
                         <Blockquote className="warning">
                             Papago API 지원이 중단되었습니다. 하위 호환성을 위해 메소드는 유지되지만, 항상 `null`을 반환합니다.
                         </Blockquote>
-                        <br />
                         `papagoTranslate(`*`sourceLanguage: String, targetLanguage: String, content: String, errorToString?: Boolean = false`*`)` \
-                        입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다. \
+                        ~~입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다.~~ \
                         이 메소드는 더 이상 실제 번역 기능을 수행하지 않으며, 항상 `null`을 반환합니다.
-                        <br />
-                        `sourceLanguage`: 출발어의 언어코드 \
-                        `targetLanguage`: 번역어(도착어)의 언어코드 \
-                        `content`: 번역할 텍스트 \
-                        `errorToString?`: 에러를 문자열로 반환할 것인지에 대한 여부
+                        <div>
+                            ##### 반환값
+                            ~~출발어 텍스트를 도착어로 번역한 텍스트~~ \
+                            항상 `null`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `sourceLanguage`: 출발어의 언어코드 \
+                            `targetLanguage`: 번역어(도착어)의 언어코드 \
+                            `content`: 번역할 텍스트 \
+                            `errorToString?`: 에러를 문자열로 반환할 것인지에 대한 여부
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `gc()` \
                         가비지 컬렉팅을 강제로 시작합니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
-                        `UIThread(`*`func: Function, onComplete: Function`*`)` \
+                        `UIThread(`*`func: () => Any, onComplete: (error, result) => Any`*`)` \
                         UI쓰레드 상에서 특정 함수를 실행합니다.
-                        <br />
-                        `func`: UI쓰레드 상에서 실행할 함수 \
-                        `complete`: 결과를 처리할 함수 \
-                        매개변수:
-                        - `error`: `func`함수 실행 도중 일어난 에러의 객체를 전달받는 인자
-                        - `result`: `func`함수의 반환값을 전달받는 인자
+                        <div>
+                            ##### 매개변수
+                            `func`: UI쓰레드 상에서 실행할 함수 \
+                            `complete`: 결과를 처리할 함수
+                            - `error`: `func` 함수 실행 도중 일어난 에러의 객체를 전달받는 인자
+                            - `result`: `func` 함수의 반환값을 전달받는 인자
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getActiveThreadsCount(`*`scriptName?: String`*`)` \
-                        스크립트의 활성 쓰레드 수를 반환합니다.
-                        <br />
-                        `scriptName?`: 활성 쓰레드 수를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 활성 쓰레드 수 반환)
+                        스크립트의 활성 스레드 수를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 인자가 존재할 경우: 해당 스크립트의 활성 스레드 수 \
+                            `scriptName` 인자가 존재하지 않을 경우: 해당 메소드를 호출한 스크립트의 활성 스레드 수
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 활성 스레드 수를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `interruptThreads(`*`scriptName?: String`*`)` \
                         스크립트의 쓰레드에 `interrupt`요청을 보냅니다.
-                        <br />
-                        `scriptName?`: 쓰레드에 `interrupt`요청을 보낼 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 쓰레드에 `interrupt`요청)
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 쓰레드에 `interrupt`요청을 보낼 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 쓰레드에 `interrupt`요청)
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isTerminated(`*`scriptName?: String`*`)` \
-                        `interruptThreads()` 실행 이후, 스크립트의 모든 쓰레드의 `interrupt`처리 완료 여부를 반환합니다.
-                        <br />
-                        `scriptName?`: 모든 쓰레드의 `interrupt`처리 완료 여부를 확인할 스크립트 이름 (인자가 없을 시 이 메소드를 호출한 스크립트의 모든 쓰레드의 `interrupt`처리 완료 여부 반환)
+                        `interruptThreads()` 실행 이후, 스크립트의 모든 스레드의 `interrupt`처리 완료 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `scriptName` 인자가 존재할 경우: 해당 스크립트의 모든 스레드에 대해 `interrupt`처리가 완료되었을 경우 `true`, 완료되지 않을 경우 `false` \
+                            `scriptName` 인자가 존재하지 않을 경우: 해당 메소드를 호출한 스크립트의 모든 스레드에 대해 `interrupt`처리가 완료되었을 경우 `true`, 완료되지 않을 경우 `false` \
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName?`: 모든 쓰레드의 `interrupt`처리 완료 여부를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `markAsRead(`*`room?: String, packageName?: String`*`)` \
-                        채팅방의 메시지를 읽음 처리합니다. \
-                        방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-                        <br />
-                        `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
-                        `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+                        채팅방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            방에 대한 알림 읽기 세션을 찾을 수 있을 경우 `true`, 찾을 수 없을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
+                            `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -253,7 +345,7 @@
     <Section>
         ### Utils
 
-        그럼 `Utils` 객체는 어떤 객체일까요? 이 객체도 카카오톡봇의 근본적인 기능을 구현하기 위한 메소드들이 있답니다!
+        `Utils` 객체는 카카오톡봇의 근본적인 기능을 구현하기 위한 객체입니다.
 
         <Table>
             <thead>
@@ -264,47 +356,77 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getWebText(`*`url: String`*`)` \
                         입력된 URL의 HTML을 반환합니다. (동기)
-                        <br />
-                        `url`: HTML을 로드할 웹 페이지의 URL
+                        <div>
+                            ##### 반환값
+                            `url`에 대한 HTML
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `url`: HTML을 로드할 웹 페이지의 URL
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`org.jsoup.nodes`</Td>
+                    <Td><span>`org.jsoup.nodes`</span></Td>
                     <Td>
                         `parse(`*`url: String`*`)` \
                         입력된 URL의 HTML을 로드한 `org.jsoup.nodes.Document`를 반환합니다. (동기, `GET`방식)
+                        <div>
+                            ##### 반환값
+                            `url`의 HTML을 로드한 `org.jsoup.Jsoup.Document`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `url`: HTML을 로드할 웹 페이지의 URL
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getAndroidVersionCode()` \
                         앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 환경의 안드로이드 버전 코드
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getAndroidVersionName()` \
                         앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 환경의 안드로이드 버전 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                         <Td>
                             `getPhoneBrand()` \
                             앱 구동 기기의 브랜드명을 반환합니다.
+                            <div>
+                            ##### 반환값
+                            앱 구동 기기의 브랜드명
+                        </div>
                         </Td>
                     </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getPhoneModel()` \
                         앱 구동 기기의 모델명을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 모델명
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -313,7 +435,7 @@
     <Section>
         ### FileStream
     
-        이번 객체는 이름에서부터 느낌이 오지 않나요? `FileStream` 객체는 내부 저장소의 파일을 다루는 객체입니다! 카카오톡봇을 개발하다 보면 많이 사용할 객체이니 잘 알아보세요.
+        `FileStream` 객체는 내부 저장소의 파일을 다루는 객체입니다.
 
         <Table>
             <thead>
@@ -324,44 +446,65 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `read(`*`path: String`*`)` \
                         특정 파일의 내용을 반환합니다.
-                        <br />
-                        `path`: 내용을 읽을 파일의 경로
+                        <div>
+                            ##### 반환값
+                            `path`경로의 파일의 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `path`: 내용을 읽을 파일의 경로
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `write(`*`path: String, data: String`*`)` \
-                        파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다. \
-                        생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
-                        <br />
-                        `path`: 생성하거나 덮어쓸 파일의 경로 \
-                        `data`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+                        파일을 새로 생성하거나, 특정 파일의 내용을 덮어씁니다. 생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `path`경로의 파일의 최종 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `path`: 생성하거나 덮어쓸 파일의 경로 \
+                            `data`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `append(`*`path: String, data: String`*`)` \
-                        기존의 파일의 내용에 새로운 내용을 이어 씁니다. \
-                        이어 쓴 파일의 최종 내용을 반환합니다.
-                        <br />
-                        `path`: 내용을 이어 쓸 파일의 경로 \
-                        `data`: 파일에 이어 쓸 내용
+                        기존의 파일의 내용에 새로운 내용을 이어 씁니다. 이어 쓴 파일의 최종 내용을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `path`경로의 파일의 최종 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `path`: 내용을 이어 쓸 파일의 경로 \
+                            `data`: 파일에 이어 쓸 내용
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `remove(`*`path: String`*`)` \
-                        파일을 삭제합니다. \
-                        `java.io.File.delete()`의 결과값을 반환합니다.
-                        <br />
-                        `path`: 삭제할 파일의 경로
+                        파일을 삭제합니다. 파일의 삭제 성공 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            파일 삭제에 성공할 경우 `true`, 실패할 경우 `false` (`java.io.File.delete()`의 반환값과 같음)
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `path`: 삭제할 파일의 경로
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -370,7 +513,7 @@
     <Section>
         ### DataBase
     
-        `DataBase` 객체는 `FileStream` 객체와 마찬가지로 파일을 다루는 객체입니다. 근데 뭐가 다르냐고요? 이 객체는 스크립트의 로컬 폴더에 한해서만 파일을 조작할 수 있습니다!
+        `DataBase` 객체는 `FileStream` 객체와 마찬가지로 파일을 다루는 객체입니다. 하지만 `FileStream` 객체와 다르게 스크립트의 로컬 폴더에 한해서만 파일을 조작할 수 있습니다.
 
         <Table>
             <thead>
@@ -381,44 +524,65 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getDataBase(`*`fileName: String`*`)` \
                         스크립트 로컬 폴더 내 특정 파일의 내용을 반환합니다.
-                        <br />
-                        `fileName`: 내용을 읽을 파일의 이름
+                        <div>
+                            ##### 반환값
+                            `fileName` 파일의 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `fileName`: 내용을 읽을 파일의 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `setDataBase(`*`fileName: String, data: String`*`)` \
-                        파일을 새로 생성하거나, 스크립트 로컬 폴더 내 특정 파일의 내용을 덮어씁니다. \
-                        생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
-                        <br />
-                        `fileName`: 생성하거나 덮어쓸 파일의 이름 \
-                        `data`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+                        파일을 새로 생성하거나 스크립트 로컬 폴더 내 특정 파일의 내용을 덮어씁니다. 생성하거나 덮어쓴 파일의 최종 내용을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `fileName` 파일의 최종 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `fileName`: 생성하거나 덮어쓸 파일의 이름 \
+                            `data`: 생성한 파일의 내용이나 파일에 덮어쓸 내용
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `appendDataBase(`*`fileName: String, data: String`*`)` \
-                        기존의 파일의 내용에 새로운 내용을 이어 씁니다. \
-                        이어 쓴 파일의 최종 내용을 반환합니다.
-                        <br />
-                        `fileName`: 내용을 이어 쓸 파일의 이름 \
-                        `data`: 파일에 이어 쓸 내용
+                        기존의 파일의 내용에 새로운 내용을 이어 씁니다. 이어 쓴 파일의 최종 내용을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `fileName` 파일의 최종 내용
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `fileName`: 내용을 이어 쓸 파일의 이름 \
+                            `data`: 파일에 이어 쓸 내용
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `removeDataBase(`*`fileName: String`*`)` \
-                        스크립트 로컬 폴더 내 특정 파일을 삭제합니다. (메신저봇R 옵션의 "삭제 시 백업기능"이 활성화 상태인 경우, *`fileName`*`.bak`으로 백업.) \
-                        `java.io.File.delete()`의 결과값을 반환합니다.
-                        <br />
-                        `fileName`: 삭제할 파일의 이름
+                        스크립트 로컬 폴더 내 특정 파일을 삭제합니다. 메신저봇R 옵션의 **삭제 시 백업기능**이 활성화 상태인 경우, *`fileName`*`.bak`으로 백업합니다. 파일의 삭제 성공 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            파일 삭제에 성공할 경우 `true`, 실패할 경우 `false` (`java.io.File.delete()`의 반환값과 같음)
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `fileName`: 삭제할 파일의 이름
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -438,40 +602,46 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `d(`*`data: String, showToast?: Boolean = false`*`)` \
                         `debug(`*`data: String, showToast?: Boolean = false`*`)` \
-                        디버그 로그를 작성합니다.
-                        <br />
-                        `data`: 작성할 디버그 로그의 내용 \
-                        `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        디버그 로그를 작성합니다. `showToast`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                        <div>
+                            ##### 매개변수
+                            `data`: 작성할 디버그 로그의 내용 \
+                            `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `e(`*`data: String, showToast?: Boolean = false`*`)` \
                         `error(`*`data: String, showToast?: Boolean = false`*`)` \
-                        에러 로그를 작성합니다.
-                        <br />
-                        `data`: 작성할 에러 로그의 내용 \
-                        `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        에러 로그를 작성합니다. `showToast`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                        <div>
+                            ##### 매개변수
+                            `data`: 작성할 에러 로그의 내용 \
+                            `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `i(`*`data: String, showToast?: Boolean = false`*`)` \
                         `info(`*`data: String, showToast?: Boolean = false`*`)` \
-                        정보 로그를 작성합니다.
-                        <br />
-                        `data`: 작성할 정보 로그의 내용 \
-                        `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        정보 로그를 작성합니다. `showToast`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                        <div>
+                            ##### 매개변수
+                            `data`: 작성할 정보 로그의 내용 \
+                            `showToast?`: 작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `clear()` \
                         로그를 모두 삭제합니다.
@@ -483,7 +653,7 @@
     <Section>
         ### Device
 
-        `Device` 객체는 구동 환경/기기에 관한 정보를 제공하는 메소드들을 모은 객체입니다. 빈번하게는 아니지만 꽤 애용할 만한 객체예요.
+        `Device` 객체는 구동 환경/기기에 관한 정보를 제공하는 메소드들을 모은 객체입니다.
 
         <Table>
             <thead>
@@ -494,113 +664,161 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.os.Build`</Td>
+                    <Td><span>`android.os.Build`</span></Td>
                     <Td>
                         `getBuild()` \
-                        `android.os.Build()`값을 반환합니다.
+                        `android.os.Build()`를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `android.os.Build()`
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getAndroidVersionCode()` \
                         앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 환경의 안드로이드 버전 코드
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getAndroidVersionName()` \
                         앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 환경의 안드로이드 버전 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getPhoneBrand()` \
                         앱 구동 기기의 브랜드명을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 브랜드명
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getPhoneModel()` \
                         앱 구동 기기의 모델명을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 모델명
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isCharging()` \
                         앱 구동 기기가 충전 중인지의 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기가 충전 중일 경우 `true`, 충전 중이 아닐 경우 `false`
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getPlugType()` \
-                        앱 구동 기기의 충전기 타입을 반환합니다. \
-                        반환값은 다음과 같습니다:
-                        - `ac`
-                        - `wireless`
-                        - `usb`
-                        - `unknown`
+                        앱 구동 기기의 충전기 타입을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            - AC 충전기일 경우: `ac`
+                            - 무선 충전기일 경우: `wireless`
+                            - USB 포트일 경우: `usb`
+                            - 알 수 없을 경우: `unknown`                            
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getBatteryLevel()` \
                         앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 배터리 잔량(%)
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getBatteryHealth()` \
-                        앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다. \
-                        반환값은 다음과 같습니다:
-                        - `android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_GOOD = `*`2`*` (`*`0x00000002`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = `*`3`*` (`*`0x00000003`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_DEAD = `*`4`*` (`*`0x00000004`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = `*`5`*` (`*`0x00000005`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = `*`6`*` (`*`0x00000006`*`)`
-                        - `android.os.BatteryManager.BATTERY_HEALTH_COLD = `*`7`*` (`*`0x00000007`*`)`
+                        앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 배터리 건강 상태를 나타내는 상수
+                            - `android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_GOOD = `*`2`*` (`*`0x00000002`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = `*`3`*` (`*`0x00000003`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_DEAD = `*`4`*` (`*`0x00000004`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = `*`5`*` (`*`0x00000005`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = `*`6`*` (`*`0x00000006`*`)`
+                            - `android.os.BatteryManager.BATTERY_HEALTH_COLD = `*`7`*` (`*`0x00000007`*`)`                            
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getBatteryTemperature()` \
-                        앱 구동 기기의 배터리 온도(*`temp`*` * 10`)값을 반환합니다.
+                        앱 구동 기기의 배터리 온도를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 배터리 온도(*`temp`*` * 10`)
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getBatteryVoltage()` \
-                        앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+                        앱 구동 기기의 배터리 전압을 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 배터리 전압(mV)
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getBatteryStatus()` \
-                        앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다. \
-                        반환값은 다음과 같습니다:
-                        - `android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
-                        - `android.os.BatteryManager.BATTERY_STATUS_CHARGING = `*`2`*` (`*`0x00000002`*`)`
-                        - `android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = `*`3`*` (`*`0x00000003`*`)`
-                        - `android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = `*`4`*` (`*`0x00000004`*`)`
-                        - `android.os.BatteryManager.BATTERY_STATUS_FULL = `*`5`*` (`*`0x00000005`*`)`
+                        앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            앱 구동 기기의 배터리 상태를 나타내는 상수
+                            - `android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = `*`1`*` (`*`0x00000001`*`)`
+                            - `android.os.BatteryManager.BATTERY_STATUS_CHARGING = `*`2`*` (`*`0x00000002`*`)`
+                            - `android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = `*`3`*` (`*`0x00000003`*`)`
+                            - `android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = `*`4`*` (`*`0x00000004`*`)`
+                            - `android.os.BatteryManager.BATTERY_STATUS_FULL = `*`5`*` (`*`0x00000005`*`)`
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`android.content.Intent`</Td>
+                    <Td><span>`android.content.Intent`</span></Td>
                     <Td>
                         `getBatteryIntent()` \
-                        `context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`값을 반환합니다.
+                        `context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -609,7 +827,7 @@
     <Section>
         ### Bridge
     
-        `Bridge` 객체는 이름처럼 다른 스크립트의 전역 스코프에 접근할 수 있도록 하는 메소드를 모은 것이에요. 알아두면 언젠가 유용하게 쓰일 객체이니 기억해두세요!
+        `Bridge` 객체는 다른 스크립트의 전역 스코프에 접근할 수 있도록 하는 메소드를 모은 객체입니다.
     
         <Table>
             <thead>
@@ -620,21 +838,33 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`org.mozilla.javascript.ScripTableObject`</Td>
+                    <Td><span>`org.mozilla.javascript.ScripTableObject`</span></Td>
                     <Td>
                         `getScopeOf(`*`scriptName: String`*`)` \
                         특정 스크립트의 전역 스코프를 반환합니다.
-                        <br />
-                        `scriptName`: 반환받고자 하는 전역 스코프의 스크립트 이름
+                        <div>
+                            ##### 반환값
+                            `scriptName` 스크립트의 전역 스코프
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: 반환받고자 하는 전역 스코프의 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isAllowed(`*`scriptName: String`*`)` \
                         특정 스크립트의 `Bridge`에 의한 접근 허용 여부를 반환합니다.
-                        <br />
-                        `scriptName`: `Bridge`의 접근 혀용 여부를 확인할 스크립트 이름
+                        <div>
+                            ##### 반환값
+                            `Bridge`로 `scriptName` 스크립트에의 접근이 허용된 경우 `true`, 허용되지 않을 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `scriptName`: `Bridge`의 접근 혀용 여부를 확인할 스크립트 이름
+                        </div>
                     </Td>
                 </tr>
             </tbody>
@@ -643,7 +873,7 @@
     <Section>
         ### AppData
 
-        `AppData` 객체는 앱의 데이터에 관한 기능들을 위한 객체예요.
+        `AppData` 객체는 앱의 데이터에 관한 기능들을 위한 객체입니다.
 
         <Table>
             <thead>
@@ -654,73 +884,99 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `putBoolean(`*`key: String, boolean: Boolean`*`)` \
                         앱 데이터에 `Boolean`형 데이터를 씁니다.
-                        <br />
-                        `key`: 쓸 앱 데이터의 키 \
-                        `boolean`: `key`에 대한 `Boolean`형 데이터
+                        <div>
+                            ##### 매개변수
+                            `key`: 쓸 앱 데이터의 키 \
+                            `boolean`: `key`에 대한 `Boolean`형 데이터
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `getBoolean(`*`key: String`*`)` \
-                        앱 데이터로부터 특정 키 값에 대응되는 `Boolean`형 데이터를 반환합니다.
-                        <br />
-                        `key`: 불러올 앱 데이터에 대응되는 키 이름
+                        앱 데이터로부터 특정 키 값에 대응하는 `Boolean`형 데이터를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `key`에 대응하는 `Boolean`형 데이터
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `key`: 불러올 앱 데이터에 대응하는 키 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `putInt(`*`key: String, integer: Number`*`)` \
                         앱 데이터에 `Number`(정수)형 데이터를 씁니다.
-                        <br />
-                        `key`: 쓸 앱 데이터의 키 \
-                        `integer`: `key`에 대한 `Number`(정수)형 데이터
+                        <div>
+                            ##### 매개변수
+                            `key`: 쓸 앱 데이터의 키 \
+                            `integer`: `key`에 대한 `Number`(정수)형 데이터
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Number`</Td>
+                    <Td><span>`Number`</span></Td>
                     <Td>
                         `getInt(`*`key: String`*`)` \
-                        앱 데이터로부터 특정 키 값에 대응되는 `Number`(정수)형 데이터를 반환합니다.
-                        <br />
-                        `key`: 불러올 앱 데이터에 대응되는 키 이름
+                        앱 데이터로부터 특정 키 값에 대응하는 `Number`(정수)형 데이터를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `key`에 대응하는 `Number`(정수)형 데이터
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `key`: 불러올 앱 데이터에 대응하는 키 이름
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `putString(`*`key: String, string: String`*`)` \
                         앱 데이터에 `String`형 데이터를 씁니다.
-                        <br />
-                        `key`: 쓸 앱 데이터의 키 \
-                        `string`: `key`에 대한 `String`형 데이터
+                        <div>
+                            ##### 매개변수
+                            `key`: 쓸 앱 데이터의 키 \
+                            `string`: `key`에 대한 `String`형 데이터
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `getString(`*`key: String`*`)` \
-                        앱 데이터로부터 특정 키 값에 대응되는 `String`형 데이터를 반환합니다.
-                        <br />
-                        `key`: 불러올 앱 데이터에 대응되는 키
+                        앱 데이터로부터 특정 키 값에 대응하는 `String`형 데이터를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `key`에 대응하는 `String`형 데이터
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `key`: 불러올 앱 데이터에 대응하는 키
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `remove(`*`key: String`*`)` \
-                        `AppData`로 저장한 특정 키에 대응되는 앱 데이터를 삭제합니다.
-                        <br />
-                        `key`: 삭제할 앱 데이터에 대한 키
+                        `AppData`로 저장한 특정 키에 대응하는 앱 데이터를 삭제합니다.
+                        <div>
+                            ##### 매개변수
+                            `key`: 삭제할 앱 데이터에 대한 키
+                        </div>
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`undefined`</Td>
+                    <Td><span>`void`</span></Td>
                     <Td>
                         `clear()` \
                         `AppData`로 저장한 모든 앱 데이터를 삭제합니다.
@@ -733,12 +989,12 @@
 <Section>
     ## 이벤트 리스너
 
-    레거시 API에는 이벤트 리스너가 지정되어 있습니다. 상황에 맞는 이벤트 리스너를 사용하여 더 다양한 기능을 만들거나, 더 다양한 상황에 대응할 수 있죠!
+    레거시 API에는 이벤트 리스너가 지정되어 있습니다. 상황에 맞는 이벤트 리스너를 사용하여 더 다양한 기능을 만들거나, 더 다양한 상황에 대응할 수 있습니다.
 
     <Section>
         ### response 함수
 
-        `response` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너예요. 카카오톡봇 개발에 있어서 가장 기초가 되죠. `response` 함수의 매개변수는 메시지에 관한 다양한 정보를 나타내요.
+        `response` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너입니다. `response` 함수의 매개변수는 메시지에 관한 다양한 정보를 나타냅니다.
 
         ~~~js
         function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
@@ -755,52 +1011,52 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `room` \
-                        메시지가 발신된 채팅방의 이름을 나타냅니다.
+                        메시지가 발신된 채팅방의 이름입니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `msg` \
-                        발신된 메시지의 내용을 나타냅니다.
+                        발신된 메시지의 내용입니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `sender` \
-                        메시지를 발신한 유저의 이름을 나타냅니다.
+                        메시지를 발신한 유저의 이름입니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `isGroupChat` \
-                        메시지가 발신된 방이 그룹 채팅방(3인 이상)인지의 여부를 나타냅니다.
+                        메시지가 발신된 방이 그룹 채팅방(3인 이상)이면 `true`, 아니면 `false`입니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Object`</Td>
+                    <Td><span>`Object`</span></Td>
                     <Td>
                         `replier` \
                         응답 기능, 세션 등을 가지고 있는 객체입니다. (아래 참고)
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`Object`</Td>
+                    <Td><span>`Object`</span></Td>
                     <Td>
                         `imageDB` \
                         메시지를 발신한 유저의 프로필 이미지의 정보를 담은 객체입니다. (아래 참고)
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`String`</Td>
+                    <Td><span>`String`</span></Td>
                     <Td>
                         `packageName` \
-                        메시지가 발신된 앱의 패키지명을 반환합니다. (카카오톡의 경우: `com.kakao.talk`)
+                        메시지가 발신된 앱의 패키지명입니다. (카카오톡의 경우: `com.kakao.talk`)
                     </Td>
                 </tr>
             </tbody>
@@ -817,58 +1073,77 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <Td>`void`</Td>
+                        <Td><span>`void`</span></Td>
                         <Td>
                             `reply(`*`msg: String`*`)` \
                             메시지가 발신된 방에 메시지를 보냅니다.
-                            <br />
-                            `msg`: 보낼 메시지의 내용
+                            <div>
+                                ##### 매개변수
+                                `msg`: 보낼 메시지의 내용
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`Boolean`</Td>
+                        <Td><span>`Boolean`</span></Td>
                         <Td>
-                            `reply(`*`room: String, msg: String, hideToast?: Boolean= false`*`)` \
-                            특정 방에 메시지를 보냅니다. \
-                            메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-                            <br />
-                            `room`: 메시지를 보낼 방 이름 \
-                            `msg`: 보낼 메시지의 내용 \
-                            `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+                            `reply(`*`room: String, msg: String, hideToast?: Boolean = false`*`)` \
+                            특정 방에 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+                            <div>
+                                ##### 반환값
+                                `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`
+                            </div>
+                            <div>
+                                ##### 매개변수
+                                `room`: 메시지를 보낼 방 이름 \
+                                `msg`: 보낼 메시지의 내용 \
+                                `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`void`</Td>
+                        <Td><span>`void`</span></Td>
                         <Td>
                             `replyDelayed(`*`msg: String, delay: Number`*`)` \
                             메시지가 발신된 방에 지정한 시간이 지난 후 메시지를 보냅니다.
-                            <br />
-                            `msg`: 보낼 메시지의 내용 \
-                            `delay`: 메시지 발신을 지연할 시간 (밀리초)
+                            <div>
+                                ##### 매개변수
+                                `msg`: 보낼 메시지의 내용 \
+                                `delay`: 메시지 발신을 지연할 시간 (밀리초)
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`Boolean`</Td>
+                        <Td><span>`Boolean`</span></Td>
                         <Td>
                             `replyDelayed(`*`room: String, msg: String, delay: Number, hideToast?: Boolean = false`*`)` \
-                            특정 방에 지정한 시간이 지난 후 메시지를 보냅니다. \
-                            메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-                            <br />
-                            `room`: 메시지를 보낼 방 이름 \
-                            `msg`: 보낼 메시지의 내용 \
-                            `delay`: 메시지 발신을 지연할 시간 (밀리초) \
-                            `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+                            특정 방에 지정한 시간이 지난 후 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+                            <div>
+                                ##### 반환값
+                                `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`
+                            </div>
+                            <div>
+                                ##### 매개변수
+                                `room`: 메시지를 보낼 방 이름 \
+                                `msg`: 보낼 메시지의 내용 \
+                                `delay`: 메시지 발신을 지연할 시간 (밀리초) \
+                                `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`Boolean`</Td>
+                        <Td><span>`Boolean`</span></Td>
                         <Td>
                             `markAsRead(`*`room?: String, packageName?: String`*`)` \
-                            채팅방의 메시지를 읽음 처리합니다. \
-                            방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-                            <br />
-                            `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
-                            `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+                            채팅방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                            <div>
+                                ##### 반환값
+                                `room` 방에 대한 알림 읽기 세션을 찾을 수 있을 경우 `true`, 찾을 수 없을 경우 `false`
+                            </div>
+                            <div>
+                                ##### 매개변수
+                                `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
+                                `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
+                            </div>
                         </Td>
                     </tr>
                 </tbody>
@@ -886,66 +1161,92 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getProfileBase64()` \
                             `getProfileImage()` \
-                            프로필 이미지를 Base64로 인코딩한 값을 반환합니다.
+                            프로필 이미지를 Base64 인코딩한 값을 반환합니다.
+                            <div>
+                                ##### 반환값
+                                프로필 이미지를 Base64 인코딩한 값
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`android.graphics.Bitmap`</Td>
+                        <Td><span>`android.graphics.Bitmap`</span></Td>
                         <Td>
                             `getProfileBitmap()` \
                             프로필 이미지를 Bitmap으로 반환합니다.
+                            <div>
+                                ##### 반환값
+                                프로필 이미지의 Bitmap
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getImageBase64()` \
                             `getImage()` \
-                            채팅 상에서 감지된 이미지를 Base64로 인코딩한 값을 반환합니다.
+                            채팅 상에서 감지된 이미지를 Base64 인코딩한 값을 반환합니다.
+                            <div>
+                                ##### 반환값
+                                이미지를 Base64 인코딩한 값
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getImageBitmap()` \
                             채팅 상에서 감지된 이미지를 Bitmap으로 반환합니다.
+                            <div>
+                                ##### 반환값
+                                이미지의 Bitmap
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getImageHash()` \
                             채팅 상에서 감지된 이미지의 해시 값을 반환합니다.
+                            <div>
+                                ##### 반환값
+                                이미지의 해시 값
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getImageMD5()` \
                             채팅 상에서 감지된 이미지를 MD5로 인코딩한 값을 반환합니다.
+                            <div>
+                                ##### 반환값
+                                이미지를 MD5 인코딩한 값
+                            </div>
                         </Td>
                     </tr>
                     <tr>
-                        <Td>`String`</Td>
+                        <Td><span>`String`</span></Td>
                         <Td>
                             `getImageSHA()` \
                             채팅 상에서 감지된 이미지를 SHA로 인코딩한 값을 반환합니다.
+                            <div>
+                                ##### 반환값
+                                이미지를 SHA 인코딩한 값
+                            </div>
                         </Td>
                     </tr>
                 </tbody>
             </Table>
         </Section>
-
-        유용한 매개변수들이죠? 다만, response 함수의 매개변수를 사용할 때 유의해야 할 점이 있어요. <Mark>response 함수의 매개변수는 반드시 response 함수 안에서만 사용을 해야 한답니다!</Mark>
     </Section>
     <Section>
         ### onStartCompile 함수
 
-        `onStartCompile` 함수는 스크립트의 컴파일이 수행되려 할 때, 컴파일 수행 전 호출되는 이벤트 리스너예요.
+        `onStartCompile` 함수는 스크립트의 컴파일을 수행하기 전에 호출되는 이벤트 리스너입니다.
 
         ~~~js
         function onStartCompile() {
@@ -956,15 +1257,13 @@
     <Section>
         ### onNotificationPosted 함수
 
-        `onNotificationPosted` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너예요. 방법은 어려울지 모르지만, 이 이벤트 리스너를 이용해 다른 메신저 앱의 자동응답봇을 개발할 수 있어요!
+        `onNotificationPosted` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너입니다. 이 이벤트 리스너를 이용해 다른 메신저 앱의 자동응답봇을 개발할 수 있습니다.
 
         ~~~js
         function onNotificationPosted(statusBarNotification, sessionManager) {
 
         }
         ~~~
-
-        인자의 정보는 다음과 같아요.
 
         <Table>
             <thead>
@@ -975,17 +1274,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.service.notification.StatusBarNotification`</Td>
+                    <Td><span>`android.service.notification.StatusBarNotification`</span></Td>
                     <Td>
                         `statusBarNotification` \
                         [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`SessionManager`</Td>
+                    <Td><span>`SessionManager`</span></Td>
                     <Td>
                         [`sessionManager`](#sessionmanager) \
-                        메신저봇 앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 인자
+                        메신저봇 앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 인자입니다.
                     </Td>
                 </tr>
             </tbody>
@@ -1003,15 +1302,20 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <Td>`Boolean`</Td>
+                    <Td><span>`Boolean`</span></Td>
                     <Td>
                         `bindSession(`*`packageName?: String, room: String, action?: android.app.Notification.Action`*`)` \
-                        다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다. \
-                        `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
-                        <br />
-                        `packageName?`: 메시지를 보낼 메신저 앱의 패키지명 \
-                        `room`: 메시지를 보낼 메신저 앱 내의 채팅방 \
-                        `action?`: 메시지 전송 구현을 위한 `android.app.Notification.Action`값
+                        다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다. `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
+                        <div>
+                            ##### 반환값
+                            `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닐 경우 `true`, 둘 중 적어도 하나가 `null`일 경우 `false`
+                        </div>
+                        <div>
+                            ##### 매개변수
+                            `packageName?`: 메시지를 보낼 메신저 앱의 패키지명 \
+                            `room`: 메시지를 보낼 메신저 앱 내의 채팅방 \
+                            `action?`: 메시지 전송 구현을 위한 `android.app.Notification.Action`값
+                        </div>
                     </Td>
                 </tr>
                 </tbody>
@@ -1021,15 +1325,13 @@
     <Section>
         ### onCreate 함수
 
-        지금부터는 스크립트 액티비티에 관한 이벤트 리스너예요. 안드로이드 객체를 사용하여 새 화면을 만들 수 있는건데, `onCreate` 함수는 스트립트 액티비티의 `onCreate`가 호출될 때 호출되는 이벤트 리스너예요.
+        `onCreate` 함수는 스트립트 액티비티의 `onCreate`가 호출될 때 호출되는 이벤트 리스너입니다.
 
         ~~~js
         function onCreate(savedInstanceState, activity) {
 
         }
         ~~~
-
-        인자의 정보는 아래와 같아요.
 
         <Table>
             <thead>
@@ -1040,14 +1342,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.os.Bundle`</Td>
+                    <Td><span>`android.os.Bundle`</span></Td>
                     <Td>
                         `savedInstanceState` \
                         액티비티의 `onCreate`의 인자인 `savedInstanceState`입니다.
                     </Td>
                 </tr>
                 <tr>
-                    <Td>`android.app.Activity`</Td>
+                    <Td><span>`android.app.Activity`</span></Td>
                     <Td>
                         `activity` \
                         해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
@@ -1059,15 +1361,13 @@
     <Section>
         ### onPause 함수
 
-        `onPause` 함수는 스트립트 액티비티의 `onPause`가 호출될 때 호출되는 이벤트 리스너예요.
+        `onPause` 함수는 스트립트 액티비티의 `onPause`가 호출될 때 호출되는 이벤트 리스너입니다.
 
         ~~~js
         function onPause(activity) {
 
         }
         ~~~
-
-        인자의 정보는 아래와 같아요.
 
         <Table>
             <thead>
@@ -1078,7 +1378,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.app.Activity`</Td>
+                    <Td><span>`android.app.Activity`</span></Td>
                     <Td>
                         `activity` \
                         해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
@@ -1090,15 +1390,13 @@
     <Section>
         ### onResume 함수
 
-        `onResume` 함수는 스트립트 액티비티의 `onResume`이 호출될 때 호출되는 이벤트 리스너예요.
+        `onResume` 함수는 스트립트 액티비티의 `onResume`이 호출될 때 호출되는 이벤트 리스너입니다.
 
         ~~~js
         function onResume(activity) {
 
         }
         ~~~
-
-        인자의 정보는 아래와 같아요.
 
         <Table>
             <thead>
@@ -1109,7 +1407,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.app.Activity`</Td>
+                    <Td><span>`android.app.Activity`</span></Td>
                     <Td>
                         `activity` \
                         해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
@@ -1121,15 +1419,13 @@
     <Section>
         ### onStop 함수
 
-        `onStop` 함수는 스트립트 액티비티의 `onStop`이 호출될 때 호출되는 이벤트 리스너예요.
+        `onStop` 함수는 스트립트 액티비티의 `onStop`이 호출될 때 호출되는 이벤트 리스너입니다.
 
         ~~~js
         function onStop(activity) {
 
         }
         ~~~
-
-        인자의 정보는 아래와 같아요.
 
         <Table>
             <thead>
@@ -1140,7 +1436,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <Td>`android.app.Activity`</Td>
+                    <Td><span>`android.app.Activity`</span></Td>
                     <Td>
                         `activity` \
                         해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.

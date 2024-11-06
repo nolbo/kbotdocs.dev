@@ -74,7 +74,8 @@ export const sthlTheme: { [key: string]: React.CSSProperties } = {
         color: "var(--sthl-number)"
     },
     "constant": {
-        color: "var(--sthl-constant)"
+        color: "var(--sthl-constant)",
+        fontStyle: "italic",
     },
     "symbol": {
         color: "var(--sthl-symbol)"
@@ -126,7 +127,6 @@ export const sthlTheme: { [key: string]: React.CSSProperties } = {
     },
     "keyword": {
         color: "var(--sthl-keyword)",
-        fontWeight: "bold"
     },
     "regex": {
         color: "var(--sthl-regex)"

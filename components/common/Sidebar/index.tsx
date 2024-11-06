@@ -17,6 +17,7 @@ export default function Sidebar() {
     const SelectOnChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         if (e.target) {
             router.push(e.target.value);
+            setIsTOCShowed(false);
         }
     };
 
@@ -37,7 +38,7 @@ export default function Sidebar() {
     }, [isTOCShowed]);
 
     return (
-        <aside className={`fixed top-0 left-0 mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
+        <aside className={`fixed top-0 left-0 z-[1] mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
             <div className={`flex justify-start items-center gap-[8px] px-screen-x-default w-full h-[48px] bg-default md:hidden`}>
                 <IconButton icon={(isTOCShowed) ? "CancelIcon" : "HamburgerButtonIcon"} onClick={() => {
                     setIsTOCShowed(v => !v)

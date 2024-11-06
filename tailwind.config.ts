@@ -154,7 +154,7 @@ export default {
                 "yellow-default": "var(--border-yellow-default)",
             },
             spacing: {
-                "content-x-default": "18px",
+                "content-x-default": "16px",
                 "content-x-md": "96px",
                 "content-x-lg": "calc((100vw - var(--width-main-md)) / 2 + 32px)",
                 "content-x-xl": "32px",

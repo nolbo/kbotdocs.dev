@@ -15,7 +15,7 @@ export default function Header() {
                     <div className={"cursor-pointer"}>
                         <Icon icon={"PidocIcon"}
                               onClick={ () => { router.push("/") } }
-                              className={"flex items-center ml-[9px] w-[32px] h-[32px] fill-logo"} />
+                              className={"flex items-center ml-[9px] w-[28px] h-[28px] fill-logo md:w-[32px] md:h-[32px]"} />
                     </div>
                 </div>
                 <div className={"flex items-center gap-[12px]"}>
