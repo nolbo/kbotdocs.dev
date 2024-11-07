@@ -96,11 +96,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             return (<tbody className="flex flex-col gap-[16px] md:table-row-group" { ...rest }>{ children }</tbody>);
         },
         Tr({ children, ...rest }) {
-            return (<tr className="flex flex-col overflow-clip rounded-[8px] border-[1px] border-default md:table-row md:border-none" { ...rest }>{ children }</tr>);
+            return (<tr className="flex flex-col overflow-clip rounded-[8px] border-[1px] border-default [thead_&]:border-none md:table-row md:border-none" { ...rest }>{ children }</tr>);
         },
         Th({ children, ...rest }) {
             return (
-                <th className={"p-[12px] leading-normal bg-gradient-to-r from-[theme(backgroundColor.emphasis)] to-transparent text-left md:bg-transparent md:border-b-[2px] md:border-default"} { ...rest }>
+                <th className={"text-left leading-normal md:bg-none md:bg-transparent md:border-b-[2px] md:border-default md:text-left md:p-[12px]"} { ...rest }>
                     <div className="w-full overflow-auto">
                         { children }    
                     </div>
