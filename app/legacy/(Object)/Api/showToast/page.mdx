@@ -1,0 +1,38 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Api.showToast()
+
+    토스트 메시지를 표시합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.showToast(content: String, length?: Number = android.widget.Toast.LENGTH_SHORT);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`content`</Dt>
+            <Dd>
+                표시할 토스트 메시지의 내용
+            </Dd>
+            <Dt>`length?`</Dt>
+            <Dd>
+                토스트 메시지의 유지 시간을 나타내는 상수
+                - `android.widget.Toast.LENGTH_SHORT = 0 (0x00000000)`: 짧은 시간동안 출력
+                - `android.widget.Toast.LENGTH_LONG = 1 (0x00000001)`: 긴 시간동안 출력
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.showToast()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`showToast`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

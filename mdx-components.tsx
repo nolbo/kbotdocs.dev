@@ -1,8 +1,12 @@
 import type { MDXComponents } from "mdx/types";
+import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import CodeBlock from "@/components/common/CodeBlock";
 import Keycap from "@/components/common/Keycap";
 import InlineCode from "@/components/common/InlineCode";
+import { Table, Thead, Tbody, Tr, Th, Td } from "@/components/common/Table";
+import AppCompatibility from "@/components/common/AppCompatibility";
+import AppCompatibilityItem from "@/components/common/AppCompatibilityItem";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -81,46 +85,43 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             return (<del className="text-noimportance" { ...p }></del>);
         },
         Table({ children, className, ...rest }) {
-            return (
-                <article className={"overflow-auto"}>
-                    <table className={"flex flex-col gap-[16px] min-w-[0] w-full border-collapse md:table"} { ...rest }>
-                        {children}
-                    </table>
-                </article>
-            )
+            return (<Table { ...rest }>{ children }</Table>);
         },
         Thead({ children, ...rest }) {
-            return (<thead { ...rest }>{ children }</thead>);
+            return (<Thead { ...rest }>{ children }</Thead>);
         },
         Tbody({ children, ...rest }) {
-            return (<tbody className="flex flex-col gap-[16px] md:table-row-group" { ...rest }>{ children }</tbody>);
+            return (<Tbody { ...rest }>{ children }</Tbody>);
         },
         Tr({ children, ...rest }) {
-            return (<tr className="flex flex-col overflow-clip rounded-[8px] border-[1px] border-default [thead_&]:border-none md:table-row md:border-none" { ...rest }>{ children }</tr>);
+            return (<Tr { ...rest }>{ children }</Tr>);
         },
         Th({ children, ...rest }) {
-            return (
-                <th className={"text-left leading-normal md:bg-none md:bg-transparent md:border-b-[2px] md:border-default md:text-left md:p-[12px]"} { ...rest }>
-                    <div className="w-full overflow-auto">
-                        { children }    
-                    </div>
-                </th>
-            )
+            return (<Th { ...rest }>{ children }</Th>);
         },
         Td({ children, ...rest }) {
-            return (
-                <td className={"p-[12px] leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid"} { ...rest }>
-                    <div className="flex flex-col gap-[16px] w-full overflow-auto">
-                        { children }    
-                    </div>
-                </td>
-            )
+            return (<Td { ...rest }>{ children }</Td>);
         },
         Blockquote({ children, className, title }) {
             let header;
+            let blockStyle = "bg-default-hover border-default-hover";
+
+            return (
+                <blockquote className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
+                    <div className={"flex items-center gap-[6px]"}>
+                        { header }
+                    </div>
+                    <div>
+                        { children }
+                    </div>
+                </blockquote>
+            )
+        },
+        Noti({ children, type, title }) {
+            let header;
             let blockStyle = "";
 
-            switch (className) {
+            switch (type) {
                 case "warning":
                     header = (
                         <>
@@ -138,6 +139,33 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                         </>
                     )
                     blockStyle = "bg-red-default border-red-default";
+                    break;
+                case "deprecated":
+                    header = (
+                        <>
+                            <Icon icon={"DeprecatedIcon"} className={"stroke-red w-[1rem] h-[1rem]"}/>
+                            <p className={"font-bold"}>{ title || "지원중단됨" }</p>
+                        </>
+                    )
+                    blockStyle = "bg-red-default border-red-default";
+                    break;
+                case "experimental":
+                    header = (
+                        <>
+                            <Icon icon={"ExperimentalIcon"} className={"stroke-blue w-[1rem] h-[1rem]"}/>
+                            <p className={"font-bold"}>{ title || "실험적" }</p>
+                        </>
+                    )
+                    blockStyle = "bg-blue-default border-blue-default dark:[&_a]:text-green dark:[&_a:visited]:text-purple";
+                    break;
+                case "nonStandard":
+                    header = (
+                        <>
+                            <Icon icon={"WarningIcon"} className={"stroke-yellow w-[1rem] h-[1rem]"}/>
+                            <p className={"font-bold"}>{ title || "비표준" }</p>
+                        </>
+                    )
+                    blockStyle = "bg-yellow-default border-yellow-default";
                     break;
                 case "success":
                     header = (
@@ -162,15 +190,36 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             }
 
             return (
-                <blockquote className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
+                <div className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
                     <div className={"flex items-center gap-[6px]"}>
                         { header }
                     </div>
-                    <div>
-                        { children }
-                    </div>
-                </blockquote>
+                    {children && (<div>{children}</div>)}
+                </div>
             )
+        },
+        a({children, href, ...rest }) {
+            if (href?.startsWith("/")) {
+                return (<Link href={ href }>{ children }</Link>);
+            }
+            else {
+                return <a href={ href } { ...rest }>{ children }</a>
+            }
+        },
+        Dl({ children, className, ...rest }) {
+            return (<dl className={`[&_dl]:mt-[8px] [&_dl]:mb-[4px] [&_dl]:first:mt-0 [&_dl]:pl-[1rem] [&_dl]:border-l-default [&_dl]:border-l-[2px] ${className || ""}`} { ...rest }>{ children }</dl>);
+        },
+        Dt({ children, className, ...rest }) {
+            return (<dt className={`mt-[8px] mb-[4px] first:mt-0 ${className || ""}`} { ...rest }>{ children }</dt>);
+        },
+        Dd({ children, className, ...rest }) {
+            return (<dd className={`flex flex-col gap-[4px] ml-[16px] mb-[16px] last:mb-0 ${className || ""}`} { ...rest }>{ children }</dd>);
+        },
+        AppCompatibility({ children, listTitle, ...rest }) {
+            return (<AppCompatibility listTitle={ listTitle } { ...rest }>{ children }</AppCompatibility>);
+        },
+        AppCompatibilityItem({ children, msgBot, arBot, sl, ...rest }) {
+            return (<AppCompatibilityItem msgBot={msgBot} arBot={arBot} sl={sl} { ...rest }>{ children }</AppCompatibilityItem>);
         },
         ...components,
     }

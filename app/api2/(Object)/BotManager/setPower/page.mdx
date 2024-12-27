@@ -1,0 +1,36 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## BotManager.setPower()
+
+    `botName` 이름의 `Bot` 객체의 활성화 여부를 제어합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    BotManager.setPower(botName: String, power: Boolean);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`botName`</Dt>
+            <Dd>
+                활성화 여부를 제어할 `Bot` 객체의 이름
+            </Dd>
+            <Dt>`power`</Dt>
+            <Dd>
+                `Bot` 객체의 활성화 여부
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="BotManager.setPower()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`setPower`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

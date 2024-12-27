@@ -1,0 +1,82 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## GlobalLog
+
+    `GlobalLog` 객체는 앱 내 글로벌 로그에 로그를 기록할 수 있게 하는 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`GlobalLog` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`clear`](/api2/GlobalLog/clear)`()` \
+                    글로벌 로그를 모두 삭제합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`d`](/api2/GlobalLog/d)`(data: String, showToast?: Boolean = false)` \
+                    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`debug`](/api2/GlobalLog/debug)`(data: String, showToast?: Boolean = false)` \
+                    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`e`](/api2/GlobalLog/e)`(data: String, showToast?: Boolean = false)` \
+                    에러 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`error`](/api2/GlobalLog/error)`(data: String, showToast?: Boolean = false)` \
+                    에러 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`i`](/api2/GlobalLog/i)`(data: String, showToast?: Boolean = false)` \
+                    정보 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`info`](/api2/GlobalLog/info)`(data: String, showToast?: Boolean = false)` \
+                    정보 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="GlobalLog 객체">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`clear`](/api2/GlobalLog/clear)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`d`](/api2/GlobalLog/d)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`debug`](/api2/GlobalLog/debug)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`e`](/api2/GlobalLog/e)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`error`](/api2/GlobalLog/error)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`i`](/api2/GlobalLog/i)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`info`](/api2/GlobalLog/info)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

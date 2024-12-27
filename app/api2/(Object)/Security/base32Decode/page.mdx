@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Security.base32Decode()
+
+    `value`를 Base32 복호화한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Security.base32Decode(value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`value`</Dt>
+            <Dd>
+                복호화할 값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `value`를 Base32 복호화한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security.base32Decode()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`base32Decode`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

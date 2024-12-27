@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## notificationPosted
+
+    `notificationPosted` 이벤트는 알림이 발생할 때 발생하는 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.NOTIFICATION_POSTED`](/api2/Event/NOTIFICATION_POSTED)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("notificationPosted", (statusBarNotification: android.service.notification.StatusBarNotification, sessionManager: SessionManager) => {});
+    // 또는
+    bot.addListener(Event.NOTIFICATION_POSTED, (statusBarNotification: android.service.notification.StatusBarNotification, sessionManager: SessionManager) => {});
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`statusBarNotification`</Dt>
+            <Dd>
+                노티피케이션에 관한 정보가 담긴 [`android.service.notification.StatusBarNotification`](https://developer.android.com/reference/android/service/notification/StatusBarNotification)입니다.
+            </Dd>
+            <Dt>`sessionManager`</Dt>
+            <Dd>
+                앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 [`SessionManager`](/api2/SessionManager) 객체입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="notificationPosted">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`notificationPosted`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

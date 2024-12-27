@@ -1,8 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, HTMLAttributes } from "react";
 
-export default function TOC({ scrollToRef } : { scrollToRef: React.MutableRefObject<number> }) {
+interface ITOC extends HTMLAttributes<HTMLUListElement> {
+    scrollToRef: React.MutableRefObject<number>;
+}
+
+export default function TOC({ scrollToRef, className, ...p } : ITOC) {
     const [ headers, setHeaders ] = useState<Element[]>([]);
     const [ pageInViewport, setPageInViewport ] = useState<string>("");
 
@@ -58,12 +62,12 @@ export default function TOC({ scrollToRef } : { scrollToRef: React.MutableRefObj
     }, [headers, pageInViewport]);
 
     return (
-        <ul className={"leading-relaxed overflow-auto text-sm mt-0 p-none border-0 rounded-[0] bg-transparent"}>
+        <ul className={`h-full leading-relaxed overflow-auto text-sm mt-0 p-none border-0 rounded-[0] bg-transparent select-none ${className}`} {...p}>
             {
                 headers.map((e, i) => {
                     return (
                         <li key={i} id={`a${e.id}`}
-                            className={`list-none p-[0_1em] ${(e.classList.contains("sub")) ? "pl-[2em]" : ""} border-l-[2px] ${(pageInViewport === e.id) ? "border-l-emphasis text-default font-bold currentcon" : "border-l-noimportance text-noimportance font-normal"} cursor-pointer hover:border-l-emphasis hover:text-default`}
+                            className={`list-none p-[0_1em] ${(e.classList.contains("sub")) ? "pl-[2em]" : ""} border-l-[2px] ${(pageInViewport === e.id) ? "border-l-emphasis text-default font-bold currentcon" : "border-l-noimportance text-noimportance font-normal"} cursor-pointer break-all hover:border-l-emphasis hover:text-default`}
                             onClick={() => liOnClickHandler(e.id)}>{e.textContent}</li>
                     );
                 })

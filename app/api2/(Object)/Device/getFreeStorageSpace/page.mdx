@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.getFreeStorageSpace()
+
+    `path` 경로의 파티션에서 할당되지 않은 공간의 크기(Byte)를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getFreeStorageSpace(path: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                할당되지 않은 공간의 크기를 확인할 파티션의 경로
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Number` - `path` 경로의 파티션에서 할당되지 않은 공간의 크기(Byte)를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getFreeStorageSpace()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getFreeStorageSpace`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

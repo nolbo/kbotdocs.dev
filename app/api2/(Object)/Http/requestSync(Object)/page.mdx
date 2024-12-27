@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Http.requestSync(Object)
+
+    [`jsoup`](https://jsoup.org/)을 이용해 옵션에 따라 동기 request를 보냅니다. 요청에 대한 응답을 `org.jsoup.nodes.Document` 형식으로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Http.requestSync(option: Object);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`option`</Dt>
+            <Dd>
+                보낼 요청의 옵션
+                ~~~json
+                {
+                    "url": String, // request를 보낼 URL
+                    "timeout": Number, // request 타임아웃 (밀리초; 기본값: 3000)
+                    "method": String, // request 메소드 (기본값: "GET")
+                    "headers": { /* Header */ } // request 헤더 (기본값: null)
+                }
+                ~~~
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        [`org.jsoup.nodes.Document`](https://jsoup.org/apidocs/org/jsoup/nodes/Document.html) - 요청에 대한 응답을 `org.jsoup.nodes.Document` 형식으로 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Http.requestSync(Object)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`requestSync(Object)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

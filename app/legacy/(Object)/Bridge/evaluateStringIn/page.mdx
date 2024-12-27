@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Bridge.evaluateStringIn()
+
+    특정 스크립트의 전역 스코프에서 문자열로 표현된 JavaScript 코드를 실행합니다. 실행 성공 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Bridge.evaluateStringIn(scriptName: String, src: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName`</Dt>
+            <Dd>
+                JavaScript 코드를 실행할 스크립트의 이름
+            </Dd>
+            <Dt>`src`</Dt>
+            <Dd>
+                문자열로 표현된 JavaScript 코드
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `scriptName`를 이름으로 하는 스크립트의 전역 스코프에서 `src`를 JavaScript 코드로써 성공적으로 실행했을 경우 `true`, 실패했을 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bridge.evaluateStringIn()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`evaluateStringIn`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

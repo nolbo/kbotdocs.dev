@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Utils.removeTags()
+
+    문자열 `html`에서 HTML 태그를 삭제한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.removeTags(html: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`html`</Dt>
+            <Dd>
+                반전 문자를 삭제할 문자열
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - 문자열 `html`에서 HTML 태그를 삭제한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.removeTags()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`removeTags`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

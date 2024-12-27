@@ -1,0 +1,42 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Api.reload(String, Boolean?)
+
+    특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.reload(scriptName: String, throwOnError?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName`</Dt>
+            <Dd>
+                컴파일할 스크립트의 이름
+            </Dd>
+            <Dt>`throwOnError?`</Dt>
+            <Dd>
+                컴파일 에러 시 에러 throw 여부
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `scriptName` 이름의 스크립트의 컴파일에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.reload(String, Boolean?)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`reload(String)`</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`reload(String, Boolean)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

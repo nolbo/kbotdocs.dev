@@ -1,0 +1,27 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.getPlugType()
+
+    앱 구동 기기의 충전기 타입을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getPlugType();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 앱 구동 기기의 충전기 타입이 AC 충전기일 경우 `ac`, 무선 충전기일 경우 `wireless`, USB 포트일 경우 `usb`, 알 수 없을 경우 `unknown`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getPlugType()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getPlugType`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

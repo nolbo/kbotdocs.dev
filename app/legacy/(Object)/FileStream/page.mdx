@@ -1,0 +1,133 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## FileStream
+
+    `FileStream` 객체는 내부 저장소의 파일을 다루는 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`FileStream` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`append`](/legacy/FileStream/append)`(path: String, data: String)` \
+                    `path` 경로의 파일 내용에 새로운 내용을 이어 씁니다. 이어 쓴 후 해당 파일의 최종 내용을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`copyFile`](/legacy/FileStream/copyFile)`(path1: String, path2: String)` \
+                    `path1` 경로의 파일을 `path2` 경로에 복사합니다. 파일 복사의 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`create`](/legacy/FileStream/create)`(path: String)` \
+                    `path` 경로의 파일을 생성합니다. 파일 생성의 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`createDir`](/legacy/FileStream/createDir)`(path: String)` \
+                    `path` 경로에 폴더를 생성합니다. 폴더 생성의 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getSdcardPath`](/legacy/FileStream/getSdcardPath)`()` \
+                    내장 메모리의 최상위 경로를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`moveFile`](/legacy/FileStream/moveFile)`(path1: String, path2: String)` \
+                    `path1` 경로의 파일을 `path2` 경로로 이동합니다. 파일 이동의 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`read`](/legacy/FileStream/read)`(path: String)` \
+                    `path` 경로의 파일 내용을 문자열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Object`</span></Td>
+                <Td>
+                    [`readJSON`](/legacy/FileStream/readJSON)`(path: String)` \
+                    `path` 경로의 파일 내용을 `Object` 형식으로 반환합니다. 파일 내용의 형식이 `JSON`일 경우에만 가능합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`remove`](/legacy/FileStream/remove)`(path: String)` \
+                    `path` 경로의 파일을 삭제합니다. 파일의 삭제 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`save`](/legacy/FileStream/save)`(path: String, data: String, append?: Boolean = false)` \
+                    문자열을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다. `append?`가 `true`일 경우 `path` 경로의 파일 내용에 새로운 내용을 이어 씁니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`saveJSON`](/legacy/FileStream/saveJSON)`(path: String, json: Object)` \
+                    객체를 `JSON String`으로 변환한 값을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`write`](/legacy/FileStream/write)`(path: String, data: String)` \
+                    문자열을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다. 덮어쓰거나 생성한 파일의 최종 내용을 반환합니다.
+                    <Noti type={"info"}>
+                        채팅 자동응답 봇에서는 반환값이 존재하지 않습니다. (`void`)
+                    </Noti>
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`writeJSON`](/legacy/FileStream/writeJSON)`(path: String, json: Object)` \
+                    객체를 `JSON String`으로 변환한 값을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="FileStream 객체">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`append`](/legacy/FileStream/append)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`copyFile`](/legacy/FileStream/copyFile)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`create`](/legacy/FileStream/create)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`createDir`](/legacy/FileStream/createDir)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getSdcardPath`](/legacy/FileStream/getSdcardPath)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`moveFile`](/legacy/FileStream/moveFile)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`read`](/legacy/FileStream/read)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`readJSON`](/legacy/FileStream/readJSON)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`remove`](/legacy/FileStream/remove)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`save`](/legacy/FileStream/save)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`saveJSON`](/legacy/FileStream/saveJSON)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`write`](/legacy/FileStream/write)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`writeJSON`](/legacy/FileStream/writeJSON)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

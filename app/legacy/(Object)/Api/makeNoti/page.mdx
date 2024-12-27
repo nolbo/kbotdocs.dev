@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Api.makeNoti()
+
+    상단바 알림을 생성합니다. 동일 ID의 알림이 존재할 경우 해당 알림을 수정합니다. 알림의 생성/수정 성공 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.makeNoti(title: String, content: String, id?: Number = 0);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`title`</Dt>
+            <Dd>
+                알림의 제목
+            </Dd>
+            <Dt>`content`</Dt>
+            <Dd>
+                알림의 내용
+            </Dd>
+            <Dt>`id?`</Dt>
+            <Dd>
+                알림의 아이디
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - 알림의 생성 또는 수정에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.makeNoti()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`makeNoti`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

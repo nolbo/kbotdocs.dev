@@ -1,0 +1,58 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Broadcast
+
+    `Broadcast` 객체는 다른 스크립트 간의 데이터 교류를 지원하는 객체입니다. [`Broadcast.send()`](/api2/Broadcast/send)를 통해 전송된 브로드캐스트는 [`Broadcast.register()`](/api2/Broadcast/register)를 이용해 모든 스크립트에서 감지하고 접근할 수 있습니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Broadcast` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`register`](/api2/Broadcast/register)`(broadcastName: String, task: (value: Any) => Any)` \
+                    `broadcastName`를 이름으로 하는 브로드캐스트에 대한 리스너를 추가합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`send`](/api2/Broadcast/send)`(broadcastName: String, value: Any)` \
+                    모든 스크립트를 대상으로 특정 값을 가진 브로드캐스트를 전송합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`unregister`](/api2/Broadcast/unregister)`(broadcastName: String, task: (value: Any) => Any)` \
+                    `broadcastName`를 이름으로 하는 브로드캐스트에 대한 특정 리스너를 제거합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`unregisterAll`](/api2/Broadcast/unregisterAll)`()` \
+                    브로드캐스트에 등록된 모든 리스너를 제거합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Broadcast 객체">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`register`](/api2/Broadcast/register)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`send`](/api2/Broadcast/send)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`unregister`](/api2/Broadcast/unregister)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`unregisterAll`](/api2/Broadcast/unregisterAll)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

@@ -1,25 +1,16 @@
 "use client";
 
-import React, { ChangeEvent, useEffect, useState, useRef } from "react";
-import { useRouter, useParams } from "next/navigation";
-import Select from "@/components/common/Select";
+import React, { useEffect, useState, useRef } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import TOC from "@/components/common/TOC";
-import { Docs, Guide, NoGroup, Reference } from "@/constants/mdxDocs";
+import PageTree from "@/components/common/PageTree";
 import IconButton from "@/components/common/IconButton";
+import Tab from "@/components/common/Tab";
 
 export default function Sidebar() {
     const [ isTOCShowed, setIsTOCShowed ] = useState<boolean>(false);
     const scrollTo = useRef<number>(0);
-
-    const router = useRouter();
-    const params = useParams<{ id: string }>();
-
-    const SelectOnChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        if (e.target) {
-            router.push(e.target.value);
-            setIsTOCShowed(false);
-        }
-    };
+    const path = usePathname();
 
     useEffect(() => {
         if (isTOCShowed) {
@@ -43,34 +34,17 @@ export default function Sidebar() {
                 <IconButton icon={(isTOCShowed) ? "CancelIcon" : "HamburgerButtonIcon"} onClick={() => {
                     setIsTOCShowed(v => !v)
                 }} />
-                <p className={`${(isTOCShowed) ? "hidden" : "block"} text-sm font-bold`}>{ Docs.find(e => e.value === `/${params.id}`)?.label }</p>
             </div>
             <div
-                className={`w-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-[225px] md:max-h-[calc(100vh-160px-64px)]`}>
-                <Select defaultValue={`/${params.id}`}
-                        onChange={SelectOnChangeHandler}>
-                    {
-                            NoGroup.map((e) => (
-                                <option key={e.value} value={e.value}>{e.label}</option>
-                            ))
-                        }
-                    <optgroup label="가이드">
-                        {
-                            Guide.map((e) => (
-                                <option key={e.value} value={e.value}>{e.label}</option>
-                            ))
-                        }
-                    </optgroup>
-                    <optgroup label="레퍼런스">
-                        {
-                            Reference.map((e) => (
-                                <option key={e.value} value={e.value}>{e.label}</option>
-                            ))
-                        }
-                    </optgroup>
-                </Select>
-                <div className={"overflow-auto"} onClick={() => { setIsTOCShowed(false) }}>
-                    <TOC scrollToRef={ scrollTo } />
+                className={`w-full h-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-[225px] md:max-h-[calc(100vh-160px-64px)]`}>
+                <div className={"w-full h-full"} onClick={() => { setIsTOCShowed(false) }}>
+                    <Tab
+                        items={[
+                            { label: "목차", content: <TOC scrollToRef={ scrollTo } className={"pt-[16px]"} /> },
+                            { label: "페이지", content: <PageTree currentPath={path} className={"pt-[16px]"} /> }
+                        ]}
+                        className={"h-full"}
+                    />
                 </div>
             </div>
         </aside>

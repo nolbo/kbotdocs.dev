@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    <Noti type={"nonStandard"}>
+        해당 메소드는 비표준입니다.
+    </Noti>
+</Section>
+<Section>
+    ## Bridge.setVariable()
+
+    단순 자동응답에 대하여 특정 방에서 특정 이름을 가진 `[[변수]]`에 값을 저장합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Bridge.setVariable(room: String, name: String, value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`room`</Dt>
+            <Dd>
+                값을 저장할 `[[변수]]`에 대응하는 방 이름
+            </Dd>
+            <Dt>`name`</Dt>
+            <Dd>
+                값을 저장할 `[[변수]]`의 이름
+            </Dd>
+            <Dt>`value`</Dt>
+            <Dd>
+                저장할 값
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bridge.setVariable()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>`setVariable`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

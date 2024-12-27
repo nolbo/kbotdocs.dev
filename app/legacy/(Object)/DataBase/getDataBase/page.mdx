@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## DataBase.getDataBase()
+
+    `fileName` 이름의 파일의 내용을 문자열로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    DataBase.getDataBase(fileName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`fileName`</Dt>
+            <Dd>
+                내용을 문자열로 읽을 파일의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `fileName` 이름의 파일의 내용을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="DataBase.getDataBase()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getDataBase`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

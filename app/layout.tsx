@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import ThemeProvider from "@/components/context/ThemeProvider";
 import { Open_Sans } from "next/font/google";

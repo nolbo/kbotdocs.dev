@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Security.ariaDecode()
+
+    `value`를 ARIA 복호화한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Security.ariaDecode(key: String, value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                ARIA 복호화를 위한 키
+            </Dd>
+            <Dt>`value`</Dt>
+            <Dd>
+                복호화할 값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `value`를 ARIA 복호화한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security.ariaDecode()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`ariaDecode`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

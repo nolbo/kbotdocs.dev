@@ -1,0 +1,27 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.getMaxMemory()
+
+    앱이 사용하려고 시도하는 최대 메모리 크기(Byte)를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getMaxMemory();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Number` - 앱이 사용하려고 시도하는 최대 메모리 크기(Byte)를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getMaxMemory()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getMaxMemory`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.getTotalStorageSpace()
+
+    `path` 경로의 파티션의 전체 크기(Byte)를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getTotalStorageSpace(path: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                전체 크기를 확인할 파티션의 경로
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Number` - `path` 경로의 파티션의 전체 크기(Byte)를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getTotalStorageSpace()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getTotalStorageSpace`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

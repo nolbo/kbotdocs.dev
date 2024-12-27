@@ -1,0 +1,38 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Api.getActiveThreadsCount()
+
+    스크립트의 활성 쓰레드 수를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.getActiveThreadsCount(scriptName?: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName?`</Dt>
+            <Dd>
+                활성 쓰레드 수를 확인할 스크립트의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Number` - `scriptName?` 인자가 존재할 경우 `scriptName` 이름의 스크립트의 활성 쓰레드 수를 반환합니다.
+        `scriptName?` 인자가 존재하지 않을 경우 해당 메소드를 호출한 스크립트의 활성 쓰레드 수를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.getActiveThreadsCount()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getActiveThreadsCount`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

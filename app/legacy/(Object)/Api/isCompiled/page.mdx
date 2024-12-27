@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Api.isCompiled()
+
+    특정 스크립트의 컴파일 완료 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.isCompiled(scriptName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName`</Dt>
+            <Dd>
+                컴파일 완료 여부를 확인할 스크립트의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `scriptName` 이름의 스크립트의 컴파일이 완료되었을 경우 `true`, 완료되지 않았을 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.isCompiled()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`isCompiled`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

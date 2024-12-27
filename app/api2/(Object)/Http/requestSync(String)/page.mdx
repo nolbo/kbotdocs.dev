@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Http.requestSync(String)
+
+    [`jsoup`](https://jsoup.org/)을 이용해 `url`에 동기 request를 보냅니다. 요청에 대한 응답을 `org.jsoup.nodes.Document` 형식으로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Http.requestSync(url: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`url`</Dt>
+            <Dd>
+                request를 보낼 서버의 URL
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        [`org.jsoup.nodes.Document`](https://jsoup.org/apidocs/org/jsoup/nodes/Document.html) - 요청에 대한 응답을 `org.jsoup.nodes.Document` 형식으로 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Http.requestSync(String)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`requestSync(String)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

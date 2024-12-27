@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Utils.getWebText2()
+
+    `java.net` 패키지를 이용해 `url`에 동기 GET request를 보냅니다. 지정한 인코딩 형식의 요청에 대한 응답을 문자열로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.getWebText2(url: String, encoding?: String = "UTF-8");
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`url`</Dt>
+            <Dd>
+                GET request를 보낼 서버의 URL
+            </Dd>
+            <Dt>`encoding?`</Dt>
+            <Dd>
+                요청에 대한 인코딩 형식
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - 인코딩 형식의 요청에 대한 응답을 `encoding?` 문자열로 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.getWebText2()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getWebText2`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

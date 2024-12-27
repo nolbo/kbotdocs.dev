@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Utils.parse()
+
+    [`jsoup`](https://jsoup.org/)을 이용해 `url`에 동기 GET request를 보냅니다. 요청에 대한 응답을 `org.jsoup.nodes.Document` 값으로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.parse(url: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`url`</Dt>
+            <Dd>
+                GET request를 보낼 서버의 URL
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `org.jsoup.nodes.Document` - 요청에 대한 응답을 `org.jsoup.nodes.Document` 값으로 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.parse()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`parse`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

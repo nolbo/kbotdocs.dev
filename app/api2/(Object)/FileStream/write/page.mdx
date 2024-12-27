@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## FileStream.write()
+
+    문자열을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다. 덮어쓰거나 생성한 파일의 최종 내용을 반환합니다.
+
+    <Noti type={"info"}>
+        채팅 자동응답 봇에서는 반환값이 존재하지 않습니다. (`void`)
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    FileStream.write(path: String, data: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                내용을 덮어쓰거나 새로 생성할 파일의 경로
+            </Dd>
+            <Dt>`data`</Dt>
+            <Dd>
+                파일 내용으로 저장할 문자열
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `path` 경로의 파일을 덮어쓰거나 생성한 후 최종 내용을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="FileStream.write()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`write`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

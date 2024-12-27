@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Broadcast.register()
+
+    `broadcastName`를 이름으로 하는 브로드캐스트에 대한 리스너를 추가합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Broadcast.register(broadcastName: String, task: (value: Any) => Any);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`broadcastName`</Dt>
+            <Dd>
+                리스너를 추가할 브로드캐스트 이름
+            </Dd>
+            <Dt>`task`</Dt>
+            <Dd>
+                리스너로 추가할 함수
+                - `value`: 브로드캐스트을 통해 송출된 값
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Broadcast.register()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`register`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

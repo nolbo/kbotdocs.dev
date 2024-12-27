@@ -1,0 +1,37 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## FileStream.createDir()
+
+    `path` 경로에 폴더를 생성합니다. 폴더 생성의 성공 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    FileStream.createDir(path: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                생성할 폴더의 경로
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - 폴더 생성에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="FileStream.createDir()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`createDir`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

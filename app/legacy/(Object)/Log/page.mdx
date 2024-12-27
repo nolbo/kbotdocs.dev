@@ -1,0 +1,82 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Log
+
+    `Log` 객체는 앱 내 스크립트 로그에 로그를 기록할 수 있게 하는 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Log` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`clear`](/legacy/Log/clear)`()` \
+                    스크립트 로그를 모두 삭제합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`d`](/legacy/Log/d)`(data: String, showToast?: Boolean = false)` \
+                    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`debug`](/legacy/Log/debug)`(data: String, showToast?: Boolean = false)` \
+                    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`e`](/legacy/Log/e)`(data: String, showToast?: Boolean = false)` \
+                    에러 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`error`](/legacy/Log/error)`(data: String, showToast?: Boolean = false)` \
+                    에러 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`i`](/legacy/Log/i)`(data: String, showToast?: Boolean = false)` \
+                    정보 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`info`](/legacy/Log/info)`(data: String, showToast?: Boolean = false)` \
+                    정보 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Log 객체">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`clear`](/legacy/Log/clear)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`d`](/legacy/Log/d)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`debug`](/legacy/Log/debug)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`e`](/legacy/Log/e)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`error`](/legacy/Log/error)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`i`](/legacy/Log/i)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`info`](/legacy/Log/info)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

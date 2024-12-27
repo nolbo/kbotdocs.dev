@@ -1,0 +1,32 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.getBatteryStatus()
+
+    앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getBatteryStatus();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Number` - 앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다. 관련 상수는 다음과 같습니다:
+        - `android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = 1 (0x00000001)`
+        - `android.os.BatteryManager.BATTERY_STATUS_CHARGING = 2 (0x00000002)`
+        - `android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = 3 (0x00000003)`
+        - `android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = 4 (0x00000004)`
+        - `android.os.BatteryManager.BATTERY_STATUS_FULL = 5 (0x00000005)`
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getBatteryStatus()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getBatteryStatus`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

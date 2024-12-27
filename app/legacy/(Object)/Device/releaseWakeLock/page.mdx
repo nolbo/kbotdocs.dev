@@ -1,0 +1,53 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Device.releaseWakeLock()
+
+    [wake lock](https://developer.android.com/develop/background-work/background-tasks/awake/wakelock)을 해제합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.releaseWakeLock(flags?: Number = 0);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`flags?`</Dt>
+            <Dd>
+                wake lock 해제 동작을 나타내는 플래그
+                <Table className="table-fixed">
+                    <Thead>
+                        <Tr>
+                            <Th colSpan="2">wake lock 해제 플래그 ([`android.os.PowerManager`](https://developer.android.com/reference/android/os/PowerManager))</Th>
+                        </Tr>
+                        <Tr className="hidden md:table-row">
+                            <Th></Th>
+                            <Th>액션</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        <Tr>
+                            <Td><span>`0 (0x00000000)`</span></Td>
+                            <Td>wake lock을 해제합니다.</Td>
+                        </Tr>
+                        <Tr>
+                            <Td><span>[`RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY`](https://developer.android.com/reference/android/os/PowerManager#RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY)` = 1 (0x00000001)`</span></Td>
+                            <Td>근접센서가 물체를 감지하지 않을 때까지 wake lock의 해제를 연기합니다.</Td>
+                        </Tr>
+                    </Tbody>
+                </Table>
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.releaseWakeLock()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`releaseWakeLock`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

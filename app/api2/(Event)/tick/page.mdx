@@ -1,0 +1,24 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## tick
+
+    `tick` 이벤트는 매 틱(1초)마다 발생하는 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.TICK`](/api2/Event/TICK)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("tick", () => {});
+    // 또는
+    bot.addListener(Event.TICK, () => {});
+    ~~~
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="tick">
+        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`tick`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

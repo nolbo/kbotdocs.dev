@@ -1,0 +1,226 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## Utils
+
+    `Utils` 객체는 카카오톡봇의 기능 구현에 도움이 되는 메소드들을 모은 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Utils` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`compress`](/legacy/Utils/compress)`()` \
+                    전체보기 메시지를 위한 단축문자(`"\u200b".repeat(1000) + "\n"`)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`copyToClipboard`](/legacy/Utils/copyToClipboard)`(value: String)` \
+                    문자열 `value`를 클립보드에 복사합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`delay`](/legacy/Utils/delay)`(mil: Number)` \
+                    일정 시간(밀리초; ms)만큼 지연합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getAndroidVersionCode`](/legacy/Utils/getAndroidVersionCode)`()` \
+                    앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getAndroidVersionName`](/legacy/Utils/getAndroidVersionName)`()` \
+                    앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getLw`](/legacy/Utils/getLw)`()` \
+                    전체보기 메시지를 위한 단축문자(`"\u200b".repeat(500)`)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getLwLined`](/legacy/Utils/getLwLined)`()` \
+                    전체보기 메시지를 위한 선이 포함된 단축문자 세트(`"\u200b".repeat(500) + "\n" + "\u2500".repeat(20) + "\n"`)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getPhoneBrand`](/legacy/Utils/getPhoneBrand)`()` \
+                    앱 구동 기기의 브랜드명을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getPhoneModel`](/legacy/Utils/getPhoneModel)`()` \
+                    앱 구동 기기의 모델명을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getRandomUserAgent`](/legacy/Utils/getRandomUserAgent)`()` \
+                    `User-Agent` 요청 헤더 값을 무작위 생성해 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Object`</span></Td>
+                <Td>
+                    [`getWeatherJSON`](/legacy/Utils/getWeatherJSON)`(locationOrZoneId: String)` \
+                    특정 지역 또는 특정 행정구역코드로 식별되는 지역의 기상 정보를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getWebText`](/legacy/Utils/getWebText)`(url: String, removeTags?: Boolean = false)` \
+                    [`jsoup`](https://jsoup.org/)을 이용해 `url`에 동기 GET request를 보냅니다. 요청에 대한 응답을 문자열로 반환합니다. `removeTags?`가 `true`일 경우 HTML 태그를 삭제한 응답을 문자열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getWebText2`](/legacy/Utils/getWebText2)`(url: String, encoding?: String = "UTF-8")` \
+                    `java.net` 패키지를 이용해 `url`에 동기 GET request를 보냅니다. 지정한 인코딩 형식의 요청에 대한 응답을 문자열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getZoneIdByName`](/legacy/Utils/getZoneIdByName)`(location: String)` \
+                    특정 지역의 행정구역코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isUndefined`](/legacy/Utils/isUndefined)`(value?: Any?)` \
+                    `value?`가 `undefined`인지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`measureNanoTime`](/legacy/Utils/measureNanoTime)`(func: () => Any?)` \
+                    `func` 함수의 실행에 소요된 시간을 반환합니다.(나노초; ns)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`measureTimeMillis`](/legacy/Utils/measureTimeMillis)`(func: () => Any?)` \
+                    `func` 함수의 실행에 소요된 시간을 반환합니다.(밀리초; ms)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`org.jsoup.nodes.Document`</span></Td>
+                <Td>
+                    [`parse`](/legacy/Utils/parse)`(url: String)` \
+                    [`jsoup`](https://jsoup.org/)을 이용해 `url`에 동기 GET request를 보냅니다. 요청에 대한 응답을 `org.jsoup.nodes.Document` 값으로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`randomAlphanumeric`](/legacy/Utils/randomAlphanumeric)`(length: Number)` \
+                    길이가 `length`인 영숫자(alphanumeric characters)를 무작위 생성해 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`removeRLO`](/legacy/Utils/removeRLO)`(str: String)` \
+                    문자열 `str`에서 반전 문자를 삭제한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`removeTags`](/legacy/Utils/removeTags)`(html: String)` \
+                    문자열 `html`에서 HTML 태그를 삭제한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`sleep`](/legacy/Utils/sleep)`(mil: Number)` \
+                    일정 시간(밀리초; ms)만큼 지연합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`toast`](/legacy/Utils/toast)`(msg: String)` \
+                    토스트 메시지를 표시합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`vibrate`](/legacy/Utils/vibrate)`(sec: Number)` \
+                    주어진 시간(초; s)동안 진동을 울립니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`xmlToJson`](/legacy/Utils/xmlToJson)`(xml: String)` \
+                    XML 형식의 문자열을 `JSON String`으로 변환한 값을 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils 객체">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`compress`](/legacy/Utils/compress)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`copyToClipboard`](/legacy/Utils/copyToClipboard)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`delay`](/legacy/Utils/delay)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionCode`](/legacy/Utils/getAndroidVersionCode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionName`](/legacy/Utils/getAndroidVersionName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getLw`](/legacy/Utils/getLw)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getLwLined`](/legacy/Utils/getLwLined)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneBrand`](/legacy/Utils/getPhoneBrand)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneModel`](/legacy/Utils/getPhoneModel)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRandomUserAgent`](/legacy/Utils/getRandomUserAgent)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getWeatherJSON`](/legacy/Utils/getWeatherJSON)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.PARTIAL_SUPPORT}>[`getWebText`](/legacy/Utils/getWebText)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getWebText2`](/legacy/Utils/getWebText2)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getZoneIdByName`](/legacy/Utils/getZoneIdByName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isUndefined`](/legacy/Utils/isUndefined)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`measureNanoTime`](/legacy/Utils/measureNanoTime)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`measureTimeMillis`](/legacy/Utils/measureTimeMillis)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`parse`](/legacy/Utils/parse)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`randomAlphanumeric`](/legacy/Utils/randomAlphanumeric)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`removeRLO`](/legacy/Utils/removeRLO)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`removeTags`](/legacy/Utils/removeTags)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sleep`](/legacy/Utils/sleep)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`toast`](/legacy/Utils/toast)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`vibrate`](/legacy/Utils/vibrate)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`xmlToJson`](/legacy/Utils/xmlToJson)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

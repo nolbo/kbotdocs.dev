@@ -1,0 +1,48 @@
+import { Compatibility } from "@/constants/compatibility";
+
+<Section>
+    ## batteryLevelChanged
+
+    `batteryLevelChanged` 이벤트는 앱 구동 기기의 배터리 잔량이 변화했을 때 발생하는 이벤트입니다. 배터리 잔량 측정 간격은 10초입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.BATTERY_LEVEL_CHANGED`](/api2/Event/BATTERY_LEVEL_CHANGED)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("batteryLevelChanged", (battery: Object) => {});
+    // 또는
+    bot.addListener(Event.BATTERY_LEVEL_CHANGED, (battery: Object) => {});
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`battery.before: Number`</Dt>
+            <Dd>
+                변화 전 배터리 잔량입니다.
+            </Dd>
+            <Dt>`battery.after: Number`</Dt>
+            <Dd>
+                변화 후 배터리 잔량입니다.
+            </Dd>
+            <Dt>`battery.status: Number`</Dt>
+            <Dd>
+                앱 구동 기기의 배터리 상태를 나타내는 상수입니다. 관련 상수는 다음과 같습니다:
+                - `android.os.BatteryManager.BATTERY_STATUS_UNKNOWN = 1 (0x00000001)`
+                - `android.os.BatteryManager.BATTERY_STATUS_CHARGING = 2 (0x00000002)`
+                - `android.os.BatteryManager.BATTERY_STATUS_DISCHARGING = 3 (0x00000003)`
+                - `android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING = 4 (0x00000004)`
+                - `android.os.BatteryManager.BATTERY_STATUS_FULL = 5 (0x00000005)`
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="batteryLevelChanged">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`batteryLevelChanged`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>
