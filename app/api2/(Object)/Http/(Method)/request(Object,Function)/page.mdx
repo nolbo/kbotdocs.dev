@@ -1,0 +1,54 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Http.request(Object, Function) - API2",
+    openGraph: {
+        title: "Http.request(Object, Function) - API2"
+    }
+}
+
+<Section>
+    ## Http.request(Object, Function)
+
+    [`jsoup`](https://jsoup.org/)을 이용해 옵션에 따라 비동기 request를 보냅니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Http.request(option: Object, callBack: (error: java.lang.Exception?, response: org.jsoup.Connection.Response?, doc: org.jsoup.nodes.Document?) => Any);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`option`</Dt>
+            <Dd>
+                보낼 요청의 옵션
+                ~~~json
+                {
+                    "url": String, // request를 보낼 URL
+                    "timeout": Number, // request 타임아웃 (밀리초; 기본값: 3000)
+                    "method": String, // request 메소드 (기본값: "GET")
+                    "headers": { /* Header */ } // request 헤더 (기본값: null)
+                }
+                ~~~
+            </Dd>
+            <Dt>`callback`</Dt>
+            <Dd>
+                request를 보낸 후 실행할 콜백 함수
+                - `error`: (에러 발생 시) 요청 중 발생한 에러를 나타내는 `java.lang.Exception`
+                - `response`: (요청 정상 처리 시) 요청에 대한 응답을 나타내는 [`org.jsoup.Connection.Response`](https://jsoup.org/apidocs/org/jsoup/Connection.Response.html)
+                - `doc`: (요청 정상 처리 시) 응답의 body에 대한 문서 형식의 값 [(`org.jsoup.nodes.Document`)](https://jsoup.org/apidocs/org/jsoup/nodes/Document.html)
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Http.request(Object, Function)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`request(Object, Function)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

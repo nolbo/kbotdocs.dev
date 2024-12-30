@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Event.Activity.BACK_PRESSED - API2",
+    openGraph: {
+        title: "Event.Activity.BACK_PRESSED - API2"
+    }
+}
+
+<Section>
+    ## Event.Activity.BACK_PRESSED
+
+    API2의 [`activityBackPressed`](/api2/activityBackPressed) 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Event.Activity.BACK_PRESSED;
+    ~~~
+
+    <Section>
+        ### 상수값
+
+        `String` - `"activityBackPressed"`
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Event.Activity.BACK_PRESSED">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`BACK_PRESSED`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

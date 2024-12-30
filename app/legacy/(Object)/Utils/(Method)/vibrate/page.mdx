@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.vibrate() - 레거시 API",
+    openGraph: {
+        title: "Utils.vibrate() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.vibrate()
+
+    주어진 시간(초; s)동안 진동을 울립니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.vibrate(sec: Number);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`sec`</Dt>
+            <Dd>
+                주어진 시간(초; s)동안 진동을 울립니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.vibrate()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`vibrate`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

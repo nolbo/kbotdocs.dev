@@ -1,0 +1,299 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api - 레거시 API",
+    openGraph: {
+        title: "Api - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api
+
+    `Api` 객체는 카카오톡봇의 기본적인 기능을 구현하거나 스크립트를 관리하기 위한 메소드들을 모아놓은 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Api` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`canReply`](/legacy/Api/canReply)`(room: String)` \
+                    특정 방에 메시지를 발신할 수 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`compile`](/legacy/Api/compile(Boolean$))`(throwOnError?: Boolean = false)` \
+                    모든 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`compile`](/legacy/Api/compile(String,Boolean$))`(scriptName: String, throwOnError?: Boolean = false)` \
+                    특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`gc`](/legacy/Api/gc)`()` \
+                    가비지 컬렉팅을 강제로 시작합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getActiveThreadsCount`](/legacy/Api/getActiveThreadsCount)`()` \
+                    스크립트의 활성 쓰레드 수를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.content.Context`</span></Td>
+                <Td>
+                    [`getContext`](/legacy/Api/getContext)`()` \
+                    앱의 Context(컨텍스트)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type={"warning"}>
+                        해당 메소드는 안드로이드 11 이상에서 동작하지 않습니다.
+                    </Noti>
+                    [`getLastImage`](/legacy/Api/getLastImage)`()` \
+                    가장 최근에 수신한 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    <Noti type={"warning"}>
+                        해당 메소드는 안드로이드 11 이상에서 동작하지 않습니다.
+                    </Noti>
+                    [`getLastImageBitmap`](/legacy/Api/getLastImageBitmap)`()` \
+                    가장 최근에 수신한 이미지의 `android.graphics.Bitmap`값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String[]`</span></Td>
+                <Td>
+                    [`getRoomList`](/legacy/Api/getRoomList)`()` \
+                    메시지 전송이 가능한 방 이름을 배열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String[]`</span></Td>
+                <Td>
+                    [`getScriptNames`](/legacy/Api/getScriptNames)`()` \
+                    모든 스크립트의 이름을 배열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`interruptThreads`](/legacy/Api/interruptThreads)`(scriptName?: String)` \
+                    스크립트의 쓰레드에 `interrupt` 요청을 보냅니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isCompiled`](/legacy/Api/isCompiled)`(scriptName: String)` \
+                    특정 스크립트의 컴파일 완료 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isCompiling`](/legacy/Api/isCompiling)`(scriptName: String)` \
+                    특정 스크립트의 컴파일이 진행 중인지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isOn`](/legacy/Api/isOn)`(scriptName: String)` \
+                    특정 스크립트의 활성화 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isTerminated`](/legacy/Api/isTerminated)`(scriptName?: String)` \
+                    [`Api.interruptThreads()`](/legacy/Api/interruptThreads) 실행 이후 스크립트의 모든 쓰레드의 `interrupt` 처리가 완료되었는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`makeNoti`](/legacy/Api/makeNoti)`(title: String, content: String, id?: Number = 0)` \
+                    상단바 알림을 생성하거나 수정합니다. 알림의 생성/수정 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`markAsRead`](/legacy/Api/markAsRead(String$))`(packageName?: String)` \
+                    메시지가 온 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`markAsRead`](/legacy/Api/markAsRead(String,String$))`(room: String, packageName?: String)` \
+                    특정 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`markAsReadOnID`](/legacy/Api/markAsReadOnID(BigInt))`(roomId: BigInt)` \
+                    특정 ID로 식별되는 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`markAsReadOnID`](/legacy/Api/markAsReadOnID(String))`(roomId: String)` \
+                    특정 ID로 식별되는 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`off`](/legacy/Api/off)`(scriptName?: String)` \
+                    스크립트의 작동을 비활성화하고 스크립트의 존재 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`on`](/legacy/Api/on)`(scriptName?: String)` \
+                    스크립트의 작동을 활성화하고 스크립트의 존재 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type="deprecated">
+                        해당 메소드는 Papago API 지원 중단으로 인해 지원이 중지되었습니다. 그러므로 더 이상 실제 변역 기능을 수행하지 않습니다.
+                        하위 호환성을 위해 메소드는 유지되지만, 메신저봇R에서는 항상 `null`을 반환하며 채팅 자동응답 봇에서는 `"Error Code: 051"`을 반환합니다.
+                    </Noti>
+                    [`papagoTranslate`](/legacy/Api/papagoTranslate)`(sourceLanguage: String, targetLanguage: String, content: String, errorToString?: Boolean = false)` \
+                    입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다. `errorToString?`의 값이 `true`일 경우 에러를 문자열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`prepare`](/legacy/Api/prepare)`(scriptName: String)` \
+                    특정 스크립트가 한번도 컴파일된 적이 없을 경우 컴파일하고 스크립트의 컴파일 상태를 나타내는 정수를 반환합니다. 컴파일 에러가 발생할 경우 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`reload`](/legacy/Api/reload(Boolean$))`(throwOnError?: Boolean = false)` \
+                    모든 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`reload`](/legacy/Api/reload(String,Boolean$))`(scriptName: String, throwOnError?: Boolean = false)` \
+                    특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`replyRoom`](/legacy/Api/replyRoom)`(room: String, message: String, hideToast?: Boolean = false)` \
+                    특정 방에 메시지를 발신하고 메시지를 발신할 방에 대한 세션의 존재 여부를 반환합니다. `hideToast?`가 `true`일 경우 방의 세션 존재 여부를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`replyToID`](/legacy/Api/replyToID(BigInt,String,Boolean))`(roomId: BigInt, message: String, hideToast: Boolean = false)` \
+                    특정 ID로 식별되는 방에 메시지를 발신하고 방에 대한 세션의 존재 여부를 반환합니다. `hideToast`가 `true`일 경우 방의 세션 존재 여부를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`replyToID`](/legacy/Api/replyToID(String,String,Boolean))`(roomId: String, message: String, hideToast: Boolean = false)` \
+                    특정 ID로 식별되는 방에 메시지를 발신하고 방에 대한 세션의 존재 여부를 반환합니다. `hideToast`가 `true`일 경우 방의 세션 존재 여부를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`showToast`](/legacy/Api/showToast)`(content: String, length?: Number = android.widget.Toast.LENGTH_SHORT)` \
+                    토스트 메시지를 표시합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`UIThread`](/legacy/Api/UIThread)`(func: () => Any?, onComplete?: (error: java.lang.Throwable?, result: Any?) => Any?)` \
+                    UI 쓰레드 상에서 특정 함수를 실행합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`unload`](/legacy/Api/unload)`(scriptName: String)` \
+                    스크립트를 컴파일 전 상태로 전환(언로드)하고 언로드 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`canReply`](/legacy/Api/canReply)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`compile(Boolean?)`](/legacy/Api/compile(Boolean$))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`compile(String, Boolean?)`](/legacy/Api/compile(String,Boolean$))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`gc`](/legacy/Api/gc)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getActiveThreadsCount`](/legacy/Api/getActiveThreadsCount)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getContext`](/legacy/Api/getContext)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getLastImage`](/legacy/Api/getLastImage)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getLastImageBitmap`](/legacy/Api/getLastImageBitmap)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRoomList`](/legacy/Api/getRoomList)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getScriptNames`](/legacy/Api/getScriptNames)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`interruptThreads`](/legacy/Api/interruptThreads)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isCompiled`](/legacy/Api/isCompiled)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isCompiling`](/legacy/Api/isCompiling)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isOn`](/legacy/Api/isOn)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isTerminated`](/legacy/Api/isTerminated)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`makeNoti`](/legacy/Api/makeNoti)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`markAsRead(String?)`](/legacy/Api/markAsRead(String?))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`markAsRead(String, String?)`](/legacy/Api/markAsRead(String,String?))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsReadOnID(BigInt)`](/legacy/Api/markAsReadOnID(BigInt))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsReadOnID(String)`](/legacy/Api/markAsReadOnID(String))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`off`](/legacy/Api/off)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`on`](/legacy/Api/on)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} deprecated>[`papagoTranslate`](/legacy/Api/papagoTranslate)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`prepare`](/legacy/Api/prepare)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reload(Boolean?)`](/legacy/Api/reload(Boolean$))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reload(String, Boolean?)`](/legacy/Api/reload(String,Boolean$))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyRoom`](/legacy/Api/replyRoom)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyToID(BigInt, String, Boolean)`](/legacy/Api/replyToID(BigInt,String,Boolean))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyToID(String, String, Boolean)`](/legacy/Api/replyToID(String,String,Boolean))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`showToast`](/legacy/Api/showToast)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`UIThread`](/legacy/Api/UIThread)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`unload`](/legacy/Api/unload)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

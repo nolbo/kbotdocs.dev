@@ -1,0 +1,48 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "SessionManager.bindSession(String, android.app.Notification.Action?) - API2",
+    openGraph: {
+        title: "SessionManager.bindSession(String, android.app.Notification.Action?) - API2"
+    }
+}
+
+<Section>
+    ## SessionManager.bindSession(String, android.app.Notification.Action?)
+
+    다른 메신저 앱의 `room` 방에 채팅이 왔을 때 메시지를 전송합니다. `action`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    sessionManager.bindSession(room: String, action?: android.app.Notification.Action);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`room`</Dt>
+            <Dd>
+                메시지를 보낼 메신저 앱 내의 방
+            </Dd>
+            <Dt>`action?`</Dt>
+            <Dd>
+                메시지 전송 구현을 위한 `android.app.Notification.Action`값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `action`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닐 경우 `true`, 둘 중 적어도 하나가 `null`일 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="SessionManager.bindSession(String, android.app.Notification.Action?)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`bindSession(String, android.app.Notification.Action?)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "AppData.getString() - 레거시 API",
+    openGraph: {
+        title: "AppData.getString() - 레거시 API"
+    }
+}
+
+<Section>
+    ## AppData.getString()
+
+    `key`에 대응하는 `String`형 데이터를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    AppData.getString(key: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                불러올 `String`형 데이터에 대응하는 키
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `key`에 대응하는 `String`형 데이터를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="AppData.getString()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getString`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

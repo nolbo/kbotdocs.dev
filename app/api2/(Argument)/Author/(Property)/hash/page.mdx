@@ -1,0 +1,31 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Author.hash - API2",
+}
+
+<Section>
+    ## Author.hash
+
+    발신자의 고유 해시입니다. 해시는 같은 방 내에서 고유합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    author.hash;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `String` - 발신자의 고유 해시입니다. 해시는 같은 방 내에서 고유합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Author.hash">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`hash`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

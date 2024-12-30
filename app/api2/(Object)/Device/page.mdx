@@ -1,0 +1,255 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device - API2",
+    openGraph: {
+        title: "Device - API2"
+    }
+}
+
+<Section>
+    ## Device
+
+    `Device` 객체는 구동 환경/기기에 관한 정보를 제공하는 메소드들을 모은 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Device` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Noti type="danger">
+                        wake lock 생성 후 오랜 시간 유지하는 것은 기기의 배터리 수명에 부정적 영향을 줄 수 있습니다. 사용할 경우 가능한 한 짧은 시간동안만 유지하는 것을 권장합니다.
+                    </Noti>
+                    [`acquireWakeLock`](/api2/Device/acquireWakeLock)`(levelAndFlags: Number, tag?: String = "[문서참조]", timeout?: Number = null)` \
+                    [wake lock](https://developer.android.com/develop/background-work/background-tasks/awake/wakelock)을 획득합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getAndroidVersionCode`](/api2/Device/getAndroidVersionCode)`()` \
+                    앱 구동 환경의 안드로이드 버전 코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getAndroidVersionName`](/api2/Device/getAndroidVersionName)`()` \
+                    앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getApiLevel`](/api2/Device/getApiLevel)`()` \
+                    앱 구동 환경의 안드로이드 API Level을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryHealth`](/api2/Device/getBatteryHealth)`()` \
+                    앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`android.content.Intent`](https://developer.android.com/reference/android/content/Intent)</span></Td>
+                <Td>
+                    [`getBatteryIntent`](/api2/Device/getBatteryIntent)`()` \
+                    [`android.content.Context.registerReceiver`](https://developer.android.com/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter))`(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryLevel`](/api2/Device/getBatteryLevel)`()` \
+                    앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryStatus`](/api2/Device/getBatteryStatus)`()` \
+                    앱 구동 기기의 배터리 상태를 나타내는 상수를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryTemp`](/api2/Device/getBatteryTemp)`()` \
+                    앱 구동 기기의 배터리 온도(˚C)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryTemperature`](/api2/Device/getBatteryTemperature)`()` \
+                    앱 구동 기기의 배터리 온도(*`temp`*` * 10`, ˚C)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getBatteryVoltage`](/api2/Device/getBatteryVoltage)`()` \
+                    앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`android.os.Build`](https://developer.android.com/reference/android/os/Build)</span></Td>
+                <Td>
+                    [`getBuild`](/api2/Device/getBuild)`()` \
+                    [`android.os.Build`](https://developer.android.com/reference/android/os/Build)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getConnectedNetworkType`](/api2/Device/getConnectedNetworkType)`()` \
+                    연결되어 있는 네트워크의 타입을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getFreeMemory`](/api2/Device/getFreeMemory)`()` \
+                    앱이 사용 가능한 메모리 크기를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getFreeStorageSpace`](/api2/Device/getFreeStorageSpace)`(path: String)` \
+                    `path` 경로의 파티션에서 할당되지 않은 공간의 크기(Byte)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getMaxMemory`](/api2/Device/getMaxMemory)`()` \
+                    앱이 사용하려고 시도하는 최대 메모리 크기(Byte)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getModelName`](/api2/Device/getModelName)`()` \
+                    앱 구동 기기의 모델명을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getPhoneBrand`](/api2/Device/getPhoneBrand)`()` \
+                    앱 구동 기기의 브랜드명을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getPhoneModel`](/api2/Device/getPhoneModel)`()` \
+                    앱 구동 기기의 모델명을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getPlugType`](/api2/Device/getPlugType)`()` \
+                    앱 구동 기기의 충전기 타입을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getTotalMemory`](/api2/Device/getTotalMemory)`()` \
+                    앱에 할당된 총 메모리 크기(Byte)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getTotalStorageSpace`](/api2/Device/getTotalStorageSpace)`(path: String)` \
+                    `path`경로의 파티션의 전체 크기(Byte)를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type="info">
+                        정상적으로 이용하기 위해 위치 권한이 필요합니다.
+                    </Noti>
+                    [`getWifiName`](/api2/Device/getWifiName)`()` \
+                    현재 연결되어 있는 WiFi의 이름을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isCharging`](/api2/Device/isCharging)`()` \
+                    앱 구동 기기가 충전 중인지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isPowerSaveMode`](/api2/Device/isPowerSaveMode)`()` \
+                    앱 구동 기기가 절전 모드인지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isScreenOn`](/api2/Device/isScreenOn)`()` \
+                    앱 구동 기기의 화면이 켜져 있는지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`releaseWakeLock`](/api2/Device/releaseWakeLock)`(flags?: Number = 0)` \
+                    [wake lock](https://developer.android.com/develop/background-work/background-tasks/awake/wakelock)을 해제합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`acquireWakeLock`](/api2/Device/acquireWakeLock)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionCode`](/api2/Device/getAndroidVersionCode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionName`](/api2/Device/getAndroidVersionName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getApiLevel`](/api2/Device/getApiLevel)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryHealth`](/api2/Device/getBatteryHealth)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryIntent`](/api2/Device/getBatteryIntent)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryLevel`](/api2/Device/getBatteryLevel)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryStatus`](/api2/Device/getBatteryStatus)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBatteryTemp`](/api2/Device/getBatteryTemp)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryTemperature`](/api2/Device/getBatteryTemperature)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBatteryVoltage`](/api2/Device/getBatteryVoltage)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getBuild`](/api2/Device/getBuild)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getConnectedNetworkType`](/api2/Device/getConnectedNetworkType)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getFreeMemory`](/api2/Device/getFreeMemory)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getFreeStorageSpace`](/api2/Device/getFreeStorageSpace)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getMaxMemory`](/api2/Device/getMaxMemory)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getModelName`](/api2/Device/getModelName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneBrand`](/api2/Device/getPhoneBrand)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneModel`](/api2/Device/getPhoneModel)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPlugType`](/api2/Device/getPlugType)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getTotalMemory`](/api2/Device/getTotalMemory)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getTotalStorageSpace`](/api2/Device/getTotalStorageSpace)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getWifiName`](/api2/Device/getWifiName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isCharging`](/api2/Device/isCharging)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isPowerSaveMode`](/api2/Device/isPowerSaveMode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isScreenOn`](/api2/Device/isScreenOn)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`releaseWakeLock`](/api2/Device/releaseWakeLock)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

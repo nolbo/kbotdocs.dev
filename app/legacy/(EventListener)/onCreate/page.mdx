@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "onCreate 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "onCreate 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## onCreate
+
+    `onCreate`는 스크립트 액티비티의 [`onCreate`](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle))가 호출되면 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onCreate(savedInstanceState: android.os.Bundle, activity: android.app.Activity) {
+
+    }
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`savedInstanceState`</Dt>
+            <Dd>
+                스크립트 액티비티의 `onCreate`의 인자 `savedInstanceState`입니다.
+            </Dd>
+            <Dt>`activity`</Dt>
+            <Dd>
+                해당 이벤트가 발생했을 때의 액티비티입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="onCreate">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`onCreate`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

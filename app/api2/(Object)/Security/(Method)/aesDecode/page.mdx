@@ -1,0 +1,52 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Security.aesDecode() - API2",
+    openGraph: {
+        title: "Security.aesDecode() - API2"
+    }
+}
+
+<Section>
+    ## Security.aesDecode()
+
+    `value`를 AES 복호화한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Security.aesDecode(key: String, initVector: String, value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                AES 복호화를 위한 키
+            </Dd>
+            <Dt>`initVector`</Dt>
+            <Dd>
+                초기화 백터
+            </Dd>
+            <Dt>`value`</Dt>
+            <Dd>
+                복호화할 값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `value`를 AES 복호화한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security.aesDecode()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`aesDecode`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

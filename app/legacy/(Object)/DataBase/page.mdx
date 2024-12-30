@@ -1,0 +1,65 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "DataBase - 레거시 API",
+    openGraph: {
+        title: "DataBase - 레거시 API"
+    }
+}
+
+<Section>
+    ## DataBase
+
+    `DataBase` 객체는 스크립트 로컬 폴더 내 데이터 조작에 관한 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`DataBase` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`appendDataBase`](/legacy/DataBase/appendDataBase)`(fileName: String, data: String)` \
+                    `fileName` 이름의 파일 내용에 새로운 내용을 이어 씁니다. 이어 쓴 후 해당 파일의 최종 내용을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getDataBase`](/legacy/DataBase/getDataBase)`(fileName: String)` \
+                    `fileName` 이름의 파일의 내용을 문자열로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`removeDataBase`](/legacy/DataBase/removeDataBase)`(fileName: String)` \
+                    `fileName` 이름의 파일을 삭제합니다. 파일의 삭제 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`setDataBase`](/legacy/DataBase/setDataBase)`(fileName: String, data: String)` \
+                    문자열을 `fileName` 이름의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `fileName` 이름의 파일을 생성합니다. 덮어쓰거나 생성한 파일의 최종 내용을 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="DataBase 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`appendDataBase`](/legacy/DataBase/appendDataBase)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getDataBase`](/legacy/DataBase/getDataBase)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`removeDataBase`](/legacy/DataBase/removeDataBase)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`setDataBase`](/legacy/DataBase/setDataBase)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

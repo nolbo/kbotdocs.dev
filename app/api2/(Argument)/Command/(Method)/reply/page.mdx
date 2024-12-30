@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Command.reply() - API2",
+    openGraph: {
+        title: "Command.reply() - API2"
+    }
+}
+
+<Section>
+    ## Command.reply()
+
+    메시지가 발신된 방에 메시지를 발신합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    cmd.reply(content: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`content`</Dt>
+            <Dd>
+                발신할 메시지의 내용
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Command.reply()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`reply`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

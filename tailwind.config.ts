@@ -167,6 +167,8 @@ export default {
                 "heading-content": "64px",
                 "main-md": "var(--width-main-md)",
                 "header-h": "64px",
+                "sidebar-w-md": "225px",
+                "sidebar-w-lg": "256px",
                 none: "0"
             },
             padding: {

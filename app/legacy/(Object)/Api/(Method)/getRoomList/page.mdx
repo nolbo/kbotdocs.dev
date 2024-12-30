@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.getRoomList() - 레거시 API",
+    openGraph: {
+        title: "Api.getRoomList() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.getRoomList()
+
+    메시지 전송이 가능한 방 이름을 배열로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.getRoomList();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String[]` - 메시지 전송이 가능한 방 이름이 담긴 배열을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.getRoomList()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getRoomList`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

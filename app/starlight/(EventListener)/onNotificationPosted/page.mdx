@@ -1,0 +1,32 @@
+export const metadata = {
+    title: "onNotificationPosted 이벤트 리스너 - StarLight",
+    openGraph: {
+        title: "onNotificationPosted 이벤트 리스너 - StarLight"
+    }
+}
+
+<Section>
+    ## onNotificationPosted
+
+    `onNotificationPosted`는 알림이 발생할 때 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onNotificationPosted(statusBarNotification: android.service.notification.StatusBarNotification) {
+
+    }
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`statusBarNotification`</Dt>
+            <Dd>
+                알림에 관한 정보가 담긴 [`android.service.notification.StatusBarNotification`](https://developer.android.com/reference/android/service/notification/StatusBarNotification)입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>

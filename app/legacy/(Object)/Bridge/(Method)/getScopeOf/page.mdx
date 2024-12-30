@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Bridge.getScopeOf() - 레거시 API",
+    openGraph: {
+        title: "Bridge.getScopeOf() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Bridge.getScopeOf()
+
+    특정 스크립트의 전역 스코프를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Bridge.getScopeOf(scriptName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName`</Dt>
+            <Dd>
+                전역 스코프의 스크립트 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `org.mozilla.javascript.ScripTableObject` - `scriptName`를 이름으로 하는 스크립트의 전역 스코프를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bridge.getScopeOf()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getScopeOf`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

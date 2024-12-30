@@ -1,0 +1,160 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Command - API2",
+    openGraph: {
+        title: "Command - API2"
+    }
+}
+
+<Section>
+    ## Command
+
+    `Command` 객체는 발신된 명령어에 대한 정보를 담고 있는 객체입니다. [`command`](/api2/command) 이벤트의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Command` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String[]`</span></Td>
+                <Td>
+                    [`args`](/api2/Command/args) \
+                    명령어 인자들의 배열입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Author`](/api2/Author)</span></Td>
+                <Td>
+                    [`author`](/api2/Command/author) \
+                    메시지의 발신자에 대한 [`Author`](/api2/Author) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`BigInt`</span></Td>
+                <Td>
+                    [`channelId`](/api2/Command/channelId) \
+                    메시지가 발신된 방의 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`command`](/api2/Command/command) \
+                    명령어의 이름입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`content`](/api2/Command/content) \
+                    메시지의 전체 내용입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Image`](/api2/Image)</span></Td>
+                <Td>
+                    [`image`](/api2/Command/image) \
+                    메시지에 포함된 이미지에 관한 정보를 담은 [`Image`](/api2/Image) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isDebugRoom`](/api2/Command/isDebugRoom) \
+                    방이 디버깅 룸인지의 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isGroupChat`](/api2/Command/isGroupChat) \
+                    방이 그룹 채팅방인지의 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isMention`](/api2/Command/isMention) \
+                    메시지 내 멘션 포함 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`BigInt`</span></Td>
+                <Td>
+                    [`logId`](/api2/Command/logId) \
+                    메시지에 대한 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`packageName`](/api2/Command/packageName) \
+                    메시지가 발신된 메신저 앱의 패키지명입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`room`](/api2/Command/room) \
+                    메시지가 발신된 방의 이름입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Command` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`markAsRead`](/api2/Command/markAsRead)`()` \
+                    메시지를 수신한 방의 알림을 읽음 처리합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`reply`](/api2/Command/reply)`(content: String)` \
+                    메시지를 수신한 방에 메시지를 발신합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Command 객체 프로퍼티">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`args`](/api2/Command/args)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`author`](/api2/Command/author)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`channelId`](/api2/Command/channelId)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`command`](/api2/Command/command)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`content`](/api2/Command/content)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`image`](/api2/Command/image)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isDebugRoom`](/api2/Command/isDebugRoom)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isGroupChat`](/api2/Command/isGroupChat)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isMention`](/api2/Command/isMention)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`logId`](/api2/Command/logId)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`packageName`](/api2/Command/packageName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`room`](/api2/Command/room)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="Command 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsRead`](/api2/Command/markAsRead)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`reply`](/api2/Command/reply)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

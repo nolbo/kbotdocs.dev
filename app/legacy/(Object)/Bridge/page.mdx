@@ -1,0 +1,101 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Bridge - 레거시 API",
+    openGraph: {
+        title: "Bridge - 레거시 API"
+    }
+}
+
+<Section>
+    ## Bridge
+
+    `Bridge` 객체는 다른 스크립트의 전역 스코프에 접근하기 위한 객체입니다. 채팅 자동응답 봇에서는 단순 자동응답 간의 스코프 교류를 위한 메소드도 제공합니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Bridge` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`evaluateStringIn`](/legacy/Bridge/evaluateStringIn)`(scriptName: String, src: String)` \
+                    특정 스크립트의 전역 스코프에서 문자열로 표현된 JavaScript 코드를 실행합니다. 실행 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type={"nonStandard"}>
+                        해당 메소드는 비표준입니다.
+                    </Noti>
+                    [`getGlobalVariable`](/legacy/Bridge/getGlobalVariable)`(name: String)` \
+                    단순 자동응답에 대하여 특정 이름을 가진 `[[전체변수]]`의 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`org.mozilla.javascript.ScripTableObject`</span></Td>
+                <Td>
+                    [`getScopeOf`](/legacy/Bridge/getScopeOf)`(scriptName: String)` \
+                    특정 스크립트의 전역 스코프를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type={"nonStandard"}>
+                        해당 메소드는 비표준입니다.
+                    </Noti>
+                    [`getVariable`](/legacy/Bridge/getVariable)`(room: String, name: String)` \
+                    단순 자동응답에 대하여 특정 방에서 특정 이름을 가진 `[[변수]]`의 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isAllowed`](/legacy/Bridge/isAllowed)`(scriptName: String)` \
+                    `Bridge` 객체로 특정 스크립트에 접근이 가능한지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Noti type={"nonStandard"}>
+                        해당 메소드는 비표준입니다.
+                    </Noti>
+                    [`setGlobalVariable`](/legacy/Bridge/setGlobalVariable)`(name: String, value: String)` \
+                    단순 자동응답에 대하여 특정 이름을 가진 `[[전체변수]]`에 값을 저장합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Noti type={"nonStandard"}>
+                        해당 메소드는 비표준입니다.
+                    </Noti>
+                    [`setVariable`](/legacy/Bridge/setVariable)`(room: String, name: String, value: String)` \
+                    단순 자동응답에 대하여 특정 방에서 특정 이름을 가진 `[[변수]]`에 값을 저장합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bridge 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`evaluateStringIn`](/legacy/Bridge/evaluateStringIn)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>[`getGlobalVariable`](/legacy/Bridge/getGlobalVariable)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getScopeOf`](/legacy/Bridge/getScopeOf)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>[`getVariable`](/legacy/Bridge/getVariable)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isAllowed`](/legacy/Bridge/isAllowed)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>[`setGlobalVariable`](/legacy/Bridge/setGlobalVariable)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>[`setVariable`](/legacy/Bridge/setVariable)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

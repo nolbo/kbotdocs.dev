@@ -1,0 +1,38 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getWifiName() - API2",
+    openGraph: {
+        title: "Device.getWifiName() - API2"
+    }
+}
+
+<Section>
+    ## Device.getWifiName()
+
+    현재 연결되어 있는 WiFi의 이름을 반환합니다.
+
+    <Noti type="info">
+        정상적으로 이용하기 위해 위치 권한이 필요합니다.
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getWifiName();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 현재 연결되어 있는 WiFi의 이름을 반환합니다. 연결되어 있는 WiFi가 없거나 위치 권한이 허용되지 않은 경우 `<unknown ssid>`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getWifiName()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getWifiName`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

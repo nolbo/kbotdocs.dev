@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "BotManager.getPower() - API2",
+    openGraph: {
+        title: "BotManager.getPower() - API2"
+    }
+}
+
+<Section>
+    ## BotManager.getPower()
+
+    `botName` 이름의 `Bot` 객체의 활성화 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    BotManager.getPower(botName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`botName`</Dt>
+            <Dd>
+                활성화 여부를 확인할 `Bot` 객체의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `botName`의 `Bot`이 활성화 상태일 경우 `true`, 비활성화 상태일 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="BotManager.getPower()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getPower`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

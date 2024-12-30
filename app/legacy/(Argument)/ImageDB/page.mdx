@@ -1,0 +1,145 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "ImageDB - 레거시 API",
+    openGraph: {
+        title: "ImageDB - 레거시 API"
+    }
+}
+
+<Section>
+    ## ImageDB
+
+    `ImageDB` 객체는 이미지에 대한 기능을 제공하는 객체입니다. 해당 객체는 직접 호출할 수 없습니다. [`response`](/legacy/response)의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`ImageDB` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getImage`](/legacy/ImageDB/getImage)`()` \
+                    수신한 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getImageBase64`](/legacy/ImageDB/getImageBase64)`()` \
+                    수신한 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    [`getImageBitmap`](/legacy/ImageDB/getImageBitmap)`()` \
+                    수신한 이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getImageHash`](/legacy/ImageDB/getImageHash)`()` \
+                    수신한 이미지의 해시코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getImageMD5`](/legacy/ImageDB/getImageMD5)`()` \
+                    수신한 이미지를 MD5 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getImageSHA`](/legacy/ImageDB/getImageSHA)`()` \
+                    수신한 이미지를 SHA 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getProfileBase64`](/legacy/ImageDB/getProfileBase64)`()` \
+                    발신자의 프로필 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    [`getProfileBitmap`](/legacy/ImageDB/getProfileBitmap)`()` \
+                    발신자의 프로필 이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getProfileHash`](/legacy/ImageDB/getProfileHash)`()` \
+                    발신자의 프로필 이미지의 해시코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getProfileImage`](/legacy/ImageDB/getProfileImage)`()` \
+                    발신자의 프로필 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getProfileMD5`](/legacy/ImageDB/getProfileMD5)`()` \
+                    발신자의 프로필 이미지를 MD5 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getProfileSHA`](/legacy/ImageDB/getProfileSHA)`()` \
+                    발신자의 프로필 이미지를 SHA 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    [`getRoomBitmap`](/legacy/ImageDB/getRoomBitmap)`()` \
+                    방 아이콘 이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getRoomImage`](/legacy/ImageDB/getRoomImage)`()` \
+                    방 아이콘 이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="ImageDB 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImage`](/legacy/ImageDB/getImage)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImageBase64`](/legacy/ImageDB/getImageBase64)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImageBitmap`](/legacy/ImageDB/getImageBitmap)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImageHash`](/legacy/ImageDB/getImageHash)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImageMD5`](/legacy/ImageDB/getImageMD5)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getImageSHA`](/legacy/ImageDB/getImageSHA)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getProfileBase64`](/legacy/ImageDB/getProfileBase64)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getProfileBitmap`](/legacy/ImageDB/getProfileBitmap)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getProfileHash`](/legacy/ImageDB/getProfileHash)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getProfileImage`](/legacy/ImageDB/getProfileImage)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getProfileMD5`](/legacy/ImageDB/getProfileMD5)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getProfileSHA`](/legacy/ImageDB/getProfileSHA)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRoomBitmap`](/legacy/ImageDB/getRoomBitmap)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRoomImage`](/legacy/ImageDB/getRoomImage)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

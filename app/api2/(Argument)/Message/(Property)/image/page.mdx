@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Message.image - API2",
+    openGraph: {
+        title: "Message.image - API2"
+    }
+}
+
+<Section>
+    ## Message.image
+
+    메시지에 포함된 이미지에 관한 정보를 담은 [`Image`](/api2/Image) 객체입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    msg.image;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `Image` - 메시지에 포함된 이미지에 관한 정보를 담은 [`Image`](/api2/Image) 객체입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Message.image">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`image`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

@@ -1,0 +1,42 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "command 이벤트 - API2",
+    openGraph: {
+        title: "command 이벤트 - API2"
+    }
+}
+
+<Section>
+    ## command
+
+    `command` 이벤트는 [`Bot.setCommandPrefix()`](/api2/Bot/setCommandPrefix)에 의해 정해진 접두어로 시작하는 명령어를 수신할 때 발생하는 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.COMMAND`](/api2/Event/COMMAND)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("command", (msg: Command) => {});
+    // 또는
+    bot.addListener(Event.COMMAND, (msg: Command) => {});
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`msg`</Dt>
+            <Dd>
+                발신된 명령어에 대한 정보를 담고 있는 [`Command`](/api2/Command) 객체입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="command">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`command`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

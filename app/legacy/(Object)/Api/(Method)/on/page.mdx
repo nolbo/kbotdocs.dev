@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.on() - 레거시 API",
+    openGraph: {
+        title: "Api.on() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.on()
+
+    스크립트의 작동을 활성화하고 스크립트의 존재 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.on(scriptName?: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName?`</Dt>
+            <Dd>
+                활성화할 스크립트의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `scriptName?` 인자가 존재할 경우 `scriptName?` 이름의 스크립트가 존재하면 `true`, 존재하지 않으면 `false`를 반환합니다.
+        `scriptName?` 인자가 존재하지 않을 경우 무조건 `true`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.on()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`on`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

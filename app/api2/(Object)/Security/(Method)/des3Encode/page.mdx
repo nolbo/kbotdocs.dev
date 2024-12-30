@@ -1,0 +1,48 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Security.des3Encode() - API2",
+    openGraph: {
+        title: "Security.des3Encode() - API2"
+    }
+}
+
+<Section>
+    ## Security.des3Encode()
+
+    `value`를 DES3 암호화한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Security.des3Encode(key: String, value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                DES3 암호화를 위한 키
+            </Dd>
+            <Dt>`value`</Dt>
+            <Dd>
+                암호화할 값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `value`를 DES3 암호화한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security.des3Encode()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`des3Encode`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

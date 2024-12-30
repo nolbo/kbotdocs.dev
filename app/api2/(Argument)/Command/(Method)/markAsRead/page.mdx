@@ -1,0 +1,28 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Command.markAsRead() - API2",
+    openGraph: {
+        title: "Command.markAsRead() - API2"
+    }
+}
+
+<Section>
+    ## Command.markAsRead()
+
+    메시지가 발신된 방의 알림을 읽음 처리합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    cmd.markAsRead();
+    ~~~
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Command.markAsRead()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`markAsRead`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

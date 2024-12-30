@@ -9,12 +9,14 @@ export default function NotFound() {
 
     return (
         <div className={"flex justify-center px-screen-x-default md:px-screen-x-md"}>
-            <div className={"w-full h-screen md:max-w-main-md"}>
+            <div className={"w-full h-full md:max-w-main-md"}>
                 <div
                     className={"flex flex-col justify-center items-center h-full"}>
                     <div className={"flex items-center gap-[24px]"}>
                         {
-                            (theme == "light") ? <NotFound_Light className={"w-[128px] h-[128px]"}/> :
+                            (theme == "light") ? 
+                                <NotFound_Light className={"w-[128px] h-[128px]"}/> 
+                                :
                                 <NotFound_Dark className={"w-[128px] h-[128px]"}/>
                         }
                         <div className={"flex flex-col justify-center gap-[8px]"}>

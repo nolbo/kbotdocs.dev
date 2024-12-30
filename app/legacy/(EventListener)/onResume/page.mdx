@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "onResume 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "onResume 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## onResume
+
+    `onResume`는 스크립트 액티비티의 [`onResume`](https://developer.android.com/reference/android/app/Activity#onResume())가 호출되면 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onResume(activity: android.app.Activity) {
+
+    }
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`activity`</Dt>
+            <Dd>
+                해당 이벤트가 발생했을 때의 액티비티입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="onResume">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`onResume`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

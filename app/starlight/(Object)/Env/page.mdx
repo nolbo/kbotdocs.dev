@@ -1,0 +1,47 @@
+export const metadata = {
+    title: "Env - StarLight",
+    openGraph: {
+        title: "Env - StarLight"
+    }
+}
+
+<Section>
+    ## Env
+
+    `Env` 객체는 Dotenv 형식 파일의 입출력을 위한 객체입니다. 기본적으로 프로젝트 폴더 내부의 `.env` 파일을 찾아 파싱합니다.
+    이 객체는 Dotenvy의 확장된 Dotenv 형식을 지원합니다. 자세한 사항은 [여기](https://github.com/allan2/dotenvy/blob/master/.env-substitution)를 참고하세요.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Env` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`get`](/starlight/Env/get)`(key: String)` \
+                    특정 키에 대응하는 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.util.Map<String, String>`</span></Td>
+                <Td>
+                    [`parseFile`](/starlight/Env/parseFile)`(path: String)` \
+                    특정 Dotenv 파일에 대한 `java.util.Map<String, String>` 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.util.Map<String, String>`</span></Td>
+                <Td>
+                    [`parseString`](/starlight/Env/parseString)`(content: String)` \
+                    Dotenv 형식의 문자열을 `java.util.Map<String, String>` 형식으로 변환한 값을 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

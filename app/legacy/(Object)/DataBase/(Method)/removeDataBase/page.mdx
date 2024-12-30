@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "DataBase.removeDataBase() - 레거시 API",
+    openGraph: {
+        title: "DataBase.removeDataBase() - 레거시 API"
+    }
+}
+
+<Section>
+    ## DataBase.removeDataBase()
+
+    `fileName` 이름의 파일을 삭제합니다. 파일의 삭제 성공 여부를 반환합니다.
+    메신저봇R은 **삭제 시 백업기능**이 활성화 상태인 경우 *`fileName`*`.bak` 파일을 생성해 백업합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    DataBase.removeDataBase(fileName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`fileName`</Dt>
+            <Dd>
+                삭제할 파일의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - 파일 삭제에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다. `java.io.File.delete()`의 반환값과 같습니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="DataBase.removeDataBase()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`removeDataBase`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

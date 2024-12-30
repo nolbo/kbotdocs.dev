@@ -1,0 +1,39 @@
+export const metadata = {
+    title: "Platform.getAsset() - StarLight",
+    openGraph: {
+        title: "Platform.getAsset() - StarLight"
+    }
+}
+
+<Section>
+    ## Plugin.getAsset()
+
+    플러그인에 등록된 에셋 파일을 반환합니다.
+
+    <Noti type="danger">
+        플러그인의 에셋은 읽기 전용이며, 이를 수정 혹은 제거해서는 안됩니다.
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Plugin.getAsset(path: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                에셋 파일의 상대 경로
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `java.io.File` - 플러그인에 등록된 에셋 파일에 대한 `java.io.File` 값을 반환합니다.
+    </Section>
+</Section>

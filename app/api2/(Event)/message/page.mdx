@@ -1,0 +1,42 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "message 이벤트 - API2",
+    openGraph: {
+        title: "message 이벤트 - API2"
+    }
+}
+
+<Section>
+    ## message
+
+    `message` 이벤트는 메시지를 수신할 때 발생하는 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.MESSAGE`](/api2/Event/MESSAGE)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("message", (msg: Message) => {});
+    // 또는
+    bot.addListener(Event.MESSAGE, (msg: Message) => {});
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`msg`</Dt>
+            <Dd>
+                발신된 메시지에 대한 정보를 담고 있는 [`Message`](/api2/Message) 객체입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="message">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`message`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

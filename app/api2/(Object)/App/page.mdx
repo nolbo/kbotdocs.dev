@@ -1,0 +1,49 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "App - API2",
+    openGraph: {
+        title: "App - API2"
+    }
+}
+
+<Section>
+    ## App
+
+    `App` 객체는 봇 구동 앱에 관한 기능들을 담고 있는 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+        <Tr>
+            <Th colSpan="2">`App` 객체의 메소드</Th>
+        </Tr>
+        </Thead>
+        <Tbody>
+        <Tr>
+            <Td><span>`android.content.Context`</span></Td>
+            <Td>
+                [`getContext`](/api2/App/getContext)`()` \
+                앱의 Context(컨텍스트)를 반환합니다.
+            </Td>
+        </Tr>
+        <Tr>
+            <Td><span>`void`</span></Td>
+            <Td>
+                [`runOnUiThread`](/api2/App/runOnUiThread)`(task: () => Any, onComplete: (error, result) => Any)` \
+                UI쓰레드 상에서 특정 함수를 실행합니다.
+            </Td>
+        </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="App 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getContext`](/api2/App/getContext)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`runOnUiThread`](/api2/App/runOnUiThread)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

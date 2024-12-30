@@ -1,0 +1,67 @@
+export const metadata = {
+    title: "NotificationBuilder - StarLight",
+    openGraph: {
+        title: "NotificationBuilder - StarLight"
+    }
+}
+
+<Section>
+    ## NotificationBuilder
+
+    `NotificationBuilder` 객체는 알림의 생성을 위한 빌더(Builder) 객체입니다. 해당 객체는 직접 호출할 수 없습니다. [`Notification.create()`](/starlight/Notification/create)을 이용해 `NotificationBuilder` 객체를 반환받을 수 있습니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`NotificationBuilder` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Notification`](/starlight/Notification)</span></Td>
+                <Td>
+                    [`build`](/starlight/NotificationBuilder/build)`()` \
+                    설정한 값들로 알림을 생성하고 생성된 알림을 제어할 수 있는 `Notification` 객체를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`NotificationBuilder`</span></Td>
+                <Td>
+                    [`lights`](/starlight/NotificationBuilder/lights)`(argb: Number, onMs: Number, offMs: Number)` \
+                    알림의 LED 발광 패턴을 설정합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`NotificationBuilder`</span></Td>
+                <Td>
+                    [`onClick`](/starlight/NotificationBuilder/onClick)`(title: String, callback: (id: Number) => Any?)` \
+                    알림에 클릭 가능한 버튼과 클릭할 때 호출될 콜백 함수를 설정합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`NotificationBuilder`</span></Td>
+                <Td>
+                    [`onDismiss`](/starlight/NotificationBuilder/onDismiss)`(callback: (id: Number) => Any?)` \
+                    알림이 상단바에서 제거될 때 호출될 콜백 함수를 설정합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`NotificationBuilder`</span></Td>
+                <Td>
+                    [`setText`](/starlight/NotificationBuilder/setText)`(text: String)` \
+                    알림의 내용을 설정합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`NotificationBuilder`</span></Td>
+                <Td>
+                    [`setTitle`](/starlight/NotificationBuilder/setTitle)`(title: String)` \
+                    알림의 제목을 설정합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

@@ -1,0 +1,97 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "AppData - API2",
+    openGraph: {
+        title: "AppData - API2"
+    }
+}
+
+<Section>
+    ## AppData
+
+    `AppData` 객체는 앱의 데이터에 관한 기능들을 위한 객체입니다. `AppData` 객체로 관리하는 데이터는 `키: 값` 형태의 데이터입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`AppData` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`clear`](/api2/AppData/clear)`()` \
+                    `AppData` 객체로 저장한 모든 데이터를 삭제합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`getBoolean`](/api2/AppData/getBoolean)`(key: String)` \
+                    `key`에 대응하는 `Boolean`형 데이터를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`getInt`](/api2/AppData/getInt)`(key: String)` \
+                    `key`에 대응하는 `Number`(정수)형 데이터를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getString`](/api2/AppData/getString)`(key: String)` \
+                    `key`에 대응하는 `String`형 데이터를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`putBoolean`](/api2/AppData/putBoolean)`(key: String, boolean: Boolean)` \
+                    앱 데이터에 `key: boolean` (`String: Boolean` 형식) 데이터를 씁니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`putInt`](/api2/AppData/putInt)`(key: String, integer: Number)` \
+                    앱 데이터에 `key: integer` (`String: Number(정수)` 형식) 데이터를 씁니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`putString`](/api2/AppData/putString)`(key: String, string: String)` \
+                    앱 데이터에 `key: string` (`String: String` 형식) 데이터를 씁니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`remove`](/api2/AppData/remove)`(key: String)` \
+                    `key`에 대응하는 앱 데이터를 삭제합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="AppData 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`clear`](/api2/AppData/clear)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBoolean`](/api2/AppData/getBoolean)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getInt`](/api2/AppData/getInt)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getString`](/api2/AppData/getString)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`putBoolean`](/api2/AppData/putBoolean)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`putInt`](/api2/AppData/putInt)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`putString`](/api2/AppData/putString)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`remove`](/api2/AppData/remove)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

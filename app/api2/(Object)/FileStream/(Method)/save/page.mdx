@@ -1,0 +1,47 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "FileStream.save() - API2",
+    openGraph: {
+        title: "FileStream.save() - API2"
+    }
+}
+
+<Section>
+    ## FileStream.save()
+
+    문자열을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다. `append?`가 `true`일 경우 `path` 경로의 파일 내용에 새로운 내용을 이어 씁니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    FileStream.save(path: String, data: String, append?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path`</Dt>
+            <Dd>
+                내용을 쓰거나 새로 생성할 파일의 경로
+            </Dd>
+            <Dt>`data`</Dt>
+            <Dd>
+                생성할 파일의 내용
+            </Dd>
+            <Dt>`append?`</Dt>
+            <Dd>
+                `path` 경로의 파일이 존재할 경우 이어쓰기 여부
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="FileStream.save()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`save`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

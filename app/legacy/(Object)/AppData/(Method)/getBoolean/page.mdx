@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "AppData.getBoolean() - 레거시 API",
+    openGraph: {
+        title: "AppData.getBoolean() - 레거시 API"
+    }
+}
+
+<Section>
+    ## AppData.getBoolean()
+
+    `key`에 대응하는 `Boolean`형 데이터를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    AppData.getBoolean(key: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                불러올 `Boolean`형 데이터에 대응하는 키
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `key`에 대응하는 `Boolean`형 데이터를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="AppData.getBoolean()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getBoolean`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

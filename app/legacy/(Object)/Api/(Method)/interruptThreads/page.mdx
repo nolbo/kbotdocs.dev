@@ -1,0 +1,40 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.interruptThreads() - 레거시 API",
+    openGraph: {
+        title: "Api.interruptThreads() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.interruptThreads()
+
+    스크립트의 쓰레드에 `interrupt` 요청을 보냅니다. `scriptName?` 인자가 존재할 경우 `scriptName?` 이름의 스크립트의 쓰레드에 `interrupt` 요청을 보냅니다.
+    `scriptName?` 인자가 존재하지 않을 경우 해당 메소드를 호출한 스크립트의 쓰레드에 `interrupt` 요청을 보냅니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.interruptThreads(scriptName?: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName?`</Dt>
+            <Dd>
+                쓰레드에 `interrupt` 요청을 보낼 스크립트 이름
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.interruptThreads()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`interruptThreads`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

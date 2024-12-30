@@ -1,0 +1,43 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "AppData.putString() - 레거시 API",
+    openGraph: {
+        title: "AppData.putString() - 레거시 API"
+    }
+}
+
+<Section>
+    ## AppData.putString()
+
+    앱 데이터에 `key: string` (`String: String` 형식) 데이터를 씁니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    AppData.putString(key: String, string: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                쓸 앱 데이터의 키
+            </Dd>
+            <Dt>`string`</Dt>
+            <Dd>
+                `key`에 대한 `String`형 데이터
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="AppData.putString()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`putString`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

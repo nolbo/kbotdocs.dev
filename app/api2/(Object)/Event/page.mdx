@@ -1,0 +1,97 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Event - API2",
+    openGraph: {
+        title: "Event - API2"
+    }
+}
+
+<Section>
+    ## Event
+
+    `Event` 객체는 API2의 이벤트들에 대한 상수들을 제공하는 객체입니다.
+</Section>
+<Section>
+    ## 상수
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Event` 객체의 상수</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Event.Activity`</span></Td>
+                <Td>
+                    [`Activity`](/api2/Event/Activity) \
+                    API2의 액티비티 관련 이벤트들에 대한 상수들을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`BATTERY_LEVEL_CHANGED`](/api2/Event/BATTERY_LEVEL_CHANGED)` = "batteryLevelChanged"` \
+                    API2의 [`batteryLevelChanged`](/api2/batteryLevelChanged) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`COMMAND`](/api2/Event/COMMAND)` = "command"` \
+                    API2의 [`command`](/api2/command) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`MESSAGE`](/api2/Event/MESSAGE)` = "message"` \
+                    API2의 [`message`](/api2/message) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`NOTIFICATION_POSTED`](/api2/Event/NOTIFICATION_POSTED)` = "notificationPosted"` \
+                    API2의 [`notificationPosted`](/api2/notificationPosted) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`NOTIFICATION_REMOVED`](/api2/Event/NOTIFICATION_REMOVED)` = "notificationRemoved"` \
+                    API2의 [`notificationRemoved`](/api2/notificationRemoved) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`START_COMPILE`](/api2/Event/START_COMPILE)` = "startCompile"` \
+                    API2의 [`startCompile`](/api2/startCompile) 이벤트입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`TICK`](/api2/Event/TICK)` = "tick"` \
+                    API2의 [`tick`](/api2/tick) 이벤트입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Event 객체 상수">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Activity`](/api2/Event/Activity)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`BATTERY_LEVEL_CHANGED`](/api2/Event/BATTERY_LEVEL_CHANGED)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`COMMAND`](/api2/Event/COMMAND)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`MESSAGE`](/api2/Event/MESSAGE)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`NOTIFICATION_POSTED`](/api2/Event/NOTIFICATION_POSTED)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`NOTIFICATION_REMOVED`](/api2/Event/NOTIFICATION_REMOVED)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`START_COMPILE`](/api2/Event/START_COMPILE)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`TICK`](/api2/Event/TICK)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

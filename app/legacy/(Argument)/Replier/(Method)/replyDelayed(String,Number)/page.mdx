@@ -1,0 +1,43 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Replier.replyDelayed(String, Number) - 레거시 API",
+    openGraph: {
+        title: "Replier.replyDelayed(String, Number) - 레거시 API"
+    }
+}
+
+<Section>
+    ## Replier.replyDelayed(String, Number)
+
+    일정 시간 후 메시지를 수신한 방에 메시지를 발신합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    replier.replyDelayed(msg: String, delay: Number);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`msg`</Dt>
+            <Dd>
+                일정 시간 후 발신할 메시지의 내용
+            </Dd>
+            <Dt>`delay`</Dt>
+            <Dd>
+                지연할 시간(밀리초; ms)
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Replier.replyDelayed(String, Number)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`replyDelayed(String, Number)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

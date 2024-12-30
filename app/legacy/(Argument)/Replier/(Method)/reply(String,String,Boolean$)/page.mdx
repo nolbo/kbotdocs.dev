@@ -1,0 +1,53 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Replier.reply(String, String, Boolean?) - 레거시 API",
+    openGraph: {
+        title: "Replier.reply(String, String, Boolean?) - 레거시 API"
+    }
+}
+
+<Section>
+    ## Replier.reply(String, String, Boolean?)
+
+    특정 방에 메시지를 발신하고 방에 대한 세션의 존재 여부를 반환합니다. `hideToast?`가 `true`일 경우 방의 세션 존재 여부를 토스트 메시지로 출력합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    replier.reply(room: String, msg: String, hideToast?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`room`</Dt>
+            <Dd>
+                메시지를 발신할 방의 이름
+            </Dd>
+            <Dt>`msg`</Dt>
+            <Dd>
+                발신할 메시지의 내용
+            </Dd>
+            <Dt>`hideToast?`</Dt>
+            <Dd>
+                메시지를 발신할 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `room` 방에 대한 세션이 존재하면 `true`, 존재하지 않으면 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Replier.reply(String, String, Boolean?)">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`reply(String, String)`</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`reply(String, String, Boolean)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

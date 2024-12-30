@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.isScreenOn() - 레거시 API",
+    openGraph: {
+        title: "Device.isScreenOn() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Device.isScreenOn()
+
+    앱 구동 기기의 화면이 켜져 있는지의 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.isScreenOn();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Boolean` - 앱 구동 기기의 화면이 켜져 있을 경우 `true`, 꺼져 있을 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.isScreenOn()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`isScreenOn`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

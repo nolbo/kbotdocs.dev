@@ -1,0 +1,42 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "activityStart 이벤트 - API2",
+    openGraph: {
+        title: "activityStart 이벤트 - API2"
+    }
+}
+
+<Section>
+    ## activityStart
+
+    `activityStart` 이벤트는 스크립트 액티비티의 [`onStart`](https://developer.android.com/reference/android/app/Activity#onStart())가 호출되면 발생하는 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.Activity.START`](/api2/Event/Activity/START)를 이용해 이벤트 이름을 전달할 수도 있습니다.
+    ~~~js
+    bot.addListener("activityStart", (activity: android.app.Activity) => {});
+    // 또는
+    bot.addListener(Event.Activity.START, (activity: android.app.Activity) => {});
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`activity`</Dt>
+            <Dd>
+                해당 이벤트가 발생했을 때의 액티비티입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="activityStart">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`activityStart`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

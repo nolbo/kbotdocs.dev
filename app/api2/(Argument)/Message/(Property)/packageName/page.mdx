@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Message.packageName - API2",
+    openGraph: {
+        title: "Message.packageName - API2"
+    }
+}
+
+<Section>
+    ## Message.packageName
+
+    메시지가 발신된 메신저 앱의 패키지명입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    msg.packageName;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `String` - 메시지가 발신된 메신저 앱의 패키지명입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Message.packageName">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`packageName`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

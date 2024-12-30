@@ -1,0 +1,43 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Broadcast.send() - API2",
+    openGraph: {
+        title: "Broadcast.send() - API2"
+    }
+}
+
+<Section>
+    ## Broadcast.send()
+
+    모든 스크립트를 대상으로 특정 값을 가진 브로드캐스트를 전송합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Broadcast.send(broadcastName: String, value: Any);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`broadcastName`</Dt>
+            <Dd>
+                전송할 브로드캐스트 이름
+            </Dd>
+            <Dt>`value`</Dt>
+            <Dd>
+                브로드캐스트로 송출할 값
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Broadcast.send()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`send`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

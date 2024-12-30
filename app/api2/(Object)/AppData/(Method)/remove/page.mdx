@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "AppData.remove() - API2",
+    openGraph: {
+        title: "AppData.remove() - API2"
+    }
+}
+
+<Section>
+    ## AppData.remove()
+
+    `key`에 대응하는 앱 데이터를 삭제합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    AppData.remove(key: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`key`</Dt>
+            <Dd>
+                삭제할 앱 데이터의 키
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="AppData.remove()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`remove`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

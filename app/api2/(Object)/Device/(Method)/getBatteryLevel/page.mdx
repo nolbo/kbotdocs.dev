@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getBatteryLevel() - API2",
+    openGraph: {
+        title: "Device.getBatteryLevel() - API2"
+    }
+}
+
+<Section>
+    ## Device.getBatteryLevel()
+
+    앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getBatteryLevel();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Number` - 앱 구동 기기의 배터리 잔량(%)을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getBatteryLevel()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getBatteryLevel`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

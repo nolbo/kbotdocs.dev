@@ -1,0 +1,73 @@
+export const metadata = {
+    title: "Plugin - StarLight",
+    openGraph: {
+        title: "Plugin - StarLight"
+    }
+}
+
+<Section>
+    ## Plugin
+
+    `Plugin` 객체는 앱에 등록된 플러그인의 정보를 제공하는 객체입니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Plugin` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`PluginInfo`](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/plugin/PluginInfo.kt#L2)</span></Td>
+                <Td>
+                    [`info`](/starlight/Plugin/info) \
+                    플러그인의 기본 등록 정보입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Plugin` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`java.io.File`</span></Td>
+                <Td>
+                    [`getAsset`](/starlight/Plugin/getAsset)`(path: String)` \
+                    플러그인에 등록된 에셋 파일을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.io.File`</span></Td>
+                <Td>
+                    [`getExternalDataDirectory`](/starlight/Plugin/getExternalDataDirectory)`()` \
+                    플러그인의 외부 데이터 디렉터리를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.io.File`</span></Td>
+                <Td>
+                    [`getInternalDataDirectory`](/starlight/Plugin/getInternalDataDirectory)`()` \
+                    플러그인의 내부 데이터 디렉터리를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isEnabled`](/starlight/Plugin/isEnabled)`()` \
+                    플러그인의 활성화 여부를 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

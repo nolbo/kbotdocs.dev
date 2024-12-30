@@ -1,0 +1,333 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Security - API2",
+    openGraph: {
+        title: "Security - API2"
+    }
+}
+
+<Section>
+    ## Security
+
+    `Security` 객체는 각종 암호화/복호화에 관한 기능들을 제공하는 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Security` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`aesDecode`](/api2/Security/aesDecode)`(key: String, initVector: String, value: String)` \
+                    `value`를 AES 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`aesEncode`](/api2/Security/aesEncode)`(key: String, initVector: String, value: String)` \
+                    `value`를 AES 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`ariaDecode`](/api2/Security/ariaDecode)`(key: String, value: String)` \
+                    `value`를 ARIA 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`ariaDecodeRaw`](/api2/Security/ariaDecodeRaw)`(key: String, raw: org.mozilla.javascript.NativeArray)` \
+                    `raw`를 ARIA 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`ariaEncode`](/api2/Security/ariaEncode)`(key: String, value: String)` \
+                    `value`를 ARIA 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>*`byte[]`*</span></Td>
+                <Td>
+                    [`ariaEncodeRaw`](/api2/Security/ariaEncodeRaw)`(key: String, value: String)` \
+                    `value`를 ARIA 암호화한 값을 미가공 데이터(바이트 배열)로 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`base32Decode`](/api2/Security/base32Decode)`(value: String)` \
+                    `value`를 Base32 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`base32Encode`](/api2/Security/base32Encode)`(value: String)` \
+                    `value`를 Base32 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`base64Decode`](/api2/Security/base64Decode)`(value: String)` \
+                    `value`를 Base64 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`base64Encode`](/api2/Security/base64Encode)`(value: String)` \
+                    `value`를 Base64 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`des3Decode`](/api2/Security/des3Decode)`(key: String, value: String)` \
+                    `value`를 DES3 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`des3Encode`](/api2/Security/des3Encode)`(key: String, value: String)` \
+                    `value`를 DES3 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`desDecode`](/api2/Security/desDecode)`(key: String, value: String)` \
+                    `value`를 DES 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`desEncode`](/api2/Security/desEncode)`(key: String, value: String)` \
+                    `value`를 DES 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`desKey`](/api2/Security/desKey)`()` \
+                    DES 보조키를 생성하여 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`eccDecode`](/api2/Security/eccDecode)`(key: String, value: String)` \
+                    `value`를 ECC 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`eccEncode`](/api2/Security/eccEncode)`(key: String, value: String)` \
+                    `value`를 ECC 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    <Noti type={"warning"}>
+                        이 메소드는 미구현 상태입니다.
+                    </Noti>
+
+                    [`getDesKey`](/api2/Security/getDesKey)`()` \
+                    DES 보조키를 생성하여 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`hashCode`](/api2/Security/hashCode)`(value: String)` \
+                    `value`의 해시코드를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`md2`](/api2/Security/md2)`(value: String)` \
+                    `value`를 MD2 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`md5`](/api2/Security/md5)`(value: String)` \
+                    `value`를 MD5 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`md55`](/api2/Security/md55)`(value: String)` \
+                    `value`를 MD5 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`rc4Decode`](/api2/Security/rc4Decode)`(key: String, value: String)` \
+                    `value`를 RC4 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`rc4Encode`](/api2/Security/rc4Encode)`(key: String, value: String)` \
+                    `value`를 RC4 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`seedDecode`](/api2/Security/seedDecode)`(key: String, value: String)` \
+                    `value`를 SEED 복호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`seedEncode`](/api2/Security/seedEncode)`(key: String, value: String)` \
+                    `value`를 SEED 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha`](/api2/Security/sha)`(value: String)` \
+                    `value`를 SHA 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha3_224`](/api2/Security/sha3_224)`(value: String)` \
+                    `value`를 SHA3-224 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha3_256`](/api2/Security/sha3_256)`(value: String)` \
+                    `value`를 SHA3-256 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha3_384`](/api2/Security/sha3_384)`(value: String)` \
+                    `value`를 SHA3-384 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha3_512`](/api2/Security/sha3_512)`(value: String)` \
+                    `value`를 SHA3-512 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha256`](/api2/Security/sha256)`(value: String)` \
+                    `value`를 SHA256 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha384`](/api2/Security/sha384)`(value: String)` \
+                    `value`를 SHA384 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sha512`](/api2/Security/sha512)`(value: String)` \
+                    `value`를 SHA512 암호화한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`ulid`](/api2/Security/ulid)`()` \
+                    ULID 값을 생성합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`uuid`](/api2/Security/uuid)`()` \
+                    UUID 값을 생성합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`uuidv7`](/api2/Security/uuidv7)`()` \
+                    UUIDv7 값을 생성합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`aesDecode`](/api2/Security/aesDecode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`aesEncode`](/api2/Security/aesEncode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`ariaDecode`](/api2/Security/ariaDecode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`ariaDecodeRaw`](/api2/Security/ariaDecodeRaw)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`ariaEncode`](/api2/Security/ariaEncode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`ariaEncodeRaw`](/api2/Security/ariaEncodeRaw)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`base32Decode`](/api2/Security/base32Decode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`base32Encode`](/api2/Security/base32Encode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`base64Decode`](/api2/Security/base64Decode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`base64Encode`](/api2/Security/base64Encode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`des3Decode`](/api2/Security/des3Decode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`des3Encode`](/api2/Security/des3Encode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`desDecode`](/api2/Security/desDecode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`desEncode`](/api2/Security/desEncode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`desKey`](/api2/Security/desKey)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`eccDecode`](/api2/Security/eccDecode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`eccEncode`](/api2/Security/eccEncode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getDesKey`](/api2/Security/getDesKey)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`hashCode`](/api2/Security/hashCode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`md2`](/api2/Security/md2)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`md5`](/api2/Security/md5)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`md55`](/api2/Security/md55)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`rc4Decode`](/api2/Security/rc4Decode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`rc4Encode`](/api2/Security/rc4Encode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`seedDecode`](/api2/Security/seedDecode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`seedEncode`](/api2/Security/seedEncode)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha`](/api2/Security/sha)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha3_224`](/api2/Security/sha3_224)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha3_256`](/api2/Security/sha3_256)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha3_384`](/api2/Security/sha3_384)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha3_512`](/api2/Security/sha3_512)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha256`](/api2/Security/sha256)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha384`](/api2/Security/sha384)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sha512`](/api2/Security/sha512)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`ulid`](/api2/Security/ulid)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`uuid`](/api2/Security/uuid)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`uuidv7`](/api2/Security/uuidv7)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

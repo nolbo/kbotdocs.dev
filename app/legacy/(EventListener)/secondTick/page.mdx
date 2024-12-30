@@ -1,0 +1,30 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "secondTick 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "secondTick 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## secondTick
+
+    `secondTick`은 매 틱(1초)마다 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function secondTick() {
+
+    }
+    ~~~
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="secondTick">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`secondTick`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

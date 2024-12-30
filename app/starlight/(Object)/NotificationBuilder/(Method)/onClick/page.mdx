@@ -1,0 +1,40 @@
+export const metadata = {
+    title: "NotificationBuilder.onClick() - StarLight",
+    openGraph: {
+        title: "NotificationBuilder.onClick() - StarLight"
+    }
+}
+
+<Section>
+    ## NotificationBuilder.onClick()
+
+    알림에 클릭 가능한 버튼과 클릭할 때 호출될 콜백 함수를 설정합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    NotificationBuilder.onClick(title: String, callback: (id: Number) => Any?);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`title`</Dt>
+            <Dd>
+                버튼의 제목
+            </Dd>
+            <Dt>`callback`</Dt>
+            <Dd>
+                버튼을 클릭할 때 호출될 콜백 함수
+                - `id`: 알림의 ID
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `NotificationBuilder` - 해당 `NotificationBuilder` 객체
+    </Section>
+</Section>

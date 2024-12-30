@@ -1,0 +1,45 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "onNotificationPosted 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "onNotificationPosted 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## onNotificationPosted
+
+    `onNotificationPosted`는 알림이 발생할 때 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onNotificationPosted(statusBarNotification: android.service.notification.StatusBarNotification, sessionManager: SessionManager) {
+
+    }
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`statusBarNotification`</Dt>
+            <Dd>
+                알림에 관한 정보가 담긴 [`android.service.notification.StatusBarNotification`](https://developer.android.com/reference/android/service/notification/StatusBarNotification)입니다.
+            </Dd>
+            <Dt>`sessionManager`</Dt>
+            <Dd>
+                앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 [`SessionManager`](/legacy/SessionManager) 객체입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="onNotificationPosted">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`onNotificationPosted`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

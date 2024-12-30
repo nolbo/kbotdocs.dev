@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.getZoneIdByName() - 레거시 API",
+    openGraph: {
+        title: "Utils.getZoneIdByName() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.getZoneIdByName()
+
+    특정 지역의 행정구역코드를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.getZoneIdByName(location: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`location`</Dt>
+            <Dd>
+                지역명
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `location` 지역의 행정구역코드를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.getZoneIdByName()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getZoneIdByName`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

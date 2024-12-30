@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.unload() - 레거시 API",
+    openGraph: {
+        title: "Api.unload() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.unload()
+
+    스크립트를 컴파일 전 상태로 전환(언로드)하고 언로드 성공 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.unload(scriptName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scriptName`</Dt>
+            <Dd>
+                언로드할 스크립트의 이름
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `scriptName`를 이름으로 하는 스크립트의 언로드에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.unload()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`unload`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

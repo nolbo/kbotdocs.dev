@@ -1,0 +1,39 @@
+export const metadata = {
+    title: "Project.callFunction() - StarLight",
+    openGraph: {
+        title: "Project.callFunction() - StarLight"
+    }
+}
+
+<Section>
+    ## Project.callFunction()
+
+    프로젝트의 쓰레드 풀에서 작동 중인 `job`의 수를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Project.callFunction(name: String, args: Any[], onException: (throwable: java.lang.Throwable) => Any);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`name`</Dt>
+            <Dd>
+                호출할 함수의 이름
+            </Dd>
+            <Dt>`args`</Dt>
+            <Dd>
+                호출할 함수에게 전달할 인자
+            </Dd>
+            <Dt>`onException`</Dt>
+            <Dd>
+                예외가 발생할 때 호출할 콜백 함수
+                - `throwable`: 발생한 예외에 대한 `java.lang.Throwable` 값
+            </Dd>
+        </Dl>
+    </Section>
+</Section>

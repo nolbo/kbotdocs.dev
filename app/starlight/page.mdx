@@ -1,0 +1,205 @@
+export const metadata = {
+    title: "StarLight",
+    openGraph: {
+        title: "StarLight"
+    }
+}
+
+<Section>
+    <Noti type="info">
+        StarLight는 Alpha Test 단계입니다. API의 세부 구현이 추후 변경될 수 있습니다.
+    </Noti>
+</Section>
+<Section>
+    ## StarLight
+
+    [**StarLight**](https://starlight.mooner.dev/)는 2023년 Alpha Test로 공개된 [**mooner**](https://github.com/mooner1022)님의 카카오톡봇 프로젝트입니다.
+    레거시 API와 API2가 일부 구현되어 있습니다. 또한, StarLight는 독자적인 카카오톡봇 규격과 플러그인을 지원합니다.
+</Section>
+<Section>
+    ## 객체
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>StarLight의 객체</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Env`](/starlight/Env)</span></Td>
+                <Td>
+                    Dotenv 형식 파일의 입출력을 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Java`](/starlight/Java)</span></Td>
+                <Td>
+                    Java 클래스에 대한 접근을 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Language`](/starlight/Language)</span></Td>
+                <Td>
+                    앱이 지원하는 프로그래밍 언어에 관한 기능들을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Languages`](/starlight/Languages)</span></Td>
+                <Td>
+                    앱이 지원하는 프로그래밍 언어에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Notification`](/starlight/Notification)</span></Td>
+                <Td>
+                    알림을 관리하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`NotificationBuilder`](/starlight/NotificationBuilder)</span></Td>
+                <Td>
+                    알림의 생성을 위한 빌더(Builder) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Platform`](/starlight/Platform)</span></Td>
+                <Td>
+                    구동 중인 봇 앱의 정보를 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugin`](/starlight/Plugin)</span></Td>
+                <Td>
+                    앱에 등록된 플러그인의 정보를 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugins`](/starlight/Plugins)</span></Td>
+                <Td>
+                    앱에 등록된 플러그인의 정보에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Project`](/starlight/Project)</span></Td>
+                <Td>
+                    프로젝트에 관한 기능들을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Projects`](/starlight/Projects)</span></Td>
+                <Td>
+                    프로젝트에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 이벤트 리스너
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>StarLight의 이벤트 리스너</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`onMessage`](/starlight/onMessage)</span></Td>
+                <Td>
+                    메시지를 수신할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onMessageDeleted`](/starlight/onMessageDeleted)</span></Td>
+                <Td>
+                    메시지가 삭제되었을 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationPosted`](/starlight/onNotificationPosted)</span></Td>
+                <Td>
+                    알림이 발생할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStartCompile`](/starlight/onStartCompile)</span></Td>
+                <Td>
+                    컴파일 요청을 감지했을 때 컴파일 시작 전에 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 인자
+
+    이 객체들은 직접적으로 접근할 수 없습니다. 이벤트의 인자로 주어지는 데이터 형태입니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">StarLight의 인자</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`ChatRoom`](/starlight/ChatRoom)</span></Td>
+                <Td>
+                    방에 관한 정보를 담은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ChatSender`](/starlight/ChatSender)</span></Td>
+                <Td>
+                    발신자에 관한 정보를 담은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`DeletedMessage`](/starlight/DeletedMessage)</span></Td>
+                <Td>
+                    삭제된 메시지에 대한 정보를 담고 있는 객체입니다. [`onMessageDeleted`](/starlight/onMessageDeleted)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Message`](/starlight/Message)</span></Td>
+                <Td>
+                    메시지에 대한 정보를 담고 있는 객체입니다. [`onMessage`](/starlight/onMessage)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 플러그인
+
+    StarLight는 플러그인을 이용해 기본적으로 제공하지 않는 기능들을 추가할 수 있습니다. StarLight의 플러그인은 아래의 과정으로 추가할 수 있습니다.
+
+    1. `.slp` 파일을 `sdcard/StarLight/plugins/` 폴더 내에 추가합니다.
+    2. StarLight를 재시작합니다.
+
+    [여기에서](https://drive.google.com/drive/folders/12GgPeRxWrlBbj9TV2olPmeKTPfI8KW0i) 플러그인들을 다운로드할 수 있습니다.
+
+    <Noti type="danger">
+        StarLight 플러그인 파일을 다운로드하거나 설치하기 전에 신뢰할 수 있는 출처와 파일인지를 확인하세요.
+    </Noti>
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">StarLight의 플러그인</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[Discord](/starlight/Discord)</span></Td>
+                <Td>JavaScript를 이용한 디스코드봇 개발을 위한 플러그인입니다.</Td>
+            </Tr>
+            <Tr>
+                <Td><span>[V8](/starlight/V8)</span></Td>
+                <Td>V8 엔진을 이용한 카카오톡봇 개발을 위한 플러그인입니다.</Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

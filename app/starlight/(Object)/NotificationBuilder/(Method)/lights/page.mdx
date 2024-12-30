@@ -1,0 +1,43 @@
+export const metadata = {
+    title: "NotificationBuilder.lights() - StarLight",
+    openGraph: {
+        title: "NotificationBuilder.lights() - StarLight"
+    }
+}
+
+<Section>
+    ## NotificationBuilder.lights()
+
+    알림의 LED 발광 패턴을 설정합니다. 최신 기기는 LED 발광을 지원하지 않을 수 있습니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    NotificationBuilder.lights(argb: Number, onMs: Number, offMs: Number);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`argb`</Dt>
+            <Dd>
+                설정할 LED 색 (`0xAARRGGBB` 형식, 예: `0xFFFFFFFF`)
+            </Dd>
+            <Dt>`onMs`</Dt>
+            <Dd>
+                LED가 켜진 채로 유지될 시간(밀리초; ms)
+            </Dd>
+            <Dt>`offMs`</Dt>
+            <Dd>
+                LED가 꺼진 채로 유지될 시간(밀리초; ms)
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `NotificationBuilder` - 해당 `NotificationBuilder` 객체
+    </Section>
+</Section>

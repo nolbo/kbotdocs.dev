@@ -1,0 +1,60 @@
+export const metadata = {
+    title: "DeletedMessage - StarLight",
+    openGraph: {
+        title: "DeletedMessage - StarLight"
+    }
+}
+
+<Section>
+    ## DeletedMessage
+
+    `DeletedMessage` 객체는 삭제된 메시지에 대한 정보를 담고 있는 객체입니다. [`onMessageDeleted`](/starlight/onMessageDeleted)의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`DeletedMessage` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`chatLogId`](/starlight/DeletedMessage/chatLogId) \
+                    삭제된 메시지에 대한 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`message`](/starlight/DeletedMessage/message) \
+                    삭제된 메시지의 전체 내용입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`packageName`](/starlight/DeletedMessage/packageName) \
+                    메시지가 삭제된 메신저 앱의 패키지명입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ChatRoom`](/starlight/ChatRoom)`?`</span></Td>
+                <Td>
+                    [`room`](/starlight/DeletedMessage/room) \
+                    메시지가 삭제된 방에 대한 `ChatRoom` 객체입니다. 해당 프로퍼티는 `null`일 수 있습니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`sender`](/starlight/DeletedMessage/sender) \
+                    삭제된 메시지의 발신자의 이름입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

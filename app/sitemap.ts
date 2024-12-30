@@ -1,30 +1,25 @@
 import { MetadataRoute } from "next";
+import { Docs } from "@/constants/docs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: "https://kbotdocs.dev",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/basic",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/advanced",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/legacy",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/api2",
-            lastModified: new Date()
-        },
-        {
-            url: "https://kbotdocs.dev/starlight",
-            lastModified: new Date()
-        },
-    ];
+    let sitemapArr: MetadataRoute.Sitemap = [{
+        url: "https://kbotdocs.dev",
+        lastModified: new Date()
+    }];
+    const loopFn = (e: Doc) => {
+
+        if (e.children) {
+            e.children.map(loopFn);
+        }
+        if (e.path) {
+            sitemapArr.push({
+                url: `https://kbotdocs.dev${e.path}`,
+                lastModified: new Date()
+            });
+        }
+    }
+
+    Docs.forEach(loopFn);
+
+    return sitemapArr;
 }

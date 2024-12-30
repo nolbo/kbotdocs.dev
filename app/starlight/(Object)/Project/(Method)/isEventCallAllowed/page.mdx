@@ -1,0 +1,35 @@
+export const metadata = {
+    title: "Project.isEventCallAllowed() - StarLight",
+    openGraph: {
+        title: "Project.isEventCallAllowed() - StarLight"
+    }
+}
+
+<Section>
+    ## Project.isEventCallAllowed()
+
+    특정 `ProjectEvent`의 호출 허용 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Project.isEventCallAllowed(eventId: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`eventId`</Dt>
+            <Dd>
+                호출 허용 여부를 확인할 `ProjectEvent`의 ID
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - `eventId`로 식별되는 `ProjectEvent`의 호출이 허용된 상태일 경우 `true`, 허용되지 않은 상태일 경우 `false`를 반환합니다.
+    </Section>
+</Section>

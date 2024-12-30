@@ -1,0 +1,77 @@
+export const metadata = {
+    title: "Message - StarLight",
+    openGraph: {
+        title: "Message - StarLight"
+    }
+}
+
+<Section>
+    ## Message
+
+    `Message` 객체는 메시지에 대한 정보를 담고 있는 객체입니다. [`onMessage`](/starlight/onMessage)의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Message` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`chatLogId`](/starlight/Message/chatLogId) \
+                    메시지에 대한 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`hasMention`](/starlight/Message/hasMention) \
+                    메시지 내 멘션 포함 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    <Noti type={"experimental"}>
+                        해당 프로퍼티는 실험적입니다.
+                    </Noti>
+                    [`image`](/starlight/Message/image) \
+                    메시지에 포함된 이미지에 대한 `android.graphics.Bitmap` 값입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`message`](/starlight/Message/message) \
+                    메시지의 전체 내용입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`packageName`](/starlight/Message/packageName) \
+                    메시지가 발신된 메신저 앱의 패키지명입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ChatRoom`](/starlight/ChatRoom)</span></Td>
+                <Td>
+                    [`room`](/starlight/Message/room) \
+                    메시지가 발신된 방에 대한 `ChatRoom` 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ChatSender`](/starlight/ChatSender)</span></Td>
+                <Td>
+                    [`sender`](/starlight/Message/sender) \
+                    메시지의 발신자에 대한 `ChatSender` 객체입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "onLoaded 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "onLoaded 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## onLoaded
+
+    `onLoaded`는 스크립트 컴파일이 완료되면 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onLoaded(ctx: android.context.Context) {
+
+}
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`ctx`</Dt>
+            <Dd>
+                액티비티의 Context(컨텍스트)입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="onLoaded">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`onLoaded`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

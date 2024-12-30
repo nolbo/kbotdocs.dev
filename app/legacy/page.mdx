@@ -1,0 +1,247 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "레거시 API",
+    openGraph: {
+        title: "레거시 API"
+    }
+}
+
+<Section>
+    <Noti type="warning">
+        레거시 API는 더 이상 권장되지 않습니다. 새로운 프로젝트에서는 사용을 피하고, 가능한 경우 API2로 마이그레이션하는 것이 좋습니다.
+    </Noti>
+</Section>
+<Section>
+    ## 레거시 API
+    
+    레거시 API는 카카오톡봇 초창기부터 지원해오고 있는 내장 API입니다. 등장한지 오래되었으며, 더 이상 사용을 권장하지 않습니다. [최신 레벨의 API인 API2를 사용하세요](https://kbotdocs.dev/api2).
+</Section>
+<Section>
+    ## 객체
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">레거시 API의 객체</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Api`](/legacy/Api)</span></Td>
+                <Td>
+                    카카오톡봇의 기본적인 기능을 구현하거나 스크립트를 관리하기 위한 메소드들을 모아놓은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`AppData`](/legacy/AppData)</span></Td>
+                <Td>
+                    앱의 데이터에 관한 기능들을 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Bridge`](/legacy/Bridge)</span></Td>
+                <Td>
+                    다른 스크립트의 전역 스코프에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`DataBase`](/legacy/DataBase)</span></Td>
+                <Td>
+                    스크립트 로컬 폴더 내 데이터 조작에 관한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Device`](/legacy/Device)</span></Td>
+                <Td>
+                    구동 환경/기기에 관한 정보를 제공하는 메소드들을 모은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`FileStream`](/legacy/FileStream)</span></Td>
+                <Td>
+                    내부 저장소의 파일을 다루는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Log`](/legacy/Log)</span></Td>
+                <Td>
+                    앱 내 스크립트 로그에 로그를 기록할 수 있게 하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Utils`](/legacy/Utils)</span></Td>
+                <Td>
+                    카카오톡봇의 기능 구현에 도움이 되는 메소드들을 모은 객체입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 이벤트 리스너
+
+    레거시 API에는 이벤트 리스너가 지정되어 있습니다. 상황에 맞는 이벤트 리스너를 사용하여 더 다양한 기능을 만들거나, 더 다양한 상황에 대응할 수 있습니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>레거시 API의 이벤트 리스너</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`onBackPressed`](/legacy/onBackPressed)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onBackPressed`](https://developer.android.com/reference/android/app/Activity#onBackPressed())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onCreate`](/legacy/onCreate)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onCreate`](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle))가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onDestroy`](/legacy/onDestroy)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onDestroy`](https://developer.android.com/reference/android/app/Activity#onDestroy())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onLoaded`](/legacy/onLoaded)</span></Td>
+                <Td>
+                    스크립트 컴파일이 완료되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationPosted`](/legacy/onNotificationPosted)</span></Td>
+                <Td>
+                    알림이 발생할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationRemoved`](/legacy/onNotificationRemoved)</span></Td>
+                <Td>
+                    알림이 사라질 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onPause`](/legacy/onPause)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onPause`](https://developer.android.com/reference/android/app/Activity#onPause())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onRestart`](/legacy/onRestart)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onRestart`](https://developer.android.com/reference/android/app/Activity#onRestart())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onResume`](/legacy/onResume)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onResume`](https://developer.android.com/reference/android/app/Activity#onResume())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStart`](/legacy/onStart)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onStart`](https://developer.android.com/reference/android/app/Activity#onStart())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStartCompile`](/legacy/onStartCompile)</span></Td>
+                <Td>
+                    컴파일 요청을 감지했을 때 컴파일 시작 전에 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStop`](/legacy/onStop)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onStop`](https://developer.android.com/reference/android/app/Activity#onStop())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`response`](/legacy/response)</span></Td>
+                <Td>
+                    메시지를 수신할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`secondTick`](/legacy/secondTick)</span></Td>
+                <Td>
+                    매 틱(1초)마다 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 인자
+
+    이 객체들은 직접적으로 접근할 수 없습니다. 이벤트의 인자로 주어지는 데이터 형태입니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">레거시 API의 인자</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`ImageDB`](/legacy/ImageDB)</span></Td>
+                <Td>
+                    이미지에 대한 기능을 제공하는 객체입니다. [`response`](/legacy/response)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Replier`](/legacy/Replier)</span></Td>
+                <Td>
+                    메시지 발신에 대한 기능을 제공하는 객체입니다. [`response`](/legacy/response)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`SessionManager`](/legacy/SessionManager)</span></Td>
+                <Td>
+                    방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. [`onNotificationPosted`](/legacy/onNotificationPosted)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="레거시 API 객체">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Api`](/legacy/Api)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`AppData`](/legacy/AppData)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Bridge`](/legacy/Bridge)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`DataBase`](/legacy/DataBase)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Device`](/legacy/Device)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`FileStream`](/legacy/FileStream)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Log`](/legacy/Log)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`SessionManager`](/legacy/SessionManager)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Utils`](/legacy/Utils)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="레거시 API 이벤트 리스너">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onBackPressed`](/legacy/onBackPressed)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onCreate`](/legacy/onCreate)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onDestroy`](/legacy/onDestroy)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onLoaded`](/legacy/onLoaded)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`onNotificationPosted`](/legacy/onNotificationPosted)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onNotificationRemoved`](/legacy/onNotificationRemoved)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onPause`](/legacy/onPause)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onRestart`](/legacy/onRestart)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onResume`](/legacy/onResume)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onStart`](/legacy/onStart)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`onStartCompile`](/legacy/onStartCompile)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onStop`](/legacy/onStop)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`response`](/legacy/response)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`secondTick`](/legacy/secondTick)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="레거시 API 인자">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`ImageDB`](/legacy/ImageDB)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Replier`](/legacy/Replier)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`SessionManager`](/legacy/SessionManager)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>
