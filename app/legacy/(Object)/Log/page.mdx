@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Log - 레거시 API",
+    openGraph: {
+        title: "Log - 레거시 API"
+    }
+}
+
 <Section>
     ## Log
 
@@ -70,7 +77,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Log 객체">
+    <AppCompatibility listTitle="Log 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`clear`](/legacy/Log/clear)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`d`](/legacy/Log/d)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`debug`](/legacy/Log/debug)</AppCompatibilityItem>

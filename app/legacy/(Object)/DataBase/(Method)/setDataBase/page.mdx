@@ -1,0 +1,48 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "DataBase.setDataBase() - 레거시 API",
+    openGraph: {
+        title: "DataBase.setDataBase() - 레거시 API"
+    }
+}
+
+<Section>
+    ## DataBase.setDataBase()
+
+    문자열을 `fileName` 이름의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `fileName` 이름의 파일을 생성합니다. 덮어쓰거나 생성한 파일의 최종 내용을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    DataBase.setDataBase(fileName: String, data: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`fileName`</Dt>
+            <Dd>
+                내용을 덮어쓰거나 새로 생성할 파일의 이름
+            </Dd>
+            <Dt>`data`</Dt>
+            <Dd>
+                파일 내용으로 저장할 문자열
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `fileName` 이름의 파일을 덮어쓰거나 생성한 후 최종 내용을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="DataBase.setDataBase()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`setDataBase`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

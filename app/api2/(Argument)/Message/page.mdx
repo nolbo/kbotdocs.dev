@@ -1,0 +1,146 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Message - API2",
+    openGraph: {
+        title: "Message - API2"
+    }
+}
+
+<Section>
+    ## Message
+
+    `Message` 객체는 발신된 메시지에 대한 정보를 담고 있는 객체입니다. [`message`](/api2/message) 이벤트의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Message` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Author`](/api2/Author)</span></Td>
+                <Td>
+                    [`author`](/api2/Message/author) \
+                    메시지의 발신자에 대한 [`Author`](/api2/Author) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`BigInt`</span></Td>
+                <Td>
+                    [`channelId`](/api2/Message/channelId) \
+                    메시지가 발신된 방의 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`content`](/api2/Message/content) \
+                    메시지의 전체 내용입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Image`](/api2/Image)</span></Td>
+                <Td>
+                    [`image`](/api2/Message/image) \
+                    메시지에 포함된 이미지에 관한 정보를 담은 [`Image`](/api2/Image) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isDebugRoom`](/api2/Message/isDebugRoom) \
+                    방이 디버깅 룸인지의 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isGroupChat`](/api2/Message/isGroupChat) \
+                    방이 그룹 채팅방인지의 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isMention`](/api2/Message/isMention) \
+                    메시지 내 멘션 포함 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`BigInt`</span></Td>
+                <Td>
+                    [`logId`](/api2/Message/logId) \
+                    메시지에 대한 고유 ID입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`packageName`](/api2/Message/packageName) \
+                    메시지가 발신된 메신저 앱의 패키지명입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`room`](/api2/Message/room) \
+                    메시지가 발신된 방의 이름입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Message` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`markAsRead`](/api2/Message/markAsRead)`()` \
+                    메시지를 수신한 방의 알림을 읽음 처리합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`reply`](/api2/Message/reply)`(content: String)` \
+                    메시지를 수신한 방에 메시지를 발신합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Message 객체 프로퍼티">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`args`](/api2/Message/args)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`author`](/api2/Message/author)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`channelId`](/api2/Message/channelId)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`command`](/api2/Message/command)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`content`](/api2/Message/content)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`image`](/api2/Message/image)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isDebugRoom`](/api2/Message/isDebugRoom)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isGroupChat`](/api2/Message/isGroupChat)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isMention`](/api2/Message/isMention)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`logId`](/api2/Message/logId)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`packageName`](/api2/Message/packageName)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`room`](/api2/Message/room)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="Message 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsRead`](/api2/Message/markAsRead)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`reply`](/api2/Message/reply)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

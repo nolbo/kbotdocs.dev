@@ -1,1142 +1,205 @@
+export const metadata = {
+    title: "StarLight",
+    openGraph: {
+        title: "StarLight"
+    }
+}
+
 <Section>
-    <Noti type="warning">
-        StarLight는 아직 Alpha Test 단계로, API의 세부 구현이 추후 변경될 수 있습니다.
-    </Noti>
     <Noti type="info">
-        이 문서는 완성되지 않았습니다. [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
+        StarLight는 Alpha Test 단계입니다. API의 세부 구현이 추후 변경될 수 있습니다.
     </Noti>
 </Section>
 <Section>
     ## StarLight
 
     [**StarLight**](https://starlight.mooner.dev/)는 2023년 Alpha Test로 공개된 [**mooner**](https://github.com/mooner1022)님의 카카오톡봇 프로젝트입니다.
-    레거시 API가 구현되어있어 메신저봇, 채팅 자동응답 봇에서 작성한 코드를 작동할 수 있습니다. API2 또한 일부 구현되어있지만, 주목할 점은 **StarLight의 독자적인 카카오톡봇 규격과 플러그인 지원**입니다.
-    해당 문서에서는 **StarLight API**와 **플러그인**에 대해 소개합니다.
+    레거시 API와 API2가 일부 구현되어 있습니다. 또한, StarLight는 독자적인 카카오톡봇 규격과 플러그인을 지원합니다.
 </Section>
 <Section>
     ## 객체
 
-    <Section>
-        ### Languages
-
-        `Languages` 객체는 현재 앱에 등록된 특정 프로그래밍 언어에 접근할 수 있는 기능들을 담고 있습니다. 이 객체는 조건에 따른 언어를 반환하는 기능만을 담고 있으며, 실제 언어에 대한 기능들은 `Language` 객체가 담당합니다.
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Languages` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>[`Language`](#language)</span></Td>
-                    <Td>
-                        `getSelf()` \
-                        현재 프로젝트에 대한 `Language` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 프로젝트에 대한 `Language` 객체
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`Language`](#language)</span></Td>
-                    <Td>
-                        `ofId(`*`id: String`*`)` \
-                        특정 id의 프로그래밍 언어 구현체에 대한 `Language` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `id`에 대응하는 프로그래밍 언어 구현체에 대한 `Language` 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `id`: 반환받고자 하는 구현체의 id
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Language
-
-        `Language` 객체는 현재 앱에 등록된 프로그래밍 언어에 관한 기능들을 담고 있는 객체입니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Language` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `id` \
-                        이 언어의 고유 id입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `name` \
-                        이 언어의 유저에게 표시되는 이름입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `fileExtension` \
-                        이 언어의 파일 확장자입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `requireRelease` \
-                        이 언어의 사용이 종료되었을 때 scope를 할당 해제해야 할 경우 `true`, 아닐 경우 `false`를 나타냅니다. scope의 할당 해제는 `release(scope)` 함수로 수행 가능합니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Any`</span></Td>
-                    <Td>
-                        <Noti type="warning">
-                            이 함수는 내부적 구현에 사용되는 것을 기준으로 설계되었습니다. `code` 매개변수 이외에는 일반적으로 취득 및 사용이 불가합니다.
-                        </Noti>
-                        `compile(`*`code: String, apis: List<Api>, project?: Project, classLoader?: java.lang.ClassLoader`*`)` \
-                        제공된 코드를 컴파일 하여 실행 가능한 Scope로 변환합니다. 반환 타입은 언어의 종류에 따라 상이합니다.
-                        <div>
-                            ##### 반환값
-                            언어의 종류에 따라 달라질 수 있음.
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `code`: 컴파일 할 코드 \
-                            `apis`: 코드에 사용 가능한 API 객체 목록 \
-                            `project?`: API 객체 초기화에 사용될 프로젝트 객체 \
-                            `classLoader?`: 코드 컴파일 시 사용될 `ClassLoader`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Any?`</span></Td>
-                    <Td>
-                        `callFunction(`*`scope: Any, functionName: String, args: Any[]`*`)` \
-                        컴파일 된 스코프에 선언된 특정 함수의 이름과 인자를 전달받아 호출합니다. 함수의 반환값이 존재할 경우 해당 값을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `functionName`에 대응하는 함수의 반환값이 존재할 경우: 호출한 함수의 반환값 \
-                            `functionName`에 대응하는 함수의 반환값이 존재하지 않을 경우: (`void`)
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `scope`: 사용될 스코프 \
-                            `functionName`: 호출할 함수의 이름 \
-                            `args`: 함수에게 전달할 인자
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Any`</span></Td>
-                    <Td>
-                        `eval(`*`code: String`*`)` \
-                        컴파일 단계 없이 코드를 즉시 실행합니다. 코드 실행 결과를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `code`를 코드로써 실행한 결과
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `code`: 실행할 코드의 문자열
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `release(`*`scope: Any`*`)` \
-                        컴파일 된 스코프를 사용 해제 상태로 변경합니다. 사용 해제된 스코프는 불필요한 리소스를 모두 정리하고 대기 상태로 전환됩니다.
-                        <div>
-                            ##### 매개변수
-                            `scope`: 사용 해제될 스코프
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        <Noti type="warning">
-                            이 메소드는 스코프의 사용이 끝난 후 최종 단계에만 호출해야 하며, 폐기된 스코프는 재사용이 불가합니다.
-                        </Noti>
-
-                        `destroy(`*`scope: Any`*`)` \
-                        컴파일 된 스코프를 폐기하고 모든 리소스를 할당 해제합니다.
-                        <div>
-                            ##### 매개변수
-                            `scope`: 폐기될 스코프
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Projects
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Projects` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>[`Project`](#project)</span></Td>
-                    <Td>
-                        `getSelf()` \
-                        현재 프로젝트에 대한 `Project` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 프로젝트에 대한 `Project` 객체
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`Project`](#project)</span></Td>
-                    <Td>
-                        `ofName(`*`name: String`*`)` \
-                        특정 이름의 프로젝트에 대한 `Project` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `name` 프로젝트에 대한 `Project` 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `name`: 반환받고자 하는 프로젝트의 이름
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`Project`](#project)</span></Td>
-                    <Td>
-                        `ofId(`*`id: String`*`)` \
-                        특정 id의 프로젝트에 대한 `Project` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `id`에 대응하는 프로젝트에 대한 `Project` 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `id`: 반환받고자 하는 프로젝트의 id
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Project
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Project` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`java.io.File`</span></Td>
-                    <Td>
-                        `directory` \
-                        프로젝트의 루트 디렉터리에 대한 `java.io.File`입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`ProjectInfo`</span></Td>
-                    <Td>
-                        `info` \
-                        프로젝트에 대한 정보입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`MutableConfig`</span></Td>
-                    <Td>
-                        `config` \
-                        프로젝트의 로컬 디렉터리에 저장되는 프로젝트 전용 구성 데이터입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `isCompiled` \
-                        프로젝트의 컴파일 여부입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`ProjectLogger`</span></Td>
-                    <Td>
-                        `logger` \
-                        프로젝트의 이벤트 로깅에 사용되는 logger입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `callFunction(`*`name: String, args: Any[], onException: (throwable) => Any`*`)` \
-                        특정 함수의 이름과 인자를 전달받아 호출합니다.
-                        <div>
-                            ##### 매개변수
-                            `name`: 호출할 함수의 이름 \
-                            `args`: 함수에게 전달할 인자 \
-                            `onException`: 에러 발생 시 호출할 콜백 함수
-                            - `throwable`: 발생한 예외에 대한 `java.lang.Throwable` 클래스
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `compile(`*`throwException?: Boolean = false`*`)` \
-                        프로젝트를 컴파일합니다. 컴파일 성공 여부를 반환합니다. `throwException`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
-                        <div>
-                            ##### 반환값
-                            컴파일에 성공할 경우 `true`, 실패할 경우 `false`
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `throwException?`: 컴파일 에러 시 에러 throw 여부
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `setEnabled(`*`enabled: Boolean`*`)` \
-                        프로젝트의 활성화 상태를 설정합니다. 활성화 상태 변경의 성공 여부를 반환합니다. 성공 여부는 프로젝트의 컴파일 여부에 따라 달라집니다.
-                        <div>
-                            ##### 반환값
-                            프로젝트의 활성화 상태 변경에 성공할 경우 `true`, 실패할 경우 `false`
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `enabled`: 새롭게 설정할 프로젝트의 활성화 상태 값
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `requestUpdate()` \
-                        앱에 프로젝트 UI 업데이트를 요청합니다. 앱이 백그라운드에서 실행 중일 경우 요청은 무시됩니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `saveInfo()` \
-                        `Project.info` 값을 파일에 저장합니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `loadInfo()` \
-                        메모리 내 프로젝트 정보 데이터를 무효화하고 로컬 파일에서 다시 로드합니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`Language`](#language)</span></Td>
-                    <Td>
-                        `getLanguage()` \
-                        프로젝트에서 사용 중인 언어에 대한 `Language`를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            프로젝트에서 사용 중인 언어에 대한 `Language`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Any?`</span></Td>
-                    <Td>
-                        `getScope()` \
-                        scope 인스턴스를 반환합니다. 프로젝트가 컴파일되지 않은 경우 `null`을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            프로젝트가 컴파일된 상태일 경우: scope 인스턴스 \
-                            프로젝트가 컴파일되지 않은 상태일 경우: `null`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Number`</span></Td>
-                    <Td>
-                        `activeJobs()` \
-                        프로젝트의 스레드 풀에서 작동 중인 `job`의 수를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            프로젝트의 스레드 풀에서 작동 중인 `job`의 수
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `stopAllJobs()` \
-                        작동 중인 모든 `job`을 중지합니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `destroy()` \
-                        작동 중인 모든 `job`을 중지합니다. 프로젝트가 컴파일된 상태일 경우, `langScope`를 해제합니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `rename(`*`name: String`*`)` \
-                        프로젝트의 이름을 변경합니다.
-                        <div>
-                            ##### 매개변수
-                            `name`: 새롭게 설정할 프로젝트의 이름
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`java.io.File`</span></Td>
-                    <Td>
-                        `getDataDirectory()` \
-                        프로젝트의 데이터(데이터베이스 파일, 유저 데이터 등)가 저장된 디렉터리에 대한 `java.io.File`을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            프로젝트의 데이터가 저장된 디렉터리에 대한 `java.io.File`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `isEventCallAllowed(`*`eventId: String`*`)` \
-                        특정 `ProjectEvent`의 호출 허용 여부를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `eventId`에 대응하는 `ProjectEvent`의 호출이 허용된 상태일 경우 `true`, 허용되지 않은 상태일 경우 `false`
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `eventId`: 호출 허용 여부를 확인할 `ProjectEvent`의 id
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Plugins
-         `Plugins` 객체는 현재 앱에 등록된 플러그인 정보에 접근할 수 있는 기능들을 담고 있는 객체입니다. 해당 객체는 조건에 따라 플러그인 정보를 반환하는 기능만을 담고 있으며, 실제 플러그인에 대한 기능들은 `Plugin` 객체가 담당해요.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Plugins` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>[`Plugin`](#plugin)</span></Td>
-                    <Td>
-                        `ofId(`*`id: String`*`)` \
-                        특정 id의 플러그인에 대한 `Plugin` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `id`에 대응하는 플러그인에 대한 `Plugin` 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `id`: 반환받고자 하는 플러그인의 id
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`Plugin`](#plugin)</span></Td>
-                    <Td>
-                        `ofName(`*`name: String`*`)` \
-                        특정 이름의 플러그인에 대한 `Plugin` 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `name`에 대응하는 플러그인에 대한 `Plugin` 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `name`: 반환받고자 하는 플러그인의 이름
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`List<Plugin>`</span></Td>
-                    <Td>
-                        `getAll()` \
-                        현재 로드된 모든 플러그인을 모은 리스트를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 로드된 모든 플러그인을 모은 리스트
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Plugin
-
-         `Plugin` 객체는 현재 앱에 등록된 플러그인 정보를 담고 있는 객체입니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Plugin` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`PluginInfo`</span></Td>
-                    <Td>
-                        `info` \
-                        플러그인의 기본 등록 정보입니다.
-                        등록 정보에 대한 자세한 정보는 [여기](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/plugin/PluginInfo.kt#L2)를 참조하세요.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `isEnabled()` \
-                        플러그인의 활성화 여부를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            플러그인이 활성화 상태일 경우 `true`, 비활성화 상태일 경우 `false`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`java.io.File`</span></Td>
-                    <Td>
-                        <Noti type="danger">
-                            플러그인의 내부 경로 및 데이터는 오직 플러그인에서만 관리되어야 하며, 이를 임의로 변경 및 수정시 예기치 못한 동작이 발생할 수 있습니다.
-                        </Noti>
-                        `getInternalDataDirectory()` \
-                        플러그인의 내부 데이터 경로를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            플러그인의 내부 데이터 경로
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`java.io.File`</span></Td>
-                    <Td>
-                        <Noti type="danger">
-                            플러그인의 외부 경로 및 데이터는 오직 앱 내부 로직과 플러그인에서만 관리되어야 하며, 이를 임의로 변경 및 수정시 예기치 못한 동작이 발생할 수 있습니다.
-                        </Noti>
-                        `getExternalDataDirectory()` \
-                        플러그인의 외부 데이터 경로를 반환합니다. 
-                        <div>
-                            ##### 반환값
-                            플러그인의 외부 데이터 경로 (`/sdcard/StarLight/plugins/{id}/`)
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`java.io.File`</span></Td>
-                    <Td>
-                        <Noti type="danger">
-                            플러그인의 에셋은 읽기 전용이며, 이를 수정 혹은 제거해서는 안됩니다.
-                        </Noti>
-                        `getAsset(`*`path: String`*`)` \
-                        플러그인에 등록된 에셋 파일을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            플러그인에 등록된 에셋 파일에 대한 `java.io.File`
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `path`: 에셋 파일에 대한 상대 경로
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Env
-
-        <Noti type="info">
-            이 API는 Dotenvy의 확장된 Dotenv 형식을 지원합니다. 자세한 사항은 [여기](https://github.com/allan2/dotenvy/blob/master/.env-substitution)를 참고하십시오.
-        </Noti>
-
-        `Env` 객체는 Dotenv 형식의 파일을 읽고 값을 사용할 수 있는 API입니다. 기본적으로 프로젝트 폴더 내부의 `.env` 파일을 찾아 파싱합니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Env` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `get(`*`key: String`*`)` \
-                        특정 키(key)에 대응하는 값(value)을 반환합니다. 
-                        <Noti type="info">
-                            Env API 클래스는 `Map`을 상속하고 있으므로 `Env.get("KEY")` 또는 `Env.KEY` 로 사용 가능합니다.
-                        </Noti>
-                        <div>
-                            ##### 반환값
-                            `key`에 대응하는 값
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `key`: 반환받으려는 값에 대한 key
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Map<String, String>`</span></Td>
-                    <Td>
-                        `parseFile(`*`path: String`*`)` \
-                        특정 Dotenv 파일을 파싱하고 키-값을 담고 있는 `Map`을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `path`의 Dotenv 파일의 `Map`형식 값
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `path`: 사용하고자 하는 Dotenv 파일의 경로
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Map<String, String>`</span></Td>
-                    <Td>
-                        `parseString(`*`content: String`*`)` \
-                        Dotenv 형식의 문자열을 파싱하고 키-값을 담고 있는 `Map`을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            Dotenv 형식인 `content`의 `Map`으로의 변환 값
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `content`: Dotenv 형식으로 작성된 문자열
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Platform
-
-        `Platform` 객체는 현재 구동중인 봇 앱의 정보를 담고 있는 객체입니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Platform` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `getName()` \
-                        현재 구동 중인 봇 앱의 이름을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 구동 중인 봇 앱의 이름
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `getVersion()` \
-                        현재 구동 중인 봇 앱의 버전을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 구동 중인 봇 앱의 버전
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Long`</span></Td>
-                    <Td>
-                        `getUptime()` \
-                        현재 구동중인 봇 앱의 구동 시간을 반환합니다.
-                        <div>
-                            ##### 반환값
-                            현재 구동 중인 봇 앱의 구동 시간 (밀리초)
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### Java
-
-        `Java` 객체는 특정 이름을 가진 Java 클래스를 가져오기 위한 객체입니다. 특정 플랫폼의 Java 클래스 사용 방법에 종속되지 않고 Java 클래스를 사용할 수 있게 하는데 목적이 있습니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Java` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`java.lang.Class<*>`</span></Td>
-                    <Td>
-                        `type(`*`name: String`*`)` \
-                        특정 패키지명과 이름을 가진 Java 클래스를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `name`에 대응하는 Java 클래스
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `name`: 가져올 Java 클래스의 패키지를 포함한 전체 이름 (예: `java.lang.System`)
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        <Noti type="warning">
-            알림의 생성은 `NotificationBuilder`를 통해서, 생성 이후의 관리는 `Notification` 객체를 통해서 수행됩니다. 각 메서드가 어디에 소속되어 있는지 잘 확인하십시오.
-        </Noti>
-
-        ### Notification
-
-        `Notification` 객체는 상단 알림(노티피케이션)을 생성하고 관리하기 위한 객체입니다.
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`Notification` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`Number`</span></Td>
-                    <Td>
-                        `state` \
-                        알림의 상태를 나타내는 상수입니다.
-                        <div>
-                            ##### 반환값
-                            알림의 상태를 나타내는 상수
-                            - 알림이 제거된 상태일 경우: `-1`
-                            - 알림이 아직 생성되지 않았을 경우: `0`
-                            - 알림이 생성되었을 경우: `1`
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>[`NotificationBuilder`](#notificationbuilder)</span></Td>
-                    <Td>
-                        `Notification.create(`*`id: Number`*`)` \
-                        특정 id의 노티피케이션을 생성하는 [`NotificationBuilder`](#notificationbuilder) 객체를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `id`를 id로 가지는 노티피케이션을 생성하는 [`NotificationBuilder`](#notificationbuilder) 객체
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `id`: 생성될 알림의 id (`Int`)
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `update(`*`title?: String, message?: String`*`)` \
-                        생성된 알림의 제목과 내용을 수정합니다. `null`이 제공된 값은 수정하지 않습니다.
-                        <div>
-                            ##### 매개변수
-                            `title?`: 제목으로 설정할 문자열 \
-                            `message?`: 내용으로 설정할 문자열
-                        </div>
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`void`</span></Td>
-                    <Td>
-                        `delete()` \
-                        알림을 상단바에서 제거합니다. 이미 알림이 제거된 상태일 경우 `IllegalStateException`을 throw합니다.
-                        <div>
-                            ##### 반환값
-                            해당 `Notification` 객체
-                        </div>
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-
-        <Section>
-            #### NotificationBuilder
-
-            <Table>
-                <Thead>
-                    <Tr>
-                        <Th colSpan="2">`NotificationBuilder` 객체의 프로퍼티 / 메소드</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td><span>`NotificationBuilder`</span></Td>
-                        <Td>
-                            `setTitle(`*`title: String`*`)` \
-                            알림의 제목을 설정합니다.
-                            <div>
-                                ##### 반환값
-                                해당 `NotificationBuilder` 객체
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `title`: 제목으로 설정할 문자열
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`NotificationBuilder`</span></Td>
-                        <Td>
-                            `setText(`*`text: String`*`)` \
-                            알림의 본 내용을 설정합니다.
-                            <div>
-                                ##### 반환값
-                                해당 `NotificationBuilder` 객체
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `text`: 본 내용으로 설정할 문자열
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`NotificationBuilder`</span></Td>
-                        <Td>
-                            <Noti type="warning">
-                                최신 기기는 LED 발광을 지원하지 않을 수 있습니다.
-                            </Noti>
-                            `lights(`*`argb: Number, onMs: Number, offMs: Number`*`)` \
-                            알림의 LED 발광 패턴을 설정합니다.
-                            <div>
-                                ##### 반환값
-                                해당 `NotificationBuilder` 객체
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `argb`: 설정할 LED 색 (`0xAARRGGBB` 형식, 예: `0xFFFFFFFF`) (`Int`) \
-                                `onMs`: LED가 켜진 채로 유지될 시간(밀리초, `Int`) \
-                                `offMs`: LED가 꺼진 채로 유지될 시간(밀리초, `Int`)
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`NotificationBuilder`</span></Td>
-                        <Td>
-                            `onDismiss(`*`callback: (id) => Any`*`)` \
-                            이 알림이 상단바에서 제거되면 호출될 콜백 함수를 설정합니다.
-                            <div>
-                                ##### 반환값
-                                해당 `NotificationBuilder` 객체
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `callback`: 알림 제거시 호출될 콜백 함수
-                                - `id`: 제거된 알림의 id
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`NotificationBuilder`</span></Td>
-                        <Td>
-                            `onClick(`*`title: String, callback: (id) => Any`*`)` \
-                            알림에 클릭 가능한 버튼과 버튼 클릭시 호출될 콜백 함수를 설정합니다.
-                            <div>
-                                ##### 반환값
-                                해당 `Notification` 객체
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `title`: 버튼에 표시될 텍스트 \
-                                `callback`: 버튼 클릭시 호출될 콜백 함수
-                                - `id`: 알림의 id
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`Notification`</span></Td>
-                        <Td>
-                            `build()` \
-                            설정한 값들로 알림을 생성합니다. 생성된 알림을 제어할 수 있는 `Notification` 객체를 반환합니다.
-                            <div>
-                                ##### 반환값
-                                생성된 알림에 대한 `Notification` 객체
-                            </div>
-                        </Td>
-                    </Tr>
-                </Tbody>
-            </Table>
-        </Section>
-    </Section>
-</Section>
-<Section>
-    ## 이벤트 리스너
-
-    <Section>
-        ### onMessage 함수
-
-        `onMessage` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너입니다. 레거시 API의 `response`에 대응되며, 단일 매개변수 `event`로 메세지 정보를 제공합니다.
-
-        ~~~js
-        function onMessage(event) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onMessage` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>[`Message`](#message)</span></Td>
-                    <Td>
-                        `event` \
-                        수신된 메세지의 정보를 담고 있는 객체입니다. 자세한 구조는 하단의 [`Message`](#message) 섹션을 참고하세요.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-
-        <Section>
-            #### Message
-
-            ~~~js
-            {
-                message : String, // 수신된 메시지
-                image   : Bitmap?, // 전송된 이미지(실험적)
-                sender  : (ChatSender) {
-                    name          : String, // 전송자 이름
-                    id            : String?, // 유저 고유 id, 방마다 상이
-                    profileBitmap : Bitmap, // 프로필 이미지
-                    profileBase64 : String, // 프로필 이미지의 Base64 인코딩 값
-                    profileHash   : Int // profileBase64의 hashCode
-                },
-                room    : (ChatRoom) {
-                    id          : String, // 채팅방 고유 id
-                    name        : String, // 채팅방의 이름,
-                    isGroupChat : Boolean, // 그룹 채팅방 유무
-                    isDebugRoom : Boolean, // 디버그룸 유무
-                    send        : (message: String) => Boolean, // message를 방에 전송, 전송 성공시 true 반환
-                    markAsRead  : () => Boolean // 방의 메세지를 읽음 처리, 성공시 true 반환
-                },
-                hasMention  : Boolean, // 멘션을 포함하고 있을 시 true
-                chatLogId   : Long
-            }
-            ~~~
-        </Section>
-    </Section>
-    <Section>
-        ### onMessageDeleted 함수
-
-        `onMessageDeleted` 함수는 메시지 삭제를 감지하면 호출되는 함수입니다. 가장 마지막에 전송된 메세지의 삭제만 감지할 수 있습니다.
-
-        ~~~js
-        function onMessageDeleted(event) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onMessageDeleted` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>[`DeletedMessage`](#deletedmessage)</span></Td>
-                    <Td>
-                        `event` \
-                        삭제된 메세지가 담고 있던 정보를 담고 있는 객체입니다. 자세한 구조는 하단의 [`DeletedMessage`](#deletedmessage) 섹션을 참고하세요.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-
-        <Section>
-            #### DeletedMessage
-
-            <Noti type="warning">
-                `Message`와 다르게 `room`이 `null`일 수 있습니다. 값의 `null` 여부를 확인한 후 사용하십시오.
-            </Noti>
-
-            ~~~js
-            {
-                message : String, // 수신된 메시지
-                sender  : String, // 전송자 이름
-                room?   : (ChatRoom) {
-                    id          : String, // 채팅방 고유 id
-                    name        : String, // 채팅방의 이름,
-                    isGroupChat : Boolean, // 그룹 채팅방 유무
-                    isDebugRoom : Boolean, // 디버그룸 유무
-                    send        : (message: String) => Boolean, // message를 방에 전송, 전송 성공시 true 반환
-                    markAsRead  : () => Boolean // 방의 메세지를 읽음 처리, 성공시 true 반환
-                },
-                packageName : String,
-                chatLogId   : Long
-            }
-            ~~~
-        </Section>
-    </Section>
-    <Section>
-        ### onStartCompile 함수
-        `onStartCompile` 함수는 스크립트의 컴파일이 수행되려 할 때, 컴파일 수행 전 호출되는 이벤트 리스너입니다. 레거시 API의 `onStartCompile` 함수와 동일합니다.
-
-        ~~~js
-        function onStartCompile() {
-
-        }
-        ~~~
-    </Section>
-    <Section>
-        ### onNotificationPosted 함수
-        `onNotificationPosted` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너입니다. 레거시 API의 `onNotificationPosted` 함수와 유사하나, `sessionManager`가 제공되지 않습니다.
-
-        ~~~js
-        function onNotificationPosted(statusBarNotification) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onNotificationPosted` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.service.notification.StatusBarNotification`</span></Td>
-                    <Td>
-                        `statusBarNotification` \
-                        [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-</Section>
-<Section>
-    ## 플러그인
-
-    <Noti type="info">
-        [**kbotdocs.dev 레포지토리**](https://github.com/nolbo/kbotdocs.dev)에서 문서에 기여해주세요!
-    </Noti>
-
-    **플러그인**은 서드파티 개발자들이 응용 프로그램을 확장하는 기능을 만들 수 있도록 하는 일종의 확장 레이어로, 플러그인을 이용해 기본적으로 제공하지 않는 기능들을 추가할 수 있습니다.
-    [여기에서](https://drive.google.com/drive/folders/12GgPeRxWrlBbj9TV2olPmeKTPfI8KW0i) 플러그인들을 다운로드할 수 있습니다.
-
     <Table>
         <Thead>
             <Tr>
-                <Th colSpan="2">StarLight 플러그인</Th>
+                <Th colSpan={"2"}>StarLight의 객체</Th>
             </Tr>
         </Thead>
         <Tbody>
             <Tr>
-                <Td><span>[Discord](#discord)</span></Td>
-                <Td>JS를 이용한 디스코드봇 개발을 위한 플러그인입니다.</Td>
+                <Td><span>[`Env`](/starlight/Env)</span></Td>
+                <Td>
+                    Dotenv 형식 파일의 입출력을 위한 객체입니다.
+                </Td>
             </Tr>
             <Tr>
-                <Td><span>[V8](#v8)</span></Td>
+                <Td><span>[`Java`](/starlight/Java)</span></Td>
+                <Td>
+                    Java 클래스에 대한 접근을 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Language`](/starlight/Language)</span></Td>
+                <Td>
+                    앱이 지원하는 프로그래밍 언어에 관한 기능들을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Languages`](/starlight/Languages)</span></Td>
+                <Td>
+                    앱이 지원하는 프로그래밍 언어에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Notification`](/starlight/Notification)</span></Td>
+                <Td>
+                    알림을 관리하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`NotificationBuilder`](/starlight/NotificationBuilder)</span></Td>
+                <Td>
+                    알림의 생성을 위한 빌더(Builder) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Platform`](/starlight/Platform)</span></Td>
+                <Td>
+                    구동 중인 봇 앱의 정보를 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugin`](/starlight/Plugin)</span></Td>
+                <Td>
+                    앱에 등록된 플러그인의 정보를 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugins`](/starlight/Plugins)</span></Td>
+                <Td>
+                    앱에 등록된 플러그인의 정보에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Project`](/starlight/Project)</span></Td>
+                <Td>
+                    프로젝트에 관한 기능들을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Projects`](/starlight/Projects)</span></Td>
+                <Td>
+                    프로젝트에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 이벤트 리스너
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>StarLight의 이벤트 리스너</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`onMessage`](/starlight/onMessage)</span></Td>
+                <Td>
+                    메시지를 수신할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onMessageDeleted`](/starlight/onMessageDeleted)</span></Td>
+                <Td>
+                    메시지가 삭제되었을 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationPosted`](/starlight/onNotificationPosted)</span></Td>
+                <Td>
+                    알림이 발생할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStartCompile`](/starlight/onStartCompile)</span></Td>
+                <Td>
+                    컴파일 요청을 감지했을 때 컴파일 시작 전에 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 인자
+
+    이 객체들은 직접적으로 접근할 수 없습니다. 이벤트의 인자로 주어지는 데이터 형태입니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">StarLight의 인자</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`ChatRoom`](/starlight/ChatRoom)</span></Td>
+                <Td>
+                    방에 관한 정보를 담은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ChatSender`](/starlight/ChatSender)</span></Td>
+                <Td>
+                    발신자에 관한 정보를 담은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`DeletedMessage`](/starlight/DeletedMessage)</span></Td>
+                <Td>
+                    삭제된 메시지에 대한 정보를 담고 있는 객체입니다. [`onMessageDeleted`](/starlight/onMessageDeleted)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Message`](/starlight/Message)</span></Td>
+                <Td>
+                    메시지에 대한 정보를 담고 있는 객체입니다. [`onMessage`](/starlight/onMessage)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 플러그인
+
+    StarLight는 플러그인을 이용해 기본적으로 제공하지 않는 기능들을 추가할 수 있습니다. StarLight의 플러그인은 아래의 과정으로 추가할 수 있습니다.
+
+    1. `.slp` 파일을 `sdcard/StarLight/plugins/` 폴더 내에 추가합니다.
+    2. StarLight를 재시작합니다.
+
+    [여기에서](https://drive.google.com/drive/folders/12GgPeRxWrlBbj9TV2olPmeKTPfI8KW0i) 플러그인들을 다운로드할 수 있습니다.
+
+    <Noti type="danger">
+        StarLight 플러그인 파일을 다운로드하거나 설치하기 전에 신뢰할 수 있는 출처와 파일인지를 확인하세요.
+    </Noti>
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">StarLight의 플러그인</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[Discord](/starlight/Discord)</span></Td>
+                <Td>JavaScript를 이용한 디스코드봇 개발을 위한 플러그인입니다.</Td>
+            </Tr>
+            <Tr>
+                <Td><span>[V8](/starlight/V8)</span></Td>
                 <Td>V8 엔진을 이용한 카카오톡봇 개발을 위한 플러그인입니다.</Td>
             </Tr>
         </Tbody>
     </Table>
-
-    <Section>
-        ### Discord
-
-        **Discord**는 StarLight용 플러그인으로, 디스코드 챗봇 API의 이벤트를 수신 및 사용할 수 있게 합니다.
-
-        <Section>
-            #### 사용방법
-
-            1. 플러그인 파일(`discord.slp`, `awt.slp`)을 다운로드하여 `/StarLight/plugins` 폴더 내에 저장합니다.
-            2. StarLight 앱을 재시작하여 초기화를 수행합니다.
-            3. 하단의 **플러그인** 탭 > **Discord 플러그인** > **설정** > **봇 토큰** 에 본인의 봇 토큰을 입력합니다. (봇 토큰 발급 방법)
-            4. StarLight 앱을 재시작하여 서버를 시작합니다.
-            5. 이벤트를 수신할 프로젝트의 설정에 들어가 **호출이 허용된 이벤트** 항목에 `discord.message.*` 를 추가합니다.
-            6. 이제 해당 프로젝트의 `onMessageCreate` 함수가 디스코드 메세지 수신 시 호출됩니다.
-        </Section>
-        <Section>
-            #### Event 수신
-
-            본 플러그인은 내부적으로 JavaCord 라이브러리를 사용합니다.
-            따라서 `onMessageCreate`의 매개변수인 `event`로 JavaCord의 `MessageCreateEvent` 객체가 넘겨집니다.
-            자세한 사항은 JavaCord의 [Javadoc]((https://javadoc.io/doc/org.javacord/javacord-api/latest/org/javacord/api/event/message/MessageCreateEvent.html))을 참고하세요.
-        </Section>
-        <Section>
-            #### 예제
-
-            ~~~js
-            function onMessageCreate(event) {
-                if (!event.messageAuthor.isUser()) return;
-                if (event.message.content !== "!ping") return;
-
-                event.channel.sendMessage("Pong!");
-            }
-            ~~~
-        </Section>
-    </Section>
-    <Section>
-        <Noti type="danger">
-            V8 플러그인 사용 전 몇 가지 유의사항이 있습니다:
-
-            - 이 플러그인은 아직 **실험적 적용 단계**입니다. 사용 중에 발생한 문제에 대해선 책임지지 않으며, **모든 책임은 사용자 본인에게 있습니다.**
-            - V8 엔진은 Rhino 엔진에 비해 전력 사용량이 매우 큽니다. 실제 휴대하는 기기에 적용시 배터리를 크게 소모할 수 있습니다.
-            - 현재 `require`와 같이 외부 모듈 로드는 지원하지 않습니다.
-
-            에러 발생시 StarLight 제작자에게 [**제보**](https://github.com/mooner1022/StarLight/issues)해주세요.
-        </Noti>
-
-        ### V8
-
-        **V8**는 StarLight용 플러그인으로, Rhino JS에 V8 엔진을 이용할 수 있게 합니다.
-        실행 속도가 Rhino 엔진에 비해 **약 29~117배** 더 빠르다는 이점이 있습니다.
-        
-        <Section>
-            #### 사용방법
-
-            1. 위 첨부된 링크에서 올바른 플러그인 파일을 다운로드 합니다.
-            <Noti type="warning">
-                사용하는 기기에 맞는 파일을 다운로드 해야 합니다.
-                - `armeabi`: 일부 구식 안드로이드 기기
-                - `arm64`: 대부분의 기기와 휴대폰
-                - `x86_64`: 대부분의 에뮬레이터/가상화 기기
-            </Noti>
-            2. 앱을 완전히 재시작 합니다. (**설정** > **일반** > **앱 재시작**)
-            3. 새 프로젝트 생성시에 언어 선택 항목에서 **JavaScript(V8)** 항목을 선택합니다.
-        </Section>
-        <Section>
-            #### 추가: 프로젝트 설정
-
-            `eval()` 함수의 사용 여부와 상술한 Java 클래스 수동 접근 여부를 프로젝트 설정에서 변경할 수 있습니다. 사용 환경에 따라 해당 설정을 조절하여 사용하십시오.
-        </Section>
-    </Section>
 </Section>

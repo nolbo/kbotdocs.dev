@@ -1,0 +1,43 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "GlobalLog.debug() - API2",
+    openGraph: {
+        title: "GlobalLog.debug() - API2"
+    }
+}
+
+<Section>
+    ## GlobalLog.debug()
+
+    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다. 해당 메소드의 동작은 [`GlobalLog.d()`](/api2/GlobalLog/d)와 같습니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    GlobalLog.debug(data: String, showToast?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`data`</Dt>
+            <Dd>
+                작성할 디버그 로그의 내용
+            </Dd>
+            <Dt>`showToast?`</Dt>
+            <Dd>
+                작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="GlobalLog.debug()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`debug`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

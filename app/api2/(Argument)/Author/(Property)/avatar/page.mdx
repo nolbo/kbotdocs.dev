@@ -1,0 +1,31 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Author.avatar - API2",
+}
+
+<Section>
+    ## Author.avatar
+
+    발신자의 프로필 이미지에 대한 [`Image`](/api2/Image) 객체입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    author.avatar;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `Image` - 발신자의 프로필 이미지에 대한 [`Image`](/api2/Image) 객체입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Author.avatar">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`avatar`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

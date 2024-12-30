@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "ImageDB.getProfileImage() - 레거시 API",
+    openGraph: {
+        title: "ImageDB.getProfileImage() - 레거시 API"
+    }
+}
+
+<Section>
+    ## ImageDB.getProfileImage()
+
+    발신자의 프로필 이미지를 Base64 인코딩한 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    imageDB.getProfileImage();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 발신자의 프로필 이미지를 Base64 인코딩한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="ImageDB.getProfileImage()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getProfileImage`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

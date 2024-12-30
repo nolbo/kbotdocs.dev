@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.getPhoneModel() - 레거시 API",
+    openGraph: {
+        title: "Utils.getPhoneModel() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.getPhoneModel()
+
+    앱 구동 기기의 모델명을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.getPhoneModel();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 앱 구동 기기의 모델명을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.getPhoneModel()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getPhoneModel`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getBatteryIntent() - API2",
+    openGraph: {
+        title: "Device.getBatteryIntent() - API2"
+    }
+}
+
+<Section>
+    ## Device.getBatteryIntent()
+
+    [`android.content.Context.registerReceiver`](https://developer.android.com/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter))`(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getBatteryIntent();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        [`android.content.Intent`](https://developer.android.com/reference/android/content/Intent) - [`android.content.Context.registerReceiver`](https://developer.android.com/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter))`(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getBatteryIntent()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getBatteryIntent`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

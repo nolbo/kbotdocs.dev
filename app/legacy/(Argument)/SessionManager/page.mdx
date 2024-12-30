@@ -1,0 +1,49 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "SessionManager - 레거시 API",
+    openGraph: {
+        title: "SessionManager - 레거시 API"
+    }
+}
+
+<Section>
+    ## SessionManager
+
+    `SessionManager` 객체는 방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. 해당 객체는 직접 호출할 수 없습니다. [`notificationPosted`](/legacy/notificationPosted) 이벤트의 인자로 주어집니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`SessionManager` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`bindSession`](/legacy/SessionManager/bindSession(String,Action$))`(room: String, action?: android.app.Notification.Action)` \
+                    다른 메신저 앱의 `room` 방에 채팅이 왔을 때 메시지를 전송합니다. `action`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`bindSession`](/legacy/SessionManager/bindSession(String,String,Action$))`(packageName: String, room: String, action?: android.app.Notification.Action)` \
+                    `packageName`이 패키지명인 메신저 앱의 `room` 방에 채팅이 왔을 때 메시지를 전송합니다. `action`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="SessionManager 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`bindSession(String, android.app.Notification.Action?)`](/legacy/SessionManager/bindSession(String,Action$))</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`bindSession(String, String, android.app.Notification.Action?)`](/legacy/SessionManager/bindSession(String,String,Action$))</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

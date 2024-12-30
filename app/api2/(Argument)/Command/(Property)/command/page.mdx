@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Command.command - API2",
+    openGraph: {
+        title: "Command.command - API2"
+    }
+}
+
+<Section>
+    ## Command.command
+
+    명령어의 이름입니다. 예를 들어, 접두어가 `"/"`이고 전송된 메시지가 `"/angles 30 60 90"` 일 때 `"angles"` 입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    cmd.command;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `String` - 명령어의 이름입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Command.command">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`command`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

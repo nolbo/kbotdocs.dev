@@ -1,0 +1,30 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "onStartCompile 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "onStartCompile 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## onStartCompile
+
+    `onStartCompile`은 컴파일 요청을 감지했을 때 컴파일 시작 전에 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function onStartCompile() {
+
+    }
+    ~~~
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="onStartCompile">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`onStartCompile`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

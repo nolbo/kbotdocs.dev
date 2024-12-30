@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import TOC from "@/components/common/TOC";
 import PageTree from "@/components/common/PageTree";
 import IconButton from "@/components/common/IconButton";
@@ -36,12 +36,12 @@ export default function Sidebar() {
                 }} />
             </div>
             <div
-                className={`w-full h-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-[225px] md:max-h-[calc(100vh-160px-64px)]`}>
-                <div className={"w-full h-full"} onClick={() => { setIsTOCShowed(false) }}>
+                className={`w-full h-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-sidebar-w-md md:max-h-[calc(100vh-160px-64px)] lg:w-sidebar-w-lg`}>
+                <div className={"w-full h-full"}>
                     <Tab
                         items={[
-                            { label: "목차", content: <TOC scrollToRef={ scrollTo } className={"pt-[16px]"} /> },
-                            { label: "페이지", content: <PageTree currentPath={path} className={"pt-[16px]"} /> }
+                            { label: "목차", content: <TOC scrollToRef={scrollTo} onAnchorClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> },
+                            { label: "페이지", content: <PageTree currentPath={path} onLinkClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> }
                         ]}
                         className={"h-full"}
                     />

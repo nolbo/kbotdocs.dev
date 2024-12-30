@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Http - API2",
+    openGraph: {
+        title: "Http - API2"
+    }
+}
+
 <Section>
     ## Http
 
@@ -49,7 +56,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Http 객체">
+    <AppCompatibility listTitle="Http 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`request(Object, Function)`](/api2/Http/request(Object,Function))</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`request(String, Function)`](/api2/Http/request(String,Function))</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`requestSync(Object)`](/api2/Http/requestSync(Object))</AppCompatibilityItem>

@@ -99,7 +99,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <Header />
                     <div className={"flex justify-center mt-header-h px-screen-x-default md:px-screen-x-md"}>
-                        <div className={"relative w-full md:grid md:grid-cols-[225px_auto] md:gap-[32px] md:max-w-main-md"}>
+                        <div className={"relative w-full md:grid md:grid-cols-[theme(spacing.sidebar-w-md)_auto] md:gap-[32px] md:max-w-main-md lg:grid-cols-[theme(spacing.sidebar-w-lg)_auto]"}>
                             <Sidebar />
                             <main id={"doc"} className={"flex flex-col gap-[32px] py-[96px] overflow-auto"}>
                                 { children }

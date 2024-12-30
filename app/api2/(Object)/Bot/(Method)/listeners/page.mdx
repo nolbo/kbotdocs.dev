@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Bot.listeners() - API2",
+    openGraph: {
+        title: "Bot.listeners() - API2"
+    }
+}
+
+<Section>
+    ## Bot.listeners()
+
+    특정 이벤트에 대한 모든 이벤트 리스너를 배열로 반환합니다. API2의 이벤트 이름들이 담긴 [`Event`](/api2/Event)객체를 함께 이용할 수 있습니다. API2의 이벤트는 [여기](/api2#이벤트)를 참고하세요.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    bot.listeners(eventName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`eventName`</Dt>
+            <Dd>
+                반환될 모든 이벤트 리스너의 이벤트명
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Function[]` - `eventName` 이벤트의 모든 이벤트 리스너가 담긴 배열을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bot.listeners()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`listeners`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

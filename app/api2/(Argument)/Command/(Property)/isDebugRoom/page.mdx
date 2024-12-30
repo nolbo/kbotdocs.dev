@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Command.isDebugRoom - API2",
+    openGraph: {
+        title: "Command.isDebugRoom - API2"
+    }
+}
+
+<Section>
+    ## Command.isDebugRoom
+
+    방이 디버깅 룸인지의 여부입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    cmd.isDebugRoom;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `Boolean` - 방이 디버깅 룸인지의 여부입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Command.isDebugRoom">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`isDebugRoom`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

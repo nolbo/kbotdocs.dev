@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "BotManager.unload() - API2",
+    openGraph: {
+        title: "BotManager.unload() - API2"
+    }
+}
+
+<Section>
+    ## BotManager.unload()
+
+    `botName` 이름의 `Bot` 객체를 컴파일 전 상태로 전환(언로드)합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    BotManager.unload(botName: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`botName`</Dt>
+            <Dd>
+                언로드할 `Bot` 객체의 이름
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="BotManager.unload()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`unload`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

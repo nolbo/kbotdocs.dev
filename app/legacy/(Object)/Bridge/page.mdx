@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Bridge - 레거시 API",
+    openGraph: {
+        title: "Bridge - 레거시 API"
+    }
+}
+
 <Section>
     ## Bridge
 
@@ -82,7 +89,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Bridge 객체">
+    <AppCompatibility listTitle="Bridge 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`evaluateStringIn`](/legacy/Bridge/evaluateStringIn)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>[`getGlobalVariable`](/legacy/Bridge/getGlobalVariable)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getScopeOf`](/legacy/Bridge/getScopeOf)</AppCompatibilityItem>

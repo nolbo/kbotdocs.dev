@@ -1,0 +1,171 @@
+export const metadata = {
+    title: "Project - StarLight",
+    openGraph: {
+        title: "Project - StarLight"
+    }
+}
+
+<Section>
+    ## Project
+
+    `Project` 객체는 프로젝트에 관한 기능들을 제공하는 객체입니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Project` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`MutableConfig`](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/config/data/MutableConfig.kt)</span></Td>
+                <Td>
+                    [`config`](/starlight/Project/config) \
+                    프로젝트의 로컬 디렉터리에 저장되는 프로젝트 전용 구성 데이터입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.io.File`</span></Td>
+                <Td>
+                    [`directory`](/starlight/Project/directory) \
+                    프로젝트의 루트 디렉터리에 대한 `java.io.File`입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ProjectInfo`](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/project/ProjectInfo.kt#L11)</span></Td>
+                <Td>
+                    [`info`](/starlight/Project/info) \
+                    프로젝트에 대한 정보입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isCompiled`](/starlight/Project/isCompiled) \
+                    프로젝트의 컴파일 여부입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`ProjectLogger`](https://github.com/mooner1022/StarLight/blob/nightly/PluginCore/src/main/java/dev/mooner/starlight/plugincore/logger/ProjectLogger.kt#L24)</span></Td>
+                <Td>
+                    [`logger`](/starlight/Project/logger) \
+                    프로젝트의 이벤트 로깅에 사용되는 logger입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Project` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`Number`</span></Td>
+                <Td>
+                    [`activeJobs`](/starlight/Project/activeJobs)`()` \
+                    프로젝트의 쓰레드 풀에서 작동 중인 `job`의 수를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`callFunction`](/starlight/Project/activeJobs)`(name: String, args: Any[], onException: (throwable: java.lang.Throwable) => Any)` \
+                    특정 함수의 이름과 인자를 전달받아 호출합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`compile`](/starlight/Project/compile)`(throwException?: Boolean = false)` \
+                    프로젝트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwException?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`destroy`](/starlight/Project/destroy)`()` \
+                    작동 중인 모든 `job`을 중지합니다. 프로젝트가 컴파일된 상태일 경우, `langScope`를 해제합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`java.io.File`</span></Td>
+                <Td>
+                    [`getDataDirectory`](/starlight/Project/getDataDirectory)`()` \
+                    프로젝트의 데이터(데이터베이스 파일, 유저 데이터 등)가 저장된 디렉터리에 대한 `java.io.File`을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Language`](/starlight/Language)</span></Td>
+                <Td>
+                    [`getLanguage`](/starlight/Project/getLanguage)`()` \
+                    프로젝트에서 사용하는 언어에 대한 `Language` 객체를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Any?`</span></Td>
+                <Td>
+                    [`getScope`](/starlight/Project/getScope)`()` \
+                    scope 인스턴스를 반환합니다. 프로젝트가 컴파일되지 않은 경우 `null`을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`isEventCallAllowed`](/starlight/Project/isEventCallAllowed)`(eventId: String)` \
+                    특정 `ProjectEvent`의 호출 허용 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`loadInfo`](/starlight/Project/loadInfo)`()` \
+                    메모리 내 프로젝트 정보 데이터를 무효화하고 로컬 파일에서 다시 로드합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`rename`](/starlight/Project/rename)`(name: String)` \
+                    프로젝트의 이름을 변경합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`requestUpdate`](/starlight/Project/requestUpdate)`()` \
+                    앱에 프로젝트 UI 업데이트를 요청합니다. 앱이 백그라운드에서 실행 중일 경우 요청은 무시됩니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`saveInfo`](/starlight/Project/saveInfo)`()` \
+                    `Project.info` 값을 파일에 저장합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`Boolean`</span></Td>
+                <Td>
+                    [`setEnabled`](/starlight/Project/setEnabled)`(enabled: Boolean)` \
+                    프로젝트의 활성화 상태를 설정하고 활성화 상태 변경의 성공 여부를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    [`stopAllJobs`](/starlight/Project/stopAllJobs)`()` \
+                    작동 중인 모든 `job`을 중지합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

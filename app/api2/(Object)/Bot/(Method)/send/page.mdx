@@ -1,0 +1,52 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Bot.send() - API2",
+    openGraph: {
+        title: "Bot.send() - API2"
+    }
+}
+
+<Section>
+    ## Bot.send()
+
+    특정 방에 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    bot.send(room: String, msg: String, packageName?: String = null);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`room`</Dt>
+            <Dd>
+                메시지를 보낼 방 이름
+            </Dd>
+            <Dt>`msg`</Dt>
+            <Dd>
+                보낼 메시지의 내용
+            </Dd>
+            <Dt>`packageName?`</Dt>
+            <Dd>
+                메시지를 보낼 메신저 앱의 패키지명
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean`: `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Bot.send()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`send`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

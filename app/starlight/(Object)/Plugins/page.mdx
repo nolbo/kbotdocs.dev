@@ -1,0 +1,46 @@
+export const metadata = {
+    title: "Plugins - StarLight",
+    openGraph: {
+        title: "Plugins - StarLight"
+    }
+}
+
+<Section>
+    ## Plugins
+
+    `Plugins` 객체는 앱에 등록된 플러그인의 정보에 접근하기 위한 객체입니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Plugins` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`java.util.List<`[`Plugin`](/starlight/Plugin)`>`</span></Td>
+                <Td>
+                    [`getAll`](/starlight/Plugins/getAll)`()` \
+                    로드된 모든 플러그인에 대한 `Plugin` 객체를 모은 `java.util.List`를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugin`](/starlight/Plugin)</span></Td>
+                <Td>
+                    [`ofId`](/starlight/Plugins/ofId)`(id: String)` \
+                    특정 ID로 식별되는 플러그인에 대한 `Plugin` 객체를 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Plugin`](/starlight/Plugin)</span></Td>
+                <Td>
+                    [`ofName`](/starlight/Plugins/ofName)`(name: String)` \
+                    특정 이름의 플러그인에 대한 `Plugin` 객체를 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>

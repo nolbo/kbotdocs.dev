@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "message 이벤트 - API2",
+    openGraph: {
+        title: "message 이벤트 - API2"
+    }
+}
+
 <Section>
     ## message
 
@@ -10,99 +17,18 @@ import { Compatibility } from "@/constants/compatibility";
 
     [`Bot.addListener()`](/api2/Bot/addListener)를 이용해 이벤트에 대한 리스너를 추가할 수 있습니다. [`Event.MESSAGE`](/api2/Event/MESSAGE)를 이용해 이벤트 이름을 전달할 수도 있습니다.
     ~~~js
-    bot.addListener("message", (msg: Object) => {});
+    bot.addListener("message", (msg: Message) => {});
     // 또는
-    bot.addListener(Event.MESSAGE, (msg: Object) => {});
+    bot.addListener(Event.MESSAGE, (msg: Message) => {});
     ~~~
 
     <Section>
         ### 인자
 
         <Dl>
-            <Dt>`msg.room: String`</Dt>
+            <Dt>`msg`</Dt>
             <Dd>
-                메시지가 발신된 채팅방의 이름입니다.
-            </Dd>
-            <Dt>`msg.channelId: BigInt`</Dt>
-            <Dd>
-                메시지가 발신된 채팅방의 고유 아이디입니다.
-            </Dd>
-            <Dt>`msg.content: String`</Dt>
-            <Dd>
-                메시지의 내용입니다.
-            </Dd>
-            <Dt>`msg.isGroupChat: Boolean`</Dt>
-            <Dd>
-                채팅방이 그룹 채팅방인지의 여부입니다.
-            </Dd>
-            <Dt>`msg.isDebugRoom: Boolean`</Dt>
-            <Dd>
-                디버깅 룸인지의 여부입니다.
-            </Dd>
-            <Dt>`msg.image: Object`</Dt>
-            <Dd>
-                메시지에 포함된 이미지에 관한 정보를 담은 객체입니다.
-
-                <Dl>
-                    <Dt>`msg.image.getBase64(): () => String`</Dt>
-                    <Dd>
-                        이미지의 Base64 값을 반환합니다.
-                    </Dd>
-                    <Dt>`msg.image.getBitmap(): () => android.graphics.Bitmap`</Dt>
-                    <Dd>
-                        이미지의 `android.graphics.Bitmap` 값을 반환합니다.
-                    </Dd>
-                </Dl>
-            </Dd>
-            <Dt>`msg.isMention: Boolean`</Dt>
-            <Dd>
-                메시지 내 멘션 포함 여부입니다.
-            </Dd>
-            <Dt>`msg.logId: BigInt`</Dt>
-            <Dd>
-                메시지에 대한 고유 아이디입니다.
-            </Dd>
-            <Dt>`msg.author: Object`</Dt>
-            <Dd>
-                메시지의 발신자에 관한 정보를 담은 객체입니다.
-
-                <Dl>
-                    <Dt>`msg.author.name: String`</Dt>
-                    <Dd>
-                        발신자의 이름입니다.
-                    </Dd>
-                    <Dt>`msg.author.avatar: Boolean`</Dt>
-                    <Dd>
-                        발신자의 프로필 이미지에 관한 정보를 담은 객체입니다.
-
-                        <Dl>
-                            <Dt>`msg.author.avatar.getBase64(): () => String`</Dt>
-                            <Dd>
-                                프로필 이미지의 Base64 값을 반환합니다.
-                            </Dd>
-                            <Dt>`msg.author.avatar.getBitmap(): () => android.graphics.Bitmap`</Dt>
-                            <Dd>
-                                프로필 이미지의 `android.graphics.Bitmap` 값을 반환합니다.
-                            </Dd>
-                        </Dl>
-                    </Dd>
-                    <Dt>`msg.author.hash: String`</Dt>
-                    <Dd>
-                        발신자에 대한 해시 값입니다. 프로필이 변경되어도 동일 채팅방 내에서 같은 유저에 대해 같은 값을 가집니다.
-                    </Dd>
-                </Dl>
-            </Dd>
-            <Dt>`msg.reply: (content: String) => void`</Dt>
-            <Dd>
-                메시지가 발신된 채팅방에 `content`를 발신합니다.
-            </Dd>
-            <Dt>`msg.markAsRead: () => void`</Dt>
-            <Dd>
-                메시지가 발신된 채팅방의 알림을 읽음 처리합니다.
-            </Dd>
-            <Dt>`msg.packageName: String`</Dt>
-            <Dd>
-                메시지가 발신된 메신저 앱의 패키지명입니다.
+                발신된 메시지에 대한 정보를 담고 있는 [`Message`](/api2/Message) 객체입니다.
             </Dd>
         </Dl>
     </Section>

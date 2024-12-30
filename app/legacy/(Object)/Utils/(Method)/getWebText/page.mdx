@@ -1,0 +1,49 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.getWebText() - 레거시 API",
+    openGraph: {
+        title: "Utils.getWebText() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.getWebText()
+
+    [`jsoup`](https://jsoup.org/)을 이용해 `url`에 동기 GET request를 보냅니다. 요청에 대한 응답을 문자열로 반환합니다. `removeTags?`가 `true`일 경우 HTML 태그를 삭제한 응답을 문자열로 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.getWebText(url: String, removeTags?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`url`</Dt>
+            <Dd>
+                GET request를 보낼 서버의 URL
+            </Dd>
+            <Dt>`removeTags?`</Dt>
+            <Dd>
+                응답 값에 존재하는 HTML 태그를 삭제할 것인지의 여부
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - 요청에 대한 응답을 문자열로 반환합니다. `removeTags?`가 `true`일 경우 HTML 태그를 삭제한 응답을 문자열로 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.getWebText()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getWebText(String)`</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getWebText(String, Boolean)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

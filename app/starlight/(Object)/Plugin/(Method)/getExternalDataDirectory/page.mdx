@@ -1,0 +1,29 @@
+export const metadata = {
+    title: "Platform.getExternalDataDirectory() - StarLight",
+    openGraph: {
+        title: "Platform.getExternalDataDirectory() - StarLight"
+    }
+}
+
+<Section>
+    ## Plugin.getExternalDataDirectory()
+
+    플러그인의 외부 데이터 디렉터리를 반환합니다.
+
+    <Noti type="danger">
+        플러그인의 외부 경로 및 데이터는 오직 앱 내부 로직과 플러그인에서만 관리되어야 하며, 이를 임의로 변경 및 수정시 예기치 못한 동작이 발생할 수 있습니다.
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Plugin.getExternalDataDirectory();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `java.io.File` - 플러그인의 외부 데이터 디렉터리(`/sdcard/StarLight/plugins/`*`id`*`/`)에 대한 `java.io.File` 값을 반환합니다.
+    </Section>
+</Section>

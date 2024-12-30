@@ -1,0 +1,36 @@
+export const metadata = {
+    title: "NotificationBuilder.onDismiss() - StarLight",
+    openGraph: {
+        title: "NotificationBuilder.onDismiss() - StarLight"
+    }
+}
+
+<Section>
+    ## NotificationBuilder.onDismiss()
+
+    알림이 상단바에서 제거될 때 호출될 콜백 함수를 설정합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    NotificationBuilder.onDismiss(callback: (id: Number) => Any?);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`callback`</Dt>
+            <Dd>
+                알림이 상단바에서 제거될 때 호출될 콜백 함수
+                - `id`: 알림의 ID
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `NotificationBuilder` - 해당 `NotificationBuilder` 객체
+    </Section>
+</Section>

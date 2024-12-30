@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "레거시 API",
+    openGraph: {
+        title: "레거시 API"
+    }
+}
+
 <Section>
     <Noti type="warning">
         레거시 API는 더 이상 권장되지 않습니다. 새로운 프로젝트에서는 사용을 피하고, 가능한 경우 API2로 마이그레이션하는 것이 좋습니다.
@@ -62,12 +69,6 @@ import { Compatibility } from "@/constants/compatibility";
                 </Td>
             </Tr>
             <Tr>
-                <Td><span>[`SessionManager`](/legacy/SessionManager)</span></Td>
-                <Td>
-                    채팅방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. [`onNotificationPosted`](/legacy/onNotificationPosted) 이벤트 리스너의 인자로 주어집니다.
-                </Td>
-            </Tr>
-            <Tr>
                 <Td><span>[`Utils`](/legacy/Utils)</span></Td>
                 <Td>
                     카카오톡봇의 기능 구현에 도움이 되는 메소드들을 모은 객체입니다.
@@ -81,451 +82,132 @@ import { Compatibility } from "@/constants/compatibility";
 
     레거시 API에는 이벤트 리스너가 지정되어 있습니다. 상황에 맞는 이벤트 리스너를 사용하여 더 다양한 기능을 만들거나, 더 다양한 상황에 대응할 수 있습니다.
 
-    <Section>
-        ### response 함수
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>레거시 API의 이벤트 리스너</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`onBackPressed`](/legacy/onBackPressed)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onBackPressed`](https://developer.android.com/reference/android/app/Activity#onBackPressed())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onCreate`](/legacy/onCreate)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onCreate`](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle))가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onDestroy`](/legacy/onDestroy)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onDestroy`](https://developer.android.com/reference/android/app/Activity#onDestroy())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onLoaded`](/legacy/onLoaded)</span></Td>
+                <Td>
+                    스크립트 컴파일이 완료되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationPosted`](/legacy/onNotificationPosted)</span></Td>
+                <Td>
+                    알림이 발생할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationRemoved`](/legacy/onNotificationRemoved)</span></Td>
+                <Td>
+                    알림이 사라질 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onPause`](/legacy/onPause)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onPause`](https://developer.android.com/reference/android/app/Activity#onPause())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onRestart`](/legacy/onRestart)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onRestart`](https://developer.android.com/reference/android/app/Activity#onRestart())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onResume`](/legacy/onResume)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onResume`](https://developer.android.com/reference/android/app/Activity#onResume())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStart`](/legacy/onStart)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onStart`](https://developer.android.com/reference/android/app/Activity#onStart())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStartCompile`](/legacy/onStartCompile)</span></Td>
+                <Td>
+                    컴파일 요청을 감지했을 때 컴파일 시작 전에 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStop`](/legacy/onStop)</span></Td>
+                <Td>
+                    스크립트 액티비티의 [`onStop`](https://developer.android.com/reference/android/app/Activity#onStop())가 호출되면 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`response`](/legacy/response)</span></Td>
+                <Td>
+                    메시지를 수신할 때 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`secondTick`](/legacy/secondTick)</span></Td>
+                <Td>
+                    매 틱(1초)마다 동작하는 이벤트 리스너입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 인자
 
-        `response` 함수는 메시지를 수신할 때마다 호출되는 이벤트 리스너입니다. `response` 함수의 매개변수는 메시지에 관한 다양한 정보를 나타냅니다.
+    이 객체들은 직접적으로 접근할 수 없습니다. 이벤트의 인자로 주어지는 데이터 형태입니다.
 
-        ~~~js
-        function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`respone` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `room` \
-                        메시지가 발신된 채팅방의 이름입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `msg` \
-                        발신된 메시지의 내용입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `sender` \
-                        메시지를 발신한 유저의 이름입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `isGroupChat` \
-                        메시지가 발신된 방이 그룹 채팅방(3인 이상)이면 `true`, 아니면 `false`입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Object`</span></Td>
-                    <Td>
-                        `replier` \
-                        응답 기능, 세션 등을 가지고 있는 객체입니다. (아래 참고)
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`Object`</span></Td>
-                    <Td>
-                        `imageDB` \
-                        메시지를 발신한 유저의 프로필 이미지의 정보를 담은 객체입니다. (아래 참고)
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`String`</span></Td>
-                    <Td>
-                        `packageName` \
-                        메시지가 발신된 앱의 패키지명입니다. (카카오톡의 경우: `com.kakao.talk`)
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-        <Section>
-            #### replier
-
-            <Table>
-                <Thead>
-                    <Tr>
-                        <Th colSpan="2">`replier` 객체의 프로퍼티 / 메소드</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td><span>`void`</span></Td>
-                        <Td>
-                            `reply(`*`msg: String`*`)` \
-                            메시지가 발신된 방에 메시지를 보냅니다.
-                            <div>
-                                ##### 매개변수
-                                `msg`: 보낼 메시지의 내용
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`Boolean`</span></Td>
-                        <Td>
-                            `reply(`*`room: String, msg: String, hideToast?: Boolean = false`*`)` \
-                            특정 방에 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-                            <div>
-                                ##### 반환값
-                                `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `room`: 메시지를 보낼 방 이름 \
-                                `msg`: 보낼 메시지의 내용 \
-                                `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`void`</span></Td>
-                        <Td>
-                            `replyDelayed(`*`msg: String, delay: Number`*`)` \
-                            메시지가 발신된 방에 지정한 시간이 지난 후 메시지를 보냅니다.
-                            <div>
-                                ##### 매개변수
-                                `msg`: 보낼 메시지의 내용 \
-                                `delay`: 메시지 발신을 지연할 시간 (밀리초)
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`Boolean`</span></Td>
-                        <Td>
-                            `replyDelayed(`*`room: String, msg: String, delay: Number, hideToast?: Boolean = false`*`)` \
-                            특정 방에 지정한 시간이 지난 후 메시지를 보냅니다. 메시지를 보낼 방에 대한 세션의 존재 여부를 반환합니다.
-                            <div>
-                                ##### 반환값
-                                `room` 방에 대한 세션이 존재할 경우 `true`, 존재하지 않을 경우 `false`
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `room`: 메시지를 보낼 방 이름 \
-                                `msg`: 보낼 메시지의 내용 \
-                                `delay`: 메시지 발신을 지연할 시간 (밀리초) \
-                                `hideToast?`: 메시지를 보낼 방의 세션 존재 여부를 토스트 메시지로 출력할 것인지의 여부
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`Boolean`</span></Td>
-                        <Td>
-                            `markAsRead(`*`room?: String, packageName?: String`*`)` \
-                            채팅방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-                            <div>
-                                ##### 반환값
-                                `room` 방에 대한 알림 읽기 세션을 찾을 수 있을 경우 `true`, 찾을 수 없을 경우 `false`
-                            </div>
-                            <div>
-                                ##### 매개변수
-                                `room?`: 메시지를 읽음 처리할 채팅방의 이름 (인자가 없을 시 메시지가 온 채팅방의 메시지를 읽음 처리) \
-                                `packageName?`: 메시지를 읽음 처리할 메신저 앱의 패키지명
-                            </div>
-                        </Td>
-                    </Tr>
-                </Tbody>
-            </Table>
-        </Section>
-        <Section>
-            #### imageDB
-
-            <Table>
-                <Thead>
-                    <Tr>
-                        <Th colSpan="2">`imageDB` 객체의 프로퍼티 / 메소드</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getProfileBase64()` \
-                            `getProfileImage()` \
-                            프로필 이미지를 Base64 인코딩한 값을 반환합니다.
-                            <div>
-                                ##### 반환값
-                                프로필 이미지를 Base64 인코딩한 값
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`android.graphics.Bitmap`</span></Td>
-                        <Td>
-                            `getProfileBitmap()` \
-                            프로필 이미지를 Bitmap으로 반환합니다.
-                            <div>
-                                ##### 반환값
-                                프로필 이미지의 Bitmap
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getImageBase64()` \
-                            `getImage()` \
-                            채팅 상에서 감지된 이미지를 Base64 인코딩한 값을 반환합니다.
-                            <div>
-                                ##### 반환값
-                                이미지를 Base64 인코딩한 값
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getImageBitmap()` \
-                            채팅 상에서 감지된 이미지를 Bitmap으로 반환합니다.
-                            <div>
-                                ##### 반환값
-                                이미지의 Bitmap
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getImageHash()` \
-                            채팅 상에서 감지된 이미지의 해시 값을 반환합니다.
-                            <div>
-                                ##### 반환값
-                                이미지의 해시 값
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getImageMD5()` \
-                            채팅 상에서 감지된 이미지를 MD5로 인코딩한 값을 반환합니다.
-                            <div>
-                                ##### 반환값
-                                이미지를 MD5 인코딩한 값
-                            </div>
-                        </Td>
-                    </Tr>
-                    <Tr>
-                        <Td><span>`String`</span></Td>
-                        <Td>
-                            `getImageSHA()` \
-                            채팅 상에서 감지된 이미지를 SHA로 인코딩한 값을 반환합니다.
-                            <div>
-                                ##### 반환값
-                                이미지를 SHA 인코딩한 값
-                            </div>
-                        </Td>
-                    </Tr>
-                </Tbody>
-            </Table>
-        </Section>
-    </Section>
-    <Section>
-        ### onStartCompile 함수
-
-        `onStartCompile` 함수는 스크립트의 컴파일을 수행하기 전에 호출되는 이벤트 리스너입니다.
-
-        ~~~js
-        function onStartCompile() {
-
-        }
-        ~~~
-    </Section>
-    <Section>
-        ### onNotificationPosted 함수
-
-        `onNotificationPosted` 함수는 기기에 상단바 노티피케이션이 생성될 때마다 호출되는 이벤트 리스너입니다. 이 이벤트 리스너를 이용해 다른 메신저 앱의 자동응답봇을 개발할 수 있습니다.
-
-        ~~~js
-        function onNotificationPosted(statusBarNotification, sessionManager) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onNotificationPosted` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.service.notification.StatusBarNotification`</span></Td>
-                    <Td>
-                        `statusBarNotification` \
-                        [안드로이드 공식 문서](https://developer.android.com/reference/android/service/notification/StatusBarNotification)를 참고하세요.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`SessionManager`</span></Td>
-                    <Td>
-                        [`sessionManager`](#sessionmanager) \
-                        메신저봇 앱이 공식적으로 지원하지 않는 메신저에 사용하기 위한 인자입니다.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-
-        <Section>
-            #### sessionManager
-
-            <Table>
-                <Thead>
-                <Tr>
-                    <Th colSpan="2">`sessionManager` 객체의 프로퍼티 / 메소드</Th>
-                </Tr>
-                </Thead>
-                <Tbody>
-                <Tr>
-                    <Td><span>`Boolean`</span></Td>
-                    <Td>
-                        `bindSession(`*`packageName?: String, room: String, action?: android.app.Notification.Action`*`)` \
-                        다른 메신저 앱의 특정 방에 채팅이 왔을 때 메시지를 전송합니다. `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닌지의 여부를 반환합니다.
-                        <div>
-                            ##### 반환값
-                            `action?`과 앱이 자동 분석한 답장 액션 모두 `null`이 아닐 경우 `true`, 둘 중 적어도 하나가 `null`일 경우 `false`
-                        </div>
-                        <div>
-                            ##### 매개변수
-                            `packageName?`: 메시지를 보낼 메신저 앱의 패키지명 \
-                            `room`: 메시지를 보낼 메신저 앱 내의 채팅방 \
-                            `action?`: 메시지 전송 구현을 위한 `android.app.Notification.Action`값
-                        </div>
-                    </Td>
-                </Tr>
-                </Tbody>
-            </Table>
-        </Section>
-    </Section>
-    <Section>
-        ### onCreate 함수
-
-        `onCreate` 함수는 스트립트 액티비티의 `onCreate`가 호출될 때 호출되는 이벤트 리스너입니다.
-
-        ~~~js
-        function onCreate(savedInstanceState, activity) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onCreate` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.os.Bundle`</span></Td>
-                    <Td>
-                        `savedInstanceState` \
-                        액티비티의 `onCreate`의 인자인 `savedInstanceState`입니다.
-                    </Td>
-                </Tr>
-                <Tr>
-                    <Td><span>`android.app.Activity`</span></Td>
-                    <Td>
-                        `activity` \
-                        해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### onPause 함수
-
-        `onPause` 함수는 스트립트 액티비티의 `onPause`가 호출될 때 호출되는 이벤트 리스너입니다.
-
-        ~~~js
-        function onPause(activity) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onPause` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.app.Activity`</span></Td>
-                    <Td>
-                        `activity` \
-                        해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### onResume 함수
-
-        `onResume` 함수는 스트립트 액티비티의 `onResume`이 호출될 때 호출되는 이벤트 리스너입니다.
-
-        ~~~js
-        function onResume(activity) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onResume` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.app.Activity`</span></Td>
-                    <Td>
-                        `activity` \
-                        해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
-    <Section>
-        ### onStop 함수
-
-        `onStop` 함수는 스트립트 액티비티의 `onStop`이 호출될 때 호출되는 이벤트 리스너입니다.
-
-        ~~~js
-        function onStop(activity) {
-
-        }
-        ~~~
-
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th colSpan="2">`onStop` 함수의 인자</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                <Tr>
-                    <Td><span>`android.app.Activity`</span></Td>
-                    <Td>
-                        `activity` \
-                        해당 이벤트 리스너가 호출되었을 때의 액티비티입니다.
-                    </Td>
-                </Tr>
-            </Tbody>
-        </Table>
-    </Section>
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">레거시 API의 인자</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`ImageDB`](/legacy/ImageDB)</span></Td>
+                <Td>
+                    이미지에 대한 기능을 제공하는 객체입니다. [`response`](/legacy/response)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Replier`](/legacy/Replier)</span></Td>
+                <Td>
+                    메시지 발신에 대한 기능을 제공하는 객체입니다. [`response`](/legacy/response)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`SessionManager`](/legacy/SessionManager)</span></Td>
+                <Td>
+                    방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. [`onNotificationPosted`](/legacy/onNotificationPosted)의 인자로 주어집니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
 </Section>
 <Section>
     ## 앱 호환성
@@ -542,12 +224,24 @@ import { Compatibility } from "@/constants/compatibility";
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Utils`](/legacy/Utils)</AppCompatibilityItem>
     </AppCompatibility>
     <AppCompatibility listTitle="레거시 API 이벤트 리스너">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onBackPressed`](/legacy/onBackPressed)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onCreate`](/legacy/onCreate)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onNotificationPosted`](/legacy/onNotificationPosted)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onDestroy`](/legacy/onDestroy)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onLoaded`](/legacy/onLoaded)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`onNotificationPosted`](/legacy/onNotificationPosted)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onNotificationRemoved`](/legacy/onNotificationRemoved)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onPause`](/legacy/onPause)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onRestart`](/legacy/onRestart)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onResume`](/legacy/onResume)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onStart`](/legacy/onStart)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`onStartCompile`](/legacy/onStartCompile)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`onStop`](/legacy/onStop)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`response`](/legacy/response)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`secondTick`](/legacy/secondTick)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="레거시 API 인자">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`ImageDB`](/legacy/ImageDB)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Replier`](/legacy/Replier)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`SessionManager`](/legacy/SessionManager)</AppCompatibilityItem>
     </AppCompatibility>
 </Section>

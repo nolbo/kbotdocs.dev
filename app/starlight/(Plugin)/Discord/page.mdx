@@ -1,0 +1,66 @@
+export const metadata = {
+    title: "Discord 플러그인 - StarLight",
+    openGraph: {
+        title: "Discord 플러그인 - StarLight"
+    }
+}
+
+<Section>
+    ## Discord
+
+    **Discord**는 StarLight용 플러그인으로, 디스코드 챗봇 API의 이벤트를 수신 및 사용할 수 있게 합니다.
+</Section>
+<Section>
+    ## 사용방법
+
+    1. [`discord.slp`](https://drive.google.com/file/d/1Q_eEmqehX7Rk7xGCgzT1TIqUDRJdgNyJ/view?usp=drive_link)과 [`awt.slp`](https://drive.google.com/file/d/16XpEZ335X1_mDWA0CbQRpXXHtrFp4Jqe/view?usp=drive_link) 파일을 `sdcard/StarLight/plugins/` 폴더 내에 추가합니다.
+    2. StarLight를 재시작합니다.
+    3. 하단의 **플러그인** 탭 > **Discord 플러그인** > **설정** > **봇 토큰** 에 본인의 봇 토큰을 입력합니다.
+    4. StarLight 앱을 재시작하여 서버를 시작합니다.
+    5. 이벤트를 수신할 프로젝트의 설정에 들어가 **호출이 허용된 이벤트** 항목에 `discord.message.*` 를 추가합니다.
+
+    위 과정을 실행하면 해당 프로젝트의 `onMessageCreate` 함수가 디스코드 메세지 수신시 호출됩니다.
+</Section>
+<Section>
+    ## Event 수신
+
+    본 플러그인은 내부적으로 JavaCord 라이브러리를 사용합니다. 따라서 `onMessageCreate`의 매개변수인 `event`는 JavaCord의 `MessageCreateEvent` 객체입니다.
+    자세한 사항은 JavaCord의 [Javadoc](https://javadoc.io/doc/org.javacord/javacord-api/latest/org/javacord/api/event/message/MessageCreateEvent.html)을 참고하세요.
+</Section>
+<Section>
+    ## 예제
+
+    <Section>
+        ### 단순 수신&답장
+
+        ~~~js
+        function onMessageCreate(event) {
+            if (!event.messageAuthor.isUser()) return;
+            if (event.message.content !== "!ping") return;
+
+            event.channel.sendMessage("Pong!");
+        }
+        ~~~
+    </Section>
+    <Section>
+        ### 수신&답장 심화
+
+        ~~~js
+        const ms = java.lang.System.currentTimeMillis;
+
+        function onMessageCreate(event) {
+            if (!event.messageAuthor.isUser()) return;
+            if (event.message.content !== "!ping") return;
+
+            let start = ms();
+
+            event.channel.sendMessage("안녕하세요, " + event.messageAuthor.name + "님!");
+            event.channel.sendMessage("Pong!")
+                .thenAccept(msg => {
+                    let now = ms();
+                    msg.edit("핑은 " + (now - start) + "ms 에요!");
+                });
+        }
+        ~~~
+    </Section>
+</Section>

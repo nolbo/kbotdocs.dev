@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.measureTimeMillis() - 레거시 API",
+    openGraph: {
+        title: "Utils.measureTimeMillis() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.measureTimeMillis()
+
+    `func` 함수의 실행에 소요된 시간을 반환합니다.(밀리초; ms)
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.measureTimeMillis(func: () => Any?);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`func`</Dt>
+            <Dd>
+                실행 시간을 측정할 함수
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Number` - `func` 함수의 실행에 소요된 시간을 반환합니다.(밀리초; ms)
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.measureTimeMillis()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`measureTimeMillis`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

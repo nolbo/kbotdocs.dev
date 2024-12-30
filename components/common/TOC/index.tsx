@@ -4,9 +4,10 @@ import React, { useState, useEffect, HTMLAttributes } from "react";
 
 interface ITOC extends HTMLAttributes<HTMLUListElement> {
     scrollToRef: React.MutableRefObject<number>;
+    onAnchorClick?: () => void;
 }
 
-export default function TOC({ scrollToRef, className, ...p } : ITOC) {
+export default function TOC({ scrollToRef, onAnchorClick, className, ...p } : ITOC) {
     const [ headers, setHeaders ] = useState<Element[]>([]);
     const [ pageInViewport, setPageInViewport ] = useState<string>("");
 
@@ -16,6 +17,7 @@ export default function TOC({ scrollToRef, className, ...p } : ITOC) {
                 top: document.getElementById(id)!.getBoundingClientRect().top - 160
             });
             scrollToRef.current += document.getElementById(id)!.getBoundingClientRect().top - 160;
+            onAnchorClick && onAnchorClick();
         }
     };
 

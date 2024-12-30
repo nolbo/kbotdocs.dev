@@ -1,17 +1,24 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Event - API2",
+    openGraph: {
+        title: "Event - API2"
+    }
+}
+
 <Section>
     ## Event
 
     `Event` 객체는 API2의 이벤트들에 대한 상수들을 제공하는 객체입니다.
 </Section>
 <Section>
-    ## 프로퍼티
+    ## 상수
 
     <Table>
         <Thead>
             <Tr>
-                <Th colSpan="2">`Event` 객체의 프로퍼티</Th>
+                <Th colSpan="2">`Event` 객체의 상수</Th>
             </Tr>
         </Thead>
         <Tbody>
@@ -77,7 +84,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Event 객체">
+    <AppCompatibility listTitle="Event 객체 상수">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Activity`](/api2/Event/Activity)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`BATTERY_LEVEL_CHANGED`](/api2/Event/BATTERY_LEVEL_CHANGED)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`COMMAND`](/api2/Event/COMMAND)</AppCompatibilityItem>

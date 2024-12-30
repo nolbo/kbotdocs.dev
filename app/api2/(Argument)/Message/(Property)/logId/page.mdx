@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Message.logId - API2",
+    openGraph: {
+        title: "Message.logId - API2"
+    }
+}
+
+<Section>
+    ## Message.logId
+
+    메시지에 대한 고유 ID입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    msg.logId;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `BigInt` - 메시지에 대한 고유 ID입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Message.logId">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`logId`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

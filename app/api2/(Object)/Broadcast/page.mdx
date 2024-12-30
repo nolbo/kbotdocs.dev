@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Broadcast - API2",
+    openGraph: {
+        title: "Broadcast - API2"
+    }
+}
+
 <Section>
     ## Broadcast
 
@@ -49,7 +56,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Broadcast 객체">
+    <AppCompatibility listTitle="Broadcast 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`register`](/api2/Broadcast/register)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`send`](/api2/Broadcast/send)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`unregister`](/api2/Broadcast/unregister)</AppCompatibilityItem>

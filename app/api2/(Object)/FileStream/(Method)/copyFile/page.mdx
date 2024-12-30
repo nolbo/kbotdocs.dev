@@ -1,0 +1,48 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "FileStream.copyFile() - API2",
+    openGraph: {
+        title: "FileStream.copyFile() - API2"
+    }
+}
+
+<Section>
+    ## FileStream.copyFile()
+
+    `path1` 경로의 파일을 `path2` 경로에 복사합니다. 파일 복사의 성공 여부를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    FileStream.copyFile(path1: String, path2: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`path1`</Dt>
+            <Dd>
+                복사할 원본 파일의 경로
+            </Dd>
+            <Dt>`path2`</Dt>
+            <Dd>
+                복사본의 경로
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Boolean` - 파일 복사에 성공할 경우 `true`, 실패할 경우 `false`를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="FileStream.copyFile()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`copyFile`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

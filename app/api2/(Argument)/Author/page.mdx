@@ -1,0 +1,57 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Author - API2",
+    openGraph: {
+        title: "Author - API2"
+    }
+}
+
+<Section>
+    ## Author
+
+    `Author` 객체는 발신자에 관한 정보를 담은 객체입니다.
+</Section>
+<Section>
+    ## 프로퍼티
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Author` 객체의 프로퍼티</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Image`](/api2/Image)</span></Td>
+                <Td>
+                    [`avatar`](/api2/Author/avatar) \
+                    발신자의 프로필 이미지에 대한 [`Image`](/api2/Image) 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`hash`](/api2/Author/hash) \
+                    발신자의 고유 해시입니다. 해시는 같은 방 내에서 고유합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`name`](/api2/Author/name) \
+                    발신자의 이름입니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Author 객체 프로퍼티">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`avatar`](/api2/Author/avatar)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`hash`](/api2/Author/hash)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`name`](/api2/Author/name)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

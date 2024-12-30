@@ -1,0 +1,53 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Security.md5() - API2",
+    openGraph: {
+        title: "Security.md5() - API2"
+    }
+}
+
+<Section>
+    ## Security.md5()
+
+    `value`를 MD5 암호화한 값을 반환합니다. 해당 메소드의 동작은 채팅 자동응답 봇의 [`Security.md55()`](/api2/Security/md55)와 차이가 있습니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Security.md5(value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`value`</Dt>
+            <Dd>
+                암호화할 값
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `String` - `value`를 MD5 암호화한 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 설명
+
+    해당 메소드는 `Security.md5()`처럼 MD5 암호화를 위한 메소드입니다. 하지만 같은 인자에 대한 두 메소드의 반환값은 차이가 있을 수 있습니다.
+
+    두 메소드 모두 MD5 암호화된 미가공 데이터(바이트 배열)를 16진수 문자열로 가공합니다. 하지만 바이트 배열을 16진수 문자열로 변환하는 방식에 차이가 있습니다.
+    `Security.md5()`는 각 바이트를 2자리 16진수(`%02x`)로 변환하는 방식을 이용합니다.
+    반면, `Security.md55()`는 `java.math.BigInteger` (`BigInteger(byte[] val)` 생성자)의 [`toString(retix)`](https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html#toString-int-) 메소드를 이용해 바이트 배열을 16진수로 변환하는 방식을 이용합니다.
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Security.md5()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`md5`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

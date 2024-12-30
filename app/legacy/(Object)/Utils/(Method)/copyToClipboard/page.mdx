@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Utils.copyToClipboard() - 레거시 API",
+    openGraph: {
+        title: "Utils.copyToClipboard() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Utils.copyToClipboard()
+
+    문자열 `value`를 클립보드에 복사합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Utils.copyToClipboard(value: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`value`</Dt>
+            <Dd>
+                클립보드에 복사할 문자열 값
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Utils.copyToClipboard()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`copyToClipboard`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

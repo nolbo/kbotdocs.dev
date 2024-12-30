@@ -1,0 +1,44 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "BotManager.prepare(Boolean?) - API2",
+    openGraph: {
+        title: "BotManager.prepare(Boolean?) - API2"
+    }
+}
+
+<Section>
+    ## BotManager.prepare(Boolean?)
+
+    모든 `Bot` 객체에 대하여 `prepare()`를 실행합니다. 새롭게 컴파일된 `Bot` 객체의 개수를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    BotManager.prepare(throwOnError?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`throwOnError?`</Dt>
+            <Dd>
+                컴파일 에러 시 에러 throw 여부
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Number` - 새롭게 컴파일된 `Bot` 객체의 개수를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="BotManager.prepare(Boolean?)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`prepare(Boolean?)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

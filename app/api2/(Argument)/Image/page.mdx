@@ -1,0 +1,49 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Image - API2",
+    openGraph: {
+        title: "Image - API2"
+    }
+}
+
+<Section>
+    ## Image
+
+    `Image` 객체는 이미지에 대한 기능을 제공하는 객체입니다. 해당 객체는 직접 접근할 수 없으며, 인자로 주어집니다.
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`Image` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`String`</span></Td>
+                <Td>
+                    [`getBase64`](/api2/Image/getBase64)`()` \
+                    이미지를 Base64 인코딩한 값을 반환합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`android.graphics.Bitmap`</span></Td>
+                <Td>
+                    [`getBitmap`](/api2/Image/getBitmap)`()` \
+                    이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Image 객체 메소드">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBase64`](/api2/Image/getBase64)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBitmap`](/api2/Image/getBitmap)</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

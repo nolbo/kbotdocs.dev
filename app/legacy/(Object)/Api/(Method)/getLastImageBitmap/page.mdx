@@ -1,0 +1,38 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.getLastImageBitmap() - 레거시 API",
+    openGraph: {
+        title: "Api.getLastImageBitmap() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.getLastImageBitmap()
+
+    가장 최근에 수신한 이미지의 `android.graphics.Bitmap`값을 반환합니다.
+
+    <Noti type={"warning"}>
+        해당 메소드는 안드로이드 11 이상에서 동작하지 않습니다.
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.getLastImageBitmap();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `android.graphics.Bitmap` - 가장 최근에 수신한 이미지의 `android.graphics.Bitmap`값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.getLastImageBitmap()">
+        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getLastImageBitmap`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

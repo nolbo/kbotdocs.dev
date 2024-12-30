@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "API2",
+    openGraph: {
+        title: "API2"
+    }
+}
+
 <Section>
     ## API2
 
@@ -91,12 +98,6 @@ import { Compatibility } from "@/constants/compatibility";
                 <Td><span>[`Security`](/api2/Security)</span></Td>
                 <Td>
                     각종 암호화/복호화에 관한 기능들을 제공하는 객체입니다.
-                </Td>
-            </Tr>
-            <Tr>
-                <Td><span>[`SessionManager`](/api2/SessionManager)</span></Td>
-                <Td>
-                    채팅방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. [`notificationPosted`](/api2/notificationPosted) 이벤트의 인자로 주어집니다.
                 </Td>
             </Tr>
         </Tbody>
@@ -208,6 +209,51 @@ import { Compatibility } from "@/constants/compatibility";
     </Table>
 </Section>
 <Section>
+    ## 인자
+
+    이 객체들은 직접적으로 접근할 수 없습니다. 이벤트의 인자로 주어지는 데이터 형태입니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">API2의 인자</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Author`](/api2/Author)</span></Td>
+                <Td>
+                    발신자에 관한 정보를 담은 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Command`](/api2/Command)</span></Td>
+                <Td>
+                    발신된 명령어에 대한 정보를 담고 있는 객체입니다. [`command`](/api2/command) 이벤트의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Image`](/api2/Image)</span></Td>
+                <Td>
+                    이미지에 대한 기능을 제공하는 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Message`](/api2/Message)</span></Td>
+                <Td>
+                    발신된 메시지에 대한 정보를 담고 있는 객체입니다. [`message`](/api2/message) 이벤트의 인자로 주어집니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`SessionManager`](/api2/SessionManager)</span></Td>
+                <Td>
+                    방 세션을 수동으로 등록할 수 있게 해주는 객체입니다. [`notificationPosted`](/api2/notificationPosted) 이벤트의 인자로 주어집니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
     ## 앱 호환성
 
     <AppCompatibility listTitle="API2 객체">
@@ -224,7 +270,6 @@ import { Compatibility } from "@/constants/compatibility";
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Http`](/api2/Http)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`Log`](/api2/Log)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Security`](/api2/Security)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`SessionManager`](/api2/SessionManager)</AppCompatibilityItem>
     </AppCompatibility>
     <AppCompatibility listTitle="API2 이벤트">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`activityBackPressed`](/api2/activityBackPressed)</AppCompatibilityItem>
@@ -242,5 +287,12 @@ import { Compatibility } from "@/constants/compatibility";
         <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`notificationRemoved`](/api2/notificationRemoved)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`startCompile`](/api2/startCompile)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`tick`](/api2/tick)</AppCompatibilityItem>
+    </AppCompatibility>
+    <AppCompatibility listTitle="API2 인자">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Author`](/api2/Author)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Command`](/api2/Command)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Image`](/api2/Image)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`Message`](/api2/Message)</AppCompatibilityItem>
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`SessionManager`](/api2/SessionManager)</AppCompatibilityItem>
     </AppCompatibility>
 </Section>

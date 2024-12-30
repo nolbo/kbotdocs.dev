@@ -1,0 +1,41 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getBatteryHealth() - 레거시 API",
+    openGraph: {
+        title: "Device.getBatteryHealth() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Device.getBatteryHealth()
+
+    앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getBatteryHealth();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Number` - 앱 구동 기기의 배터리 건강 상태를 나타내는 상수를 반환합니다. 관련 상수는 다음과 같습니다:
+        - `android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN = 1 (0x00000001)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_GOOD = 2 (0x00000002)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT = 3 (0x00000003)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_DEAD = 4 (0x00000004)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE = 5 (0x00000005)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE = 6 (0x00000006)`
+        - `android.os.BatteryManager.BATTERY_HEALTH_COLD = 7 (0x00000007)`
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getBatteryHealth()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getBatteryHealth`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

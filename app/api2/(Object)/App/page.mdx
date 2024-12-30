@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "App - API2",
+    openGraph: {
+        title: "App - API2"
+    }
+}
+
 <Section>
     ## App
 
@@ -35,7 +42,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="App 객체">
+    <AppCompatibility listTitle="App 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getContext`](/api2/App/getContext)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`runOnUiThread`](/api2/App/runOnUiThread)</AppCompatibilityItem>
     </AppCompatibility>

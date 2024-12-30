@@ -1,0 +1,94 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.acquireWakeLock() - 레거시 API",
+    openGraph: {
+        title: "Device.acquireWakeLock() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Device.acquireWakeLock()
+
+    [wake lock](https://developer.android.com/develop/background-work/background-tasks/awake/wakelock)을 획득합니다.
+
+    <Noti type="danger">
+        wake lock 생성 후 오랜 시간 유지하는 것은 기기의 배터리 수명에 부정적 영향을 줄 수 있습니다. 사용할 경우 가능한 한 짧은 시간동안만 유지하는 것을 권장합니다.
+    </Noti>
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.acquireWakeLock(levelAndFlags: Number, tag?: String = "[아래참조]", timeout?: Number = null);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`levelAndFlags`</Dt>
+            <Dd>
+                wake lock의 수준을 나타내는 플래그
+                <Table className="table-fixed">
+                    <Thead>
+                        <Tr>
+                            <Th colSpan="4">wake lock 플래그 ([`android.os.PowerManager`](https://developer.android.com/reference/android/os/PowerManager))</Th>
+                        </Tr>
+                        <Tr className="hidden md:table-row">
+                            <Th><span></span></Th>
+                            <Th>CPU</Th>
+                            <Th>화면</Th>
+                            <Th>키보드</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        <Tr>
+                            <Td><span>[`PARTIAL_WAKE_LOCK`](https://developer.android.com/reference/android/os/PowerManager#PARTIAL_WAKE_LOCK)` = 1 (0x00000001)`</span></Td>
+                            <Td><span><span className="inline md:hidden">CPU: </span>실행\*</span></Td>
+                            <Td><span><span className="inline md:hidden">화면: </span>꺼짐</span></Td>
+                            <Td><span><span className="inline md:hidden">키보드: </span>꺼짐</span></Td>
+                        </Tr>
+                        <Tr>
+                            <Td><span>[`FULL_WAKE_LOCK`](https://developer.android.com/reference/android/os/PowerManager#FULL_WAKE_LOCK)` = 26 (0x0000001a)`</span></Td>
+                            <Td><span><span className="inline md:hidden">CPU: </span>실행</span></Td>
+                            <Td><span><span className="inline md:hidden">화면: </span>켜짐 (어둡게)</span></Td>
+                            <Td><span><span className="inline md:hidden">키보드: </span>꺼짐</span></Td>
+                        </Tr>
+                        <Tr>
+                            <Td><span>[`SCREEN_DIM_WAKE_LOCK`](https://developer.android.com/reference/android/os/PowerManager#SCREEN_DIM_WAKE_LOCK)` = 6 (0x00000006)`</span></Td>
+                            <Td><span><span className="inline md:hidden">CPU: </span>실행</span></Td>
+                            <Td><span><span className="inline md:hidden">화면: </span>켜짐 (밝게)</span></Td>
+                            <Td><span><span className="inline md:hidden">키보드: </span>꺼짐</span></Td>
+                        </Tr>
+                        <Tr>
+                            <Td><span>[`SCREEN_BRIGHT_WAKE_LOCK`](https://developer.android.com/reference/android/os/PowerManager#SCREEN_BRIGHT_WAKE_LOCK)` = 10 (0x0000000a)`</span></Td>
+                            <Td><span><span className="inline md:hidden">CPU: </span>실행</span></Td>
+                            <Td><span><span className="inline md:hidden">화면: </span>켜짐 (밝게)</span></Td>
+                            <Td><span><span className="inline md:hidden">키보드: </span>켜짐 (밝게)</span></Td>
+                        </Tr>
+                    </Tbody>
+                </Table>
+                \* 기기가 사용자에 의해 sleep 상태로 전환되어도 실행 상태를 유지합니다.
+            </Dd>
+            <Dt>`tag?`</Dt>
+            <Dd>
+                디버깅을 위한 클래스 이름 또는 다른 이름 태그
+                - 기본값
+                    - 메신저봇R: `com.xfl.msgbot:default_wake_lock_tag`
+                    - StarLight: `dev.mooner.starlight:api_wakelock_tag`
+            </Dd>
+            <Dt>`timeout?`</Dt>
+            <Dd>
+                wake lock을 해제할 시간(밀리초; ms)
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.acquireWakeLock()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`acquireWakeLock`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

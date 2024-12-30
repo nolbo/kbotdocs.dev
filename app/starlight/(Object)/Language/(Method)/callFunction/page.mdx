@@ -1,0 +1,43 @@
+export const metadata = {
+    title: "Language.callFunction() - StarLight",
+    openGraph: {
+        title: "Language.callFunction() - StarLight"
+    }
+}
+
+<Section>
+    ## Language.callFunction()
+
+    컴파일된 스코프에 선언된 특정 함수의 이름과 인자를 전달받아 호출합니다. 함수의 반환값이 존재할 경우 해당 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    language.callFunction(scope: Any, functionName: String, args: Any[]);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`scope`</Dt>
+            <Dd>
+                사용할 스코프
+            </Dd>
+            <Dt>`functionName`</Dt>
+            <Dd>
+                호출할 함수의 이름
+            </Dd>
+            <Dt>`args`</Dt>
+            <Dd>
+                호출할 함수에게 전달할 인자
+            </Dd>
+        </Dl>
+    </Section>
+    <Section>
+        ### 반환값
+
+        `Any?` - `functionName` 이름의 함수의 반환값을 반환합니다.
+    </Section>
+</Section>

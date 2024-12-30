@@ -6,9 +6,10 @@ interface IPage extends HTMLAttributes<HTMLDivElement> {
     doc: Doc;
     fold: boolean;
     isCurrentPage: boolean;
+    onLinkClick?: () => void;
 }
 
-export default function PageDir({ doc, fold, isCurrentPage, children, className, ...p }: IPage) {
+export default function PageDir({ doc, fold, isCurrentPage, onLinkClick, children, className, ...p }: IPage) {
     const [ isFold, setFold ] = useState(fold);
 
     const buttonOnClickHandler = () => {
@@ -25,7 +26,7 @@ export default function PageDir({ doc, fold, isCurrentPage, children, className,
                       className={`stroke-default w-[.75rem] h-[.75rem] ${(isFold) ? "rotate-[0deg]" : "rotate-[90deg]"}`}/>
             </div>
             <div className={`pl-[.875rem] overflow-hidden ${(isFold) ? "hidden" : "block"}`}>
-                { doc.path && <Page isCurrentPage={isCurrentPage} doc={{ ...doc, label: "개요" }} /> }
+                { doc.path && <Page isCurrentPage={isCurrentPage} doc={{ ...doc, label: "개요" }} onLinkClick={ onLinkClick } /> }
                 { children }
             </div>
         </div>

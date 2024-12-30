@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "ImageDB.getProfileBitmap() - 레거시 API",
+    openGraph: {
+        title: "ImageDB.getProfileBitmap() - 레거시 API"
+    }
+}
+
+<Section>
+    ## ImageDB.getProfileBitmap()
+
+    발신자의 프로필 이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    imageDB.getProfileBitmap();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `android.graphics.Bitmap` - 발신자의 프로필 이미지에 대한 `android.graphics.Bitmap` 값을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="ImageDB.getProfileBitmap()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getProfileBitmap`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

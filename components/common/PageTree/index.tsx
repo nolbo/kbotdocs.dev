@@ -5,15 +5,17 @@ import Page from "@/components/common/Page";
 
 interface IPageTree extends HTMLAttributes<HTMLElement> {
     currentPath: string;
+    onLinkClick?: () => void;
 }
 
-export default function PageTree({ className, currentPath, ...p }: IPageTree) {
+export default function PageTree({ className, currentPath, onLinkClick, ...p }: IPageTree) {
     const generateTree = (e: Doc, i: number) => {
         if (e.children && e.children.length > 0) {
             return (
                 <PageDir key={i}
                          doc={e}
                          isCurrentPage={currentPath === e.path}
+                         onLinkClick={ onLinkClick }
                          fold={
                             !(
                                 (e.path && e.path.split("/").every((param, _i) => param === currentPath.split("/")[_i]))
@@ -26,7 +28,7 @@ export default function PageTree({ className, currentPath, ...p }: IPageTree) {
                 </PageDir>
             );
         }
-        return (<Page key={i} doc={e} isCurrentPage={currentPath === e.path} />);
+        return (<Page key={i} doc={e} onLinkClick={ onLinkClick } isCurrentPage={currentPath === e.path} />);
     };
 
     return (

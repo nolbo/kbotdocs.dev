@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "Device - API2",
+    openGraph: {
+        title: "Device - API2"
+    }
+}
+
 <Section>
     ## Device
 
@@ -216,7 +223,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Device 객체">
+    <AppCompatibility listTitle="Device 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`acquireWakeLock`](/api2/Device/acquireWakeLock)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionCode`](/api2/Device/getAndroidVersionCode)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionName`](/api2/Device/getAndroidVersionName)</AppCompatibilityItem>

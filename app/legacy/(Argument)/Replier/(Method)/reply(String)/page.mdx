@@ -1,0 +1,39 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Replier.reply(String) - 레거시 API",
+    openGraph: {
+        title: "Replier.reply(String) - 레거시 API"
+    }
+}
+
+<Section>
+    ## Replier.reply(String)
+
+    메시지가 발신된 방에 메시지를 발신합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    replier.reply(msg: String);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`msg`</Dt>
+            <Dd>
+                발신할 메시지의 내용
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Replier.reply(String)">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`reply(String)`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

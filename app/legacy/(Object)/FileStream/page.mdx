@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "FileStream - 레거시 API",
+    openGraph: {
+        title: "FileStream - 레거시 API"
+    }
+}
+
 <Section>
     ## FileStream
 
@@ -115,7 +122,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="FileStream 객체">
+    <AppCompatibility listTitle="FileStream 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`append`](/legacy/FileStream/append)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`copyFile`](/legacy/FileStream/copyFile)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`create`](/legacy/FileStream/create)</AppCompatibilityItem>

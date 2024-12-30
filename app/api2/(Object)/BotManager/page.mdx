@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "BotManager - API2",
+    openGraph: {
+        title: "BotManager - API2"
+    }
+}
+
 <Section>
     ## BotManager
 
@@ -37,7 +44,7 @@ import { Compatibility } from "@/constants/compatibility";
                 </Td>
             </Tr>
             <Tr>
-                <Td><span>`Array<Bot>`</span></Td>
+                <Td><span>`Bot[]`</span></Td>
                 <Td>
                     [`getBotList`](/api2/BotManager/getBotList)`()` \
                     모든 `Bot` 인스턴스를 배열로 반환합니다.
@@ -58,7 +65,7 @@ import { Compatibility } from "@/constants/compatibility";
                 </Td>
             </Tr>
             <Tr>
-                <Td><span>`Array<String>`</span></Td>
+                <Td><span>`String[]`</span></Td>
                 <Td>
                     [`getRooms`](/api2/BotManager/getRooms)`(packageName?: String)` \
                     메시지 전송이 가능한 방 이름을 배열로 반환합니다.
@@ -105,7 +112,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="BotManager 객체">
+    <AppCompatibility listTitle="BotManager 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`compile`](/api2/BotManager/compile)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`compileAll`](/api2/BotManager/compileAll)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBot`](/api2/BotManager/getBot)</AppCompatibilityItem>

@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "ImageDB.getImageHash() - 레거시 API",
+    openGraph: {
+        title: "ImageDB.getImageHash() - 레거시 API"
+    }
+}
+
+<Section>
+    ## ImageDB.getImageHash()
+
+    수신한 이미지의 해시코드를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    imageDB.getImageHash();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 수신한 이미지의 해시코드를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="ImageDB.getImageHash()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getImageHash`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

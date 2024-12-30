@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Api.getContext() - 레거시 API",
+    openGraph: {
+        title: "Api.getContext() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Api.getContext()
+
+    앱의 Context(컨텍스트)를 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Api.getContext();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `android.content.Context` - 앱의 Context(컨텍스트)를 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Api.getContext()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getContext`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

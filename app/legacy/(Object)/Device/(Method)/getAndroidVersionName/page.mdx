@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getAndroidVersionName() - 레거시 API",
+    openGraph: {
+        title: "Device.getAndroidVersionName() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Device.getAndroidVersionName()
+
+    앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getAndroidVersionName();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `String` - 앱 구동 환경의 안드로이드 버전 이름을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getAndroidVersionName()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getAndroidVersionName`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

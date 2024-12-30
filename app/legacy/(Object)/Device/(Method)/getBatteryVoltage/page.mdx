@@ -1,0 +1,34 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "Device.getBatteryVoltage() - 레거시 API",
+    openGraph: {
+        title: "Device.getBatteryVoltage() - 레거시 API"
+    }
+}
+
+<Section>
+    ## Device.getBatteryVoltage()
+
+    앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Device.getBatteryVoltage();
+    ~~~
+
+    <Section>
+        ### 반환값
+
+        `Number` - 앱 구동 기기의 배터리 전압(mV)을 반환합니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="Device.getBatteryVoltage()">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getBatteryVoltage`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

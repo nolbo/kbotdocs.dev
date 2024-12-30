@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "DataBase - 레거시 API",
+    openGraph: {
+        title: "DataBase - 레거시 API"
+    }
+}
+
 <Section>
     ## DataBase
 
@@ -49,7 +56,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="DataBase 객체">
+    <AppCompatibility listTitle="DataBase 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`appendDataBase`](/legacy/DataBase/appendDataBase)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getDataBase`](/legacy/DataBase/getDataBase)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`removeDataBase`](/legacy/DataBase/removeDataBase)</AppCompatibilityItem>

@@ -1,0 +1,65 @@
+import { Compatibility } from "@/constants/compatibility";
+
+export const metadata = {
+    title: "response 이벤트 리스너 - 레거시 API",
+    openGraph: {
+        title: "response 이벤트 리스너 - 레거시 API"
+    }
+}
+
+<Section>
+    ## response
+
+    `response`는 메시지를 수신할 때 동작하는 이벤트 리스너입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    function response(room: String, msg: String, sender: String, isGroupChat: Boolean, replier: Replier, imageDB: ImageDB, packageName: String) {
+
+    }
+    ~~~
+
+    <Section>
+        ### 인자
+
+        <Dl>
+            <Dt>`room`</Dt>
+            <Dd>
+                메시지가 발신된 방의 이름입니다.
+            </Dd>
+            <Dt>`msg`</Dt>
+            <Dd>
+                메시지의 전체 내용입니다.
+            </Dd>
+            <Dt>`sender`</Dt>
+            <Dd>
+                발신자의 이름입니다.
+            </Dd>
+            <Dt>`isGroupChat`</Dt>
+            <Dd>
+                방이 그룹 채팅방인지의 여부입니다.
+            </Dd>
+            <Dt>`replier`</Dt>
+            <Dd>
+                메시지 발신을 위한 [`Replier`](/legacy/Replier) 객체입니다.
+            </Dd>
+            <Dt>`imageDB`</Dt>
+            <Dd>
+                발신된 이미지와 발신자의 프로필 이미지에 대한 [`ImageDB`](/legacy/ImageDB) 객체입니다.
+            </Dd>
+            <Dt>`packageName`</Dt>
+            <Dd>
+                메시지가 발신된 메신저 앱의 패키지명입니다.
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompatibility listTitle="response">
+        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`response`</AppCompatibilityItem>
+    </AppCompatibility>
+</Section>

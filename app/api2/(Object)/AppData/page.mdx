@@ -1,7 +1,14 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "AppData - API2",
+    openGraph: {
+        title: "AppData - API2"
+    }
+}
+
 <Section>
-    ## App
+    ## AppData
 
     `AppData` 객체는 앱의 데이터에 관한 기능들을 위한 객체입니다. `AppData` 객체로 관리하는 데이터는 `키: 값` 형태의 데이터입니다.
 </Section>
@@ -77,7 +84,7 @@ import { Compatibility } from "@/constants/compatibility";
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="AppData 객체">
+    <AppCompatibility listTitle="AppData 객체 메소드">
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`clear`](/api2/AppData/clear)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getBoolean`](/api2/AppData/getBoolean)</AppCompatibilityItem>
         <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getInt`](/api2/AppData/getInt)</AppCompatibilityItem>

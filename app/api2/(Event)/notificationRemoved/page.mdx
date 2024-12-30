@@ -1,5 +1,12 @@
 import { Compatibility } from "@/constants/compatibility";
 
+export const metadata = {
+    title: "notificationRemoved 이벤트 - API2",
+    openGraph: {
+        title: "notificationRemoved 이벤트 - API2"
+    }
+}
+
 <Section>
     ## notificationRemoved
 
@@ -29,7 +36,7 @@ import { Compatibility } from "@/constants/compatibility";
         <Dl>
             <Dt>`sbn`</Dt>
             <Dd>
-                사라진 노티피케이션에 관한 정보가 담긴 [`android.service.notification.StatusBarNotification`](https://developer.android.com/reference/android/service/notification/StatusBarNotification)입니다.
+                사라진 알림에 관한 정보가 담긴 [`android.service.notification.StatusBarNotification`](https://developer.android.com/reference/android/service/notification/StatusBarNotification)입니다.
             </Dd>
             <Dt>`rankingMap`</Dt>
             <Dd>
