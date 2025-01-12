@@ -1,13 +1,23 @@
-import { HTMLAttributes } from "react";
+import React, {HTMLAttributes, useEffect} from "react";
+import {usePathname} from "next/navigation";
 import Link from "next/link";
 
 interface IPage extends HTMLAttributes<HTMLDivElement> {
     doc: Doc;
-    isCurrentPage: boolean;
+    setParentFold?: React.Dispatch<React.SetStateAction<boolean>>;
     onLinkClick?: () => void;
 }
 
-export default function Page({ doc, isCurrentPage, onLinkClick, className, ...p }: IPage) {
+export default function Page({ doc, setParentFold, onLinkClick, className, ...p }: IPage) {
+    const pathname = usePathname();
+    const isCurrentPage = doc.path === pathname;
+
+    useEffect(() => {
+        if (isCurrentPage) {
+            setParentFold && setParentFold(false);
+        }
+    }, [pathname]);
+
     return (
         (doc.path) ?
             (

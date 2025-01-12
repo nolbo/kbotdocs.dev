@@ -1,6 +1,10 @@
+import {openGraph} from "@/constants/metadata";
+
 export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "Discord 플러그인 - StarLight",
     openGraph: {
+        ...openGraph,
         title: "Discord 플러그인 - StarLight"
     }
 }

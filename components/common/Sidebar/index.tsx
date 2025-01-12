@@ -41,7 +41,7 @@ export default function Sidebar() {
                     <Tab
                         items={[
                             { label: "목차", content: <TOC scrollToRef={scrollTo} onAnchorClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> },
-                            { label: "페이지", content: <PageTree currentPath={path} onLinkClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> }
+                            { label: "페이지", content: <PageTree onLinkClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> }
                         ]}
                         className={"h-full"}
                     />

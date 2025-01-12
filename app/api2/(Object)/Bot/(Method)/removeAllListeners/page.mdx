@@ -1,8 +1,11 @@
 import { Compatibility } from "@/constants/compatibility";
+import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "Bot.removeAllListeners() - API2",
     openGraph: {
+        ...openGraph,
         title: "Bot.removeAllListeners() - API2"
     }
 }

@@ -1,6 +1,10 @@
+import {openGraph} from "@/constants/metadata";
+
 export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "Notification.state - StarLight",
     openGraph: {
+        ...openGraph,
         title: "Notification.state - StarLight"
     }
 }

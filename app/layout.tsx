@@ -6,6 +6,7 @@ import { Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
+import {openGraph} from "@/constants/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,17 +17,12 @@ export const metadata: Metadata = {
     },
     description: "카카오톡봇의 정보가 모인 카카오톡봇 문서입니다.",
     openGraph: {
+        ...openGraph,
         title: {
             default: "KBotDocs | 카카오톡봇 문서",
             template: "%s | KBotDocs"
         },
-        siteName: "KBotDocs",
         url: "https://kbotdocs.dev/",
-        images: {
-            url: "/metadata/ogimage.png"
-        },
-        type: "website",
-        locale: "ko-KR"
     },
     icons: [
         {

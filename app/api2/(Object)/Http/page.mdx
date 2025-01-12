@@ -1,8 +1,9 @@
 import { Compatibility } from "@/constants/compatibility";
-
-export const metadata = {
+import {openGraph} from "@/constants/metadata";
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "Http - API2",
     openGraph: {
+        ...openGraph,
         title: "Http - API2"
     }
 }

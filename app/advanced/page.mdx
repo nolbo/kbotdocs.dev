@@ -1,6 +1,10 @@
+import {openGraph} from "@/constants/metadata";
+
 export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "심화",
     openGraph: {
+        ...openGraph,
         title: "심화"
     }
 }

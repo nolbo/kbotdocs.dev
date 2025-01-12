@@ -1,8 +1,11 @@
 import { Compatibility } from "@/constants/compatibility";
+import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
     title: "SessionManager.bindSession(String, String, android.app.Notification.Action?) - 레거시 API",
     openGraph: {
+        ...openGraph,
         title: "SessionManager.bindSession(String, String, android.app.Notification.Action?) - 레거시 API"
     }
 }
