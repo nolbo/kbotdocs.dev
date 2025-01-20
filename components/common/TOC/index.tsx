@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, HTMLAttributes } from "react";
+import React, { useState, useEffect, useRef, HTMLAttributes } from "react";
 
 interface ITOC extends HTMLAttributes<HTMLUListElement> {
-    scrollToRef: React.MutableRefObject<number>;
     onAnchorClick?: () => void;
 }
 
-export default function TOC({ scrollToRef, onAnchorClick, className, ...p } : ITOC) {
+export default function TOC({ onAnchorClick, className, ...p } : ITOC) {
     const [ headers, setHeaders ] = useState<Element[]>([]);
     const [ pageInViewport, setPageInViewport ] = useState<string>("");
+    const scrollToRef = useRef<number>(0);
 
     const liOnClickHandler = (id: string) => {
         if (document.getElementById(id)) {

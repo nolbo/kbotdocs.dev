@@ -35,7 +35,7 @@ export const Docs: Doc[] = [
                                     { label: "markAsReadOnID(String)", path: "/legacy/Api/markAsReadOnID(String)" },
                                     { label: "off()", path: "/legacy/Api/off" },
                                     { label: "on()", path: "/legacy/Api/on" },
-                                    { label: "papagoTranslate()", path: "/legacy/Api/papagoTranslate" },
+                                    { label: "papagoTranslate()", path: "/legacy/Api/papagoTranslate", deprecated: true },
                                     { label: "prepare()", path: "/legacy/Api/prepare" },
                                     { label: "reload(Boolean?)", path: "/legacy/Api/reload(Boolean$)" },
                                     { label: "reload(String, Boolean?)", path: "/legacy/Api/reload(String,Boolean$)" },
@@ -76,12 +76,12 @@ export const Docs: Doc[] = [
                                 label: "메소드",
                                 children: [
                                     { label: "evaluateStringIn()", path: "/legacy/Bridge/evaluateStringIn" },
-                                    { label: "getGlobalVariable()", path: "/legacy/Bridge/getGlobalVariable" },
+                                    { label: "getGlobalVariable()", path: "/legacy/Bridge/getGlobalVariable", nonStandard: true },
                                     { label: "getScopeOf()", path: "/legacy/Bridge/getScopeOf" },
-                                    { label: "getVariable()", path: "/legacy/Bridge/getVariable" },
+                                    { label: "getVariable()", path: "/legacy/Bridge/getVariable", nonStandard: true },
                                     { label: "isAllowed()", path: "/legacy/Bridge/isAllowed" },
-                                    { label: "setGlobalVariable()", path: "/legacy/Bridge/setGlobalVariable" },
-                                    { label: "setVariable()", path: "/legacy/Bridge/setVariable" },
+                                    { label: "setGlobalVariable()", path: "/legacy/Bridge/setGlobalVariable", nonStandard: true },
+                                    { label: "setVariable()", path: "/legacy/Bridge/setVariable", nonStandard: true },
                                 ]
                             }
                         ]
@@ -1010,7 +1010,7 @@ export const Docs: Doc[] = [
                                 children: [
                                     { label: "chatLogId", path: "/starlight/Message/chatLogId" },
                                     { label: "hasMention", path: "/starlight/Message/hasMention" },
-                                    { label: "image", path: "/starlight/Message/image" },
+                                    { label: "image", path: "/starlight/Message/image", experimental: true },
                                     { label: "message", path: "/starlight/Message/message" },
                                     { label: "packageName", path: "/starlight/Message/packageName" },
                                     { label: "room", path: "/starlight/Message/room" },

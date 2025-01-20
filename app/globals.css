@@ -120,7 +120,7 @@
         font-weight: bold;
     }
     a {
-        @apply text-blue no-underline cursor-pointer visited:text-purple hover:underline;
+        @apply text-blue no-underline cursor-pointer visited:text-blue hover:underline;
     }
 
     [aria-hidden="true"] {

@@ -4,9 +4,11 @@ import Icon from "@/components/common/Icon";
 import CodeBlock from "@/components/common/CodeBlock";
 import Keycap from "@/components/common/Keycap";
 import InlineCode from "@/components/common/InlineCode";
+import Image from "next/image";
 import { Table, Thead, Tbody, Tr, Th, Td } from "@/components/common/Table";
 import AppCompatibility from "@/components/common/AppCompatibility";
 import AppCompatibilityItem from "@/components/common/AppCompatibilityItem";
+import Noti from "@/components/common/Noti";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -19,14 +21,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         },
         h3({ children, ...rest }) {
             return (
-                <h3 className="md:pl-[16px] md:border-l-[2px] md:border-l-noimportance sub" {...rest}>
+                <h3 className="sub" {...rest}>
                     { children }
                 </h3>
             );
         },
         h4({ children, ...rest }) {
             return (
-                <h4 className="md:pl-[16px] md:border-l-[2px] md:border-l-noimportance sub" {...rest}>
+                <h4 className="sub" {...rest}>
                     { children }
                 </h4>
             );
@@ -44,18 +46,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             return (<ol className={"flex flex-col gap-[2px]"} { ...rest }>{ children }</ol>);
         },
         ul({ children, ...rest }) {
-            return (<ul className={"flex flex-col gap-[2px]"} { ...rest }>{ children }</ul>);
+            return (<ul { ...rest }>{ children }</ul>);
         },
         li({ children, ...rest }) {
             return (<li className={"leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} { ...rest }>{ children }</li>);
         },
-        img(p) {
+        img({ ...p }) {
             return (
                 (p.alt === "icon") ?
                     <Icon className={"w-[.75rem] h-[.75rem] stroke-inherit-text"} icon={ p.src as Icons } />
                     :
                     <div className={`justify-center items-center w-full h-fit ${(p.alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((p.alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
-                        <img src={p.src as string} alt={p.alt || ""} className="rounded-[6px]" />
+                        <Image src={p.src as string} alt={p.alt || ""} className="rounded-[6px]" />
                     </div>
             )
         },
@@ -117,86 +119,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 </blockquote>
             )
         },
-        Noti({ children, type, title }) {
-            let header;
-            let blockStyle = "";
-
-            switch (type) {
-                case "warning":
-                    header = (
-                        <>
-                            <Icon icon={"WarningFillIcon"} className={"fill-yellow w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "주의" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-yellow-default border-yellow-default";
-                    break;
-                case "danger":
-                    header = (
-                        <>
-                            <Icon icon={"DangerFillIcon"} className={"fill-red w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "경고" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-red-default border-red-default";
-                    break;
-                case "deprecated":
-                    header = (
-                        <>
-                            <Icon icon={"DeprecatedIcon"} className={"stroke-red w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "지원중단됨" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-red-default border-red-default";
-                    break;
-                case "experimental":
-                    header = (
-                        <>
-                            <Icon icon={"ExperimentalIcon"} className={"stroke-blue w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "실험적" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-blue-default border-blue-default dark:[&_a]:text-green dark:[&_a:visited]:text-purple";
-                    break;
-                case "nonStandard":
-                    header = (
-                        <>
-                            <Icon icon={"WarningIcon"} className={"stroke-yellow w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "비표준" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-yellow-default border-yellow-default";
-                    break;
-                case "success":
-                    header = (
-                        <>
-                            <Icon icon={"SuccessFillIcon"} className={"fill-green w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "성공" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-green-default border-green-default";
-                    break;
-                case "info":
-                    header = (
-                        <>
-                            <Icon icon={"InformationFillIcon"} className={"fill-blue w-[1rem] h-[1rem]"}/>
-                            <p className={"font-bold"}>{ title || "정보" }</p>
-                        </>
-                    )
-                    blockStyle = "bg-blue-default border-blue-default dark:[&_a]:text-green dark:[&_a:visited]:text-purple";
-                    break;
-                default:
-                    blockStyle = "bg-default-hover border-default-hover";
-            }
-
-            return (
-                <div className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
-                    <div className={"flex items-center gap-[6px]"}>
-                        { header }
-                    </div>
-                    {children && (<div>{children}</div>)}
-                </div>
-            )
+        Noti({ children, ...p }) {
+            return (<Noti {...p}>{ children }</Noti>);
         },
         a({children, href, ...rest }) {
             if (href?.startsWith("/")) {

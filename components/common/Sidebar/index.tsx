@@ -30,21 +30,10 @@ export default function Sidebar() {
 
     return (
         <aside className={`fixed top-0 left-0 z-[1] mt-header-h w-full ${(isTOCShowed) ? "h-[calc(100vh-theme(height.header-h))] bg-default" : "h-auto bg-transparent"} md:static md:px-0 md:w-auto md:h-full`}>
-            <div className={`flex justify-start items-center gap-[8px] px-screen-x-default w-full h-[48px] bg-default md:hidden`}>
-                <IconButton icon={(isTOCShowed) ? "CancelIcon" : "HamburgerButtonIcon"} onClick={() => {
-                    setIsTOCShowed(v => !v)
-                }} />
-            </div>
             <div
                 className={`w-full h-full flex-col gap-[24px] ${(isTOCShowed) ? "flex" : "hidden"} px-screen-x-default box-border h-auto max-h-[calc(100vh-64px-64px-48px)] md:fixed md:top-[160px] md:flex md:px-0 md:w-sidebar-w-md md:max-h-[calc(100vh-160px-64px)] lg:w-sidebar-w-lg`}>
                 <div className={"w-full h-full"}>
-                    <Tab
-                        items={[
-                            { label: "목차", content: <TOC scrollToRef={scrollTo} onAnchorClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> },
-                            { label: "페이지", content: <PageTree onLinkClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} /> }
-                        ]}
-                        className={"h-full"}
-                    />
+                    <PageTree onLinkClick={() => { setIsTOCShowed(false) }} className={"pt-[16px]"} />
                 </div>
             </div>
         </aside>

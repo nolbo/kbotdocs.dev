@@ -21,7 +21,8 @@ export default {
                 600: "#0033CC",
                 700: "#002699",
                 800: "#001966",
-                900: "#000D33"
+                900: "#000D33",
+                950: "#00061A"
             },
             purple: {
                 DEFAULT: "var(--colors-purple-default)",
@@ -34,7 +35,8 @@ export default {
                 600: "#6900CC",
                 700: "#4F0099",
                 800: "#350066",
-                900: "#1A0033"
+                900: "#1A0033",
+                950: "#0D001A"
             },
             red: {
                 DEFAULT: "var(--colors-red-default)",
@@ -47,7 +49,8 @@ export default {
                 600: "#CC004E",
                 700: "#99003B",
                 800: "#660027",
-                900: "#330014"
+                900: "#330014",
+                950: "#1A000A"
             },
             yellow: {
                 DEFAULT: "var(--colors-yellow-default)",
@@ -60,7 +63,8 @@ export default {
                 600: "#CC9200",
                 700: "#996E00",
                 800: "#664900",
-                900: "#332500"
+                900: "#332500",
+                950: "#1A1200"
             },
             green: {
                 DEFAULT: "var(--colors-green-default)",
@@ -73,7 +77,8 @@ export default {
                 600: "#00CC81",
                 700: "#009961",
                 800: "#006641",
-                900: "#003320"
+                900: "#003320",
+                950: "#001A10"
             },
             gray: {
                 DEFAULT: "var(--colors-gray-default)",
@@ -86,7 +91,8 @@ export default {
                 600: "#5C6170",
                 700: "#454954",
                 800: "#2E3038",
-                900: "#17181C"
+                900: "#17181C",
+                950: "#0B0C0E"
             },
             transparent: "transparent",
             inherit: "inherit"
@@ -168,7 +174,7 @@ export default {
                 "main-md": "var(--width-main-md)",
                 "header-h": "64px",
                 "sidebar-w-md": "225px",
-                "sidebar-w-lg": "256px",
+                "sidebar-w-lg": "225px",
                 none: "0"
             },
             padding: {
