@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Api";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -35,15 +35,8 @@ export const metadata = {
             <Tr>
                 <Td><span>`Boolean`</span></Td>
                 <Td>
-                    [`compile`](/legacy/Api/compile(Boolean$))`(throwOnError?: Boolean = false)` \
-                    모든 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
-                </Td>
-            </Tr>
-            <Tr>
-                <Td><span>`Boolean`</span></Td>
-                <Td>
-                    [`compile`](/legacy/Api/compile(String,Boolean$))`(scriptName: String, throwOnError?: Boolean = false)` \
-                    특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                    [`compile`](/legacy/Api/compile)`(scriptName?: String, throwOnError?: Boolean = false)` \
+                    모든 또는 특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
                 </Td>
             </Tr>
             <Tr>
@@ -146,15 +139,8 @@ export const metadata = {
             <Tr>
                 <Td><span>`Boolean`</span></Td>
                 <Td>
-                    [`markAsRead`](/legacy/Api/markAsRead(String$))`(packageName?: String)` \
-                    메시지가 온 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-                </Td>
-            </Tr>
-            <Tr>
-                <Td><span>`Boolean`</span></Td>
-                <Td>
-                    [`markAsRead`](/legacy/Api/markAsRead(String,String$))`(room: String, packageName?: String)` \
-                    특정 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                    [`markAsRead`](/legacy/Api/markAsRead)`(room?: String, packageName?: String)` \
+                    메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
                 </Td>
             </Tr>
             <Tr>
@@ -200,21 +186,14 @@ export const metadata = {
                 <Td><span>`Number`</span></Td>
                 <Td>
                     [`prepare`](/legacy/Api/prepare)`(scriptName: String)` \
-                    특정 스크립트가 한번도 컴파일된 적이 없을 경우 컴파일하고 스크립트의 컴파일 상태를 나타내는 정수를 반환합니다. 컴파일 에러가 발생할 경우 에러를 throw합니다.
+                    스크립트가 한번도 컴파일된 적이 없을 경우 컴파일하고 스크립트의 컴파일 상태를 나타내는 정수를 반환합니다. 컴파일 에러가 발생할 경우 에러를 throw합니다.
                 </Td>
             </Tr>
             <Tr>
                 <Td><span>`Boolean`</span></Td>
                 <Td>
-                    [`reload`](/legacy/Api/reload(Boolean$))`(throwOnError?: Boolean = false)` \
-                    모든 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
-                </Td>
-            </Tr>
-            <Tr>
-                <Td><span>`Boolean`</span></Td>
-                <Td>
-                    [`reload`](/legacy/Api/reload(String,Boolean$))`(scriptName: String, throwOnError?: Boolean = false)` \
-                    특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
+                    [`reload`](/legacy/Api/reload)`(scriptName?: String, throwOnError?: Boolean = false)` \
+                    모든 또는 특정 스크립트를 컴파일하고 컴파일 성공 여부를 반환합니다. `throwOnError?`의 값이 `true`일 경우 컴파일 에러 시 에러를 throw합니다.
                 </Td>
             </Tr>
             <Tr>
@@ -265,38 +244,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Api 객체 메소드">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`canReply`](/legacy/Api/canReply)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`compile(Boolean?)`](/legacy/Api/compile(Boolean$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`compile(String, Boolean?)`](/legacy/Api/compile(String,Boolean$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`gc`](/legacy/Api/gc)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getActiveThreadsCount`](/legacy/Api/getActiveThreadsCount)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getContext`](/legacy/Api/getContext)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getLastImage`](/legacy/Api/getLastImage)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getLastImageBitmap`](/legacy/Api/getLastImageBitmap)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRoomList`](/legacy/Api/getRoomList)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getScriptNames`](/legacy/Api/getScriptNames)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`interruptThreads`](/legacy/Api/interruptThreads)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isCompiled`](/legacy/Api/isCompiled)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isCompiling`](/legacy/Api/isCompiling)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isOn`](/legacy/Api/isOn)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`isTerminated`](/legacy/Api/isTerminated)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`makeNoti`](/legacy/Api/makeNoti)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`markAsRead(String?)`](/legacy/Api/markAsRead(String?))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`markAsRead(String, String?)`](/legacy/Api/markAsRead(String,String?))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsReadOnID(BigInt)`](/legacy/Api/markAsReadOnID(BigInt))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsReadOnID(String)`](/legacy/Api/markAsReadOnID(String))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`off`](/legacy/Api/off)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`on`](/legacy/Api/on)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} deprecated>[`papagoTranslate`](/legacy/Api/papagoTranslate)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`prepare`](/legacy/Api/prepare)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reload(Boolean?)`](/legacy/Api/reload(Boolean$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reload(String, Boolean?)`](/legacy/Api/reload(String,Boolean$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyRoom`](/legacy/Api/replyRoom)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyToID(BigInt, String, Boolean)`](/legacy/Api/replyToID(BigInt,String,Boolean))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`replyToID(String, String, Boolean)`](/legacy/Api/replyToID(String,String,Boolean))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`showToast`](/legacy/Api/showToast)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`UIThread`](/legacy/Api/UIThread)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`unload`](/legacy/Api/unload)</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={Object.values(compatibility)}/>
 </Section>

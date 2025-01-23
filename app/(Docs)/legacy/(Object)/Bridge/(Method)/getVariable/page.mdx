@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Bridge";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -50,7 +50,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Bridge.getVariable()">
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT} nonStandard>`getVariable`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["getVariable"]}/>
 </Section>

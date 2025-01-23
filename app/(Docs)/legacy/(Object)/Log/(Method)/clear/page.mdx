@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Log";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -25,7 +25,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Log.clear()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`clear`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["clear"]}/>
 </Section>

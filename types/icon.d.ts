@@ -5,7 +5,9 @@ type Icons =
     "ArrowIcon" |
     "AutoReplyBotIcon" |
     "BlogIcon" |
+    "BugIcon" |
     "CalendarIcon" |
+    "CancelFillIcon" |
     "CancelIcon" |
     "CheckIcon" |
     "CopyIcon" |
@@ -33,15 +35,19 @@ type Icons =
     "LaptopIcon" |
     "LightIcon" |
     "LinkIcon" |
+    "MarkerIcon" |
     "MessengerbotRIcon" |
     "MobileIcon" |
+    "MoreIcon" |
     "NolboIcon" |
     "NonStandardIcon" |
+    "PartialFillIcon" |
     "PartialIcon" |
     "PidocIcon" |
     "PostIcon" |
     "ReactIcon" |
     "SearchIcon" |
+    "SeeIcon" |
     "SettingsIcon" |
     "SpeedIcon" |
     "StandardIcon" |

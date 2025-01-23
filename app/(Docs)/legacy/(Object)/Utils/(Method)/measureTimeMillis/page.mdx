@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Utils";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -41,7 +41,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Utils.measureTimeMillis()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`measureTimeMillis`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["measureTimeMillis"]}/>
 </Section>

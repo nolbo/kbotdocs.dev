@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/DataBase";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -45,7 +45,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="DataBase.appendDataBase()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`appendDataBase`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["appendDataBase"]}/>
 </Section>

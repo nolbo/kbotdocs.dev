@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/argument/ImageDB";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -31,7 +31,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="ImageDB.getRoomImage()">
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getRoomImage`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["getRoomImage"]}/>
 </Section>

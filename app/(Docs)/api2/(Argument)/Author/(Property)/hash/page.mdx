@@ -1,9 +1,13 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/api2/argument/Author";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
     metadataBase: new URL("https://kbotdocs.dev"),
     title: "Author.hash - API2",
+    openGraph: {
+        ...openGraph,
+        title: "Author.hash - API2"
+    }
 }
 
 <Section>
@@ -27,7 +31,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Author.hash">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`hash`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["hash"]}/>
 </Section>

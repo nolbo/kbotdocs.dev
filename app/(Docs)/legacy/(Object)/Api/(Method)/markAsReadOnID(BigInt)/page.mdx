@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Api";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -41,7 +41,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Api.markAsReadOnID(BigInt)">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>`markAsReadOnID(BigInt)`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["markAsReadOnID(BigInt)"]}/>
 </Section>

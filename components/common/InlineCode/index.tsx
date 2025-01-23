@@ -8,6 +8,6 @@ interface IInlineCode extends HTMLAttributes<HTMLDivElement> {
 
 export default function InlineCode({ children } : IInlineCode) {
     return (
-        <code className={"text-sm font-mono"}>{ children }</code>
+        <code className={"text-rel-sm font-mono"}>{ children }</code>
     );
 }

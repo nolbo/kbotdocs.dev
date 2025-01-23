@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/FileStream";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -45,7 +45,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="FileStream.append()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`append`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["append"]}/>
 </Section>

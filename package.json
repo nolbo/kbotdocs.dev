@@ -17,6 +17,7 @@
     "fs": "^0.0.1-security",
     "globby": "^14.0.2",
     "next": "^14.2.13",
+    "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "octokit": "^4.1.0",
     "path": "^0.12.7",

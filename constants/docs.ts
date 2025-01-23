@@ -14,8 +14,7 @@ export const Docs: Doc[] = [
                                 label: "메소드",
                                 children: [
                                     { label: "canReply()", path: "/legacy/Api/canReply" },
-                                    { label: "compile(Boolean?)", path: "/legacy/Api/compile(Boolean$)" },
-                                    { label: "compile(String, Boolean?)", path: "/legacy/Api/compile(String,Boolean$)" },
+                                    { label: "compile()", path: "/legacy/Api/compile" },
                                     { label: "gc()", path: "/legacy/Api/gc" },
                                     { label: "getActiveThreadsCount()", path: "/legacy/Api/getActiveThreadsCount" },
                                     { label: "getContext()", path: "/legacy/Api/getContext" },
@@ -29,16 +28,14 @@ export const Docs: Doc[] = [
                                     { label: "isOn()", path: "/legacy/Api/isOn" },
                                     { label: "isTerminated()", path: "/legacy/Api/isTerminated" },
                                     { label: "makeNoti()", path: "/legacy/Api/makeNoti" },
-                                    { label: "markAsRead(String?)", path: "/legacy/Api/markAsRead(String$)" },
-                                    { label: "markAsRead(String, String?)", path: "/legacy/Api/markAsRead(String,String$)" },
+                                    { label: "markAsRead()", path: "/legacy/Api/markAsRead" },
                                     { label: "markAsReadOnID(BigInt)", path: "/legacy/Api/markAsReadOnID(BigInt)" },
                                     { label: "markAsReadOnID(String)", path: "/legacy/Api/markAsReadOnID(String)" },
                                     { label: "off()", path: "/legacy/Api/off" },
                                     { label: "on()", path: "/legacy/Api/on" },
-                                    { label: "papagoTranslate()", path: "/legacy/Api/papagoTranslate", deprecated: true },
+                                    { label: "papagoTranslate()", path: "/legacy/Api/papagoTranslate" },
                                     { label: "prepare()", path: "/legacy/Api/prepare" },
-                                    { label: "reload(Boolean?)", path: "/legacy/Api/reload(Boolean$)" },
-                                    { label: "reload(String, Boolean?)", path: "/legacy/Api/reload(String,Boolean$)" },
+                                    { label: "reload()", path: "/legacy/Api/reload" },
                                     { label: "replyRoom()", path: "/legacy/Api/replyRoom" },
                                     { label: "replyToID(BigInt, String, Boolean)", path: "/legacy/Api/replyToID(BigInt,String,Boolean)" },
                                     { label: "replyToID(String, String, Boolean)", path: "/legacy/Api/replyToID(String,String,Boolean)" },
@@ -76,12 +73,12 @@ export const Docs: Doc[] = [
                                 label: "메소드",
                                 children: [
                                     { label: "evaluateStringIn()", path: "/legacy/Bridge/evaluateStringIn" },
-                                    { label: "getGlobalVariable()", path: "/legacy/Bridge/getGlobalVariable", nonStandard: true },
+                                    { label: "getGlobalVariable()", path: "/legacy/Bridge/getGlobalVariable" },
                                     { label: "getScopeOf()", path: "/legacy/Bridge/getScopeOf" },
-                                    { label: "getVariable()", path: "/legacy/Bridge/getVariable", nonStandard: true },
+                                    { label: "getVariable()", path: "/legacy/Bridge/getVariable" },
                                     { label: "isAllowed()", path: "/legacy/Bridge/isAllowed" },
-                                    { label: "setGlobalVariable()", path: "/legacy/Bridge/setGlobalVariable", nonStandard: true },
-                                    { label: "setVariable()", path: "/legacy/Bridge/setVariable", nonStandard: true },
+                                    { label: "setGlobalVariable()", path: "/legacy/Bridge/setGlobalVariable" },
+                                    { label: "setVariable()", path: "/legacy/Bridge/setVariable" },
                                 ]
                             }
                         ]
@@ -270,8 +267,7 @@ export const Docs: Doc[] = [
                         label: "Replier",
                         path: "/legacy/Replier",
                         children: [
-                            { label: "markAsRead(String?)", path: "/legacy/Replier/markAsRead(String$)" },
-                            { label: "markAsRead(String, String?)", path: "/legacy/Replier/markAsRead(String,String$)" },
+                            { label: "markAsRead()", path: "/legacy/Replier/markAsRead" },
                             { label: "reply(String)", path: "/legacy/Replier/reply(String)" },
                             { label: "reply(String, String, Boolean?)", path: "/legacy/Replier/reply(String,String,Boolean$)" },
                             { label: "replyDelayed(String, Number)", path: "/legacy/Replier/replyDelayed(String,Number)" },
@@ -347,8 +343,7 @@ export const Docs: Doc[] = [
                                     { label: "getName()", path: "/api2/Bot/getName" },
                                     { label: "getPower()", path: "/api2/Bot/getPower" },
                                     { label: "listeners()", path: "/api2/Bot/listeners" },
-                                    { label: "markAsRead(String?)", path: "/api2/Bot/markAsRead(String$)" },
-                                    { label: "markAsRead(String, String?)", path: "/api2/Bot/markAsRead(String,String$)" },
+                                    { label: "markAsRead()", path: "/api2/Bot/markAsRead" },
                                     { label: "off()", path: "/api2/Bot/off" },
                                     { label: "on()", path: "/api2/Bot/on" },
                                     { label: "prependListener()", path: "/api2/Bot/prependListener" },
@@ -461,25 +456,14 @@ export const Docs: Doc[] = [
                             {
                                 label: "상수",
                                 children: [
-                                    {
-                                        label: "Activity",
-                                        path: "/api2/Event/Activity",
-                                        children: [
-                                            {
-                                                label: "상수",
-                                                children: [
-                                                    { label: "BACK_PRESSED", path: "/api2/Event/Activity/BACK_PRESSED" },
-                                                    { label: "CREATE", path: "/api2/Event/Activity/CREATE" },
-                                                    { label: "DESTROY", path: "/api2/Event/Activity/DESTROY" },
-                                                    { label: "PAUSE", path: "/api2/Event/Activity/PAUSE" },
-                                                    { label: "RESTART", path: "/api2/Event/Activity/RESTART" },
-                                                    { label: "RESUME", path: "/api2/Event/Activity/RESUME" },
-                                                    { label: "START", path: "/api2/Event/Activity/START" },
-                                                    { label: "STOP", path: "/api2/Event/Activity/STOP" },
-                                                ]
-                                            }
-                                        ]
-                                    },
+                                    { label: "Activity.BACK_PRESSED", path: "/api2/Event/Activity.BACK_PRESSED" },
+                                    { label: "Activity.CREATE", path: "/api2/Event/Activity.CREATE" },
+                                    { label: "Activity.DESTROY", path: "/api2/Event/Activity.DESTROY" },
+                                    { label: "Activity.PAUSE", path: "/api2/Event/Activity.PAUSE" },
+                                    { label: "Activity.RESTART", path: "/api2/Event/Activity.RESTART" },
+                                    { label: "Activity.RESUME", path: "/api2/Event/Activity.RESUME" },
+                                    { label: "Activity.START", path: "/api2/Event/Activity.START" },
+                                    { label: "Activity.STOP", path: "/api2/Event/Activity.STOP" },
                                     { label: "BATTERY_LEVEL_CHANGED", path: "/api2/Event/BATTERY_LEVEL_CHANGED" },
                                     { label: "COMMAND", path: "/api2/Event/COMMAND" },
                                     { label: "MESSAGE", path: "/api2/Event/MESSAGE" },
@@ -1010,7 +994,7 @@ export const Docs: Doc[] = [
                                 children: [
                                     { label: "chatLogId", path: "/starlight/Message/chatLogId" },
                                     { label: "hasMention", path: "/starlight/Message/hasMention" },
-                                    { label: "image", path: "/starlight/Message/image", experimental: true },
+                                    { label: "image", path: "/starlight/Message/image" },
                                     { label: "message", path: "/starlight/Message/message" },
                                     { label: "packageName", path: "/starlight/Message/packageName" },
                                     { label: "room", path: "/starlight/Message/room" },

@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/api2/object/Broadcast";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -25,7 +25,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Broadcast.unregisterAll()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`unregisterAll`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["unregisterAll"]}/>
 </Section>
