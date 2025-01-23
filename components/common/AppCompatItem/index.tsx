@@ -3,6 +3,7 @@
 import {HTMLAttributes, useState} from "react";
 import DetailedStatusIcon from "@/components/common/DetailedStatusIcon";
 import FeatureStatusIcon from "@/components/common/FeatureStatusIcon";
+import Feature from "@/components/common/Feature";
 import Icon from "@/components/common/Icon";
 import {Td, Tr} from "@/components/common/Table";
 import MDXClient from "@/components/common/MDXClient";
@@ -65,19 +66,16 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
         <>
             <Tr {...p}>
                 <Td>
-                    <div className={`flex items-center gap-[8px]`}>
-                        { Object.values(compat.status).includes(true) && (<FeatureStatusIcon featureStatus={compat.status} />) }
-                        <div className={"break-all"}>
-                            {
-                                ((pathname === compat.url) || !compat.url) ?
-                                    <MDXClient source={compat.feature} />
-                                    :
-                                    <Link href={compat.url}><MDXClient source={compat.feature} /></Link>
-                            }
-                        </div>
-                    </div>
+                    <Feature featureStatus={compat.status}>
+                        {
+                            ((pathname === compat.url) || !compat.url) ?
+                                <MDXClient source={compat.feature} />
+                                :
+                                <MDXClient source={`[${compat.feature}](${compat.url})`} />
+                        }
+                    </Feature>
                 </Td>
-                <Td className={`md:hover:bg-default-hover ${(selected === "msgBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("msgBot", compat.support.msgBot)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "msgBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("msgBot", compat.support.msgBot)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.msgBot[compat.support.msgBot.length - 1]} /></div>
                         <p className="block md:hidden">메신저봇R</p>
@@ -91,7 +89,7 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
                         )
                     }
                 </Td>
-                <Td className={`md:hover:bg-default-hover ${(selected === "autoReplyBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("autoReplyBot", compat.support.autoReplyBot)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "autoReplyBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("autoReplyBot", compat.support.autoReplyBot)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.autoReplyBot[compat.support.autoReplyBot.length - 1]} /></div>
                         <p className="block md:hidden">채팅 자동응답 봇</p>
@@ -105,7 +103,7 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
                         )
                     }
                 </Td>
-                <Td className={`md:hover:bg-default-hover ${(selected === "starLight") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("starLight", compat.support.starLight)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "starLight") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("starLight", compat.support.starLight)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.starLight[compat.support.starLight.length - 1]} /></div>
                         <p className="block md:hidden">StarLight</p>

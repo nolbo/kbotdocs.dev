@@ -174,11 +174,7 @@ export const metadata = {
             <Tr>
                 <Td><span>`String`</span></Td>
                 <Td>
-                    <Noti type="deprecated">
-                        해당 메소드는 Papago API 지원 중단으로 인해 지원이 중지되었습니다. 그러므로 더 이상 실제 변역 기능을 수행하지 않습니다.
-                        하위 호환성을 위해 메소드는 유지되지만, 메신저봇R에서는 항상 `null`을 반환하며 채팅 자동응답 봇에서는 `"Error Code: 051"`을 반환합니다.
-                    </Noti>
-                    [`papagoTranslate`](/legacy/Api/papagoTranslate)`(sourceLanguage: String, targetLanguage: String, content: String, errorToString?: Boolean = false)` \
+                    <Feature featureStatus={{ deprecated: true }}>[`papagoTranslate`](/legacy/Api/papagoTranslate)`(sourceLanguage: String, targetLanguage: String, content: String, errorToString?: Boolean = false)`</Feature> \
                     입력된 텍스트에 대한 Papago NMT 번역 결과를 반환합니다. `errorToString?`의 값이 `true`일 경우 에러를 문자열로 반환합니다.
                 </Td>
             </Tr>

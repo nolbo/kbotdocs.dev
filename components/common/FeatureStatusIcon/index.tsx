@@ -1,23 +1,28 @@
+import {HTMLAttributes} from "react";
 import Icon from "@/components/common/Icon";
 
-export default function FeatureStatusIcon({featureStatus}: { featureStatus: FeatureStatus }) {
+interface IFeatureStatusIcon extends HTMLAttributes<HTMLDivElement> {
+    featureStatus: FeatureStatus;
+}
+
+export default function FeatureStatusIcon({featureStatus, className}: IFeatureStatusIcon) {
     return (
-        <div className={"flex items-center gap-[6px]"}>
+        <span className={`inline-flex items-center gap-[6px] ${className || ""}`}>
             {featureStatus.deprecated && (
-                <div title={"지원중단되었습니다."}>
+                <span title={"지원중단되었습니다."}>
                     <Icon icon={"DeprecatedIcon"} className={"w-[1rem] h-[1rem] stroke-red"}/>
-                </div>
+                </span>
             )}
             {featureStatus.experimental && (
-                <div title={"실험적입니다."}>
+                <span title={"실험적입니다."}>
                     <Icon icon={"ExperimentalIcon"} className={"w-[1rem] h-[1rem] stroke-blue"}/>
-                </div>
+                </span>
             )}
             {featureStatus.nonStandard && (
-                <div title={"비표준입니다."}>
+                <span title={"비표준입니다."}>
                     <Icon icon={"WarningIcon"} className={"w-[1rem] h-[1rem] stroke-yellow"}/>
-                </div>
+                </span>
             )}
-        </div>
+        </span>
     );
 }

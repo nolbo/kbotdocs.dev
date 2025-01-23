@@ -5,6 +5,10 @@ import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import {evaluate, EvaluateOptions} from "@mdx-js/mdx";
 import {mdxComponents} from "@/mdx-components";
 import {MDXProps} from "mdx/types";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeSlug from "rehype-slug";
+import rehypeKatex from "rehype-katex";
 
 interface IMDXClient extends HTMLAttributes<HTMLElement> {
     source?: string;
@@ -15,11 +19,13 @@ export default function MDXClient({source}: IMDXClient) {
 
     useEffect(() => {
         if (source) {
-            evaluate(source || "", {
+            evaluate(`\n${source || ""}\n`, {
                 jsx,
                 jsxs,
-                Fragment
-            } as Pick<EvaluateOptions, "jsx" | "jsxs" | "Fragment">).then((value) => {
+                Fragment,
+                remarkPlugins: [remarkGfm, remarkMath],
+                rehypePlugins: [rehypeSlug, rehypeKatex],
+            } as Pick<EvaluateOptions, "jsx" | "jsxs" | "Fragment" | "remarkPlugins" | "rehypePlugins">).then((value) => {
                 setMDXContent(() => value.default);
             })
         }
