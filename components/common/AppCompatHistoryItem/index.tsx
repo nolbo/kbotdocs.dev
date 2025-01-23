@@ -7,7 +7,7 @@ export default function AppCompatHistoryItem({history}: {history: CompatibilityH
     const description = (
         Array.isArray(history.description) ?
             history.description.map((d, i) => (
-                <dd>
+                <dd key={i}>
                     <div className={"flex items-start gap-[12px]"}>
                         <div className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-1rem)/2)] bg-default"}><Icon icon={"MarkerIcon"} className={"w-[1rem] h-[1rem] fill-gray stroke-[theme(backgroundColor.default)]"} /></div>
                         <div className={"text-sm"}><MDXClient source={d} key={i} /></div>
