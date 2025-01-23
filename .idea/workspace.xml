@@ -5,490 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/common/AppCompatHistory/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/AppCompatHistoryItem/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/DetailedStatusIcon/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/FeatureStatusIcon/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/MDXClient/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Author.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Command.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Image.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/SessionManager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityBackPressed.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityCreate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityDestroy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityPause.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityRestart.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityResume.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStart.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/batteryLevelChanged.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/command.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationPosted.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationRemoved.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/startCompile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/tick.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/App.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/AppData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Bot.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/BotManager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Broadcast.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Device.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Event.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/FileStream.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/GlobalLog.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Http.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Log.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Security.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/argument/ImageDB.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/argument/Replier.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/argument/SessionManager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onBackPressed.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onCreate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onDestroy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onLoaded.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationPosted.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationRemoved.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onPause.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onRestart.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onResume.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStart.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStartCompile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/secondTick.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/Api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/AppData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/Bridge.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/DataBase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/Device.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/FileStream.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/Log.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/compatibility/legacy/object/Utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/BugIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/CancelFillIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/MarkerIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/MoreIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/PartialFillIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/SeeIcon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/avatar/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/avatar/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/hash/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/hash/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/name/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/(Property)/name/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Author/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Method)/markAsRead/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Method)/markAsRead/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Method)/reply/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Method)/reply/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/args/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/args/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/author/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/author/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/channelId/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/channelId/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/command/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/command/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/content/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/content/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/image/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/image/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isDebugRoom/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isDebugRoom/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isGroupChat/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isGroupChat/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isMention/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isMention/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/logId/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/logId/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/packageName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/packageName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/room/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/room/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/(Method)/getBase64/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/(Method)/getBase64/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/(Method)/getBitmap/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/(Method)/getBitmap/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Image/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Method)/markAsRead/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Method)/markAsRead/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Method)/reply/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Method)/reply/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/author/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/author/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/channelId/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/channelId/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/content/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/content/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/image/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/image/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isDebugRoom/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isDebugRoom/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isGroupChat/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isGroupChat/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isMention/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isMention/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/logId/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/logId/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/packageName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/packageName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/room/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/room/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/bindSession(String,Action$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/bindSession(String,Action$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/bindSession(String,String,Action$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/bindSession(String,String,Action$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/SessionManager/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityBackPressed/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityBackPressed/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityCreate/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityCreate/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityDestroy/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityDestroy/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityPause/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityPause/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityRestart/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityRestart/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityResume/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityResume/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityStart/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityStart/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityStop/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/activityStop/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/batteryLevelChanged/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/batteryLevelChanged/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/command/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/command/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/message/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/message/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/notificationPosted/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/notificationPosted/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/notificationRemoved/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/notificationRemoved/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/startCompile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/startCompile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/tick/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Event)/tick/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/(Method)/getContext/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/(Method)/getContext/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/(Method)/runOnUiThread/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/(Method)/runOnUiThread/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/App/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/clear/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/clear/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getBoolean/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getBoolean/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getInt/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getInt/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/getString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putBoolean/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putBoolean/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putInt/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putInt/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/putString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/remove/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/(Method)/remove/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/AppData/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/addListener/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/addListener/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/canReply/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/canReply/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/compile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/compile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/getName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/getName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/getPower/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/getPower/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/listeners/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/listeners/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/markAsRead(String$)/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/markAsRead(String,String$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/markAsRead/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/off/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/off/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/on/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/on/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/prependListener/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/prependListener/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/removeAllListeners/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/removeAllListeners/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/removeListener/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/removeListener/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/send/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/send/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/setCommandPrefix/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/setCommandPrefix/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/setPower/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/setPower/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/unload/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/(Method)/unload/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Bot/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/compile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/compile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/compileAll/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/compileAll/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getBot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getBot/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getBotList/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getBotList/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getCurrentBot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getCurrentBot/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getPower/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getPower/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getRooms/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/getRooms/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/isCompiled/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/isCompiled/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/prepare(Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/prepare(Boolean$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/prepare(String,Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/prepare(String,Boolean$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/setPower/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/setPower/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/unload/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/(Method)/unload/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/BotManager/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/register/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/register/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/send/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/send/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/unregister/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/unregister/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/unregisterAll/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/(Method)/unregisterAll/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Broadcast/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/exists/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/exists/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/readObject/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/readObject/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/readString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/readString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/writeObject/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/writeObject/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/writeString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/(Method)/writeString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Database/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/acquireWakeLock/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/acquireWakeLock/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getAndroidVersionCode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getAndroidVersionCode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getAndroidVersionName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getAndroidVersionName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getApiLevel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getApiLevel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryHealth/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryHealth/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryIntent/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryIntent/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryLevel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryLevel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryStatus/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryStatus/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryTemp/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryTemp/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryTemperature/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryTemperature/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryVoltage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBatteryVoltage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBuild/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getBuild/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getConnectedNetworkType/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getConnectedNetworkType/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getFreeMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getFreeMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getFreeStorageSpace/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getFreeStorageSpace/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getMaxMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getMaxMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getModelName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getModelName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPhoneBrand/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPhoneBrand/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPhoneModel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPhoneModel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPlugType/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getPlugType/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getTotalMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getTotalMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getTotalStorageSpace/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getTotalStorageSpace/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getWifiName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/getWifiName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isCharging/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isCharging/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isPowerSaveMode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isPowerSaveMode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isScreenOn/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/isScreenOn/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/releaseWakeLock/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/(Method)/releaseWakeLock/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Device/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/BACK_PRESSED/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.BACK_PRESSED/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/CREATE/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.CREATE/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/DESTROY/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.DESTROY/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/PAUSE/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.PAUSE/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/RESTART/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.RESTART/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/RESUME/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.RESUME/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/START/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.START/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/(Constant)/STOP/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity.STOP/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/Activity/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/BATTERY_LEVEL_CHANGED/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/BATTERY_LEVEL_CHANGED/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/COMMAND/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/COMMAND/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/MESSAGE/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/MESSAGE/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/NOTIFICATION_POSTED/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/NOTIFICATION_POSTED/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/NOTIFICATION_REMOVED/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/NOTIFICATION_REMOVED/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/START_COMPILE/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/START_COMPILE/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/TICK/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/(Constant)/TICK/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Event/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/append/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/append/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/copyFile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/copyFile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/create/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/create/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/createDir/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/createDir/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/getSdcardPath/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/getSdcardPath/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/moveFile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/moveFile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/read/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/read/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/readJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/readJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/remove/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/remove/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/save/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/save/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/saveJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/saveJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/write/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/write/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/writeJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/(Method)/writeJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/FileStream/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/clear/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/clear/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/d/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/d/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/debug/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/debug/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/e/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/e/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/error/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/error/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/i/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/i/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/info/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/(Method)/info/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/GlobalLog/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(Object,Function)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(Object,Function)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(String,Function)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(String,Function)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/requestSync(Object)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/requestSync(Object)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/requestSync(String)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/requestSync(String)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/clear/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/clear/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/d/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/d/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/debug/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/debug/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/e/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/e/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/error/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/error/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/i/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/i/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/info/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/(Method)/info/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Log/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/aesDecode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/aesDecode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/aesEncode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/aesEncode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaDecode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaDecode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaDecodeRaw/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaDecodeRaw/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaEncode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaEncode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaEncodeRaw/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ariaEncodeRaw/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base32Decode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base32Decode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base32Encode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base32Encode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base64Decode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base64Decode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base64Encode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/base64Encode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/des3Decode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/des3Decode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/des3Encode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/des3Encode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desDecode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desDecode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desEncode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desEncode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desKey/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/desKey/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/eccDecode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/eccDecode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/eccEncode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/eccEncode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/getDesKey/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/getDesKey/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/hashCode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/hashCode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md2/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md2/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md5/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md5/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md55/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/md55/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/rc4Decode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/rc4Decode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/rc4Encode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/rc4Encode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/seedDecode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/seedDecode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/seedEncode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/seedEncode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha256/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha256/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha384/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha384/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_224/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_224/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_256/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_256/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_384/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_384/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_512/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha3_512/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha512/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/sha512/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ulid/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/ulid/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/uuid/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/uuid/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/uuidv7/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/(Method)/uuidv7/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Security/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageBase64/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageBase64/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageBitmap/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageBitmap/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageHash/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageHash/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageMD5/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageMD5/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageSHA/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getImageSHA/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileBase64/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileBase64/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileBitmap/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileBitmap/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileHash/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileHash/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileImage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileImage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileMD5/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileMD5/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileSHA/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getProfileSHA/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getRoomBitmap/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getRoomBitmap/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getRoomImage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/(Method)/getRoomImage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/ImageDB/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/markAsRead(String$)/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/markAsRead(String,String$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/markAsRead/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/reply(String)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/reply(String)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/reply(String,String,Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/reply(String,String,Boolean$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/replyDelayed(String,Number)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/replyDelayed(String,Number)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/replyDelayed(String,String,Number,Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/(Method)/replyDelayed(String,String,Number,Boolean$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/Replier/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/(Method)/bindSession(String,Action$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/(Method)/bindSession(String,Action$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/(Method)/bindSession(String,String,Action$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/(Method)/bindSession(String,String,Action$)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Argument)/SessionManager/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onBackPressed/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onBackPressed/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onCreate/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onCreate/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onDestroy/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onDestroy/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onLoaded/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onLoaded/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onNotificationPosted/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onNotificationPosted/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onNotificationRemoved/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onNotificationRemoved/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onPause/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onPause/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onRestart/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onRestart/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onResume/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onResume/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStart/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStart/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStartCompile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStartCompile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStop/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/onStop/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/response/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/response/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/secondTick/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(EventListener)/secondTick/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/UIThread/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/UIThread/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/canReply/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/canReply/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/compile(Boolean$)/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/compile(String,Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/compile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/gc/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/gc/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getActiveThreadsCount/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getActiveThreadsCount/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getContext/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getContext/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getLastImage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getLastImage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getLastImageBitmap/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getLastImageBitmap/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getRoomList/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getRoomList/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getScriptNames/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/getScriptNames/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/interruptThreads/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/interruptThreads/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isCompiled/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isCompiled/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isCompiling/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isCompiling/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isOn/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isOn/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isTerminated/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/isTerminated/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/makeNoti/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/makeNoti/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsRead(String$)/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsRead(String,String$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsRead/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsReadOnID(BigInt)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsReadOnID(BigInt)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsReadOnID(String)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/markAsReadOnID(String)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/off/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/off/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/on/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/on/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/papagoTranslate/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/papagoTranslate/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/prepare/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/prepare/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/reload(Boolean$)/page.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/reload(String,Boolean$)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/reload/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyRoom/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyRoom/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyToID(BigInt,String,Boolean)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyToID(BigInt,String,Boolean)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyToID(String,String,Boolean)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/replyToID(String,String,Boolean)/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/showToast/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/showToast/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/unload/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/unload/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/clear/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/clear/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getBoolean/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getBoolean/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getInt/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getInt/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/getString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putBoolean/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putBoolean/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putInt/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putInt/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putString/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/putString/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/remove/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/(Method)/remove/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/AppData/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/evaluateStringIn/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/evaluateStringIn/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getGlobalVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getGlobalVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getScopeOf/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getScopeOf/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/isAllowed/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/isAllowed/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setGlobalVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setGlobalVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/appendDataBase/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/appendDataBase/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/getDataBase/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/getDataBase/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/removeDataBase/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/removeDataBase/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/setDataBase/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/(Method)/setDataBase/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/DataBase/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/acquireWakeLock/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/acquireWakeLock/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getAndroidVersionCode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getAndroidVersionCode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getAndroidVersionName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getAndroidVersionName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getApiLevel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getApiLevel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryHealth/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryHealth/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryIntent/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryIntent/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryLevel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryLevel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryStatus/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryStatus/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryTemp/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryTemp/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryTemperature/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryTemperature/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryVoltage/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBatteryVoltage/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBuild/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getBuild/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getConnectedNetworkType/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getConnectedNetworkType/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getFreeMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getFreeMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getFreeStorageSpace/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getFreeStorageSpace/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getMaxMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getMaxMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getModelName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getModelName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPhoneBrand/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPhoneBrand/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPhoneModel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPhoneModel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPlugType/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getPlugType/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getTotalMemory/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getTotalMemory/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getTotalStorageSpace/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getTotalStorageSpace/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getWifiName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/getWifiName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isCharging/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isCharging/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isPowerSaveMode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isPowerSaveMode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isScreenOn/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/isScreenOn/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/releaseWakeLock/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/(Method)/releaseWakeLock/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Device/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/append/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/append/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/copyFile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/copyFile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/create/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/create/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/createDir/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/createDir/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/getSdcardPath/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/getSdcardPath/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/moveFile/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/moveFile/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/read/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/read/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/readJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/readJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/remove/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/remove/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/save/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/save/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/saveJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/saveJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/write/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/write/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/writeJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/(Method)/writeJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/FileStream/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/clear/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/clear/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/d/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/d/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/debug/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/debug/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/e/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/e/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/error/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/error/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/i/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/i/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/info/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/(Method)/info/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Log/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/compress/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/compress/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/copyToClipboard/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/copyToClipboard/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/delay/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/delay/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getAndroidVersionCode/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getAndroidVersionCode/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getAndroidVersionName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getAndroidVersionName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getLw/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getLw/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getLwLined/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getLwLined/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getPhoneBrand/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getPhoneBrand/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getPhoneModel/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getPhoneModel/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getRandomUserAgent/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getRandomUserAgent/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWeatherJSON/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWeatherJSON/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWebText/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWebText/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWebText2/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getWebText2/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getZoneIdByName/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/getZoneIdByName/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/isUndefined/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/isUndefined/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/measureNanoTime/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/measureNanoTime/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/measureTimeMillis/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/measureTimeMillis/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/parse/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/parse/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/randomAlphanumeric/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/randomAlphanumeric/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/removeRLO/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/removeRLO/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/removeTags/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/removeTags/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/sleep/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/sleep/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/toast/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/toast/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/vibrate/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/vibrate/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/xmlToJson/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/(Method)/xmlToJson/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Utils/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatibility/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompat/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatibilityItem/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/Icon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Icon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/InlineCode/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/InlineCode/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/compatibility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/compatibility.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/compatibility.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/docs.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/docs.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/icon.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/icon.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityBackPressed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityBackPressed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityCreate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityCreate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityDestroy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityDestroy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityPause.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityPause.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityRestart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityRestart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityResume.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityResume.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/activityStop.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/batteryLevelChanged.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/batteryLevelChanged.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/command.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/command.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationPosted.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationPosted.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationRemoved.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/event/notificationRemoved.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onBackPressed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onBackPressed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onCreate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onCreate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onDestroy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onDestroy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onLoaded.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onLoaded.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationPosted.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationPosted.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationRemoved.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onNotificationRemoved.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onPause.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onPause.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onRestart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onRestart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onResume.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onResume.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/onStop.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/legacy/eventListener/response.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -505,6 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nolbo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/nolbo/kbotdocs.dev.git",
+    "accountId": "986c535f-5df9-4a41-aad4-e50e532909a9"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -516,24 +71,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "add-compatibilityHistory",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/constants/compatibility/legacy/eventListener",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;add-compatibilityHistory&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/constants/compatibility/legacy/eventListener&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility\legacy\eventListener" />
@@ -604,6 +159,7 @@
       <workItem from="1737468478764" duration="13815000" />
       <workItem from="1737528116751" duration="41248000" />
       <workItem from="1737607853685" duration="9202000" />
+      <workItem from="1737617284135" duration="2031000" />
     </task>
     <servers />
   </component>
