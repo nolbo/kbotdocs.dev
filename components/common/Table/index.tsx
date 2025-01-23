@@ -36,7 +36,7 @@ export function Th({ children, className, ...rest }: ThHTMLAttributes<HTMLTableC
 
 export function Td({ children, className, ...rest }: TdHTMLAttributes<HTMLTableCellElement>) {
     return (
-        <td className={`p-[12px] leading-normal first:bg-emphasis first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid ${className}`} { ...rest }>
+        <td className={`p-[12px] leading-normal first:bg-layer1 first:border-none last:border-none border-solid border-b border-default md:first:bg-transparent md:first:border-solid md:last:border-solid ${className}`} { ...rest }>
             <div className="flex flex-col gap-[16px] w-full overflow-auto">
                 { children }    
             </div>

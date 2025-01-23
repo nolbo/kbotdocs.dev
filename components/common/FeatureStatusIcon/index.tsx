@@ -20,7 +20,7 @@ export default function FeatureStatusIcon({featureStatus, className}: IFeatureSt
             )}
             {featureStatus.nonStandard && (
                 <span title={"비표준입니다."}>
-                    <Icon icon={"WarningIcon"} className={"w-[1rem] h-[1rem] stroke-yellow"}/>
+                    <Icon icon={"NonStandardIcon"} className={"w-[1rem] h-[1rem] stroke-yellow"}/>
                 </span>
             )}
         </span>

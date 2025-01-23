@@ -14,13 +14,13 @@ export default function Page({ doc, onLinkClick, className, ...p }: IPage) {
     return (
         (doc.path) ?
             (
-                <Link data-current={isCurrentPage} href={doc.path} onClick={ onLinkClick } className={`block p-[6px_8px] text-sm rounded cursor-pointer select-none break-all hover:bg-emphasis hover:text-default hover:no-underline ${(isCurrentPage) ? "text-default font-bold bg-emphasis visited:text-default hover:bg-emphasis-hover" : "text-description font-normal bg-default visited:text-description hover:bg-default-hover"} ${className || ""}`}>
+                <Link data-current={isCurrentPage} href={doc.path} onClick={ onLinkClick } className={`block p-[6px_8px] text-sm rounded cursor-pointer select-none break-all hover:bg-layer1 hover:text-default hover:no-underline ${(isCurrentPage) ? "text-default font-bold bg-layer1 visited:text-default hover:bg-layer1-hover" : "text-description font-normal bg-default visited:text-description hover:bg-default-hover"} ${className || ""}`}>
                     { doc.label }
                 </Link>
             )
             :
             (
-                <div data-current={isCurrentPage} className={`p-[6px_8px] text-sm rounded cursor-pointer select-none break-all hover:bg-emphasis hover:text-default ${(isCurrentPage) ? "text-default font-bold bg-emphasis hover:bg-emphasis-hover" : "text-description font-normal bg-transparent hover:bg-default-hover"} ${className || ""}`}>
+                <div data-current={isCurrentPage} className={`p-[6px_8px] text-sm rounded cursor-pointer select-none break-all hover:bg-layer1 hover:text-default ${(isCurrentPage) ? "text-default font-bold bg-layer1 hover:bg-layer1-hover" : "text-description font-normal bg-transparent hover:bg-default-hover"} ${className || ""}`}>
                     { doc.label }
                 </div>
             )

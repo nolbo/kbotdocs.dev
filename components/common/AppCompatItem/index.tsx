@@ -16,23 +16,23 @@ function AppCompatStatusIcon({history}: {history: CompatibilityHistory}) {
     switch (history.status) {
         case CompatibilityStatus.FULL_SUPPORT:
             return (
-                <div title={"완전 지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-green-default"}>
+                <div title={"완전 지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-green-layer1"}>
                     <Icon icon={"CheckIcon"} className={"stroke-green w-[1rem] h-[1rem]"} />
-                    <p className={"text-xs text-green-default font-semibold"}>{history.version}</p>
+                    <p className={"text-xs text-green-layer1 font-semibold"}>{history.version}</p>
                 </div>
             );
         case CompatibilityStatus.PARTIAL_SUPPORT:
             return (
-                <div title={"일부 지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-yellow-default"}>
+                <div title={"일부 지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-yellow-layer1"}>
                     <Icon icon={"PartialIcon"} className={"stroke-yellow w-[1rem] h-[1rem]"} />
-                    <p className={"text-xs text-yellow-default font-semibold"}>{history.version}</p>
+                    <p className={"text-xs text-yellow-layer1 font-semibold"}>{history.version}</p>
                 </div>
             );
         case CompatibilityStatus.NO_SUPPORT:
             return (
-                <div title={"미지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-red-default"}>
+                <div title={"미지원"} className={"flex items-center gap-[8px] p-[2px_8px] rounded-[12px] bg-red-layer1"}>
                     <Icon icon={"CancelIcon"} className={"stroke-red w-[1rem] h-[1rem]"} />
-                    <p className={"text-xs text-red-default font-semibold"}>{history.version || "No"}</p>
+                    <p className={"text-xs text-red-layer1 font-semibold"}>{history.version || "No"}</p>
                 </div>
             );
         default:
@@ -75,7 +75,7 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
                         }
                     </Feature>
                 </Td>
-                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "msgBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("msgBot", compat.support.msgBot)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "msgBot") ? "md:border-b-layer1 md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("msgBot", compat.support.msgBot)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.msgBot[compat.support.msgBot.length - 1]} /></div>
                         <p className="block md:hidden">메신저봇R</p>
@@ -89,7 +89,7 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
                         )
                     }
                 </Td>
-                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "autoReplyBot") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("autoReplyBot", compat.support.autoReplyBot)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "autoReplyBot") ? "md:border-b-layer1 md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("autoReplyBot", compat.support.autoReplyBot)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.autoReplyBot[compat.support.autoReplyBot.length - 1]} /></div>
                         <p className="block md:hidden">채팅 자동응답 봇</p>
@@ -103,7 +103,7 @@ export default function AppCompatItem({ compat, ...p }: IAppCompatItem) {
                         )
                     }
                 </Td>
-                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "starLight") ? "md:border-b-emphasis md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("starLight", compat.support.starLight)}>
+                <Td className={`cursor-pointer md:hover:bg-default-hover ${(selected === "starLight") ? "md:border-b-layer1 md:border-b-[2px]" : ""}`} onClick={() => trOnClickHandler("starLight", compat.support.starLight)}>
                     <div className={`flex items-center gap-[8px] h-full`}>
                         <div><AppCompatStatusIcon history={compat.support.starLight[compat.support.starLight.length - 1]} /></div>
                         <p className="block md:hidden">StarLight</p>

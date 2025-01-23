@@ -25,7 +25,7 @@ export default function PageDir({ doc, onLinkClick, children, className, ...p }:
     return (
         <div className={`${className || ""}`} {...p}>
             <div
-                className={"flex justify-between items-center gap-[6px] p-[6px_8px] rounded text-sm text-description cursor-pointer select-none hover:bg-emphasis hover:text-default"}
+                className={"flex justify-between items-center gap-[6px] p-[6px_8px] rounded text-sm text-description cursor-pointer select-none hover:bg-layer1 hover:text-default"}
                 onClick={buttonOnClickHandler}>
                 <div>{doc.label}</div>
                 <Icon icon={"ArrowIcon"} className={`stroke-default w-[.75rem] h-[.75rem] ${(isFold) ? "rotate-[0deg]" : "rotate-[90deg]"}`}/>

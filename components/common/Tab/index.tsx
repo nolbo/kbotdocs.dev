@@ -24,7 +24,7 @@ export default function Tab({ items, className, ...p }: ITab) {
                         <div
                             key={i}
                             onClick={ () => tabOnClickHandler(i) }
-                            className={`flex justify-center items-center box-border h-[40px] p-[0px_12px] cursor-pointer text-sm rounded-[4px_4px_0_0] border-b-[2px] select-none hover:bg-emphasis hover:text-default ${(selectedIndex === i) ? 'font-bold border-b-emphasis text-default' : 'font-normal border-b-transparent text-noimportance'}`}
+                            className={`flex justify-center items-center box-border h-[40px] p-[0px_12px] cursor-pointer text-sm rounded-[4px_4px_0_0] border-b-[2px] select-none hover:bg-layer1 hover:text-default ${(selectedIndex === i) ? 'font-bold border-b-layer1 text-default' : 'font-normal border-b-transparent text-noimportance'}`}
                         >{ e.label }</div>
                     ))
                 }

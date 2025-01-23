@@ -54,7 +54,7 @@ const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => 
 
     return (
         <div className={"relative"} ref={wrapperRef}>
-            <button className={`flex justify-between items-center gap-x-[8px] outline-none overflow-auto text-default rounded-[6px] appearance-none w-full p-[6px_8px] border-[1px] border-default hover:bg-default-hover ${(isFocused) ? "bg-emphasis [&_svg]:rotate-[270deg]" : "bg-default [&_svg]:rotate-[90deg]"}`}>
+            <button className={`flex justify-between items-center gap-x-[8px] outline-none overflow-auto text-default rounded-[6px] appearance-none w-full p-[6px_8px] border-[1px] border-default hover:bg-default-hover ${(isFocused) ? "bg-layer1 [&_svg]:rotate-[270deg]" : "bg-default [&_svg]:rotate-[90deg]"}`}>
                 <p className={"relative pr-[16px] text-sm text-left w-[calc(100%_-_12px)] whitespace-nowrap overflow-auto after:content-[''] after:block after:absolute after:top-0 after:left-0 after:w-full after:h-full after:from-transparent after:from-97% after:to-[var(--bg-default)] [-webkit-scrollbar]:none"}>
                     { options.find(e => e.value === value)?.label }
                 </p>
@@ -82,7 +82,7 @@ const Select = ({ children, ...p }: SelectHTMLAttributes<HTMLSelectElement>) => 
                                         </div>
                                     }
                                     <li 
-                                        className={`flex items-center relative p-[6px_8px] ${(optGroup) ? "pl-[1rem]" : "pl-[8px]"} rounded-[4px] ${(value === e.value) ? "bg-emphasis hover:bg-emphasis-hover before:block" : "bg-default hover:bg-default-hover before:hidden"} cursor-pointer before:content-[''] before:absolute before:left-[-8px] before:w-[2px] before:h-[calc(100%-12px)] before:rounded-[4px] before:bg-[theme(textColor.default)]`}
+                                        className={`flex items-center relative p-[6px_8px] ${(optGroup) ? "pl-[1rem]" : "pl-[8px]"} rounded-[4px] ${(value === e.value) ? "bg-layer1 hover:bg-layer1-hover before:block" : "bg-default hover:bg-default-hover before:hidden"} cursor-pointer before:content-[''] before:absolute before:left-[-8px] before:w-[2px] before:h-[calc(100%-12px)] before:rounded-[4px] before:bg-[theme(textColor.default)]`}
                                         ref={ (value === e.value) ? selectedItemRef : null } onClick={ (_e) => { itemsOnClick(e.value) } }>{ e.label }</li>
                                 </Fragment>
                                 

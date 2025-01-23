@@ -22,12 +22,18 @@ export default function CodeBlock({ language, content } : ICodeBlock) {
     };
 
     return (
-        <div className={"overflow-clip min-w-[0] rounded-[8px] border border-[var(--sthl-pre-border)]"}>
-            <div className={"flex justify-between items-center gap-[8px] box-border z-[1] p-[4px_16px] h-[32px] rounded text-sm text-description bg-default"}>
-                <p className={"font-mono"}>{ language.toUpperCase() }</p>
-                <Icon
-                    icon={ (isCopied) ? "CheckIcon" : "CopyIcon" } onClick={ () => { CopyIconOnClickHandler(content) } }
-                    className={`rounded-sm w-[12px] h-[12px] ${(isCopied) ? "stroke-green-500" : "stroke-[theme(textColor.description)]"} cursor-pointer transition-[stroke] duration-default ${(isCopied) ? "hover:stroke-green-500" : "hover:stroke-[theme(textColor.noimportance)]"}`} />
+        <div className={"relative overflow-clip min-w-[0] rounded-[8px] border border-[var(--sthl-pre-border)] [&:hover>:first-child]:opacity-100"}>
+            <div className={"absolute z-[1] top-[6px] right-[6px] flex justify-between items-center rounded overflow-clip border-[1px] border-default bg-default opacity-0 transition-opacity duration-[.2s]"}>
+                <div className={"flex justify-center items-center px-[8px] h-[32px] rounded text-sm text-description"}>
+                    <p className={"font-mono"}>{ language.toUpperCase() }</p>
+                </div>
+                <button
+                    onClick={ () => { CopyIconOnClickHandler(content) }}
+                    className={`flex justify-center items-center bg-layer2 w-[32px] h-[32px] rounded hover:bg-layer2-hover ${(isCopied) ? "stroke-green" : "stroke-default hover:stroke-default-hover"}`}>
+                    <Icon
+                        icon={ (isCopied) ? "CheckIcon" : "CopyIcon" }
+                        className={`w-[14px] h-[14px] transition-[stroke]`} />
+                </button>
             </div>
             <SyntaxHighlighter language={ language } style={ sthlTheme }>
                 { content }
