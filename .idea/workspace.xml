@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatHistoryItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompatHistoryItem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(String,Function)/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Object)/Http/(Method)/request(String,Function)/page.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +133,7 @@
       <workItem from="1737468478764" duration="13815000" />
       <workItem from="1737528116751" duration="41248000" />
       <workItem from="1737607853685" duration="9202000" />
-      <workItem from="1737617284135" duration="15387000" />
+      <workItem from="1737617284135" duration="15670000" />
     </task>
     <servers />
   </component>
