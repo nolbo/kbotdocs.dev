@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Utils";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -34,7 +34,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Utils.getLw()">
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getLw`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["getLw"]}/>
 </Section>

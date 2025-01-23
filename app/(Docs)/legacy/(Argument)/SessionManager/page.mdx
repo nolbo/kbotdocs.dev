@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/argument/SessionManager";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -45,8 +45,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="SessionManager 객체 메소드">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`bindSession(String, android.app.Notification.Action?)`](/legacy/SessionManager/bindSession(String,Action$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`bindSession(String, String, android.app.Notification.Action?)`](/legacy/SessionManager/bindSession(String,String,Action$))</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={Object.values(compatibility)}/>
 </Section>

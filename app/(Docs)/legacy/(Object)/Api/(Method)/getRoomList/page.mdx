@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Api";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -31,7 +31,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Api.getRoomList()">
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>`getRoomList`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["getRoomList"]}/>
 </Section>

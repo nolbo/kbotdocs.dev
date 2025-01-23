@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/api2/object/App";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -42,7 +42,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="App.runOnUiThread()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`runOnUiThread`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["runOnUiThread"]} />
 </Section>

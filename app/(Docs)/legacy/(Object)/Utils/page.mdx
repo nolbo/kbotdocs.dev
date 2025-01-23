@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Utils";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -206,31 +206,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Utils 객체 메소드">
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`compress`](/legacy/Utils/compress)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`copyToClipboard`](/legacy/Utils/copyToClipboard)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`delay`](/legacy/Utils/delay)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionCode`](/legacy/Utils/getAndroidVersionCode)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getAndroidVersionName`](/legacy/Utils/getAndroidVersionName)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getLw`](/legacy/Utils/getLw)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getLwLined`](/legacy/Utils/getLwLined)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneBrand`](/legacy/Utils/getPhoneBrand)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getPhoneModel`](/legacy/Utils/getPhoneModel)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getRandomUserAgent`](/legacy/Utils/getRandomUserAgent)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`getWeatherJSON`](/legacy/Utils/getWeatherJSON)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.PARTIAL_SUPPORT}>[`getWebText`](/legacy/Utils/getWebText)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getWebText2`](/legacy/Utils/getWebText2)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`getZoneIdByName`](/legacy/Utils/getZoneIdByName)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`isUndefined`](/legacy/Utils/isUndefined)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`measureNanoTime`](/legacy/Utils/measureNanoTime)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`measureTimeMillis`](/legacy/Utils/measureTimeMillis)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`parse`](/legacy/Utils/parse)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`randomAlphanumeric`](/legacy/Utils/randomAlphanumeric)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`removeRLO`](/legacy/Utils/removeRLO)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`removeTags`](/legacy/Utils/removeTags)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`sleep`](/legacy/Utils/sleep)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`toast`](/legacy/Utils/toast)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.NO_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`vibrate`](/legacy/Utils/vibrate)</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`xmlToJson`](/legacy/Utils/xmlToJson)</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={Object.values(compatibility)}/>
 </Section>

@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/api2/object/FileStream";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -14,10 +14,6 @@ export const metadata = {
     ## FileStream.write()
 
     문자열을 `path` 경로의 파일에 덮어씁니다. 파일이 존재하지 않을 경우 `path` 경로의 파일을 생성합니다. 덮어쓰거나 생성한 파일의 최종 내용을 반환합니다.
-
-    <Noti type={"info"}>
-        채팅 자동응답 봇에서는 반환값이 존재하지 않습니다. (`void`)
-    </Noti>
 </Section>
 <Section>
     ## 구문
@@ -49,7 +45,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="FileStream.write()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`write`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["write"]}/>
 </Section>

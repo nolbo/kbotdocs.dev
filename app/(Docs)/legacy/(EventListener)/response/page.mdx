@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/eventListener/response";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -19,7 +19,7 @@ export const metadata = {
     ## 구문
 
     ~~~js
-    function response(room: String, msg: String, sender: String, isGroupChat: Boolean, replier: Replier, imageDB: ImageDB, packageName: String) {
+    response(room: String, msg: String, sender: String, isGroupChat: Boolean, replier: Replier, imageDB: ImageDB, packageName: String, isMention: Boolean, logId: BigInt, channelId: BigInt, userHash: String) {
 
     }
     ~~~
@@ -56,13 +56,27 @@ export const metadata = {
             <Dd>
                 메시지가 발신된 메신저 앱의 패키지명입니다.
             </Dd>
+            <Dt>`isMention`</Dt>
+            <Dd>
+                메시지 내 멘션 포함 여부입니다.
+            </Dd>
+            <Dt>`logId`</Dt>
+            <Dd>
+                메시지에 대한 고유 ID입니다.
+            </Dd>
+            <Dt>`channelId`</Dt>
+            <Dd>
+                메시지가 발신된 방의 고유 ID입니다.
+            </Dd>
+            <Dt>`userHash`</Dt>
+            <Dd>
+                발신자의 고유 해시입니다. 해시는 같은 방 내에서 고유합니다.
+            </Dd>
         </Dl>
     </Section>
 </Section>
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="response">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`response`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={Object.values(compatibility)}/>
 </Section>

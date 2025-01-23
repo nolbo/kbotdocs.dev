@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/argument/Replier";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -28,15 +28,8 @@ export const metadata = {
             <Tr>
                 <Td><span>`Boolean`</span></Td>
                 <Td>
-                    [`markAsRead`](/legacy/Replier/markAsRead(String$))`(packageName?: String)` \
-                    메시지가 온 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
-                </Td>
-            </Tr>
-            <Tr>
-                <Td><span>`Boolean`</span></Td>
-                <Td>
-                    [`markAsRead`](/legacy/Replier/markAsRead(String,String$))`(room: String, packageName?: String)` \
-                    특정 방의 메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
+                    [`markAsRead`](/legacy/Replier/markAsRead)`(room?: String, packageName?: String)` \
+                    메시지를 읽음 처리합니다. 방에 대한 알림 읽기 세션을 찾을 수 있는지의 여부를 반환합니다.
                 </Td>
             </Tr>
             <Tr>
@@ -73,12 +66,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Replier 객체 메소드">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsRead(String?)`](/legacy/Replier/markAsRead(String$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`markAsRead(String, String?)`](/legacy/Replier/markAsRead(String,String$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reply(String)`](/legacy/Replier/reply(String))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.PARTIAL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>[`reply(String, String, Boolean?)`](/legacy/Replier/reply(String,String,Boolean$))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`replyDelayed(String, Number)`](/legacy/Replier/replyDelayed(String,Number))</AppCompatibilityItem>
-        <AppCompatibilityItem msgBot={Compatibility.PARTIAL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.NO_SUPPORT}>[`replyDelayed(String, String, Number, Boolean?)`](/legacy/Replier/replyDelayed(String,String,Number,Boolean$))</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={Object.values(compatibility)}/>
 </Section>

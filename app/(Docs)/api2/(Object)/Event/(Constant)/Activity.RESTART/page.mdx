@@ -1,0 +1,35 @@
+import {compatibility} from "@/constants/compatibility/api2/object/Event";
+import {openGraph} from "@/constants/metadata";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "Event.Activity.RESTART - API2",
+    openGraph: {
+        ...openGraph,
+        title: "Event.Activity.RESTART - API2"
+    }
+}
+
+<Section>
+    ## Event.Activity.RESTART
+
+    API2의 [`activityRestart`](/api2/activityRestart) 이벤트입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    Event.Activity.RESTART;
+    ~~~
+
+    <Section>
+        ### 상수값
+
+        `String` - `"activityRestart"`
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompat compats={compatibility["Activity.RESTART"]}/>
+</Section>

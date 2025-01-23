@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Api";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -49,7 +49,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Api.replyToID(BigInt, String, Boolean)">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`replyToID(BigInt, String, Boolean)`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["replyToID(BigInt,String,Boolean)"]}/>
 </Section>

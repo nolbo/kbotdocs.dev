@@ -1,4 +1,4 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/legacy/object/Api";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -42,7 +42,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="Api.getActiveThreadsCount()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.NO_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`getActiveThreadsCount`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["getActiveThreadsCount"]}/>
 </Section>

@@ -113,7 +113,16 @@ export default {
             xl: "1.5rem",
             "2xl": "2rem",
             "3xl": "2.5rem",
-            "4xl": "3rem"
+            "4xl": "3rem",
+            "rel-xs": ".75em",
+            "rel-sm": ".875em",
+            "rel-base": "1em",
+            "rel-md": "1.125em",
+            "rel-lg": "1.25em",
+            "rel-xl": "1.5em",
+            "rel-2xl": "2em",
+            "rel-3xl": "2.5em",
+            "rel-4xl": "3em",
         },
         lineHeight: {
             tight: "1.25",
@@ -138,7 +147,11 @@ export default {
                 default: "var(--text-default)",
                 emphasis: "var(--text-emphasis)",
                 description: "var(--text-description)",
-                noimportance: "var(--text-noimportance)"
+                noimportance: "var(--text-noimportance)",
+                "blue-default": "var(--text-blue)",
+                "green-default": "var(--text-green)",
+                "red-default": "var(--text-red)",
+                "yellow-default": "var(--text-yellow)",
             },
             backgroundColor: {
                 default: "var(--bg-default)",
@@ -191,14 +204,17 @@ export default {
             },
             fill: {
                 none: "none",
-                logo: "var(--fill-logo)",
-                default: "var(--stroke-default)",
-                "default-hover": "var(--stroke-default-hover)",
+                logo: "var(--icon-logo)",
+                default: "var(--icon-default)",
+                "default-hover": "var(--icon-default-hover)",
+                emphasis: "var(--icon-emphasis)",
                 "inherit-text": "var(--text-default)"
             },
             stroke: {
-                default: "var(--stroke-default)",
-                "default-hover": "var(--stroke-default-hover)",
+                none: "none",
+                default: "var(--icon-default)",
+                "default-hover": "var(--icon-default-hover)",
+                emphasis: "var(--icon-emphasis)",
                 "inherit-text": "var(--text-default)"
             },
             transitionDuration: {

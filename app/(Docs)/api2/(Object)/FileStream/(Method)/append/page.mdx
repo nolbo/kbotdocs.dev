@@ -1,5 +1,6 @@
-import { Compatibility } from "@/constants/compatibility";
+import {compatibility} from "@/constants/compatibility/api2/object/FileStream";
 import {openGraph} from "@/constants/metadata";
+import AppCompat from "../../../../../../../components/common/AppCompat";
 
 export const metadata = {
     metadataBase: new URL("https://kbotdocs.dev"),
@@ -45,7 +46,5 @@ export const metadata = {
 <Section>
     ## 앱 호환성
 
-    <AppCompatibility listTitle="FileStream.append()">
-        <AppCompatibilityItem msgBot={Compatibility.FULL_SUPPORT} arBot={Compatibility.FULL_SUPPORT} sl={Compatibility.FULL_SUPPORT}>`append`</AppCompatibilityItem>
-    </AppCompatibility>
+    <AppCompat compats={compatibility["append"]}/>
 </Section>

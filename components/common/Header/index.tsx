@@ -1,11 +1,13 @@
 "use client";
 
-import {useEffect, useRef} from "react";
+import {Suspense, useEffect, useRef} from "react";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
 import ThemeButton from "@/components/common/ThemeButton";
 import IconButton from "@/components/common/IconButton";
 import PageTree from "@/components/common/PageTree";
+import {MDXRemote} from "next-mdx-remote/rsc";
+import MDXClient from "@/components/common/MDXClient";
 import {usePathname} from "next/navigation";
 
 export default function Header() {
