@@ -11,6 +11,7 @@ import Noti from "@/components/common/Noti";
 import FeatureStatusIcon from "@/components/common/FeatureStatusIcon";
 import Feature from "@/components/common/Feature";
 import MDXClient from "@/components/common/MDXClient";
+import FeatureStatusNoti from "@/components/common/FeatureStatusNoti";
 
 export const mdxComponents: MDXComponents = {
     h2({children, ...p}) {
@@ -149,6 +150,9 @@ export const mdxComponents: MDXComponents = {
     },
     Feature({children, ...p}) {
         return (<Feature {...p}>{ children }</Feature>);
+    },
+    FeatureStatusNoti({...p}) {
+        return (<FeatureStatusNoti {...p} />);
     }
 };
 

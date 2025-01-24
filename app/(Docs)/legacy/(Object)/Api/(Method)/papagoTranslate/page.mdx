@@ -10,12 +10,7 @@ export const metadata = {
     }
 }
 
-<Section>
-    <Noti type="deprecated">
-        해당 메소드는 Papago API 지원 중단으로 인해 지원이 중지되었습니다. 그러므로 더 이상 실제 변역 기능을 수행하지 않습니다.
-        하위 호환성을 위해 메소드는 유지되지만, 메신저봇R에서는 항상 `null`을 반환하며 채팅 자동응답 봇에서는 `"Error Code: 051"`을 반환합니다.
-    </Noti>
-</Section>
+<FeatureStatusNoti featureStatus={compatibility["papagoTranslate"].status} />
 <Section>
     ## Api.papagoTranslate()
 

@@ -10,11 +10,7 @@ export const metadata = {
     }
 }
 
-<Section>
-    <Noti type={"nonStandard"}>
-        해당 메소드는 비표준입니다.
-    </Noti>
-</Section>
+<FeatureStatusNoti featureStatus={compatibility["setGlobalVariable"].status} />
 <Section>
     ## Bridge.setGlobalVariable()
 

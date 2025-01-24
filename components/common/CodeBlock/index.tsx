@@ -29,7 +29,7 @@ export default function CodeBlock({ language, content } : ICodeBlock) {
                 </div>
                 <button
                     onClick={ () => { CopyIconOnClickHandler(content) }}
-                    className={`flex justify-center items-center bg-layer2 w-[32px] h-[32px] rounded hover:bg-layer2-hover ${(isCopied) ? "stroke-green" : "stroke-default hover:stroke-default-hover"}`}>
+                    className={`flex justify-center items-center bg-layer1 w-[32px] h-[32px] rounded hover:bg-layer1-hover ${(isCopied) ? "stroke-green" : "stroke-default hover:stroke-default-hover"}`}>
                     <Icon
                         icon={ (isCopied) ? "CheckIcon" : "CopyIcon" }
                         className={`w-[14px] h-[14px] transition-[stroke]`} />
