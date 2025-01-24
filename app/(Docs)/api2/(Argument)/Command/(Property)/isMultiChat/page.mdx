@@ -1,0 +1,35 @@
+import {compatibility} from "@/constants/compatibility/api2/argument/Command";
+import {openGraph} from "@/constants/metadata";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "Command.isMultiChat - API2",
+    openGraph: {
+        ...openGraph,
+        title: "Command.isMultiChat - API2"
+    }
+}
+
+<Section>
+    ## Command.isMultiChat
+
+    메신저 앱이 듀얼 메신저인지의 여부입니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    cmd.isMultiChat;
+    ~~~
+
+    <Section>
+        ### 값
+
+        `Boolean` - 메신저 앱이 듀얼 메신저인지의 여부입니다.
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompat compats={compatibility["isMultiChat"]}/>
+</Section>

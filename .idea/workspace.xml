@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/common/FeatureStatusNoti/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/(Property)/isMultiChat/page.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/(Property)/isMultiChat/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/papagoTranslate/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Api/(Method)/papagoTranslate/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getGlobalVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getGlobalVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/getVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setGlobalVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setGlobalVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setVariable/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/legacy/(Object)/Bridge/(Method)/setVariable/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/starlight/(Argument)/Message/(Property)/image/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/starlight/(Argument)/Message/(Property)/image/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatHistoryItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompatHistoryItem/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/CodeBlock/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/CodeBlock/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/svg/MarkerIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/MarkerIcon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Command/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/api2/(Argument)/Message/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/FeatureStatusNoti/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/FeatureStatusNoti/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/argument/Command.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Command.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/argument/Message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/argument/Message.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,31 +52,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/constants/compatibility/legacy/eventListener&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/app/(Docs)/api2/(Argument)/Command/(Property)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\api2\(Argument)\Command\(Property)" />
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\api2\(Argument)\Message\(Property)" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility\legacy\eventListener" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility\legacy\object" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility\api2\argument" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\constants\compatibility\api2\event" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\api2\(Object)\Event\(Constant)" />
@@ -148,7 +144,7 @@
       <workItem from="1737640587534" duration="10625000" />
       <workItem from="1737701965642" duration="6454000" />
       <workItem from="1737734866647" duration="86000" />
-      <workItem from="1737735030430" duration="2631000" />
+      <workItem from="1737735030430" duration="3420000" />
     </task>
     <servers />
   </component>
