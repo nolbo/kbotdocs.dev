@@ -84,6 +84,21 @@ export const Docs: Doc[] = [
                         ]
                     },
                     {
+                        label: "console",
+                        path: "/legacy/console",
+                        children: [
+                            {
+                                label: "메소드",
+                                children: [
+                                    { label: "debug()", path: "/legacy/console/debug" },
+                                    { label: "error()", path: "/legacy/console/error" },
+                                    { label: "info()", path: "/legacy/console/info" },
+                                    { label: "log()", path: "/legacy/console/log" },
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         label: "DataBase",
                         path: "/legacy/DataBase",
                         children: [
@@ -396,6 +411,21 @@ export const Docs: Doc[] = [
                         ]
                     },
                     {
+                        label: "console",
+                        path: "/api2/console",
+                        children: [
+                            {
+                                label: "메소드",
+                                children: [
+                                    { label: "debug()", path: "/api2/console/debug" },
+                                    { label: "error()", path: "/api2/console/error" },
+                                    { label: "info()", path: "/api2/console/info" },
+                                    { label: "log()", path: "/api2/console/log" },
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         label: "Database",
                         path: "/api2/Database",
                         children: [
@@ -653,6 +683,7 @@ export const Docs: Doc[] = [
                                     { label: "isDebugRoom", path: "/api2/Command/isDebugRoom" },
                                     { label: "isGroupChat", path: "/api2/Command/isGroupChat" },
                                     { label: "isMention", path: "/api2/Command/isMention" },
+                                    { label: "isMultiChat", path: "/api2/Command/isMultiChat" },
                                     { label: "logId", path: "/api2/Command/logId" },
                                     { label: "packageName", path: "/api2/Command/packageName" },
                                     { label: "room", path: "/api2/Command/room" },
@@ -694,6 +725,7 @@ export const Docs: Doc[] = [
                                     { label: "isDebugRoom", path: "/api2/Message/isDebugRoom" },
                                     { label: "isGroupChat", path: "/api2/Message/isGroupChat" },
                                     { label: "isMention", path: "/api2/Message/isMention" },
+                                    { label: "isMultiChat", path: "/api2/Message/isMultiChat" },
                                     { label: "logId", path: "/api2/Message/logId" },
                                     { label: "packageName", path: "/api2/Message/packageName" },
                                     { label: "room", path: "/api2/Message/room" },

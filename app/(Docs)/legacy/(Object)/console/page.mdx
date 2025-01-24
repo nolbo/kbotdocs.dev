@@ -1,0 +1,68 @@
+import {compatibility} from "@/constants/compatibility/legacy/object/console";
+import {openGraph} from "@/constants/metadata";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "console - 레거시 API",
+    openGraph: {
+        ...openGraph,
+        title: "console - 레거시 API"
+    }
+}
+
+<FeatureStatusNoti featureStatus={compatibility["console"].status} />
+<Section>
+    ## console
+
+    `console` 객체는 앱 내 스크립트 로그에 로그를 기록할 수 있게 하는 객체입니다.
+
+    <Noti type={"info"}>
+        `console` 객체를 사용하기 위해 스크립트를 생성할 때 **Console API를 사용합니다 (실험적)** 항목을 선택해야 합니다.
+    </Noti>
+</Section>
+<Section>
+    ## 메소드
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan="2">`console` 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Feature featureStatus={compatibility["debug"].status}>[`debug`](/api2/console/debug)`(str: String, showToast?: Boolean = false)`</Feature> \
+                    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Feature featureStatus={compatibility["error"].status}>[`error`](/api2/console/error)`(str: String, showToast?: Boolean = false)`</Feature> \
+                    에러 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Feature featureStatus={compatibility["info"].status}>[`info`](/api2/console/info)`(str: String, showToast?: Boolean = false)`</Feature> \
+                    정보 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>`void`</span></Td>
+                <Td>
+                    <Feature featureStatus={compatibility["log"].status}>[`log`](/api2/console/log)`(str: String)`</Feature> \
+                    정보 로그를 작성합니다.
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompat compats={Object.values(compatibility)}/>
+</Section>

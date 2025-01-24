@@ -1,0 +1,45 @@
+import {compatibility} from "@/constants/compatibility/legacy/object/console";
+import {openGraph} from "@/constants/metadata";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "console.debug() - 레거시 API",
+    openGraph: {
+        ...openGraph,
+        title: "console.debug() - 레거시 API"
+    }
+}
+
+<FeatureStatusNoti featureStatus={compatibility["debug"].status} />
+<Section>
+    ## console.debug()
+
+    디버그 로그를 작성합니다. `showToast?`의 값이 `true`일 경우 작성된 로그를 토스트 메시지로 출력합니다.
+</Section>
+<Section>
+    ## 구문
+
+    ~~~js
+    console.debug(str: String, showToast?: Boolean = false);
+    ~~~
+
+    <Section>
+        ### 매개변수
+
+        <Dl>
+            <Dt>`str`</Dt>
+            <Dd>
+                작성할 디버그 로그의 내용
+            </Dd>
+            <Dt>`showToast?`</Dt>
+            <Dd>
+                작성된 로그를 토스트 메시지로 출력할 것인지의 여부
+            </Dd>
+        </Dl>
+    </Section>
+</Section>
+<Section>
+    ## 앱 호환성
+
+    <AppCompat compats={compatibility["debug"]}/>
+</Section>

@@ -1,3 +1,4 @@
+import {compatibility as comp_console} from "@/constants/compatibility/legacy/object/console";
 import {openGraph} from "@/constants/metadata";
 
 export const metadata = {
@@ -44,6 +45,12 @@ export const metadata = {
                 <Td><span>[`Bridge`](/legacy/Bridge)</span></Td>
                 <Td>
                     다른 스크립트의 전역 스코프에 접근하기 위한 객체입니다.
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span><Feature featureStatus={comp_console["console"].status}>[`console`](/api2/console)</Feature></span></Td>
+                <Td>
+                    앱 내 스크립트 로그에 로그를 기록할 수 있게 하는 객체입니다.
                 </Td>
             </Tr>
             <Tr>
