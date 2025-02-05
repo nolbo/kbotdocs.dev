@@ -48,7 +48,8 @@
         --bg-yellow-layer1-hover: light-dark(theme("colors.yellow.200"), theme("colors.yellow.800"));
         --border-default: light-dark(theme("colors.gray.100"), theme("colors.gray.800"));
         --border-default-hover: light-dark(theme("colors.gray.200"), theme("colors.gray.700"));
-        --border-layer1: light-dark(theme("colors.gray.900"), theme("colors.gray.100"));
+        --border-layer1: light-dark(theme("colors.gray.200"), theme("colors.gray.700"));
+        --border-emphasis: light-dark(theme("colors.gray.900"), theme("colors.gray.100"));
         --border-noimportance: light-dark(theme("colors.gray.100"), theme("colors.gray.900"));
         --border-blue-default: light-dark(theme("colors.blue.500"), theme("colors.blue.700"));
         --border-green-default: light-dark(theme("colors.green.500"), theme("colors.green.800"));

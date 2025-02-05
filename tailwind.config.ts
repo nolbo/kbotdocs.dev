@@ -184,6 +184,7 @@ export default {
                 default: "var(--border-default)",
                 "default-hover": "var(--border-default-hover)",
                 layer1: "var(--border-layer1)",
+                emphasis: "var(--border-emphasis)",
                 noimportance: "var(--border-noimportance)",
                 "blue-default": "var(--border-blue-default)",
                 "green-default": "var(--border-green-default)",

@@ -69,7 +69,7 @@ export default function TOC({ onAnchorClick, className, ...p } : ITOC) {
                 headers.map((e, i) => {
                     return (
                         <li key={i} id={`a${e.id}`}
-                            className={`list-none p-[0_1em] ${(e.classList.contains("sub")) ? "pl-[2em]" : ""} border-l-[2px] ${(pageInViewport === e.id) ? "border-l-layer1 text-default font-bold currentcon" : "border-l-noimportance text-noimportance font-normal"} cursor-pointer break-all hover:border-l-layer1 hover:text-default`}
+                            className={`list-none p-[0_1em] ${(e.classList.contains("sub")) ? "pl-[2em]" : ""} border-l-[2px] ${(pageInViewport === e.id) ? "border-l-emphasis text-default font-bold currentcon" : "border-l-default text-noimportance font-normal"} cursor-pointer break-all hover:border-l-default-hover hover:text-default`}
                             onClick={() => liOnClickHandler(e.id)}>{e.textContent}</li>
                     );
                 })

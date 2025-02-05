@@ -1,0 +1,123 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "JavaScript의 기본 문법 - 기초",
+    openGraph: {
+        ...openGraph,
+        title: "JavaScript의 기본 문법 - 기초"
+    }
+}
+
+<Section>
+    # JavaScript의 기본 문법
+
+    카카오톡봇을 개발하기에 앞서, 개발에 사용할 프로그래밍 언어인 JavaScript의 기본 문법을 소개합니다.
+
+    프로그래밍 언어는 각 언어마다 정해진 문법을 준수하는 것이 중요합니다. 당신이 연인에게 편지를 쓸 때엔 문법을 조금 틀려도 상대에게 의미를 전달할 수 있습니다 (물론 문서 작성자는 해본 적 없습니다).
+    하지만 프로그래밍 언어를 다룰 때 문법을 지키지 않으면 에러가 발생합니다. JavaScript에서 문법을 지키지 않았을 경우 `SyntaxError`(구문 에러)를 "던집"니다.
+</Section>
+<Section>
+    ## 괄호와 따옴표
+
+    괄호와 따옴표는 짝이 맞아야 합니다.
+
+    ~~~js
+    msg.reply("Hello, world!"); // 올바른 예
+    msg.reply("Hello, world!"; // 잘못된 예: 닫는 괄호가 존재하지 않습니다.
+    msg.reply"Hello, world!"); // 잘못된 예: 여는 괄호가 존재하지 않습니다.
+    msg.reply("Hello, world!); // 잘못된 예: 닫는 따옴표가 존재하지 않습니다.
+    ~~~
+
+    ~~~js
+    /* 올바른 예 */
+    if (msg.content === "/date") {
+        msg.reply(new Date());
+    }
+
+    /* 잘못된 예: 닫는 중괄호가 존재하지 않습니다. */
+    if (msg.content === "/date") {
+        msg.reply(new Date());
+    ~~~
+</Section>
+<Section>
+    ## 세미콜론
+
+    세미콜론(`;`)은 JavaScript를 비롯한 많은 프로그래밍 언어에서 중요한 문법입니다. 세미콜론은 코드를 구분하는 기호입니다. 당신이 연인에게 편지를 쓸 때 문장을 구분하기 위해 마침표를 찍는 것과 같습니다.
+
+    ~~~js
+    let num = 23;
+    let str = "hello";
+    let isChecked = true;
+    ~~~
+
+    하지만 JavaScript에서는 코드의 끝마다 세미콜론을 붙이는 것을 강제하지 않습니다. 그러므로 아래와 같은 코드도 정상적으로 작동합니다.
+
+    ~~~js
+    let num = 23
+    let str = "hello"
+    let isChecked = true
+    ~~~
+
+    줄바꿈이 세미콜론 대신 코드의 끝을 구분해주기 때문입니다. 그럼에도 불구하고 세미콜론을 쓰기를 권장하는 이유는 코드의 끝을 명시적으로 구분할 수 있기 때문입니다. 아래의 예를 참고하세요.
+
+    ~~~js
+    /* 세미콜론이 코드를 구분해주므로 한줄로 작성해도 정상적으로 작동합니다. */
+    let num = 23; let str = "hello!"; let isChecked = true;
+
+    /* 세미콜론이 없으므로 코드를 구분하지 못하고 에러를 발생합니다. */
+    let num = 23 let str = "hello!" let isChecked = true
+    ~~~
+</Section>
+<Section>
+    ## 주석
+
+    주석(Comment)는 소스코드의 설명을 작성하기 위한 문법입니다. 주석 처리한 텍스트는 코드로 취급하지 않습니다. 한 줄의 주석을 추가할 땐 아래와 같이 `//`을 사용합니다.
+
+    ~~~js
+    const PI = 3.141592; // 원주율(π)의 값
+    ~~~
+
+    여기에서 '원주율(π)의 값' 이란 텍스트는 주석 처리되어 코드로 인식하지 않습니다.
+
+    한 줄 이상의 주석을 추가할 땐 아래와 같이 `/* */`을 사용합니다.
+
+    ~~~js
+    /*
+    두 수의 합을 계산하고 반환합니다.
+    매개변수
+    - num1: 합연산할 수 1
+    - num2: 합연산할 수 2
+    반환값
+    - num1과 num2를 합한 값
+    */
+    function plus(num1, num2) {
+        return num1 + num2;
+    }
+    ~~~
+
+    주석을 다는 것을 가볍게 생각할 수 있지만, 코드가 복잡해질수록 주석은 코드를 빠르게 이해하는데 필요한 수단이 됩니다.
+</Section>
+<Section>
+    ## 블록문
+
+    블록문(Block)은 여러분이 앞으로 익숙해질 정도로 많이 보게 될 표현문입니다. 블록문은 아래와 같습니다.
+
+    ~~~js
+    {
+        여기에 코드들이 들어갑니다.
+    }
+    ~~~
+
+    이렇게 중괄호로 묶인 코드 단위를 블록이라고 합니다. 블록은 앞으로 알아볼 조건문, 반복문 등에서 자주 사용하게 됩니다.
+
+    ~~~js
+    if (msg.content === "hello") {
+        msg.reply("hi.");
+    }
+    ~~~
+</Section>
+<Section>
+    <MileStone previous={Docs[3].children[2]} next={Docs[3].children[4]} />
+</Section>

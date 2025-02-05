@@ -1,0 +1,155 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export let metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "배열 - 기초",
+    openGraph: {
+        ...openGraph,
+        title: "배열 - 기초"
+    }
+}
+
+<Section>
+    # 배열
+
+    배열(Array)은 데이터들이 순서를 가지고 나열된 데이터 구조입니다. 배열 또한 변수에 저장할 수 있습니다. 배열은 다수의 데이터를 다루기 용이한 구조이며, 자주 쓰입니다.
+
+    당신이 초등학교 교사라고 가정해봅시다. 프로그래밍을 이용해 학생 정보를 처리하고자 할 때 `student1`, `student2`, ...와 같이 별개의 변수들을 각각 선언하면 학생들의 데이터를 효율적으로 처리할 수 없습니다.
+    반면, 반의 모든 학생들의 정보를 담은 배열 `students`를 선언하면 더 효율적으로 관리할 수 있습니다. 이 문서에서는 배열을 선언하고 다루는 방법을 소개합니다.
+</Section>
+<Section>
+    ## 배열 선언
+
+    배열을 선언할 땐 대괄호(`[]`)을 사용합니다.
+
+    ~~~js
+    let arr = [];
+    ~~~
+
+    위의 코드는 대괄호 사이에 아무것도 없으므로 빈 배열을 선언합니다. 직접 배열의 초깃값을 정할 수 있습니다.
+
+    ~~~js
+    let fruits = ["apple", "banana", "orange"];
+    ~~~
+
+    위의 코드는 3개의 문자열 데이터를 담은 배열을 선언합니다. JavaScript에서는 배열 안의 요소들이 같은 자료형일 필요가 없습니다.
+
+    ~~~js
+    let arr = [1, "hello", true];
+    ~~~
+
+    전체 배열을 메시지로 전송할 수 있습니다.
+
+    ~~~js
+    let arr = [1, "hello", true];
+    msg.reply(arr); // 메시지: "1,hello,true"
+    ~~~
+</Section>
+<Section>
+    ## 접근/할당
+
+    배열의 특정 요소에 접근하고 할당 때 인덱스(Index)를 사용합니다. 인덱스는 컴퓨터가 배열의 순서를 세는 방법입니다. 우리가 순서를 세는 방법과 다른 점은, 우리는 순서를 1부터 세지만 컴퓨터는 순서를 0부터 센다는 것입니다. 그러므로 당신이 배열의 2번째 요소에 접근하고 싶다면 컴퓨터에겐 1번째 요소에 접근하라고 명령해야 합니다.
+
+    배열의 특정 요소에 접근하는 방법은 아래와 같이 대괄호에 인덱스를 적는 것입니다.
+
+    ~~~js
+    let fruits = ["apple", "banana", "orange"];
+    fruits[0]; // "apple"을 반환합니다.
+    ~~~
+
+    배열의 특정 요소에 새로운 값을 할당하기 위해 `=` 연산자를 사용합니다.
+
+    ~~~js
+    let fruits = ["apple", "banana", "orange"];
+    fruits[1] = "grape";
+    msg.reply(fruits); // 메시지: "apple,grape,orange"
+    ~~~
+
+    <Noti type={"info"}>
+        배열의 마지막 요소에 접근하기 위해 고민할 수 있습니다. 만약 당신이 요소의 개수가 $$n$$인 배열의 마지막 요소에 접근하고자 한다면, `arr[n - 1]`과 같이 $$n - 1$$번째 요소에 접근하면 됩니다. 다행히, JavaScript에는 배열의 요소 개수를 쉽게 알아낼 수 있습니다.
+
+        `length` 프로퍼티(속성)은 배열의 요소 개수를 알려주는 속성입니다. 아래와 같이 사용할 수 있습니다.
+
+        ~~~js
+        let arr = ["Seoul", "Incheon", "Busan", "Daejeon"];
+        arr.length; // 4
+        ~~~
+
+        이를 이용하면 배열의 마지막 요소에 접근할 수 있습니다.
+
+        ~~~js
+        let arr = ["Seoul", "Incheon", "Busan", "Daejeon"];
+        arr[arr.length - 1]; // "Daejeon"
+        ~~~
+    </Noti>
+</Section>
+<Section>
+    ## 배열에 요소 추가하기
+
+    배열에 요소를 추가하는 방법은 다양합니다. 각각 배열의 처음, 마지막, 중간에 요소를 추가하는 방법이 존재합니다.
+
+    배열의 마지막에 요소를 추가하기 위해 아래와 같이 `push()` 메소드를 사용합니다.
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.push("grape");
+    msg.reply(arr); // 메시지: "apple,banana,orange,grape"
+    ~~~
+
+    배열의 처음 부분에 요소를 추가할 땐 아래와 같이 `unshift()` 메소드를 사용합니다.
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.unshift("grape");
+    msg.reply(arr); // 메시지: "grape,apple,banana,orange"
+    ~~~
+
+    배열의 중간 부분에 요소를 추가할 땐 `splice()` 메소드를 사용할 수 있습니다.
+
+    ~~~js
+    배열.splice(추가할_인덱스, 0, 추가할_데이터);
+    ~~~
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.splice(1, 0, "grape"); // 1번째 인덱스에 "grape"를 추가합니다.
+    msg.reply(arr); // 메시지: "apple,grape,banana,orange"
+    ~~~
+</Section>
+<Section>
+    ## 배열의 요소 제거하기
+
+    배열의 요소를 제거하는 방법은 또한 다양합니다. 각각 배열의 처음, 마지막, 중간에 존재하는 요소를 제거하는 방법이 존재합니다.
+
+    배열의 마지막 요소를 제거하기 위해 아래와 같이 `pop()` 메소드를 사용합니다.
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.pop();
+    msg.reply(arr); // 메시지: "apple,banana"
+    ~~~
+
+    배열의 처음 요소를 제거할 땐 아래와 같이 `shift()` 메소드를 사용합니다.
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.shift();
+    msg.reply(arr); // 메시지: "banana,orange"
+    ~~~
+
+    배열의 중간에 존재하는 요소를 추가할 때 또한 `splice()` 메소드를 사용할 수 있습니다. 다만 추가할 때와 조금 다르게 사용합니다.
+
+    ~~~js
+    배열.splice(제거할_인덱스, 1);
+    ~~~
+
+    ~~~js
+    let arr = ["apple", "banana", "orange"];
+    arr.splice(1, 1); // 1번째 인덱스에 존재하는 요소를 제거합니다.
+    msg.reply(arr); // 메시지: "apple,orange"
+    ~~~
+</Section>
+<Section>
+    <MileStone previous={Docs[3].children[6]} next={Docs[3].children[8]} />
+</Section>

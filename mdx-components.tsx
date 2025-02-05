@@ -12,6 +12,8 @@ import FeatureStatusIcon from "@/components/common/FeatureStatusIcon";
 import Feature from "@/components/common/Feature";
 import MDXClient from "@/components/common/MDXClient";
 import FeatureStatusNoti from "@/components/common/FeatureStatusNoti";
+import MileStone from "@/components/common/MileStone";
+import Details from "@/components/common/Details";
 
 export const mdxComponents: MDXComponents = {
     h2({children, ...p}) {
@@ -87,6 +89,9 @@ export const mdxComponents: MDXComponents = {
                     <InlineCode>{children}</InlineCode>
         );
     },
+    InlineCode({children}) {
+        return (<InlineCode>{children}</InlineCode>)  ;
+    },
     del(p) {
         return (<del className="text-noimportance" {...p}></del>);
     },
@@ -108,21 +113,14 @@ export const mdxComponents: MDXComponents = {
     Td({children, ...p}) {
         return (<Td {...p}>{children}</Td>);
     },
-    Blockquote({children, className, title}) {
-        let header;
-        let blockStyle = "bg-default-hover border-default-hover";
+    Blockquote({children}) {
 
         return (
             <blockquote
-                className={`flex flex-col gap-[4px] p-[8px_12px] rounded-[6px] border leading-normal md:p-[12px_16px] ${blockStyle}`}>
-                <div className={"flex items-center gap-[6px]"}>
-                    {header}
-                </div>
-                <div>
-                    {children}
-                </div>
+                className={`flex flex-col gap-[16px] w-full overflow-auto p-[8px_12px] rounded-[6px] leading-normal md:p-[12px_16px] bg-layer1`}>
+                {children}
             </blockquote>
-        )
+        );
     },
     Noti({children, ...p}) {
         return (<Noti {...p}>{children}</Noti>);
@@ -153,6 +151,12 @@ export const mdxComponents: MDXComponents = {
     },
     FeatureStatusNoti({...p}) {
         return (<FeatureStatusNoti {...p} />);
+    },
+    MileStone({...p}) {
+        return (<MileStone {...p} />);
+    },
+    Details({children, ...p}) {
+        return (<Details {...p}>{children}</Details>);
     }
 };
 

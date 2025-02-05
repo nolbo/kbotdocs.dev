@@ -1,0 +1,41 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "JavaScript와 카카오톡봇 - 기초",
+    openGraph: {
+        ...openGraph,
+        title: "JavaScript와 카카오톡봇 - 기초"
+    }
+}
+
+<Section>
+    # JavaScript와 카카오톡봇
+
+    들어가기 전에 JavaScript와 카카오톡봇에 대해 알아봅니다. 무엇이든지 공부하고자 하는 것에 대해 아는 것은 가장 기본이 됩니다.
+</Section>
+<Section>
+    ## JavaScript
+
+    **JavaScript**는 프론트엔드, 서버 등 다양한 분야에서 사용되는 프로그래밍 언어로, 다양한 런타임, 엔진이 존재합니다. 카카오톡봇 개발에 사용할 JavaScript 엔진은 Java로 구현된 JavaScript 엔진인 **Rhino**입니다.
+
+    Rhino 엔진은 최신 JavaScript의 feature를 완전히 지원하지 않습니다. 하지만 Java의 클래스를 객체로써 사용할 수 있습니다. 기초 자습서에서는 Java 클래스를 다루는 내용을 포함하지 않지만, 카카오톡봇 개발에 유용할 수 있습니다.
+
+    <Noti type={"info"}>
+        많은 사람들이 Java를 "JavaScript"의 줄임말로 알고 있지만 이는 잘못된 정보입니다. Java는 JavaScript와 별개인 또하나의 프로그래밍 언어의 이름이며, 많이 사용되는 JavaScript의 줄임말은 "JS"입니다.
+    </Noti>
+</Section>
+<Section>
+    ## 카카오톡봇
+
+    **카카오톡봇**은 카카오톡 상단바 알림을 읽고 자동으로 응답하는 자동응답 봇입니다.
+    카카오톡봇을 개발하고 작동시키기 위한 앱으로는 [메신저봇R](https://github.com/MessengerBotTeam/msgbot-old-release/releases), [채팅 자동응답 봇](https://github.com/DarkTornado/KakaoTalkBot/releases), [StarLight](https://starlight.mooner.dev/) 등이 있습니다.
+
+    <Noti type={"warning"}>
+        카카오톡봇을 작동하기 위해서는 구동 기기의 운영체제가 Android여야 하며, 5.0 이상 버전이여야 합니다.
+    </Noti>
+</Section>
+<Section>
+    <MileStone previous={Docs[3]} next={Docs[3].children[1]} />
+</Section>

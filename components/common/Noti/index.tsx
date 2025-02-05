@@ -82,7 +82,7 @@ export default function Noti({ children, className, type, title, ...p } : INoti)
             <div className={"flex items-center gap-[6px]"}>
                 { header }
             </div>
-            {children && (<div>{children}</div>)}
+            {children && (<div className="flex flex-col gap-[16px] w-full overflow-auto">{children}</div>)}
         </div>
     )
 }

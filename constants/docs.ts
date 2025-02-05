@@ -1063,11 +1063,18 @@ export const Docs: Doc[] = [
         ]
     },
     {
-        label: "기초",
-        path: "/basic"
-    },
-    {
-        label: "심화",
-        path: "/advanced"
+        label: "기초 자습서",
+        path: "/basic",
+        children: [
+            { label: "JavaScript와 카카오톡봇", path: "/basic/1-javascript-and-kakaotalkbot" },
+            { label: "개발 준비", path: "/basic/2-ready-for-dev" },
+            { label: "스크립트 작성", path: "/basic/3-write-script" },
+            { label: "JavaScript의 기본 문법", path: "/basic/4-basic-syntax-of-javascript" },
+            { label: "변수와 자료형", path: "/basic/5-variable-and-data-type" },
+            { label: "연산자", path: "/basic/6-operator" },
+            { label: "문자열", path: "/basic/7-string" },
+            { label: "배열", path: "/basic/8-array" },
+            { label: "조건문", path: "/basic/9-conditionals" }
+        ]
     },
 ] as const;
