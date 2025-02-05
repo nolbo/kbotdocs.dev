@@ -44,6 +44,9 @@ export default function TOC({ onAnchorClick, className, ...p } : ITOC) {
             if ((e.getBoundingClientRect().y <= 175) && ((i === headers.length - 1) || (headers[i + 1].getBoundingClientRect().y > 175))) {
                 if (pageInViewport !== e.id) setPageInViewport(e.id);
             }
+            if ((i === 0) && (e.getBoundingClientRect().y > 175)) {
+                setPageInViewport("");
+            }
         }
 
         if (headers.length > 0) {
