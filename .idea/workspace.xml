@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(Docs)/basic/10-loops/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/3-write-script/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/3-write-script/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/4-basic-syntax-of-javascript/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/4-basic-syntax-of-javascript/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/5-variable-and-data-type/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/5-variable-and-data-type/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/6-operator/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/6-operator/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/7-string/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/7-string/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/10-loops/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/10-loops/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/8-array/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/8-array/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/9-conditionals/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/9-conditionals/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/MileStone/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/MileStone/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/syntaxHighlighter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/styles/syntaxHighlighter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +145,7 @@
       <workItem from="1738732903087" duration="19618000" />
       <workItem from="1738776317747" duration="389000" />
       <workItem from="1738777136967" duration="7830000" />
-      <workItem from="1738821255652" duration="8665000" />
+      <workItem from="1738821255652" duration="10018000" />
     </task>
     <servers />
   </component>
