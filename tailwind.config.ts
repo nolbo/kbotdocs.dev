@@ -123,6 +123,7 @@ export default {
             "rel-2xl": "2em",
             "rel-3xl": "2.5em",
             "rel-4xl": "3em",
+            "codeblock": ".8375rem"
         },
         lineHeight: {
             tight: "1.25",

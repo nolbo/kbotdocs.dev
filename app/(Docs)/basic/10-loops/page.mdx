@@ -1,0 +1,475 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "반복문 - 기초 자습서",
+    openGraph: {
+        ...openGraph,
+        title: "반복문 - 기초 자습서"
+    }
+}
+
+<Section>
+    # 반복문
+
+    반복문(Loop)은 비슷한 동작을 반복적으로 수행할 필요가 있을 때 이를 효율적으로 처리하기 위해 사용하는 표현문입니다. 이 문서에서는 JavaScript에 존재하는 두 가지 반복문을 소개합니다.
+</Section>
+<Section>
+    ## 반복문이 필요한 이유
+
+    반복문을 사용하면 불필요하게 많은 코드의 사용을 줄이고 가독성을 높일 수 있습니다. 단순한 예를 들겠습니다.
+
+    여러분이 1부터 100까지의 숫자를 하나씩 메시지로 전송하고자 한다고 가정해봅시다. 반복문을 모른다면 아마 아래와 같이 코드를 작성하게 될겁니다.
+
+    ~~~js
+    msg.reply("1");
+    msg.reply("2");
+    msg.reply("3");
+    msg.reply("4");
+    msg.reply("5");
+    // ...
+    msg.reply("99");
+    msg.reply("100");
+    ~~~
+
+    1부터 100까지의 메시지를 보낸다는 단순한 동작임에도 불구하고 이를 구현하기 위해 100줄의 코드를 작성하게 됩니다. 반면, 곧 알아보게 될 반복문인 `for` 문을 사용하면 매우 간결한 코드로 같은 동작을 수행하게 할 수 있습니다.
+
+    ~~~js
+    for (let i = 1; i <= 101; i++) {
+        msg.reply(i);
+    }
+    ~~~
+
+    이외에도 반복문은 배열을 다루거나, 무언가를 반복적으로 확인해야 하는 작업에도 유리합니다.
+</Section>
+<Section>
+    ## for 문
+
+    `for` 문의 구문은 아래와 같습니다.
+
+    ~~~js
+    for (초기화식; 조건식; 증감식) {
+        // 반복적으로 수행할 코드
+    }
+    ~~~
+
+    이것으로는 `for` 문의 동작 방식을 이해하기 힘듭니다. `for` 문의 동작 방식은 다음과 같습니다.
+
+    1. 초기화식을 수행합니다.
+    2. 조건식을 평가합니다. 조건식이 `true`일 경우 `for` 문 내의 코드를 수행하고, `false`일 경우 반복문을 중단하고 다음 코드를 수행합니다.
+    3. `for` 문 내의 코드를 수행했을 경우 증감식을 수행합니다.
+    4. 2.와 3.을 반복합니다.
+
+    아래의 코드는 `for` 문이 어떻게 동작하는지 이해하기 위한 예제입니다.
+
+    ~~~js
+    for (let i = 0; i < 3; i++) {
+        msg.reply(`loop: ${i}`);
+    }
+    ~~~
+
+    **1번째 반복:**
+    1. 초기화식 `let i = 0`을 수행합니다. 변수 `i`를 선언하고 `0`을 할당합니다.
+    2. 조건식 `i < 3`를 평가합니다. `i`의 값은 `0`이므로 `true`입니다.
+    3. `for` 문 내의 코드를 수행합니다. `"loop: 0"`을 전송합니다.
+    4. 증감식 `i++`을 수행합니다. 이제 `i`의 값은 `1`입니다.
+
+    **2번째 반복:**
+    1. 조건식 `i < 3`를 평가합니다. `i`의 값은 `1`이므로 `true`입니다.
+    2. `for` 문 내의 코드를 수행합니다. `"loop: 1"`을 전송합니다.
+    3. 증감식 `i++`을 수행합니다. 이제 `i`의 값은 `2`입니다.
+
+    **3번째 반복:**
+    1. 조건식 `i < 3`를 평가합니다. `i`의 값은 `2`이므로 `true`입니다.
+    2. `for` 문 내의 코드를 수행합니다. `"loop: 2"`를 전송합니다.
+    3. 증감식 `i++`을 수행합니다. 이제 `i`의 값은 `3`입니다.
+
+    **4번째 반복:**
+    1. 조건식 `i < 3`를 평가합니다. `i`의 값은 `3`이므로 `false`입니다. 반복을 종료합니다.
+
+    그러므로 결과는 다음과 같습니다.
+
+    ~~~text
+    loop: 0
+    loop: 1
+    loop: 2
+    ~~~
+
+    `for` 문의 초기화식, 조건식, 증감식은 생략이 가능합니다. 아래는 조건식을 생략한 형태의 반복문입니다.
+
+    <Noti type="danger">
+        아래 예제 코드는 실행할 경우 피해를 입을 수 있습니다. 디버깅룸에서도 테스트하는 것을 권장하지 않으며 실제 채팅방에서도 작동하지 마세요.
+    </Noti>
+
+    ~~~js
+    for (let i = 0; ; i++) {
+        msg.reply("Infinity loop!");
+    }
+    ~~~
+
+    조건식을 생략할 경우, 조건식의 결과가 항상 `true`인 것으로 간주합니다. 그러므로 `for` 문의 내부에서 반복을 탈출하는 코드가 없으면 무한 반복하게 됩니다.
+    위 코드는 실행하면 `"Infinity loop!"`를 무한히 전송하게 됩니다.
+
+    <Noti type={"info"}>
+        만약 무한 반복을 중지하고자 한다면 절차에 따라 시행하세요.
+        1. 메신저봇R 메인 화면으로 이동하세요.
+        2. 작동한 코드의 프로젝트를 클릭하고 프로젝트 설정 버튼(맨 마지막 버튼)을 클릭하세요.
+        3. **모든 쓰레드 Interrupt 요청하기**를 클릭하세요.
+    </Noti>
+
+    초기화식, 조건식, 증감식을 모두 생략한 `for` 문의 형태는 다음과 같습니다.
+
+    ~~~js
+    for (;;) {
+        // 반복적으로 수행할 코드
+    }
+    ~~~
+</Section>
+<Section>
+    ## while 문
+
+    `while` 문은 JavaScript에서 지원하는 또다른 반복문으로 `for` 문보다 더 단순한 형태를 가집니다.
+
+    `while` 문의 구문은 아래와 같습니다.
+
+    ~~~js
+    while (조건식) {
+        // 반복적으로 수행할 코드
+    }
+    ~~~
+
+    1. 조건식을 평가합니다. 조건식이 `true`일 경우 `while` 문 내의 코드를 수행하고, `false`일 경우 반복문을 중단하고 다음 코드를 수행합니다.
+    2. `while` 문 내의 코드를 수행했을 경우 증감식을 수행합니다.
+    3. 1.과 2.를 반복합니다.
+
+    초기화식과 증감식은 `while` 문 자체에서 요구하지 않습니다. 그러므로 필요한 경우 별도로 작성해야 합니다.
+
+    ~~~js
+    let i = 0; // 초기화식
+    while (i < 3) {
+        msg.reply(`loop: ${i}`);
+        i++; // 증감식
+    }
+    ~~~
+
+    이 코드의 결과는 다음과 같습니다.
+
+    ~~~text
+    loop: 0
+    loop: 1
+    loop: 2
+    ~~~
+
+    <Section>
+        ### do ... while 문
+
+        `do...while` 문은 기존 `while` 문과 무언가가 다르며, 동작 방식 또한 차이가 있습니다. 구문은 아래와 같습니다.
+
+        ~~~js
+        do {
+            // 반복적으로 수행할 코드
+        }
+        while (조건식);
+        ~~~
+
+        `do...while` 문은 `while` 문과 다르게 `do` 내의 코드를 조건식의 판별 여부와 상관없이 최초 1번은 무조건 수행합니다. 동작 방식을 정리하면 다음과 같습니다.
+
+        1. `do` 내의 코드를 수행합니다.
+        2. `while`의 조건식을 평가합니다. 조건식이 `true`일 경우 `do` 내의 코드를 수행하고, `false`일 경우 반복문을 중단하고 다음 코드를 수행합니다.
+        3. `do` 내의 코드를 수행했을 경우 증감식을 수행합니다.
+        4. 2.와 3.을 반복합니다.
+
+        `do...while` 문 또한 초기화식과 증감식을 자체적으로 요구하지 않습니다. 그러므로 필요한 경우 별도로 작성해야 합니다.
+
+        ~~~js
+        let i = 0; // 초기화식
+        do {
+            msg.reply(`loop: ${i}`);
+            i++; // 증감식
+        }
+        while (i < 3);
+        ~~~
+
+        이 코드의 결과는 다음과 같습니다.
+
+        ~~~text
+        loop: 0
+        loop: 1
+        loop: 2
+        ~~~
+    </Section>
+</Section>
+<Section>
+    ## 반복 탈출하기: break
+
+    `break`는 `switch` 문에서만 쓰이지 않습니다. `for` 문, `while` 문과 같은 반복문에도 사용됩니다. 반복문에서 사용될 경우 해당 반복문을 탈출하고 반복문 다음의 코드를 수행하게 됩니다. 아래는 `break`를 활용한 예제입니다.
+
+    ~~~js
+    for (let i = 0; ; i++) {
+        if (i > 2) break; // i가 2보다 클 경우 반복문을 탈출합니다.
+        msg.reply(`loop: ${i}`);
+    }
+    ~~~
+
+    이 코드의 결과는 다음과 같습니다.
+
+    ~~~text
+    loop: 0
+    loop: 1
+    loop: 2
+    ~~~
+</Section>
+<Section>
+    ## 코드 건너뛰기: continue
+
+    `continue`는 반복문 내에서 사용하는 키워드로, 반복문 내의 코드를 수행하기를 중지하고 증감식 수행 단계로 건너뜁니다. `break`와 다르게 반복을 탈출하지 않습니다. 아래는 `continue`를 사용한 예제입니다.
+
+    ~~~js
+    for (let i = 0; i < 11; i++) {
+        if (i % 2 === 0) continue;
+        msg.reply(`loop: ${i}`);
+    }
+    ~~~
+
+    위 코드에서는 `i % 2 === 0`, 즉 `i`가 `2`로 나누어떨어지면(짝수이면) 반복문 내의 코드를 수행하기를 중지하고 증감식을 수행합니다. 그러므로 실행 결과는 다음과 같습니다.
+
+    ~~~text
+    loop: 1
+    loop: 3
+    loop: 5
+    loop: 7
+    loop: 9
+    ~~~
+</Section>
+<Section>
+    ## 활용: 타이머
+
+    명령어를 입력하면 1초마다 카운트다운을 하며 10초를 센 후 메시지를 보내는 기능을 반복문으로 구현할 수 있습니다. 어떤 반복문을 사용해도 되지만, 여기에서는 `for` 문을 사용하겠습니다.
+
+    ~~~js
+    const bot = BotManager.getCurrentBot();
+
+    function onCommand(msg) {
+        if (msg.command === "timer") {
+            // 여기에 코드를 작성할겁니다.
+        }
+    }
+    bot.setCommandPrefix("@");
+    bot.addListener(Event.COMMAND, onCommand);
+    ~~~
+
+    10부터 1까지 메시지를 보내주며 카운트다운을 합니다. 이 부분을 반복문을 사용해 간결하게 표현할 수 있습니다.
+
+    ~~~js
+    const bot = BotManager.getCurrentBot();
+
+    function onCommand(msg) {
+        if (msg.command === "timer") {
+            for (let i = 10; i > 0; i--) {
+                msg.reply(`카운트다운: ${i}초`);
+            }
+            msg.reply("10초가 지났습니다!");
+        }
+    }
+    bot.setCommandPrefix("@");
+    bot.addListener(Event.COMMAND, onCommand);
+    ~~~
+
+    '@timer' 명령어를 보내면 10부터 1까지 셉니다. 하지만 1초 간격마다 세지 않고 순식간에 1까지 세어버립니다. 1초만큼 딜레이를 주는 방법이 있어야합니다.
+
+    `java.lang.Thread.sleep()`은 입력된 시간만큼 코드의 흐름을 멈춥니다. 밀리초(1밀리초 = 1/1000초) 단위를 사용하기 때문에 1초 간 멈추기 위해서는 `java.lang.Thread.sleep(1000)`으로 사용해야 합니다.
+
+    ~~~js
+    const bot = BotManager.getCurrentBot();
+
+    function onCommand(msg) {
+        if (msg.command === "timer") {
+            for (let i = 10; i > 0; i--) {
+                msg.reply(`카운트다운: ${i}초`);
+                java.lang.Thread.sleep(1000); // 1초동안 멈춥니다.
+            }
+            msg.reply("10초가 지났습니다!");
+        }
+    }
+    bot.setCommandPrefix("@");
+    bot.addListener(Event.COMMAND, onCommand);
+    ~~~
+
+    이제 테스트해보면 1초 간격으로 카운트다운하는 것을 볼 수 있습니다.
+
+    ~~~text
+    카운트다운: 10초
+    카운트다운: 9초
+    카운트다운: 8초
+    카운트다운: 7초
+    카운트다운: 6초
+    카운트다운: 5초
+    카운트다운: 4초
+    카운트다운: 3초
+    카운트다운: 2초
+    카운트다운: 1초
+    10초가 지났습니다!
+    ~~~
+</Section>
+<Section>
+    ## 실습하기
+
+    <Blockquote>
+        **Q1.** 위의 타이머 코드는 10초 타이머 기능만 제공합니다. 원하는 시간만큼 타이머를 설정할 수 있다면 얼마나 좋을까요? 예를 들어, '@timer 5'라고 입력하면 1초 간격으로 카운트다운한 뒤 5초가 되었다는 메시지를 전송합니다.
+        사용자가 타이머 시간을 설정할 수 있도록 코드를 수정해보세요.
+    </Blockquote>
+    <Details summary={"모범답안"}>
+        `for` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "timer") {
+                let sec = Number(msg.args[0]); // 사용자가 입력한 시간(초)를 숫자로 형 변환
+
+                for (let i = sec; i > 0; i--) {
+                    msg.reply(`카운트다운: ${i}초`);
+                    java.lang.Thread.sleep(1000);
+                }
+                msg.reply(`${sec}초가 지났습니다!`);
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+        `while` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "timer") {
+                let sec = Number(msg.args[0]); // 사용자가 입력한 시간(초)를 숫자로 형 변환
+                let i = sec;
+
+                while (i > 0) {
+                    msg.reply(`카운트다운: ${i}초`);
+                    java.lang.Thread.sleep(1000);
+                    i--;
+                }
+                msg.reply(`${sec}초가 지났습니다!`);
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+    </Details>
+    <Blockquote>
+        **Q2.** 당신은 초등학생 동생을 위해 구구단을 출력해주는 카카오톡봇을 만들고자 합니다. 예를 들어, '@dan 2'를 입력하면 아래와 같이 출력합니다.
+
+        ~~~text
+        === 2단 ===
+        2 * 1 = 2
+        2 * 2 = 4
+        2 * 3 = 6
+        2 * 4 = 8
+        2 * 5 = 10
+        2 * 6 = 12
+        2 * 7 = 14
+        2 * 8 = 16
+        2 * 9 = 18
+        ~~~
+
+        반복문을 사용해 코드를 작성해보세요. (하나의 메시지로 출력하세요.)
+    </Blockquote>
+    <Details summary={"모범답안"}>
+        `for` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "dan") {
+                let dan = Number(msg.args[0]);
+                let result = `=== ${dan}단 ===`;
+
+                for (let i = 1; i < 10; i++) {
+                    result += `\n${dan} * ${i} = ${dan * i}`;
+                }
+
+                msg.reply(result);
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+        `while` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "dan") {
+                let dan = Number(msg.args[0]);
+                let result = `=== ${dan}단 ===`;
+                let i = 1;
+
+                while (i < 10) {
+                    result += `\n${dan} * ${i} = ${dan * i}`;
+                    i++;
+                }
+
+                msg.reply(result);
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+    </Details>
+    <Blockquote>
+        **Q3.** 여러분은 동생을 위해 열심히 Q2.를 해결했습니다. 하지만 동생은 2단부터 9단까지 모두 보여줬으면 좋겠다고 합니다. '@gugudan'을 입력하면 2단부터 9단까지 출력하도록 수정해보세요. 단마다 하나의 메시지로 출력하세요. (힌트: 반복문 안에 반복문을 사용하는 것도 가능합니다.)
+    </Blockquote>
+    <Details summary={"모범답안"}>
+        `for` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "gugudan") {
+                for (let i = 2; i < 10; i++) { // 2단부터 9단까지 반복합니다.
+                    let result = `=== ${i}단 ===`;
+
+                    for (let j = 1; j < 10; j++) {
+                        result += `\n${i} * ${j} = ${i * j}`;
+                    }
+
+                    msg.reply(result);
+                }
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+        `while` 문:
+        ~~~js
+        const bot = BotManager.getCurrentBot();
+
+        function onCommand(msg) {
+            if (msg.command === "gugudan") {
+                let i = 2;
+        
+                while (i < 10) { // 2단부터 9단까지 반복합니다.
+                    let result = `=== ${i}단 ===`;
+                    let j = 1;
+
+                    while (j < 10) {
+                        result += `\n${i} * ${j} = ${i * j}`;
+                        j++;
+                    }
+
+                    msg.reply(result);
+                    i++;
+                }
+            }
+        }
+        bot.setCommandPrefix("@");
+        bot.addListener(Event.COMMAND, onCommand);
+        ~~~
+    </Details>
+</Section>
+<Section>
+    <MileStone previous={Docs[3].children[8]} next={Docs[3].children[10]} />
+</Section>

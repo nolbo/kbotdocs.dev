@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/(Docs)/basic/10-loops/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/3-write-script/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/3-write-script/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/4-basic-syntax-of-javascript/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/4-basic-syntax-of-javascript/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/5-variable-and-data-type/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/5-variable-and-data-type/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/compatibility/api2/object/Bot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/compatibility/api2/object/Bot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/6-operator/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/6-operator/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/7-string/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/7-string/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/8-array/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/8-array/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/9-conditionals/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/9-conditionals/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/MileStone/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/MileStone/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/syntaxHighlighter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/styles/syntaxHighlighter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,31 +62,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/app/(Docs)/basic/8-array",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/app/(Docs)/basic/10-loop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\nolbo\\OneDrive\\문서\\GitHub\\kbotdocs.dev\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\10-loop" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\8-array" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\7-string" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\7-conditionals" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\6-operator" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\3-default-script" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\api2\(Object)\Event\(Constant)" />
@@ -142,7 +157,10 @@
       <workItem from="1737735030430" duration="7651000" />
       <workItem from="1738588970783" duration="19427000" />
       <workItem from="1738641773671" duration="26299000" />
-      <workItem from="1738732903087" duration="19010000" />
+      <workItem from="1738732903087" duration="19618000" />
+      <workItem from="1738776317747" duration="389000" />
+      <workItem from="1738777136967" duration="7830000" />
+      <workItem from="1738821255652" duration="8665000" />
     </task>
     <servers />
   </component>

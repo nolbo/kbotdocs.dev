@@ -24,7 +24,7 @@ export default function MileStone({previous, next}: MileStoneProps) {
                     )
                 }
             </div>
-            <div className={`${previous ? "block" : "hidden"} md:block`}>
+            <div className={`${next ? "block" : "hidden"} md:block`}>
                 {
                     next && (
                         <Link href={next.path || "#"}
