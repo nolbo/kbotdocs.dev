@@ -99,9 +99,16 @@ export const compatibility: { [name: string]: Compatibility } = {
         support: {
             msgBot: [
                 {
-                    status: CompatibilityStatus.PARTIAL_SUPPORT,
-                    version: "0.1.2a",
-                    description: "`reply(String, String)`이 존재하지 않음."
+                    status: CompatibilityStatus.FULL_SUPPORT,
+                    version: "0.1.2a"
+                },
+                {
+                    status: CompatibilityStatus.FULL_SUPPORT,
+                    detailedStatus: {
+                        bug: true
+                    },
+                    version: "0.7.34a",
+                    description: ["`reply(String, String)`이 존재하지 않음.", "`reply(String, String, Boolean)`이 `false`를 반환함."]
                 }
             ],
             autoReplyBot: [

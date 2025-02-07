@@ -79,7 +79,7 @@ export const compatibility: { [name: string]: Compatibility } = {
                         bug: true
                     },
                     version: "0.7.36a",
-                    description: "디버깅룸에서 동작하지 않음."
+                    description: "디버깅룸에서 동작 시 `false`를 반환함."
                 },
                 {
                     status: CompatibilityStatus.FULL_SUPPORT,
@@ -236,7 +236,7 @@ export const compatibility: { [name: string]: Compatibility } = {
                         bug: true
                     },
                     version: "0.7.36a",
-                    description: "디버깅룸에서 동작하지 않음."
+                    description: "디버깅룸에서 동작 시 `false`를 반환함."
                 },
                 {
                     status: CompatibilityStatus.FULL_SUPPORT,
@@ -422,7 +422,7 @@ export const compatibility: { [name: string]: Compatibility } = {
                         bug: true
                     },
                     version: "0.7.36a",
-                    description: ["디버깅룸에서 동작하지 않음.", "실행 시 `StackOverflowError`를 throw함."]
+                    description: ["디버깅룸에서 동작 시 `false`를 반환함.", "실행 시 `StackOverflowError`를 throw함."]
                 },
                 {
                     status: CompatibilityStatus.FULL_SUPPORT,
