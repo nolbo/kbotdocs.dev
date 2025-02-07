@@ -23,18 +23,13 @@ export default function CodeBlock({ language, content } : ICodeBlock) {
 
     return (
         <div className={"relative overflow-clip min-w-[0] rounded-[8px] border border-[var(--sthl-pre-border)] [&:hover>:first-child]:opacity-100"}>
-            <div className={"absolute z-[1] top-[6px] right-[6px] flex justify-between items-center rounded overflow-clip border-[1px] border-default bg-default opacity-0 transition-opacity duration-[.2s]"}>
-                <div className={"flex justify-center items-center px-[8px] h-[32px] rounded text-sm text-description"}>
-                    <p className={"font-mono"}>{ language.toUpperCase() }</p>
-                </div>
-                <button
-                    onClick={ () => { CopyIconOnClickHandler(content) }}
-                    className={`flex justify-center items-center bg-layer1 w-[32px] h-[32px] rounded hover:bg-layer1-hover ${(isCopied) ? "stroke-green" : "stroke-default hover:stroke-default-hover"}`}>
-                    <Icon
-                        icon={ (isCopied) ? "CheckIcon" : "CopyIcon" }
-                        className={`w-[14px] h-[14px] transition-[stroke]`} />
-                </button>
-            </div>
+            <button
+                onClick={ () => { CopyIconOnClickHandler(content) }}
+                className={`absolute z-[1] top-[6px] right-[6px] flex justify-center items-center rounded border-[1px] border-default bg-layer1 w-[32px] h-[32px] opacity-0 transition-opacity duration-[.2s] hover:bg-layer1-hover ${(isCopied) ? "stroke-green" : "stroke-default hover:stroke-default-hover"}`}>
+                <Icon
+                    icon={ (isCopied) ? "CheckIcon" : "CopyIcon" }
+                    className={`w-[14px] h-[14px] transition-[stroke]`} />
+            </button>
             <SyntaxHighlighter language={ language } style={ sthlTheme }>
                 { content }
             </SyntaxHighlighter>
