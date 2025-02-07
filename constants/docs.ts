@@ -1075,7 +1075,8 @@ export const Docs: Doc[] = [
             { label: "문자열", path: "/basic/7-string" },
             { label: "배열", path: "/basic/8-array" },
             { label: "조건문", path: "/basic/9-conditionals" },
-            { label: "반복문", path: "/basic/10-loops" }
+            { label: "반복문", path: "/basic/10-loops" },
+            { label: "함수", path: "/basic/11-function" }
         ]
     },
 ] as const;
