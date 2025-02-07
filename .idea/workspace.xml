@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/1-javascript-and-kakaotalkbot/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(Docs)/basic/2-ready-for-dev/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
     </list>
@@ -148,7 +147,7 @@
       <workItem from="1738777136967" duration="7830000" />
       <workItem from="1738821255652" duration="11462000" />
       <workItem from="1738906225225" duration="3585000" />
-      <workItem from="1738943867945" duration="8210000" />
+      <workItem from="1738943867945" duration="8933000" />
     </task>
     <servers />
   </component>
