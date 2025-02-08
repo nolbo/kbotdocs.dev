@@ -30,7 +30,14 @@ export default function AppCompatHistoryItem({history}: {history: CompatibilityH
                     <dt>
                         <div className={"flex items-start gap-[12px]"}>
                             <div title={"완전 지원"} className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-1rem)/2)] bg-default"}><Icon icon={"SuccessFillIcon"} className={"w-[1rem] h-[1rem] fill-green"} /></div>
-                            <p className={"text-sm text-green-layer1 font-semibold"}>{history.version}</p>
+                            <p className={"text-sm text-green-layer1 font-semibold"}>
+                                {
+                                    typeof history.version === "string" ?
+                                        history.version
+                                        :
+                                        `${history.version.start}–${history.version.last}`
+                                }
+                            </p>
                             <div className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-.875rem)/2)] bg-default"}><DetailedStatusIcon detailedStatus={history.detailedStatus} /></div>
                         </div>
                     </dt>
@@ -53,7 +60,14 @@ export default function AppCompatHistoryItem({history}: {history: CompatibilityH
                     <dt>
                         <div className={"flex items-start gap-[12px]"}>
                             <div title={"일부 지원"} className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-1rem)/2)] bg-default"}><Icon icon={"PartialFillIcon"} className={"w-[1rem] h-[1rem] fill-yellow"} /></div>
-                            <p className={"text-sm text-yellow-layer1 font-semibold"}>{history.version}</p>
+                            <p className={"text-sm text-yellow-layer1 font-semibold"}>
+                                {
+                                    typeof history.version === "string" ?
+                                        history.version
+                                        :
+                                        `${history.version.start}–${history.version.last}`
+                                }
+                            </p>
                             <div className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-.875rem)/2)] bg-default"}><DetailedStatusIcon detailedStatus={history.detailedStatus} /></div>
                         </div>
                     </dt>
@@ -72,7 +86,17 @@ export default function AppCompatHistoryItem({history}: {history: CompatibilityH
                     <dt>
                         <div className={"flex items-start gap-[12px]"}>
                             <div title={"미지원"} className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-1rem)/2)] bg-default"}><Icon icon={"CancelFillIcon"} className={"w-[1rem] h-[1rem] fill-red"} /></div>
-                            <p className={"text-sm text-red-layer1 font-semibold"}>{history.version || "No"}</p>
+                            <p className={"text-sm text-red-layer1 font-semibold"}>
+                                {
+                                    history.version ?
+                                        typeof history.version === "string" ?
+                                            history.version
+                                            :
+                                            `${history.version.start}–${history.version.last}`
+                                        :
+                                        "No"
+                                }
+                            </p>
                             <div className={"flex items-center rounded-[1rem] my-[calc((theme(fontSize.sm)*1.75-.875rem)/2)] bg-default"}><DetailedStatusIcon detailedStatus={history.detailedStatus} /></div>
                         </div>
                     </dt>

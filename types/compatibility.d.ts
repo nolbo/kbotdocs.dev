@@ -12,7 +12,10 @@ type FeatureStatus = {
 type CompatibilityHistory = {
     status: CompatibilityStatus,
     detailedStatus?: DetailedStatus,
-    version: string,
+    version: {
+        start: string,
+        last: string
+    } | string,
     description?: string | string[],
 };
 

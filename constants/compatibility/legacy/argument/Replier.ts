@@ -107,7 +107,10 @@ export const compatibility: { [name: string]: Compatibility } = {
                     detailedStatus: {
                         bug: true
                     },
-                    version: "0.7.34a",
+                    version: {
+                        start: "0.7.34a",
+                        last: "0.7.38a"
+                    },
                     description: ["`reply(String, String)`이 존재하지 않음.", "`reply(String, String, Boolean)`이 `false`를 반환함."]
                 },
                 {
