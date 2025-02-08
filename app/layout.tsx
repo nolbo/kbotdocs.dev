@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import Header from "@/components/common/Header";
 import {openGraph} from "@/constants/metadata";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://kbotdocs.dev"),
