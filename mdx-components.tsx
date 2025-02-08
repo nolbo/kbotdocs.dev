@@ -8,9 +8,7 @@ import Image from "next/image";
 import {Table, Thead, Tbody, Tr, Th, Td} from "@/components/common/Table";
 import AppCompat from "@/components/common/AppCompat";
 import Noti from "@/components/common/Noti";
-import FeatureStatusIcon from "@/components/common/FeatureStatusIcon";
 import Feature from "@/components/common/Feature";
-import MDXClient from "@/components/common/MDXClient";
 import FeatureStatusNoti from "@/components/common/FeatureStatusNoti";
 import MileStone from "@/components/common/MileStone";
 import Details from "@/components/common/Details";
@@ -38,7 +36,7 @@ export const mdxComponents: MDXComponents = {
         );
     },
     p({children}) {
-        return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block"}>{children}</p>)
+        return (<p className={"[&>svg]:relative [&>svg]:top-[-.05em] [&>svg]:z-0 [&>svg]:inline-block [&_.katex]:text-rel-base"}>{children}</p>)
     },
     Mark({children}) {
         return (<mark className={"bg-yellow text-gray-800 font-bold"}>{children}</mark>);
@@ -114,7 +112,6 @@ export const mdxComponents: MDXComponents = {
         return (<Td {...p}>{children}</Td>);
     },
     Blockquote({children}) {
-
         return (
             <blockquote
                 className={`flex flex-col gap-[16px] w-full overflow-auto p-[8px_12px] rounded-[6px] leading-normal md:p-[12px_16px] bg-layer1`}>
