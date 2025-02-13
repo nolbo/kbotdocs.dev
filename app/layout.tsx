@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import type {Metadata} from "next";
 import React from "react";
 import ThemeProvider from "@/components/context/ThemeProvider";
-import { Open_Sans } from "next/font/google";
+import {Open_Sans} from "next/font/google";
 import localFont from "next/font/local";
 import Header from "@/components/common/Header";
+import GA from "@/components/common/GA";
 import {openGraph} from "@/constants/metadata";
 import "./globals.css";
 import "katex/dist/katex.min.css";
@@ -81,17 +81,17 @@ const cascadia_code_nf = localFont({
     variable: "--font-cascadia-code-nf"
 });
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-
+export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html suppressHydrationWarning>
-            <body className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable} ${cascadia_mono_nf.variable}`}>
-                <ThemeProvider>
-                    <Header />
-                    { children }
-                    <Analytics/>
-                </ThemeProvider>
-            </body>
+        <body
+            className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable} ${cascadia_mono_nf.variable}`}>
+            <ThemeProvider>
+                <Header/>
+                {children}
+            </ThemeProvider>
+            <GA />
+        </body>
         </html>
     );
 }

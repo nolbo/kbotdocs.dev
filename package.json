@@ -13,7 +13,6 @@
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.8",
     "@types/mdx": "^2.0.13",
-    "@vercel/analytics": "^1.4.1",
     "fs": "^0.0.1-security",
     "globby": "^14.0.2",
     "next": "^14.2.13",
