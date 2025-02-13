@@ -14,7 +14,7 @@ export default function GA() {
         process.env.NEXT_PUBLIC_GA &&
         <>
             <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA}`}/>
-            <Script dangerouslySetInnerHTML={{ __html: script }}/>
+            <Script id={"google-analytics"} dangerouslySetInnerHTML={{ __html: script }}/>
         </>
     );
 }
