@@ -11,6 +11,7 @@ interface IPage extends HTMLAttributes<HTMLDivElement> {
 export default function PageDir({ doc, onLinkClick, children, className, ...p }: IPage) {
     const [ isFold, setFold ] = useState(true);
     const childrenRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     const buttonOnClickHandler = () => {
         setFold(v => !v);
@@ -20,7 +21,7 @@ export default function PageDir({ doc, onLinkClick, children, className, ...p }:
         if (childrenRef.current) {
             setFold(!childrenRef.current.querySelector("[data-current=true]"));
         }
-    }, [usePathname()]);
+    }, [pathname]);
 
     return (
         <div className={`${className || ""}`} {...p}>
