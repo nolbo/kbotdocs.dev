@@ -2,13 +2,11 @@
 
 import {HTMLAttributes, useState} from "react";
 import DetailedStatusIcon from "@/components/common/DetailedStatusIcon";
-import FeatureStatusIcon from "@/components/common/FeatureStatusIcon";
 import Feature from "@/components/common/Feature";
 import Icon from "@/components/common/Icon";
 import {Td, Tr} from "@/components/common/Table";
 import MDXClient from "@/components/common/MDXClient";
 import {usePathname} from "next/navigation";
-import Link from "next/link";
 import AppCompatHistory from "@/components/common/AppCompatHistory";
 import {CompatibilityStatus} from "@/constants/compatibility";
 
