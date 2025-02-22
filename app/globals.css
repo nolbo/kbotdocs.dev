@@ -5,6 +5,7 @@
 @layer base {
     :root {
         --width-main-md: 1240px;
+        --width-article-md: 1025px;
 
         --scroll-color: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.125));
         --colors-blue-default: light-dark(theme("colors.blue.500"), theme("colors.blue.400"));

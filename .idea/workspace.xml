@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/AppCompatItem/index.tsx" afterDir="false" />
+    <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="Feature: Add Divider in PageTree">
+      <change afterPath="$PROJECT_DIR$/app/article/(Articles)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/article/(Articles)/migration-from-legacy-to-api2/page.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/article/page.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ArticleHeader/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ArticleItem/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ArticleList/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/author.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +48,9 @@
     &quot;accountId&quot;: &quot;986c535f-5df9-4a41-aad4-e50e532909a9&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -51,7 +68,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/app/(Docs)/basic/11-function&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nolbo/OneDrive/문서/GitHub/kbotdocs.dev/app/article/(Docs)&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,18 +82,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\article\(Docs)" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\11-function" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\10-loop" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\8-array" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\7-string" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\basic\7-conditionals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\article\(Docs)" />
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\article" />
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app" />
+      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\article" />
       <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)\api2\(Object)\Event\(Constant)" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\components\common" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\(Docs)" />
-      <recent name="C:\Users\nolbo\OneDrive\문서\GitHub\kbotdocs.dev\app\starlight\(Argument)\ChatRoom" />
     </key>
   </component>
   <component name="RunManager">
@@ -94,7 +111,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
       </set>
     </attachedChunks>
   </component>
@@ -148,10 +165,81 @@
       <workItem from="1738943867945" duration="14547000" />
       <workItem from="1738990040697" duration="4825000" />
       <workItem from="1739036632671" duration="1982000" />
+      <workItem from="1739472471036" duration="5916000" />
+      <workItem from="1740152705209" duration="74000" />
+      <workItem from="1740152854371" duration="18222000" />
+      <workItem from="1740203753141" duration="13157000" />
     </task>
+    <task id="LOCAL-00001" summary="Comp(`AppCompatItem`): 에러 수정">
+      <option name="closed" value="true" />
+      <created>1739039687695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739039687695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Doc(`legacy/Api/markAsRead`, `api2/Bot/markAsRead`): `room` 매개변수 관련 정보 교정">
+      <option name="closed" value="true" />
+      <created>1739473686295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739473686295</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix(): Vercel Analytics → Google Analytics 교체">
+      <option name="closed" value="true" />
+      <created>1739476287874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739476287874</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix: Error in `GA` component">
+      <option name="closed" value="true" />
+      <created>1739476911383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739476911383</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refator(`/components/common/PageDir`): replace item of dependency array with constant">
+      <option name="closed" value="true" />
+      <created>1739477406711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739477406711</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fix: Resolve package vulnerabilities">
+      <option name="closed" value="true" />
+      <created>1739478130269</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739478130269</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Feature: Add Divider in PageTree">
+      <option name="closed" value="true" />
+      <created>1740221209839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740221209839</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Comp(`AppCompatItem`): 에러 수정" />
+    <MESSAGE value="Doc(`legacy/Api/markAsRead`, `api2/Bot/markAsRead`): `room` 매개변수 관련 정보 교정" />
+    <MESSAGE value="Fix(): Vercel Analytics → Google Analytics 교체" />
+    <MESSAGE value="Fix: Error in `GA` component" />
+    <MESSAGE value="Refator(`/components/common/PageDir`): replace item of dependency array with constant" />
+    <MESSAGE value="Fix: Resolve package vulnerabilities" />
+    <MESSAGE value="Feature: Add Divider in PageTree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: Add Divider in PageTree" />
   </component>
 </project>

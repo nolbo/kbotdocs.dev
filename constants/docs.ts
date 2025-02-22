@@ -1185,18 +1185,18 @@ export const Docs: { [name: string]: DocCategory } = {
         ]
     },
     "article": {
-        label: "아티클",
+        label: "Article",
         hide: true,
         docs: [
             {
-                label: "아티클",
+                label: "Article",
                 path: "/article",
                 children: [
                     {
                         label: "레거시 API에서 API2로 마이그레이션",
                         author: Authors["nolbo"],
                         description: "메신저봇R에서 레거시 API의 축소 계획을 발표했습니다. 레거시 API의 소스코드를 API2로 마이그레이션하는 방법을 소개합니다.",
-                        publishDate: new Date(2025, 2, 22),
+                        publishDate: new Date("2025-02-22"),
                         thumbnail: "/assets/article/migration-from-legacy-to-api2/0.png",
                         path: "/article/migration-from-legacy-to-api2",
                     }

@@ -1,0 +1,344 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "Legacy API에서 API2로 마이그레이션",
+    openGraph: {
+        ...openGraph,
+        images: {
+            url: "https://kbotdocs.dev/assets/article/migration-from-legacy-to-api2/0.png"
+        },
+        title: "Legacy API에서 API2로 마이그레이션"
+    }
+}
+
+<ArticleHeader article={Docs["article"].docs[0].children[0]}>
+    레거시 API는 카카오톡봇 개발을 위한 API1 버전입니다. 카카오톡봇 초기부터 현재까지 널리 사용되고 있지만, [문제점이 있습니다](https://messengerbotteam.github.io/posts/sunset-legacy-api.html). `response` 함수의 직렬적인 매개변수는 레거시 API의 개발 용이성을 저해하며 레거시 API로 작성된 코드의 유지보수를 어렵게 합니다. 이러한 이유로 메신저봇R은 업데이트됨에 따라 레거시 API가 축소될 수 있습니다.
+
+    이러한 단점을 보완하기 위해 API2가 등장했습니다. API2는 더 향상된 이벤트 관리를 제공하며 레거시 API의 `response` 함수가 제공하는 매개변수를 객체 단위로 제공해 개발과 유지보수에 유리합니다. 메신저봇R은 레거시 API와 API2를 구분하지만, 채팅 자동응답 봇과 StarLight는 이 둘을 엄격히 구분하지 않습니다.
+
+    메신저봇R을 사용하는 개발자에게 레거시 API에서 API2로의 마이그레이션은 작지 않은 문턱으로 작용하고 있습니다. 이 글에선 레거시 API에서 API2로 마이그레이션하는 방법을 소개합니다.
+</ArticleHeader>
+<Section>
+    ## 1. API2 스크립트로 전환하기
+
+    우선 스크립트의 설정을 변경해야 합니다.
+
+    1. 스크립트 설정에 들어가세요.
+    2. **레거시 API를 사용합니다. (더 이상 사용되지 않음)** 항목을 선택 해제하세요.
+
+    이제 해당 스크립트는 API2를 사용하게 됩니다.
+</Section>
+<Section>
+    ## 2. Bot 인스턴스 할당하기
+
+    API2에는 [`Bot`](/api2/Bot) 객체가 존재합니다. `Bot` 객체는 스크립트와 이벤트를 관리하는 메소드를 제공합니다. `Bot` 객체의 인스턴스는 직접 생성할 수 없으며, [`BotManager.getCurrentBot()`](/api2/BotManager/getCurrentBot)을 사용해 스크립트에 대응하는 `Bot` 인스턴스를 할당할 수 있습니다. 스크립트 상단에 다음과 같이 작성합니다.
+
+    ~~~js
+    const bot = BotManager.getCurrentBot();
+    ~~~
+</Section>
+<Section>
+    ## 3. 이벤트 리스너 추가하기
+
+    API2는 레거시 API와 다르게 이벤트 리스너가 정해져있지 않습니다. 개발자가 임의로 이벤트에 대한 리스너를 등록 또는 제거할 수 있습니다.
+
+    우선 `response` 함수를 API2에 맞게 수정합니다. API2에서 메시지를 감지할 때마다 호출할 이벤트 리스너의 매개변수는 1개 뿐입니다.
+
+    ~~~js
+    function response(msg) {
+        // code
+    }
+    ~~~
+
+    `response` 함수의 이름을 `onMessage`로 변경합니다. 이는 선택사항이지만, 발생할 이벤트의 리스너임을 쉽게 알기 위한 방법입니다.
+
+    ~~~js
+    function onMessage(msg) {
+        // code
+    }
+    ~~~
+
+    레거시 API에서 메시지가 올 때 마다 `response` 함수가 호출되었듯이, API2에서는 `message` 이벤트가 발생합니다.
+
+    이벤트 리스너의 등록을 위해 아래와 같이 [`Bot.addListener()`](/api2/Bot/addListener)를 사용합니다. 1번째 인자엔 리스너를 추가할 이벤트의 이름을, 2번째 인자에 리스너로 등록할 함수를 전달합니다. 이벤트의 이름을 제공하는 [`Event`](/api2/Event) 객체를 사용할 수 있습니다.
+
+    ~~~js
+    bot.addListener(Event.MESSAGE, onMessage);
+    ~~~
+
+    전체 코드는 다음과 같습니다.
+
+    ~~~js
+    const bot = BotManager.getCurrentBot();
+
+    function onMessage(msg) {
+        // code
+    }
+
+    bot.addListener(Event.MESSAGE, onMessage);
+    ~~~
+
+    `response` 함수의 매개변수는 `message` 객체의 매개변수 `msg`를 사용해 대체할 수 있습니다.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={2}>`response` 함수의 인자에 대응하는 `msg` 객체</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>`room`</span></Td>
+                <Td>[`msg.room`](/api2/Message/room)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`msg`</span></Td>
+                <Td>[`msg.content`](/api2/Message/content)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`sender`</span></Td>
+                <Td>[`msg.author.name`](/api2/Author/name)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`isGroupChat`</span></Td>
+                <Td>[`msg.isGroupChat`](/api2/Message/isGroupChat)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`replier.reply()`</span></Td>
+                <Td>[`msg.reply()`](/api2/Message/reply)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`replier.markAsRead()`</span></Td>
+                <Td>[`msg.markAsRead()`](/api2/Message/markAsRead)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`imageDB.getImage()` / `imageDB.getImageBase64()`</span></Td>
+                <Td>[`msg.image.getBase64()`](/api2/Image/getBase64)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`imageDB.getImageBitmap()`</span></Td>
+                <Td>[`msg.image.getBitmap()`](/api2/Image/getBitmap)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`imageDB.getProfileBase64()`</span></Td>
+                <Td>[`msg.author.avatar.getBase64()`](/api2/Image/getBase64)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`imageDB.getProfileBitmap()`</span></Td>
+                <Td>[`msg.author.avatar.getBitmap()`](/api2/Image/getBitmap)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`packageName`</span></Td>
+                <Td>[`msg.packageName`](/api2/Message/packageName)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`isMention`</span></Td>
+                <Td>[`msg.isMention`](/api2/Message/isMention)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`logId`</span></Td>
+                <Td>[`msg.logId`](/api2/Message/logId)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`channelId`</span></Td>
+                <Td>[`msg.channelId`](/api2/Message/channelId)</Td>
+            </Tr>
+            <Tr>
+                <Td><span>`userHash`</span></Td>
+                <Td>[`msg.author.hash`](/api2/Author/hash)</Td>
+            </Tr>
+        </Tbody>
+    </Table>
+
+    기존 레거시 API에 존재하는 다른 이벤트 리스너는 API2의 이벤트에 대응할 수 있습니다. 아래의 표를 참고하세요.
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>레거시 API의 이벤트 리스너와 그에 대응하는 API2 이벤트</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`onBackPressed`](/legacy/onBackPressed)</span></Td>
+                <Td>
+                    [`onBackPressed`](/api2/activityBackPressed) 이벤트 ([`Event.Activity.BACK_PRESSED`](/api2/Event/Activity.BACK_PRESSED))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onCreate`](/legacy/onCreate)</span></Td>
+                <Td>
+                    [`activityCreate`](/api2/activityCreate) 이벤트 ([`Event.Activity.CREATE`](/api2/Event/Activity.CREATE))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onDestroy`](/legacy/onDestroy)</span></Td>
+                <Td>
+                    [`activityDestroy`](/api2/activityDestroy) 이벤트 ([`Event.Activity.DESTROY`](/api2/Event/Activity.DESTROY))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onLoaded`](/legacy/onLoaded)</span></Td>
+                <Td>
+                    [`loaded`](/api2/loaded) 이벤트 ([`Event.LOADED`](/api2/Event/LOADED))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationPosted`](/legacy/onNotificationPosted)</span></Td>
+                <Td>
+                    [`notificationPosted`](/api2/notificationPosted) 이벤트 ([`Event.NOTIFICATION_POSTED`](/api2/Event/NOTIFICATION_POSTED))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onNotificationRemoved`](/legacy/onNotificationRemoved)</span></Td>
+                <Td>
+                    [`notificationRemoved`](/api2/notificationRemoved) 이벤트 ([`Event.NOTIFICATION_REMOVED`](/api2/Event/NOTIFICATION_REMOVED))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onPause`](/legacy/onPause)</span></Td>
+                <Td>
+                    [`activityPause`](/api2/activityPause) 이벤트 ([`Event.Activity.PAUSE`](/api2/Event/Activity.PAUSE))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onRestart`](/legacy/onRestart)</span></Td>
+                <Td>
+                    [`activityRestart`](/api2/activityRestart) 이벤트 ([`Event.Activity.RESTART`](/api2/Event/Activity.RESTART))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onResume`](/legacy/onResume)</span></Td>
+                <Td>
+                    [`activityResume`](/api2/activityResume) 이벤트 ([`Event.Activity.RESUME`](/api2/Event/Activity.RESUME))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStart`](/legacy/onStart)</span></Td>
+                <Td>
+                    [`activityStart`](/api2/activityStart) 이벤트 ([`Event.Activity.START`](/api2/Event/Activity.START))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStartCompile`](/legacy/onStartCompile)</span></Td>
+                <Td>
+                    [`startCompile`](/api2/startCompile) 이벤트 ([`Event.START_COMPILE`](/api2/Event/START_COMPILE))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`onStop`](/legacy/onStop)</span></Td>
+                <Td>
+                    [`activityStop`](/api2/activityStop) 이벤트 ([`Event.Activity.STOP`](/api2/Event/Activity.STOP))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`response`](/legacy/response)</span></Td>
+                <Td>
+                    [`message`](/api2/message) 이벤트 ([`Event.MESSAGE`](/api2/Event/MESSAGE))
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`secondTick`](/legacy/secondTick)</span></Td>
+                <Td>
+                    [`tick`](/api2/tick) 이벤트 ([`Event.TICK`](/api2/Event/TICK))
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 4. 객체 수정하기
+
+    API2는 레거시 API의 [`AppData`](/api2/AppData), [`console`](/api2/console), [`Device`](/api2/Device), [`FileStream`](/api2/FileStream), [`Log`](/api2/Log)를 제외한 객체를 지원하지 않습니다. 몇몇 객체의 메소드에 대해서는 대체 가능합니다.
+
+    <Noti type={"warning"}>
+        레거시 API의 메소드 중엔 API2로 대체할 수 없는 객체가 존재합니다. [`Bridge`](/legacy/Bridge) 객체의 경우 API2 객체로 대체하기 어렵습니다. [`DataBase`](/legacy/DataBase) 객체의 경우 API2에서 지원하지 않지만 [`Database`](/api2/Database) 객체가 비슷한 기능을 제공합니다.
+    </Noti>
+
+    <Table>
+        <Thead>
+            <Tr>
+                <Th colSpan={"2"}>API2로 대체 가능한 레거시 API 객체의 메소드</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
+            <Tr>
+                <Td><span>[`Api.getContext()`](/legacy/Api/getContext)</span></Td>
+                <Td>
+                    [`App.getContext()`](/api2/App/getContext)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.replyRoom()`](/legacy/Api/replyRoom)</span></Td>
+                <Td>
+                    [`bot.send()`](/api2/Bot/send)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.canReply()`](/legacy/Api/canReply)</span></Td>
+                <Td>
+                    [`bot.canReply()`](/api2/App/canReply)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td>
+                    [`Api.compile()`](/legacy/Api/compile) \
+                    [`Api.reload()`](/legacy/Api/reload)
+                </Td>
+                <Td>
+                    현재 스크립트를 컴파일: [`bot.compile()`](/api2/Bot/compile) \
+                    특정 스크립트를 컴파일: [`BotManager.compile()`](/api2/BotManager/compile) \
+                    모든 스크립트를 컴파일: [`BotManager.compileAll()`](/api2/BotManager/compileAll)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.getRoomList()`](/legacy/Api/getRoomList)</span></Td>
+                <Td>
+                    [`BotManager.getRooms()`](/api2/BotManager/getRooms)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.isCompiled()`](/legacy/Api/isCompiled)</span></Td>
+                <Td>
+                    [`BotManager.isCompiled()`](/api2/BotManager/isCompiled)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.isOn()`](/legacy/Api/isOn)</span></Td>
+                <Td>
+                    [`BotManager.getPower()`](/api2/BotManager/getPower)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td>
+                    [`Api.off()`](/legacy/Api/off) \
+                    [`Api.on()`](/legacy/Api/on)
+                </Td>
+                <Td>
+                    현재 스크립트의 활성화 여부를 컨트롤: [`bot.setPower()`](/api2/Bot/setPower) \
+                    특정 스크립트의 활성화 여부를 컨트롤: [`BotManager.setPower()`](/api2/BotManager/setPower)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.markAsRead()`](/legacy/Api/markAsRead)</span></Td>
+                <Td>
+                    [`bot.markAsRead()`](/api2/Bot/maskAsRead)
+                </Td>
+            </Tr>
+            <Tr>
+                <Td><span>[`Api.unload()`](/legacy/Api/unload)</span></Td>
+                <Td>
+                    현재 스크립트를 언로드: [`bot.unload()`](/api2/Bot/unload) \
+                    특정 스크립트를 언로드: [`BotManager.unload()`](/api2/BotManager/unload)
+                </Td>
+            </Tr>
+        </Tbody>
+    </Table>
+</Section>
+<Section>
+    ## 마치면서
+
+    레거시 API에서 API2로 마이그레이션하는 방법을 소개했습니다. 해당 아티클은 마이그레이션을 위한 완벽한 가이드가 아닐 수 있습니다. 마이그레이션에 어려움을 겪으신다면 [여기](https://github.com/nolbo/kbotdocs.dev/discussions/new?category=q-a)에서 질문해주세요.
+</Section>

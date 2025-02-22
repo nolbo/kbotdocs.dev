@@ -12,6 +12,8 @@ import Feature from "@/components/common/Feature";
 import FeatureStatusNoti from "@/components/common/FeatureStatusNoti";
 import MileStone from "@/components/common/MileStone";
 import Details from "@/components/common/Details";
+import ArticleList from "@/components/common/ArticleList";
+import ArticleHeader from "@/components/common/ArticleHeader";
 
 export const mdxComponents: MDXComponents = {
     h2({children, ...p}) {
@@ -53,22 +55,22 @@ export const mdxComponents: MDXComponents = {
     li({children, ...p}) {
         return (<li className={"leading-normal [&_ul]:ml-[1rem] [&_ol]:ml-[1rem]"} {...p}>{children}</li>);
     },
-    img({...p}) {
+    img({className, src, alt, width, height, ...p}) {
         return (
-            (p.alt === "icon") ?
-                <Icon className={"w-[.75rem] h-[.75rem] stroke-inherit-text"} icon={p.src as Icons}/>
+            (alt === "icon") ?
+                <Icon className={"w-[.75rem] h-[.75rem] stroke-inherit-text"} icon={src as Icons}/>
                 :
                 <div
-                    className={`justify-center items-center w-full h-fit ${(p.alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((p.alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
-                    <Image src={p.src as string} alt={p.alt || ""} className="rounded-[6px]"/>
+                    className={`justify-center items-center w-full h-fit ${(alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
+                    <Image src={src as string} alt={alt || ""} width={768} height={768} className={`rounded-[6px] w-full h-auto ${className || ""}`} {...p}/>
                 </div>
         )
     },
-    Image(p) {
+    Image({className, src, alt, ...p}) {
         return (
             <div
                 className={`justify-center items-center w-full h-fit ${(p.alt?.endsWith("#lightonly")) ? "flex dark:hidden" : ((p.alt?.endsWith("#darkonly")) ? "hidden dark:flex" : "")}`}>
-                <img src={p.src as string} alt={p.alt || ""} className="rounded-[6px]"/>
+                <Image src={src as string} alt={alt || ""} width={768} height={768} className={`rounded-[6px] w-full h-auto ${className || ""}`} {...p}/>
             </div>
         )
     },
@@ -154,6 +156,12 @@ export const mdxComponents: MDXComponents = {
     },
     Details({children, ...p}) {
         return (<Details {...p}>{children}</Details>);
+    },
+    ArticleList({...p}) {
+        return (<ArticleList {...p} />);
+    },
+    ArticleHeader({children, ...p}) {
+        return (<ArticleHeader {...p}>{children}</ArticleHeader>);
     }
 };
 

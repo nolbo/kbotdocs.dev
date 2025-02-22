@@ -19,7 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
     }
 
-    Docs.forEach(loopFn);
+    Object.values(Docs).forEach(e => {
+        e.docs.forEach(loopFn);
+    });
 
     return sitemapArr;
 }

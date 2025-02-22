@@ -1,0 +1,24 @@
+import {openGraph} from "@/constants/metadata";
+import {Docs} from "@/constants/docs";
+
+export const metadata = {
+    metadataBase: new URL("https://kbotdocs.dev"),
+    title: "Article",
+    openGraph: {
+        ...openGraph,
+        title: "Article"
+    }
+}
+
+<div>
+    <div className={"flex justify-center mt-header-h px-screen-x-default md:px-screen-x-md"}>
+        <div
+            className={"relative w-full md:max-w-[768px]"}>
+            <main className={"flex flex-col gap-[32px] py-header-main overflow-auto"}>
+                <Section>
+                    <ArticleList articles={Docs["article"].docs[0].children} />
+                </Section>
+            </main>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 import Contributors from "@/components/common/Contributors";
 import Guide from "@/public/illust/guide.svg";
 import Reference from "@/public/illust/reference.svg";
+import {Docs} from "@/constants/docs";
+import IconButton from "../components/common/IconButton";
 
 <div>
     <div className={"flex justify-center mt-header-h px-screen-x-default md:px-screen-x-md"}>
@@ -40,6 +42,15 @@ import Reference from "@/public/illust/reference.svg";
                             </div>
                         </div>
                     </div>
+                </Section>
+                <Section>
+                    <div className={"flex justify-between"}>
+                        ## Article
+                        [<IconButton icon={"ArrowIcon"} />](/article)
+                    </div>
+
+
+                    <ArticleList articles={Docs["article"].docs[0].children.toReversed().filter((_, i) => i < 5)} />
                 </Section>
                 <Section>
                     ## 기여
