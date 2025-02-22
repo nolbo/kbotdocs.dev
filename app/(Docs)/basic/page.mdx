@@ -23,12 +23,12 @@ export const metadata = {
 <Section>
     <ol className={"flex flex-col gap-[16px]"}>
         {
-            Docs[3].children.map((e, i) => (
+            Docs["learn"].docs[0].children.map((e, i) => (
                 <li key={i} className={"p-[8px_12px] rounded-md border border-layer1 bg-layer1"}><Link href={e.path}>{e.label}</Link></li>
             ))
         }
     </ol>
 </Section>
 <Section>
-    <MileStone next={Docs[3].children[0]} />
+    <MileStone next={Docs["learn"].docs[0].children[0]} />
 </Section>
