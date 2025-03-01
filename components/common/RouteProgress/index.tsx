@@ -1,13 +1,12 @@
 "use client";
 
-import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import nProgress from "nprogress";
 import {useEffect} from "react";
 import "@/styles/nProgress.css";
 
 export default function RouteProgress() {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
     const router = useRouter();
 
     useEffect(() => {
@@ -19,16 +18,14 @@ export default function RouteProgress() {
         });
 
         router.push = (href, options) => {
-            const currentHref = pathname + ((searchParams.size > 0) ? `?${searchParams}` : "");
-            if (href !== currentHref) {
+            if (href !== pathname) {
                 nProgress.start();
             }
             _push(href, options);
         };
 
         router.replace = (href, options) => {
-            const currentHref = pathname + ((searchParams.size > 0) ? `?${searchParams}` : "");
-            if (href !== currentHref) {
+            if (href !== pathname) {
                 nProgress.start();
             }
             _replace(href, options);
@@ -48,7 +45,7 @@ export default function RouteProgress() {
 
     useEffect(() => {
         nProgress.done();
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     return null;
 }
