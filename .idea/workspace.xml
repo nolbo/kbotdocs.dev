@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="Feature: Add Divider in PageTree">
-      <change afterPath="$PROJECT_DIR$/app/article/(Articles)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/article/(Articles)/migration-from-legacy-to-api2/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/article/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/ArticleHeader/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/ArticleItem/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/ArticleList/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/author.ts" afterDir="false" />
+    <list default="true" id="9b64b350-d976-4b66-9492-9cb3643c1ec7" name="Changes" comment="Feature: Add Article">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/Header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +101,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -169,6 +159,8 @@
       <workItem from="1740152705209" duration="74000" />
       <workItem from="1740152854371" duration="18222000" />
       <workItem from="1740203753141" duration="13157000" />
+      <workItem from="1740790012722" duration="83000" />
+      <workItem from="1740790152352" duration="3079000" />
     </task>
     <task id="LOCAL-00001" summary="Comp(`AppCompatItem`): 에러 수정">
       <option name="closed" value="true" />

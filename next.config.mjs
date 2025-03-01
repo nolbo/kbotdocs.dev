@@ -13,7 +13,7 @@ const nextConfig = {
         });
         return config;
     },
-    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     images: {
         remotePatterns: [
             {
@@ -37,6 +37,9 @@ const withMDX = createMDX({
     options: {
         remarkPlugins: [remarkGfm, remarkMath],
         rehypePlugins: [rehypeSlug, rehypeKatex],
+    },
+    experimental: {
+        mdxRs: true
     }
 });
 
