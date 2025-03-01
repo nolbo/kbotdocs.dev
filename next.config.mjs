@@ -13,6 +13,7 @@ const nextConfig = {
         });
         return config;
     },
+    reactStrictMode: true,
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     images: {
         remotePatterns: [
@@ -29,7 +30,7 @@ const nextConfig = {
                 pathname: '/**'
             }
         ],
-    }
+    },
 };
 
 const withMDX = createMDX({
@@ -37,9 +38,6 @@ const withMDX = createMDX({
     options: {
         remarkPlugins: [remarkGfm, remarkMath],
         rehypePlugins: [rehypeSlug, rehypeKatex],
-    },
-    experimental: {
-        mdxRs: true
     }
 });
 
