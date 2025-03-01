@@ -1,5 +1,5 @@
 import type {MDXComponents} from "mdx/types";
-import Link from "next/link";
+import { Link } from "react-transition-progress/next";
 import Icon from "@/components/common/Icon";
 import CodeBlock from "@/components/common/CodeBlock";
 import Keycap from "@/components/common/Keycap";

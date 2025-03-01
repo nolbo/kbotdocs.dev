@@ -1,13 +1,12 @@
 "use client";
 
 import {useEffect, useRef} from "react";
-import Link from "next/link";
+import { Link } from "react-transition-progress/next";
 import Icon from "@/components/common/Icon";
 import ThemeButton from "@/components/common/ThemeButton";
 import IconButton from "@/components/common/IconButton";
 import PageTree from "@/components/common/PageTree";
 import {usePathname} from "next/navigation";
-import nProgress from "nprogress";
 
 export default function Header() {
     const scrollTo = useRef<number>(0);
@@ -52,7 +51,7 @@ export default function Header() {
             <div
                 className={"flex flex-row justify-between p-none gap-[16px] box-border w-full h-full md:max-w-main-md"}>
                 <div className={"flex items-center gap-[14px]"}>
-                    <Link href={"/"} onClick={() => {nProgress.start()}}>
+                    <Link href={"/"}>
                         <Icon icon={"PidocIcon"}
                               className={"flex items-center ml-[9px] w-[28px] h-[28px] fill-logo md:w-[32px] md:h-[32px]"} />
                     </Link>

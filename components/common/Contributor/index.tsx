@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-transition-progress/next";
 
 interface IContributor extends HTMLAttributes<HTMLDivElement> {
     login: string;
@@ -8,7 +8,7 @@ interface IContributor extends HTMLAttributes<HTMLDivElement> {
     githubUrl: string;
 }
 
-export default function Contributor({ login, avatarUrl, githubUrl, ...p }: IContributor) {
+export default function Contributor({ login, avatarUrl, githubUrl }: IContributor) {
     return (
         <Link href={githubUrl}>
             <Image className={"rounded-md"} src={avatarUrl} alt={`contributorAvatar_${login}`} width={48} height={48} />

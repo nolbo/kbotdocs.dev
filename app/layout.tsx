@@ -1,9 +1,9 @@
 import type {Metadata} from "next";
 import React from "react";
 import ThemeProvider from "@/components/context/ThemeProvider";
+import {ProgressBar, ProgressBarProvider} from "react-transition-progress";
 import {Open_Sans} from "next/font/google";
 import localFont from "next/font/local";
-import RouteProgress from "@/components/common/RouteProgress";
 import Header from "@/components/common/Header";
 import GA from "@/components/common/GA";
 import {openGraph} from "@/constants/metadata";
@@ -88,9 +88,11 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <body
             className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable} ${cascadia_mono_nf.variable}`}>
             <ThemeProvider>
-                <RouteProgress/>
-                <Header/>
-                {children}
+                <ProgressBarProvider>
+                    <ProgressBar className={"fixed top-0 z-[3] h-[2px] bg-[theme(borderColor.emphasis)]"}/>
+                    <Header/>
+                    {children}
+                </ProgressBarProvider>
             </ThemeProvider>
             <GA />
         </body>

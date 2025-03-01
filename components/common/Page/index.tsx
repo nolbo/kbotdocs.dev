@@ -1,13 +1,13 @@
 import React, {HTMLAttributes} from "react";
 import {usePathname} from "next/navigation";
-import Link from "next/link";
+import { Link } from "react-transition-progress/next";
 
 interface IPage extends HTMLAttributes<HTMLDivElement> {
     doc: Doc;
     onLinkClick?: () => void;
 }
 
-export default function Page({ doc, onLinkClick, className, ...p }: IPage) {
+export default function Page({ doc, onLinkClick, className }: IPage) {
     const pathname = usePathname();
     const isCurrentPage = doc.path === pathname;
 

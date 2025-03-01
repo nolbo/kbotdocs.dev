@@ -1,5 +1,5 @@
 import {HTMLAttributes} from "react";
-import Link from "next/link";
+import { Link } from "react-transition-progress/next";
 import Image from "next/image";
 
 interface ArticleListProps extends HTMLAttributes<HTMLElement> {
