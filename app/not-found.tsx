@@ -8,7 +8,7 @@ export default function NotFound() {
     const { theme } = useTheme();
 
     return (
-        <div className={"flex justify-center px-screen-x-default md:px-screen-x-md"}>
+        <div className={"flex justify-center px-screen-x-default w-full h-screen md:px-screen-x-md"}>
             <div className={"w-full h-full md:max-w-main-md"}>
                 <div
                     className={"flex flex-col justify-center items-center h-full"}>
