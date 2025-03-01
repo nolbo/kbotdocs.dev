@@ -8,5 +8,7 @@
 <div align="center">
   
   **Repository가 마이그레이션되었습니다. [여기](https://github.com/kbotdocs/kbotdocs.dev)에서 기여 및 반영이 진행됩니다.**
+
+  해당 Repository는 **2025. 03. 08 부로** 삭제될 예정입니다.
   
 </div>
