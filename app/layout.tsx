@@ -3,6 +3,7 @@ import React from "react";
 import ThemeProvider from "@/components/context/ThemeProvider";
 import {Open_Sans} from "next/font/google";
 import localFont from "next/font/local";
+import RouteProgress from "@/components/common/RouteProgress";
 import Header from "@/components/common/Header";
 import GA from "@/components/common/GA";
 import {openGraph} from "@/constants/metadata";
@@ -87,6 +88,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <body
             className={`${open_sans.variable} ${pretendard.variable} ${cascadia_code_nf.variable} ${cascadia_mono_nf.variable}`}>
             <ThemeProvider>
+                <RouteProgress/>
                 <Header/>
                 {children}
             </ThemeProvider>
